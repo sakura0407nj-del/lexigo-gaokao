@@ -335,6 +335,9 @@ select {
 }
 .more-sheet {
   width: 100%;
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: var(--paper);
   border-radius: 20px 20px 0 0;
   padding: 18px 16px calc(88px + env(safe-area-inset-bottom));
@@ -463,6 +466,16 @@ select {
   background: linear-gradient(transparent 62%, var(--lime) 62% 92%, transparent 92%);
   padding: 0 2px;
 }
+.study-expansion { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.study-expansion-card { display: flex; gap: 14px; align-items: center; text-align: left; border: 1px solid var(--rule); background: var(--paper-2); color: var(--green); padding: 20px; border-radius: 20px; transition: transform .18s ease, border-color .18s ease; }
+.study-expansion-card:hover { transform: translateY(-2px); border-color: var(--green); }
+.study-expansion-card span { min-width: 0; flex: 1; }
+.study-expansion-card strong, .study-expansion-card small { display: block; }
+.study-expansion-card strong { font-size: 1.05rem; }
+.study-expansion-card small { color: var(--ink-soft); font-size: .8rem; line-height: 1.65; margin-top: 5px; }
+.study-expansion-game { background: #ecf2e4; }
+@media (max-width: 640px) { .study-expansion { grid-template-columns: 1fr; gap: 10px; } .study-expansion-card { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { .study-expansion-card { transition: none; } .study-expansion-card:hover { transform: none; } }
 .hero-sub {
   margin-top: 14px;
   max-width: 46ch;

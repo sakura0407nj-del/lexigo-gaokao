@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, BookMarked, BookX, Check, Headphones, Lightbulb, PenLine, RefreshCw, Sparkles } from "lucide-react";
+import { ArrowRight, BookMarked, BookX, Check, FileCheck2, Gamepad2, Headphones, Lightbulb, PenLine, RefreshCw, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { Word } from "@/lib/learning-types";
 import { aiStatusInfo, type StatusLike } from "./ai-status";
@@ -106,6 +106,17 @@ export function TodayView({ status, statusError, speech, onNavigate }: { status:
           让英语成为你的<em>优势</em>。
         </h1>
         <p className="hero-sub">按“词汇 → 听写 → 练习 → 错题复盘”完成今天的学习。进度只保存在这台设备的浏览器里。</p>
+      </div>
+
+      <div className="study-expansion">
+        <button type="button" className="study-expansion-card" onClick={() => onNavigate("exam")}>
+          <FileCheck2 aria-hidden className="size-6" />
+          <span><strong>定制一张模拟卷</strong><small>自选题型与时长 · 交卷后找到提升方向</small></span><ArrowRight aria-hidden className="size-5" />
+        </button>
+        <button type="button" className="study-expansion-card study-expansion-game" onClick={() => onNavigate("game")}>
+          <Gamepad2 aria-hidden className="size-6" />
+          <span><strong>带着单词去闯关</strong><small>选对英语之门 · 集结你的知识小队</small></span><ArrowRight aria-hidden className="size-5" />
+        </button>
       </div>
 
       <div className="card card-pad today-path">

@@ -12,6 +12,7 @@ import {GET as textbooks} from '../app/api/textbooks/route';
 import {GET as dictation} from '../app/api/dictation/route';
 import {GET as knowledge} from '../app/api/knowledge/route';
 import {POST as grade} from '../app/api/grade/route';
+import {assembleExamRequest,gradeExamRequest} from './exam-server';
 const challengeSchema=z.object({prompt:z.string().min(1).max(3000),context:z.string().max(6000).optional(),correctAnswer:z.string().min(1).max(2500),studentAnswer:z.string().trim().min(1).max(2500),explanation:z.string().max(2500).optional()});
 const wordQuerySchema=z.object({
   band:z.enum(['all','high','medium','low','unknown']).optional(),q:z.string().max(100).optional(),
@@ -48,6 +49,8 @@ export async function handlePublicRequest(req:Request):Promise<Response> {
       requireSameOrigin(req);
       if(path==='/api/words/search')return json(searchWords(wordQuerySchema.parse(await bodyOf(req,100*1024))));
       requirePublicUser(req);
+      if(path==='/api/exams/assemble')return await assembleExamRequest(req);
+      if(path==='/api/exams/grade')return await gradeExamRequest(req);
       if(path==='/api/grade')return grade(req);
       if(path==='/api/challenge-fast') {
         const input=challengeSchema.parse(await bodyOf(req,64000));

@@ -1,16 +1,18 @@
 "use client";
 
-import { BookMarked, BookX, CalendarCheck, ClipboardCheck, Headphones, History, Lightbulb, MoreHorizontal, PenLine, Sparkles, X, type LucideIcon } from "lucide-react";
+import { BookMarked, BookX, CalendarCheck, ClipboardCheck, FileCheck2, Gamepad2, Headphones, History, Lightbulb, MoreHorizontal, PenLine, Sparkles, X, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { cx } from "./ui";
 
-export type TabId = "today" | "vocab" | "dictation" | "practice" | "mistakes" | "knowledge" | "essay" | "questions" | "records";
+export type TabId = "today" | "vocab" | "dictation" | "practice" | "exam" | "game" | "mistakes" | "knowledge" | "essay" | "questions" | "records";
 
 export const TABS: { id: TabId; label: string; short: string; icon: LucideIcon; group: "learn" | "tools" }[] = [
   { id: "today", label: "今日学习", short: "今日", icon: CalendarCheck, group: "learn" },
   { id: "vocab", label: "分类词库", short: "词库", icon: BookMarked, group: "learn" },
   { id: "dictation", label: "听写练习", short: "听写", icon: Headphones, group: "learn" },
   { id: "practice", label: "练习与命题", short: "练习", icon: Sparkles, group: "learn" },
+  { id: "exam", label: "定制模拟卷", short: "试卷", icon: FileCheck2, group: "learn" },
+  { id: "game", label: "英语闯关", short: "闯关", icon: Gamepad2, group: "learn" },
   { id: "mistakes", label: "错题集", short: "错题", icon: BookX, group: "learn" },
   { id: "knowledge", label: "知识卡", short: "知识", icon: Lightbulb, group: "learn" },
   { id: "essay", label: "作文批改", short: "作文", icon: PenLine, group: "tools" },

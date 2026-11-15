@@ -1,6 +1,6 @@
 import type { Correction, ExerciseType, Grade, Paper } from "@/lib/learning-types";
 
-export type MistakeKind = "exercise" | "essay" | "questions";
+export type MistakeKind = "exercise" | "essay" | "questions" | "game";
 
 export interface MistakeEntry {
   id: string;
@@ -30,13 +30,14 @@ export interface Weakness {
 }
 
 const CONTEXT_LIMIT = 6000;
-const KINDS: MistakeKind[] = ["exercise", "essay", "questions"];
+const KINDS: MistakeKind[] = ["exercise", "essay", "questions", "game"];
 const TYPES: ExerciseType[] = ["reading", "grammar", "seven", "cloze"];
 
 export const KIND_LABEL: Record<MistakeKind, string> = {
   exercise: "练习错题",
   essay: "作文句子修改",
   questions: "题目批改订正",
+  game: "闯关错题",
 };
 
 const isRecord = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null && !Array.isArray(value);
@@ -162,11 +163,13 @@ export function pickWeaknesses(mistakes: Record<string, MistakeEntry>, type: Exe
 }
 
 export function toWeakness(entry: MistakeEntry): Weakness {
+  const option = /^[A-G]$/.test(entry.correctAnswer.trim()) ? entry.options?.[entry.correctAnswer.trim().charCodeAt(0) - 65] : undefined;
+  const prompt = [entry.prompt, entry.options?.length ? `选项：\n${entry.options.join("\n")}` : "", entry.context ? `背景节选：\n${clip(entry.context, 650)}` : ""].filter(Boolean).join("\n\n");
   return {
     knowledge: clip(entry.knowledge || entry.title, 400),
-    prompt: clip(entry.prompt, 1200),
+    prompt: clip(prompt, 1200),
     ...(entry.yourAnswer.trim() ? { yourAnswer: clip(entry.yourAnswer, 500) } : {}),
-    ...(entry.correctAnswer.trim() ? { correctAnswer: clip(entry.correctAnswer, 1000) } : {}),
+    ...(entry.correctAnswer.trim() ? { correctAnswer: clip(option || entry.correctAnswer, 1000) } : {}),
   };
 }
 

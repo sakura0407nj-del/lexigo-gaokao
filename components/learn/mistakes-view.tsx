@@ -24,7 +24,7 @@ function reviewHint(entry: MistakeEntry, now: number) {
   if (days >= 1) return "隔天复习效果更好，可以现在挑战。";
   return "刚出错，建议明天再挑战一次检验是否记住。";
 }
-const KINDS: MistakeKind[] = ["exercise", "essay", "questions"];
+const KINDS: MistakeKind[] = ["exercise", "essay", "questions", "game"];
 const TYPES: ExerciseType[] = ["reading", "grammar", "seven", "cloze"];
 const LETTERS = "ABCDEFG";
 const MAX_ANSWER = 2500;

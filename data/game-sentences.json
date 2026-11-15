@@ -1,0 +1,1352 @@
+{
+  "version": 1,
+  "source": "Gemini 原创高中英语专项练习 · Codex 语义校订",
+  "model": "Gemini（本地已配置 gemini profile）",
+  "note": "句子与短语为通用高中专项，不按人教版具体册次或单元编排；难度为题目设计分层，并非高考官方等级。",
+  "items": [
+    {
+      "id": "sentence-001",
+      "kind": "sentence",
+      "prompt": "Look at the dark clouds over the playground; it ____ heavily any minute now, so take your umbrella.",
+      "options": [
+        "is going to rain",
+        "rained"
+      ],
+      "answerIndex": 0,
+      "explanation": "句首Look at the dark clouds及any minute now表明根据当前明显迹象推测即将发生的事情，应用is going to rain；rained为一般过去时，与即将降雨的语境矛盾。",
+      "knowledge": "时态·be going to表有迹象的将来",
+      "evidence": "Look at the dark clouds ... any minute now",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-002",
+      "kind": "sentence",
+      "prompt": "Our school library ____ in 1998, and thousands of students read books there every semester.",
+      "options": [
+        "built",
+        "was built"
+      ],
+      "answerIndex": 1,
+      "explanation": "主语Our school library与动词build之间是被动关系，且有明确过去时间状语in 1998，故用一般过去时的被动语态was built；built为主动形式，图书馆不能自己建造自己。",
+      "knowledge": "语态·一般过去时的被动语态",
+      "evidence": "Our school library ... in 1998",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-003",
+      "kind": "sentence",
+      "prompt": "Since she joined the debate club last September, Lin Tao ____ three campus competitions.",
+      "options": [
+        "has won",
+        "wins"
+      ],
+      "answerIndex": 0,
+      "explanation": "since引导的时间状语从句表示从过去持续到现在的时段，主句谓语应用现在完成时has won；wins为一般现在时，不能与since加过去时间点连用表示迄今为止的成果。",
+      "knowledge": "时态·现在完成时",
+      "evidence": "Since she joined ... last September",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-004",
+      "kind": "sentence",
+      "prompt": "Each of the volunteers in the community garden ____ a green badge during weekend service.",
+      "options": [
+        "wear",
+        "wears"
+      ],
+      "answerIndex": 1,
+      "explanation": "主语核心词是Each，表示单数概念，结合during weekend service常态语境，谓语动词必须用第三人称单数形式wears；wear为复数形式，受就近复数名词volunteers误导而错。",
+      "knowledge": "主谓一致·each of作主语",
+      "evidence": "Each of the volunteers",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-005",
+      "kind": "sentence",
+      "prompt": "Listening to English podcasts for twenty minutes every morning ____ a helpful way to improve pronunciation.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "单个动名词短语Listening to English podcasts作主语时视为单数概念，系动词应用单数形式is；are为复数系动词，误将短语中的复数名词podcasts当作句子主语。",
+      "knowledge": "主谓一致·动名词短语作主语",
+      "evidence": "Listening to English podcasts ... a helpful way",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-006",
+      "kind": "sentence",
+      "prompt": "Three hours ____ too long for beginners to practice coding without taking a short break.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "answerIndex": 0,
+      "explanation": "表示时间、距离、金额等复数名词短语Three hours作主语并被视为一个整体时长时，谓语动词用单数形式is；are忽略了此处将三小时看作单一整体时段的语法规则。",
+      "knowledge": "主谓一致·时间度量作整体主语",
+      "evidence": "Three hours ... too long",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-007",
+      "kind": "sentence",
+      "prompt": "To protect her eyesight, my sister avoids ____ at her tablet screen in a dark room.",
+      "options": [
+        "to stare",
+        "staring"
+      ],
+      "answerIndex": 1,
+      "explanation": "及物动词avoid后必须接动名词作宾语，avoids staring符合固定语法搭配；to stare为动词不定式，不能作avoid的宾语。",
+      "knowledge": "非谓语动词·avoid后接动名词",
+      "evidence": "avoids",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-008",
+      "kind": "sentence",
+      "prompt": "My physics teacher advised me ____ the experiment steps carefully before turning on the power.",
+      "options": [
+        "to check",
+        "checking"
+      ],
+      "answerIndex": 0,
+      "explanation": "advise在接宾语me后，需用动词不定式作宾语补足语，构成advise sb. to do sth.，故填to check；checking用于advise doing sth.无宾语结构，不能直接作宾补。",
+      "knowledge": "非谓语动词·advise sb. to do sth.",
+      "evidence": "advised me",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-009",
+      "kind": "sentence",
+      "prompt": "The student council organized a charity sale in order ____ more books for the rural primary school.",
+      "options": [
+        "to buy",
+        "buying"
+      ],
+      "answerIndex": 0,
+      "explanation": "in order to do sth.是表示目的的固定结构，to后接动词原形，故用to buy，说明义卖是为了买书。buying不能直接接在in order后构成这一目的表达。",
+      "knowledge": "非谓语动词·in order to do表示目的",
+      "evidence": "organized a charity sale in order",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-010",
+      "kind": "sentence",
+      "prompt": "The museum ____ we visited during the history field trip last week houses many ancient bronze tools.",
+      "options": [
+        "where",
+        "which"
+      ],
+      "answerIndex": 1,
+      "explanation": "先行词The museum在定语从句中作及物动词visited的宾语，应选用关系代词which；where是关系副词，只能在从句中作地点状语，不能作visited的宾语。",
+      "knowledge": "定语从句·关系代词which作宾语",
+      "evidence": "The museum ... we visited",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-011",
+      "kind": "sentence",
+      "prompt": "Can you tell me ____ the school bus leaves for the botanical garden tomorrow morning?",
+      "options": [
+        "when",
+        "when does"
+      ],
+      "answerIndex": 0,
+      "explanation": "tell me后接宾语从句，从句必须采用陈述句语序（引导词+主语+谓语），故用when；when does把助动词提前成了疑问句语序，违反了宾语从句语序规则。",
+      "knowledge": "宾语从句·陈述句语序",
+      "evidence": "Can you tell me",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-012",
+      "kind": "sentence",
+      "prompt": "Please do not leave the laboratory ____ you have switched off all the equipment.",
+      "options": [
+        "until",
+        "during"
+      ],
+      "answerIndex": 0,
+      "explanation": "not...until...表示直到某个条件满足才做某事，句中要求先关闭所有设备才能离开。until后可接完整从句；during是介词，后接名词短语，不能直接接you have switched off这一从句。",
+      "knowledge": "时间状语从句·not...until...",
+      "evidence": "do not leave ... you have switched off all the equipment",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-013",
+      "kind": "sentence",
+      "prompt": "The mountain trail was steep and muddy, ____ every member of our hiking team reached the top safely.",
+      "options": [
+        "so",
+        "yet"
+      ],
+      "answerIndex": 1,
+      "explanation": "前半句说山路陡峭泥泞，后半句说全员安全登顶，前后分句存在明显的转折关系，应填yet；so表示因果关系，山路泥泞并不会直接导致全员顺利登顶。",
+      "knowledge": "并列连词·转折关系yet",
+      "evidence": "steep and muddy ... reached the top safely",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-014",
+      "kind": "sentence",
+      "prompt": "We had to move the outdoor painting class into the art hall ____ the sudden thunderstorm.",
+      "options": [
+        "because of",
+        "because"
+      ],
+      "answerIndex": 0,
+      "explanation": "空白后the sudden thunderstorm是名词短语而非完整主谓从句，需用介词短语because of连接；because是从属连词，后面必须接有主语和谓语的原因状语从句。",
+      "knowledge": "逻辑连接·介词短语because of与连词because辨析",
+      "evidence": "the sudden thunderstorm",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-015",
+      "kind": "sentence",
+      "prompt": "After practicing calligraphy for a whole year, Chen Jie writes much ____ than he did last term.",
+      "options": [
+        "most neatly",
+        "more neatly"
+      ],
+      "answerIndex": 1,
+      "explanation": "than引出今昔比较，much可修饰比较级，因此应选副词比较级more neatly，表示写得比以前更工整。most neatly是最高级形式，不能与本句的much和than组成这一比较结构。",
+      "knowledge": "比较级·副词比较级修饰动词",
+      "evidence": "writes much ... than",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-016",
+      "kind": "sentence",
+      "prompt": "Look at the sign beside the chemistry bench: students ____ wear protective goggles during the whole test.",
+      "options": [
+        "must",
+        "might"
+      ],
+      "answerIndex": 0,
+      "explanation": "实验室标识牌规定实验全程必须佩戴护目镜，表达强制性规章制度应用情态动词must；might仅表示可能性较低的推测，不能用于实验室安全硬性规定。",
+      "knowledge": "情态动词·must表规定与义务",
+      "evidence": "Look at the sign ... protective goggles",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "sentence-017",
+      "kind": "sentence",
+      "prompt": "By the time the rescue team arrived at the valley, the local villagers ____ all the hikers to a warm shelter.",
+      "options": [
+        "had guided",
+        "have guided"
+      ],
+      "answerIndex": 0,
+      "explanation": "By the time引导的时间状语从句使用了一般过去时arrived，说明村民引导徒步者去避难所的动作发生在救援队到达之前，即过去的过去，应用过去完成时had guided；have guided是现在完成时。",
+      "knowledge": "时态·过去完成时（by the time + 过去式）",
+      "evidence": "By the time the rescue team arrived",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-018",
+      "kind": "sentence",
+      "prompt": "We cannot hold basketball practice in the main gym this week because the wooden floor ____ right now.",
+      "options": [
+        "is repairing",
+        "is being repaired"
+      ],
+      "answerIndex": 1,
+      "explanation": "时间状语right now表明动作正在进行，且主语the wooden floor是被维修的对象，故用现在进行时的被动语态is being repaired；is repairing为主动语态，地板不能主动维修。",
+      "knowledge": "时态与语态·现在进行时的被动语态",
+      "evidence": "the wooden floor ... right now",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-019",
+      "kind": "sentence",
+      "prompt": "When you called at eight last night, I ____ for my biology presentation and could not answer the phone.",
+      "options": [
+        "was preparing",
+        "am preparing"
+      ],
+      "answerIndex": 0,
+      "explanation": "called和last night把语境明确限定在过去，句子描述来电时正在进行的准备工作，因此用过去进行时was preparing。am preparing是现在进行时，与这一过去时间背景不符。",
+      "knowledge": "时态·过去进行时表过去某刻正在进行的动作",
+      "evidence": "When you called at eight last night",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-020",
+      "kind": "sentence",
+      "prompt": "The headmaster, together with two student representatives, ____ welcoming the exchange guests at the school gate now.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "主语后接together with短语时，谓语动词的单复数与前面的核心主语The headmaster保持一致，故用单数is；are误受插入语中复数名词representatives的影响。",
+      "knowledge": "主谓一致·together with连接主语时的就远原则",
+      "evidence": "The headmaster, together with ... now",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-021",
+      "kind": "sentence",
+      "prompt": "Neither the stage lights nor the sound system ____ working properly when the rehearsal started.",
+      "options": [
+        "were",
+        "was"
+      ],
+      "answerIndex": 1,
+      "explanation": "neither...nor...连接两个并列主语时，谓语动词遵循就近原则，与靠近它的单数名词短语the sound system一致，故用was；were误与较远的复数名词lights保持一致。",
+      "knowledge": "主谓一致·neither...nor...就近原则",
+      "evidence": "Neither the stage lights nor the sound system",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-022",
+      "kind": "sentence",
+      "prompt": "A large number of old textbooks ____ collected by the recycling club every June, and they are sorted by subject.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "answerIndex": 0,
+      "explanation": "A large number of意为许多，修饰可数名词复数textbooks作主语时，谓语动词必须用复数形式are，后文they are也有印证；is常用于the number of作主语的结构。",
+      "knowledge": "主谓一致·a large number of修饰复数名词",
+      "evidence": "A large number of old textbooks ... they are",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-023",
+      "kind": "sentence",
+      "prompt": "____ from the top of the television tower, the whole city looks like a glowing chessboard at dusk.",
+      "options": [
+        "Seeing",
+        "Seen"
+      ],
+      "answerIndex": 1,
+      "explanation": "分词逻辑主语是主句主语the whole city，城市是被从电视塔顶观看的对象，具有被动关系，故用过去分词Seen；Seeing为主动形式，意味着城市自己去看，逻辑不通。",
+      "knowledge": "非谓语动词·过去分词作状语表被动",
+      "evidence": "the whole city looks like",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-024",
+      "kind": "sentence",
+      "prompt": "With the date of the final choir concert ____, the members are practicing every afternoon.",
+      "options": [
+        "approaching",
+        "approached"
+      ],
+      "answerIndex": 0,
+      "explanation": "此处approach表示日期逐渐临近，date与approach构成主动关系，with复合结构应使用现在分词approaching。approached表示被动或已完成的形式，不符合这里日期正在临近的意思。",
+      "knowledge": "非谓语动词·with复合结构中现在分词表主动进行",
+      "evidence": "With the date of the final choir concert",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-025",
+      "kind": "sentence",
+      "prompt": "The solar-powered model car ____ by three tenth-grade students won first prize at the youth science fair.",
+      "options": [
+        "designed",
+        "designing"
+      ],
+      "answerIndex": 0,
+      "explanation": "句子已有谓语动词won，空白处与by短语共同作后置定语修饰model car；模型车与design之间是被动完成关系，故用过去分词designed；designing表主动进行，不符合语境。",
+      "knowledge": "非谓语动词·过去分词短语作后置定语",
+      "evidence": "The solar-powered model car ... by three tenth-grade students",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-026",
+      "kind": "sentence",
+      "prompt": "We reached a peaceful mountain village at noon, ____ a wooden bridge crossed a clear stream.",
+      "options": [
+        "which",
+        "where"
+      ],
+      "answerIndex": 1,
+      "explanation": "定语从句a wooden bridge crossed a clear stream主谓宾结构完整，先行词village在从句中表示地点（在村里有一座木桥），应用关系副词where；which需在从句中充当主语或宾语。",
+      "knowledge": "定语从句·非限制性定语从句中where作地点状语",
+      "evidence": "a peaceful mountain village ... a wooden bridge crossed a clear stream",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-027",
+      "kind": "sentence",
+      "prompt": "____ impressed the judges most at the robotics contest was the team's creative solution to waste sorting.",
+      "options": [
+        "What",
+        "That"
+      ],
+      "answerIndex": 0,
+      "explanation": "was之前为主语从句，从句中缺少谓语动词impressed的主语，且指代最打动评委的事物，应用连接代词What；That引导主语从句时不充当任何句子成分，会导致从句缺主语。",
+      "knowledge": "主语从句·连接代词what在从句中作主语",
+      "evidence": "impressed the judges most ... was",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-028",
+      "kind": "sentence",
+      "prompt": "____ the practice schedule was tight, all members of the orchestra learned the new symphony on time.",
+      "options": [
+        "Despite",
+        "Although"
+      ],
+      "answerIndex": 1,
+      "explanation": "空白后the practice schedule was tight是包含主语和系表结构的完整从句，需用从属连词Although引导让步状语从句；Despite是介词，后面只能接名词、代词或动名词短语，不能直接接从句。",
+      "knowledge": "状语从句·连词although与介词despite辨析",
+      "evidence": "the practice schedule was tight",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-029",
+      "kind": "sentence",
+      "prompt": "You should back up your essay on a flash drive; ____, you may lose hours of work if the computer crashes.",
+      "options": [
+        "therefore",
+        "otherwise"
+      ],
+      "answerIndex": 1,
+      "explanation": "前句建议把论文备份到U盘，后句指出电脑死机可能丢失数小时成果，即如果不这样做就会产生的负面后果，应用otherwise（否则）；therefore表示顺承因果，语义相反。",
+      "knowledge": "逻辑连接·副词otherwise表否则",
+      "evidence": "back up your essay ... may lose hours of work",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-030",
+      "kind": "sentence",
+      "prompt": "Registration is required: students may reserve a study room online ____ they register with a student ID before Friday.",
+      "options": [
+        "provided that",
+        "even though"
+      ],
+      "answerIndex": 0,
+      "explanation": "开头明确说明登记是必要条件，后半句具体给出凭学生证登记的要求，应选provided that，表示只要、以此为条件。even though表示尽管，不能表达这里规定的必要条件。",
+      "knowledge": "逻辑连接·条件状语从句引导词provided that",
+      "evidence": "Registration is required",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-031",
+      "kind": "sentence",
+      "prompt": "____ regularly you exercise, the more energetic you will feel during morning classes.",
+      "options": [
+        "More",
+        "The more"
+      ],
+      "answerIndex": 1,
+      "explanation": "后半句the more energetic表明本句考查the + 比较级..., the + 比较级...（越……就越……）固定句型，句首必须带定冠词The，故填The more；More缺少定冠词The，无法构成该对应句式。",
+      "knowledge": "比较结构·the + 比较级..., the + 比较级...",
+      "evidence": "the more energetic you will feel",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-032",
+      "kind": "sentence",
+      "prompt": "The music room is dark and locked. Mr. Wu ____ home already, judging from the empty car park.",
+      "options": [
+        "must have gone",
+        "must have went"
+      ],
+      "answerIndex": 0,
+      "explanation": "对过去情况作有把握的推测，可用must have加过去分词。go的过去分词是gone，因此选must have gone；went是一般过去式，不能放在have后组成这一完成式结构。",
+      "knowledge": "情态动词完成式·must have加过去分词",
+      "evidence": "dark and locked ... the empty car park",
+      "difficulty": "standard"
+    },
+    {
+      "id": "sentence-033",
+      "kind": "sentence",
+      "prompt": "This is the second time that our school choir ____ invited to perform at the municipal youth arts festival.",
+      "options": [
+        "has been",
+        "was"
+      ],
+      "answerIndex": 0,
+      "explanation": "在固定句型This is the first/second time that...中，that从句必须使用现在完成时，且合唱团是被邀请，故用has been；was是一般过去时，不符合主句为This is时的时态规范。",
+      "knowledge": "时态与语态·This is the + 序数词 + time that...句型",
+      "evidence": "This is the second time that ... invited",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-034",
+      "kind": "sentence",
+      "prompt": "My cousin ____ in the botanical institute for five years before he moved to Kunming to teach biology in 2024.",
+      "options": [
+        "has worked",
+        "had worked"
+      ],
+      "answerIndex": 1,
+      "explanation": "工作五年的时段截止于过去动作moved to Kunming in 2024之前，并未延续到现在，因此应用过去完成时had worked；has worked表示动作持续到现在，与before he moved矛盾。",
+      "knowledge": "时态·过去完成时表过去某动作前的持续状态",
+      "evidence": "for five years before he moved to Kunming ... in 2024",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-035",
+      "kind": "sentence",
+      "prompt": "More than one student in our grade ____ signed up for the astronomy lecture, which will be held this Friday.",
+      "options": [
+        "has",
+        "have"
+      ],
+      "answerIndex": 0,
+      "explanation": "More than one + 单数可数名词作主语时，尽管意义上指不止一个学生，但语法形式上遵循单数一致原则，助动词应用has；have受语义复数干扰而误用。",
+      "knowledge": "主谓一致·more than one + 单数名词作主语",
+      "evidence": "More than one student",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-036",
+      "kind": "sentence",
+      "prompt": "What the young volunteers need most right now ____ clear training on how to guide elderly visitors.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "主语从句What the young volunteers need most指代单数不可数概念，且表语核心词是不可数名词training，系动词应用单数is；are误将从句中的复数主语volunteers当作整句主语。",
+      "knowledge": "主谓一致·what主语从句与单数表语一致",
+      "evidence": "What the young volunteers need most ... clear training",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-037",
+      "kind": "sentence",
+      "prompt": "____ the lab report three times with his partner, Zhang Wei finally felt confident enough to hand it in.",
+      "options": [
+        "Having been checked",
+        "Having checked"
+      ],
+      "answerIndex": 1,
+      "explanation": "Zhang Wei是主动检查报告的人，且检查发生在上交之前，故用Having checked这一主动完成式。Having been checked是被动形式，会把张伟说成被检查的对象，也不能直接带the lab report作宾语。",
+      "knowledge": "非谓语动词·现在分词完成式表动作先于主句发生",
+      "evidence": "three times ... finally felt confident",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-038",
+      "kind": "sentence",
+      "prompt": "The community library is reported ____ over ten thousand digital books to its online platform since last winter.",
+      "options": [
+        "to have added",
+        "to add"
+      ],
+      "answerIndex": 0,
+      "explanation": "is reported后接动词不定式，且since last winter表明添加电子书从去年冬天持续至今、发生在被报道之前，故用不定式完成式to have added；to add表一般或将来动作，无法配合since时间状语。",
+      "knowledge": "非谓语动词·不定式完成式to have done",
+      "evidence": "is reported ... since last winter",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-039",
+      "kind": "sentence",
+      "prompt": "Weather ____, the astronomy club will set up telescopes on the rooftop to observe the meteor shower tonight.",
+      "options": [
+        "permitted",
+        "permitting"
+      ],
+      "answerIndex": 1,
+      "explanation": "逗号前有独立名词Weather作逻辑主语，且Weather与permit（允许）之间是主动关系，构成独立主格结构Weather permitting（如果天气允许）；permitted表示天气被允许，语义不通。",
+      "knowledge": "非谓语动词·独立主格结构Weather permitting",
+      "evidence": "Weather ... the astronomy club will set up",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-040",
+      "kind": "sentence",
+      "prompt": "The old scientist had three notebooks, the covers of ____ were worn out after decades of field research.",
+      "options": [
+        "which",
+        "them"
+      ],
+      "answerIndex": 0,
+      "explanation": "逗号连接两个主谓结构且无并列连词and，后半句必须是非限制性定语从句，用关系代词which指代notebooks；若填人称代词them，则两个独立分句仅用逗号连接，构成逗号拼接语法错误。",
+      "knowledge": "定语从句·名词 + of which引导非限制性定语从句",
+      "evidence": "had three notebooks, the covers of ... were worn out",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-041",
+      "kind": "sentence",
+      "prompt": "The reason ____ our team chose bamboo for the bridge model was that it is both light and flexible.",
+      "options": [
+        "why",
+        "which"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行词是The reason，定语从句our team chose bamboo for the bridge model主谓宾完整，缺少原因状语，应用关系副词why；which在从句中必须充当主语或宾语，此处从句不缺名词性成分。",
+      "knowledge": "定语从句·The reason why... is that...",
+      "evidence": "The reason ... our team chose bamboo for the bridge model",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-042",
+      "kind": "sentence",
+      "prompt": "All high school participants will receive a certificate of completion, ____ score they get in the final quiz.",
+      "options": [
+        "however",
+        "whatever"
+      ],
+      "answerIndex": 1,
+      "explanation": "空白后紧跟名词score，需要能作定语修饰名词的引导词，whatever score意为无论什么分数；however作让步引导词时只能修饰形容词或副词，不能直接修饰名词score。",
+      "knowledge": "状语从句·whatever修饰名词引导让步状语从句",
+      "evidence": "score they get in the final quiz",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-043",
+      "kind": "sentence",
+      "prompt": "Late ____ it was, the museum guide stayed to answer our questions.",
+      "options": [
+        "though",
+        "although"
+      ],
+      "answerIndex": 0,
+      "explanation": "本句把表语Late提前，构成Late though it was这一让步倒装结构，意为虽然时间已经很晚。although引导此类从句时使用Although it was late的正常语序，不能填入当前的倒装位置。",
+      "knowledge": "让步状语从句·表语提前与though",
+      "evidence": "Late ... it was",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-044",
+      "kind": "sentence",
+      "prompt": "Our school cafeteria has cut down on single-use plastic boxes; ____, it encourages students to bring reusable containers.",
+      "options": [
+        "nevertheless",
+        "moreover"
+      ],
+      "answerIndex": 1,
+      "explanation": "前句说食堂减少一次性塑料盒，后句说鼓励学生自带可重复使用的餐盒，两项环保举措属于顺承递进关系，应用moreover（此外、而且）；nevertheless表转折（然而），与环保方向不符。",
+      "knowledge": "逻辑连接·递进关系副词moreover",
+      "evidence": "cut down on single-use plastic boxes ... encourages students to bring reusable containers",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-045",
+      "kind": "sentence",
+      "prompt": "Not until the documentary ended ____ how much effort the rangers had put into protecting the wetland.",
+      "options": [
+        "we realized",
+        "did we realize"
+      ],
+      "answerIndex": 1,
+      "explanation": "当Not until引导的时间状语从句置于句首时，主句必须采用部分倒装语序did we realize；we realized为正常陈述语序，未遵循否定词置首的倒装规则。",
+      "knowledge": "特殊句式·Not until位于句首引起主句部分倒装",
+      "evidence": "Not until the documentary ended",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-046",
+      "kind": "sentence",
+      "prompt": "Hardly ____ the classroom when the bell for the morning reading session rang across the campus.",
+      "options": [
+        "had I entered",
+        "I had entered"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hardly...when...表示一……就……，否定副词Hardly位于句首时，主句必须使用过去完成时的部分倒装结构had I entered；I had entered未进行主谓倒装。",
+      "knowledge": "特殊句式·Hardly...when...句首部分倒装",
+      "evidence": "Hardly ... when the bell ... rang",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-047",
+      "kind": "sentence",
+      "prompt": "____ you followed the instructions on the medicine bottle yesterday, you would not feel so sleepy this morning.",
+      "options": [
+        "Should",
+        "Had"
+      ],
+      "answerIndex": 1,
+      "explanation": "条件从句中有明确过去时间yesterday及过去分词followed，表示与过去事实相反的假设，完整形式为If you had followed，省略if后将Had提至句首构成倒装；Should用于与将来相关的虚拟条件句。",
+      "knowledge": "虚拟语气·省略if的错综条件句（从句与过去相反）",
+      "evidence": "followed the instructions ... yesterday",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "sentence-048",
+      "kind": "sentence",
+      "prompt": "It was not until she joined the campus drama club ____ Lin Mei discovered her talent for stage design.",
+      "options": [
+        "that",
+        "when"
+      ],
+      "answerIndex": 0,
+      "explanation": "本句是It was not until...that...强调句型，被强调部分是时间状语从句not until she joined the campus drama club，连接词必须用that；when常被误用，但强调句型的固定连接词不能换作when。",
+      "knowledge": "特殊句式·It was not until...that...强调句型",
+      "evidence": "It was not until she joined the campus drama club",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-001",
+      "kind": "phrase",
+      "prompt": "Because the outdoor track was covered in snow, the PE teacher decided to ____ the 800-meter race until next Monday.",
+      "options": [
+        "put off",
+        "put out"
+      ],
+      "answerIndex": 0,
+      "explanation": "跑道被雪覆盖，且后接时间状语until next Monday，说明体育老师决定把800米比赛推迟到下周一，应用put off；put out意为扑灭火苗或熄灭，不能搭配体育比赛。",
+      "knowledge": "短语动词·put off（推迟）与put out（扑灭）辨析",
+      "evidence": "covered in snow ... until next Monday",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-002",
+      "kind": "phrase",
+      "prompt": "Everyone who has registered for the robotics workshop is ____ meeting the guest engineer tomorrow.",
+      "options": [
+        "looking up to",
+        "looking forward to"
+      ],
+      "answerIndex": 1,
+      "explanation": "空白后接动名词短语meeting the guest engineer tomorrow，表示期待明天见到客座工程师这一即将发生的事件，应用looking forward to；looking up to意为敬仰，宾语通常是人而非动名词事件。",
+      "knowledge": "短语动词·look forward to（期盼）与look up to（敬仰）辨析",
+      "evidence": "meeting the guest engineer tomorrow",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-003",
+      "kind": "phrase",
+      "prompt": "Our class monitor is always ready to ____ organizing the charity book drive whenever the school needs help.",
+      "options": [
+        "take charge of",
+        "take place of"
+      ],
+      "answerIndex": 0,
+      "explanation": "take charge of意为负责、掌管，后接动名词短语表示班长乐意负责组织图书义卖；take place of缺少冠词the（应为take the place of代替），且语境并非替代某人。",
+      "knowledge": "固定短语·take charge of（负责）",
+      "evidence": "ready to ... organizing the charity book drive",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-004",
+      "kind": "phrase",
+      "prompt": "During the chemistry experiment, you must ____ the temperature change in the beaker every two minutes.",
+      "options": [
+        "pay a visit to",
+        "pay attention to"
+      ],
+      "answerIndex": 1,
+      "explanation": "化学实验中需要每两分钟关注烧杯内的温度变化，pay attention to意为注意、留心，符合实验操作要求；pay a visit to意为参观、拜访，宾语通常是地点或人，不能搭配temperature change。",
+      "knowledge": "动词短语·pay attention to（注意）",
+      "evidence": "the temperature change in the beaker every two minutes",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-005",
+      "kind": "phrase",
+      "prompt": "If you do not know how this idiom is used in context, you can ____ the example sentences in a learner's dictionary.",
+      "options": [
+        "rely to",
+        "refer to"
+      ],
+      "answerIndex": 1,
+      "explanation": "refer to意为查阅、参考，宾语为学习型词典里的例句，符合查词典语境；rely to属于介词搭配错误（正确形式为rely on依赖），英语中无此短语。",
+      "knowledge": "动词+介词·refer to（查阅、参考）",
+      "evidence": "the example sentences in a learner's dictionary",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-006",
+      "kind": "phrase",
+      "prompt": "Students who ____ regular physical exercise usually sleep better and concentrate more easily in class.",
+      "options": [
+        "participate in",
+        "participate on"
+      ],
+      "answerIndex": 0,
+      "explanation": "participate表示参加某项活动时通常与介词in搭配，故用participate in regular physical exercise，表示参加日常锻炼。participate on不符合这一动词与活动名称之间的固定介词搭配。",
+      "knowledge": "动词介词搭配·participate in",
+      "evidence": "regular physical exercise",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-007",
+      "kind": "phrase",
+      "prompt": "To make the poster easier to read from a distance, the art club decided to ____ some unnecessary details.",
+      "options": [
+        "leave for",
+        "leave out"
+      ],
+      "answerIndex": 1,
+      "explanation": "为了让海报在远处更容易看清，美术社决定删去、省去一些不必要的细节，应用leave out；leave for意为动身前往某地，不能接unnecessary details作宾语。",
+      "knowledge": "短语动词·leave out（删去、省去）与leave for（动身去）辨析",
+      "evidence": "make the poster easier to read ... some unnecessary details",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-008",
+      "kind": "phrase",
+      "prompt": "After discussing the project for an hour, our study group ____ a practical plan for the history exhibition.",
+      "options": [
+        "came up with",
+        "came up to"
+      ],
+      "answerIndex": 0,
+      "explanation": "经过讨论后想出或提出方案，要用come up with，过去式为came up with。came up to通常表示走近或到达某处，不能表达经过思考提出a practical plan的意思。",
+      "knowledge": "短语动词·come up with（想出、提出）",
+      "evidence": "After discussing the project ... a practical plan",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-009",
+      "kind": "phrase",
+      "prompt": "All members of the cycling team are required to ____ helmets and reflective vests before leaving the school gate.",
+      "options": [
+        "put on",
+        "turn on"
+      ],
+      "answerIndex": 0,
+      "explanation": "宾语helmets and reflective vests（头盔和反光背心）属于穿戴护具，出门前戴上、穿上应用put on；turn on用于打开电灯、水源或电子设备，不能搭配衣物护具。",
+      "knowledge": "短语动词·put on（戴上、穿上）与turn on（打开电器）辨析",
+      "evidence": "helmets and reflective vests",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-010",
+      "kind": "phrase",
+      "prompt": "My grandmother soon ____ using the community health app after I showed her the main buttons twice.",
+      "options": [
+        "used to",
+        "got used to"
+      ],
+      "answerIndex": 1,
+      "explanation": "空白后接动名词短语using the community health app，且前有soon表示很快适应的过程，应用got used to（习惯于，to为介词）；used to后只能接动词原形表示过去常常，不能接using。",
+      "knowledge": "固定搭配·get used to doing（习惯于做某事）与used to do辨析",
+      "evidence": "using the community health app",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-011",
+      "kind": "phrase",
+      "prompt": "Whether we can hold the stargazing activity tonight ____ how clear the sky is after sunset.",
+      "options": [
+        "depends on",
+        "insists on"
+      ],
+      "answerIndex": 0,
+      "explanation": "主语是Whether引导的主语从句（今晚能否举办观星活动），这取决于日落后天空的晴朗程度，应用depends on；insists on意为坚持要求，主语通常是人，不能表示客观条件决定。",
+      "knowledge": "动词+介词·depend on（取决于）与insist on（坚持）辨析",
+      "evidence": "Whether we can hold ... how clear the sky is",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-012",
+      "kind": "phrase",
+      "prompt": "Please remember to ____ all the laboratory computers before you lock the door for the weekend.",
+      "options": [
+        "take off",
+        "turn off"
+      ],
+      "answerIndex": 1,
+      "explanation": "周末锁门前需要把实验室电脑全部关闭，应用turn off；take off意为脱下衣物或飞机起飞，不能用于关闭电脑设备。",
+      "knowledge": "短语动词·turn off（关闭电源）与take off（脱下/起飞）辨析",
+      "evidence": "all the laboratory computers before you lock the door",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-013",
+      "kind": "phrase",
+      "prompt": "The school counselor gave us useful advice on how to ____ exam stress in a healthy way.",
+      "options": [
+        "agree with",
+        "deal with"
+      ],
+      "answerIndex": 1,
+      "explanation": "心理老师给出关于如何健康应对、处理考试压力的建议，deal with符合语境；agree with意为同意某人或某观点，与exam stress搭配语义不通。",
+      "knowledge": "动词+介词·deal with（处理、应对）",
+      "evidence": "useful advice on how to ... exam stress",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-014",
+      "kind": "phrase",
+      "prompt": "Our geography teacher asked each group to ____ a short slide presentation about local rivers.",
+      "options": [
+        "prepare for",
+        "apologize for"
+      ],
+      "answerIndex": 0,
+      "explanation": "地理老师让每个小组为关于当地河流的简短幻灯片展示做准备，应用prepare for；apologize for意为因……道歉，与常规课堂作业展示语境不符。",
+      "knowledge": "动词+介词·prepare for（为……做准备）",
+      "evidence": "a short slide presentation about local rivers",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-015",
+      "kind": "phrase",
+      "prompt": "When borrowing reference books from the reading room, students must return them ____ so others can use them.",
+      "options": [
+        "by accident",
+        "on time"
+      ],
+      "answerIndex": 1,
+      "explanation": "为了让其他同学也能使用参考书，借阅者必须按时归还，应用on time；by accident意为偶然、不小心，与must return的借阅规定不符。",
+      "knowledge": "介词短语·on time（按时）与by accident（偶然）辨析",
+      "evidence": "must return them ... so others can use them",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-016",
+      "kind": "phrase",
+      "prompt": "At first the new math topic seemed difficult, ____ after doing five practice problems, I understood the rule.",
+      "options": [
+        "but in fact",
+        "for example"
+      ],
+      "answerIndex": 0,
+      "explanation": "前半句说起初新数学知识点看似很难，后半句说做完五道练习题后就理解了规律，前后构成转折与实际体会的对比，用but in fact；for example用于举例说明前文观点，此处并非举例。",
+      "knowledge": "固定短语·in fact（事实上）与for example（例如）辨析",
+      "evidence": "At first ... seemed difficult ... I understood the rule",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "phrase-017",
+      "kind": "phrase",
+      "prompt": "To reduce campus waste, the student union called on everyone to ____ disposable plastic cutlery in the dining hall.",
+      "options": [
+        "cut down on",
+        "cut off from"
+      ],
+      "answerIndex": 0,
+      "explanation": "句首To reduce campus waste表明学生会号召大家减少使用一次性塑料餐具，固定短语为cut down on；cut off from意为使与……隔绝或切断联系，不能表达削减用量的含义。",
+      "knowledge": "短语动词·cut down on（削减、减少使用）",
+      "evidence": "To reduce campus waste ... disposable plastic cutlery",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-018",
+      "kind": "phrase",
+      "prompt": "When the projector suddenly stopped working, our speaker calmly ____ her printed handouts without panicking.",
+      "options": [
+        "turned up",
+        "turned to"
+      ],
+      "answerIndex": 1,
+      "explanation": "投影仪突然坏了时，演讲者冷静地转向、改用纸质讲义，turned to可表示转而使用或求助于某物；turned up意为调大音量或出现，不能与纸质讲义构成改用关系。",
+      "knowledge": "短语动词·turn to（转向、求助于）与turn up（调高/出现）辨析",
+      "evidence": "projector suddenly stopped working ... her printed handouts",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-019",
+      "kind": "phrase",
+      "prompt": "Even a small spelling change can ____ to the meaning of a sentence, so proofread your draft carefully.",
+      "options": [
+        "make a difference",
+        "make a fortune"
+      ],
+      "answerIndex": 0,
+      "explanation": "哪怕微小的拼写变化也会对句意产生影响，make a difference to是固定搭配；make a fortune意为发财、赚大钱，与校对作文草稿的语境毫不相干。",
+      "knowledge": "动词搭配·make a difference (to)（对……产生影响/有区别）",
+      "evidence": "to the meaning of a sentence, so proofread your draft",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-020",
+      "kind": "phrase",
+      "prompt": "To avoid overlooking any weather risks, the concert organizers had to ____ the possibility of sudden autumn rain.",
+      "options": [
+        "turn a blind eye to",
+        "take into account"
+      ],
+      "answerIndex": 1,
+      "explanation": "句首明确要求避免遗漏天气风险，因此必须把突发秋雨的可能性考虑进去，选take into account。turn a blind eye to表示故意视而不见，与避免忽视风险的目的相反。",
+      "knowledge": "固定短语·take into account（把……考虑进去）与take for granted辨析",
+      "evidence": "To avoid overlooking any weather risks",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-021",
+      "kind": "phrase",
+      "prompt": "The new student quickly ____ her classmates because she shared her notes generously and listened patiently.",
+      "options": [
+        "kept up with",
+        "fitted in with"
+      ],
+      "answerIndex": 1,
+      "explanation": "因为慷慨分享笔记并耐心倾听，新同学很快融入了同班同学之中，与之和睦相处，应用fitted in with；kept up with强调在速度或学业进度上跟上、不掉队，与分享倾听的社交原因不匹配。",
+      "knowledge": "短语动词·fit in with（与……融洽相处/融入）与keep up with（跟上进度）辨析",
+      "evidence": "shared her notes generously and listened patiently",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-022",
+      "kind": "phrase",
+      "prompt": "Because the main road to the nature reserve was flooded, the tour bus had to take a country lane ____.",
+      "options": [
+        "instead",
+        "instead of"
+      ],
+      "answerIndex": 0,
+      "explanation": "空白位于句末且后面没有宾语，表示作为替代改走乡村小道，需用副词instead修饰动词短语；instead of是介词短语，后面必须接名词、代词或动名词作宾语，不能单独置于句尾。",
+      "knowledge": "副词与介词短语·instead（单独作状语）与instead of（后接宾语）辨析",
+      "evidence": "take a country lane ____.",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-023",
+      "kind": "phrase",
+      "prompt": "The historical museum is open to all high school students ____ on Saturdays, provided they show their student cards.",
+      "options": [
+        "in charge",
+        "free of charge"
+      ],
+      "answerIndex": 1,
+      "explanation": "凭学生证在周六可免费参观历史博物馆，free of charge作状语意为免费地；in charge意为负责、主管，通常修饰人而非修饰open to students。",
+      "knowledge": "固定短语·free of charge（免费）与in charge（负责/主管）辨析",
+      "evidence": "open to all high school students ... provided they show their student cards",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-024",
+      "kind": "phrase",
+      "prompt": "After three weeks of careful observation, the biology club ____ that the seedlings grew faster near the south window.",
+      "options": [
+        "drew the conclusion",
+        "made the decision"
+      ],
+      "answerIndex": 0,
+      "explanation": "经过三周仔细观察实验后，生物社发现幼苗在南窗附近长得更快，这是通过观察得出的客观科学结论，应用drew the conclusion；树苗生长快慢是客观现象，不能由学生做出决定（made the decision）。",
+      "knowledge": "名词搭配·draw a/the conclusion（得出结论）与make a decision辨析",
+      "evidence": "After three weeks of careful observation ... that the seedlings grew faster",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-025",
+      "kind": "phrase",
+      "prompt": "The folk music club was set up ____ preserving traditional instruments and introducing them to teenagers.",
+      "options": [
+        "with the aim of",
+        "at the expense of"
+      ],
+      "answerIndex": 0,
+      "explanation": "成立民乐社的目的是保护传统乐器并向青少年推广，with the aim of意为以……为目标或目的；at the expense of意为以牺牲……为代价，与成立社团弘扬传统音乐的初衷完全相反。",
+      "knowledge": "介词短语·with the aim of（以……为目的）与at the expense of（以……为代价）辨析",
+      "evidence": "was set up ... preserving traditional instruments",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-026",
+      "kind": "phrase",
+      "prompt": "Before signing up for the marathon, you should make sure your training plan is ____ your current physical strength.",
+      "options": [
+        "familiar with",
+        "consistent with"
+      ],
+      "answerIndex": 1,
+      "explanation": "报名马拉松前应确保训练计划与当前体能相符、一致，consistent with符合主语training plan的搭配；be familiar with意为熟悉……，主语通常是人而非training plan。",
+      "knowledge": "形容词+介词·consistent with（与……一致/相符）与familiar with辨析",
+      "evidence": "your training plan is ... your current physical strength",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-027",
+      "kind": "phrase",
+      "prompt": "Our teacher says we should build lasting study habits ____ depend on a single night of cramming.",
+      "options": [
+        "rather than",
+        "instead of"
+      ],
+      "answerIndex": 0,
+      "explanation": "空后是动词原形depend，与前面的build构成两个动作的对比，应用rather than。instead of中的of是介词，若使用这一短语，后面的动词必须改为depending，不能直接接depend。",
+      "knowledge": "结构辨析·rather than do与instead of doing",
+      "evidence": "build lasting study habits ... depend",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-028",
+      "kind": "phrase",
+      "prompt": "While tidying the old attic last Sunday, my brother ____ a box of postcards our grandfather had collected in the 1980s.",
+      "options": [
+        "came about",
+        "came across"
+      ],
+      "answerIndex": 1,
+      "explanation": "整理旧阁楼时偶然发现一盒祖父八十年代收集的明信片，came across是及物短语动词，后接宾语a box of postcards；came about是不及物短语动词，意为发生，后面不能接宾语。",
+      "knowledge": "短语动词·come across（偶然发现）与come about（发生、产生）辨析",
+      "evidence": "While tidying the old attic ... a box of postcards",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-029",
+      "kind": "phrase",
+      "prompt": "Many teenagers find it hard to ____ reliable science reports apart from exaggerated online rumors.",
+      "options": [
+        "make",
+        "tell"
+      ],
+      "answerIndex": 1,
+      "explanation": "tell A apart from B表示把A与B区分开，题目中的apart from已经给出，因此应选tell。make不能与后面的名词和apart from组成表示辨别两类信息的这个结构。",
+      "knowledge": "固定搭配·tell A apart from B",
+      "evidence": "reliable science reports apart from exaggerated online rumors",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-030",
+      "kind": "phrase",
+      "prompt": "With the hospital app, the elderly residents learned how to ____ an appointment with a doctor online.",
+      "options": [
+        "make",
+        "do"
+      ],
+      "answerIndex": 0,
+      "explanation": "预约医生可表达为make an appointment with a doctor，make与appointment构成固定搭配。do虽可表示做某事，但不能代替make组成这里预约就诊的表达。",
+      "knowledge": "动词搭配·make an appointment",
+      "evidence": "an appointment with a doctor online",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-031",
+      "kind": "phrase",
+      "prompt": "The chemistry lab is ____ smoke detectors and fire extinguishers to ensure every student's safety.",
+      "options": [
+        "crowded with",
+        "equipped with"
+      ],
+      "answerIndex": 1,
+      "explanation": "化学实验室配备有烟雾报警器和灭火器以保障安全，be equipped with是标准搭配；be crowded with意为挤满了人或杂物，安防设备是合理配备而非拥挤杂乱地堆满实验室。",
+      "knowledge": "动词+介词·be equipped with（配备有）与be crowded with（挤满）辨析",
+      "evidence": "The chemistry lab is ... smoke detectors and fire extinguishers",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-032",
+      "kind": "phrase",
+      "prompt": "____ the bad weather, the school sports meet went ahead smoothly inside the indoor stadium.",
+      "options": [
+        "In spite of",
+        "Because"
+      ],
+      "answerIndex": 0,
+      "explanation": "空后the bad weather是名词短语，In spite of可接名词，表示尽管天气恶劣，校运会仍顺利进行。Because是连词，必须接完整从句；若接名词需用because of，且因果关系也不符合这里的让步语境。",
+      "knowledge": "介词短语·in spite of",
+      "evidence": "the bad weather ... went ahead smoothly",
+      "difficulty": "standard"
+    },
+    {
+      "id": "phrase-033",
+      "kind": "phrase",
+      "prompt": "The faint smell of pine needles after the rain ____ warm memories of the summer camp we attended in the mountains.",
+      "options": [
+        "called up",
+        "called off"
+      ],
+      "answerIndex": 0,
+      "explanation": "雨后松针的淡淡清香唤起了我们在山里参加夏令营的温馨回忆，called up有唤起回忆之意；called off意为取消活动或计划，不能与memories搭配。",
+      "knowledge": "短语动词·call up（唤起记忆）与call off（取消）辨析",
+      "evidence": "The faint smell of pine needles ... warm memories of the summer camp",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-034",
+      "kind": "phrase",
+      "prompt": "Our school has launched a new peer-tutoring program to ____ the needs of tenth graders who struggle with physics.",
+      "options": [
+        "subscribe to",
+        "cater to"
+      ],
+      "answerIndex": 1,
+      "explanation": "学校推出同伴辅导项目是为了满足物理学习有困难的高一学生的需求，cater to the needs of是地道搭配；subscribe to意为订阅报刊或赞同观点，不能与needs搭配。",
+      "knowledge": "动词+介词·cater to（满足……的需要）与subscribe to（订阅/赞同）辨析",
+      "evidence": "the needs of tenth graders who struggle with physics",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-035",
+      "kind": "phrase",
+      "prompt": "The guest speaker's clear diagrams helped ____ the complex concept of quantum computing to the high school audience.",
+      "options": [
+        "get across",
+        "get away"
+      ],
+      "answerIndex": 0,
+      "explanation": "get across可表示把观点或概念讲清楚、传达给别人，符合图表帮助听众理解量子计算的语境。get away表示离开、逃脱，不能直接带the complex concept作宾语来表达传达含义。",
+      "knowledge": "短语动词·get across（使被理解、讲清楚）与get over（克服/恢复）辨析",
+      "evidence": "clear diagrams helped ... the complex concept ... to the high school audience",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-036",
+      "kind": "phrase",
+      "prompt": "While digital dictionaries are convenient, they cannot ____ reading full paragraphs when we need to understand a writer's tone.",
+      "options": [
+        "account for",
+        "substitute for"
+      ],
+      "answerIndex": 1,
+      "explanation": "理解作者语气需要阅读完整段落，词典不能代替这种阅读过程，因此选substitute for。account for表示解释原因或占某种比例，不能在这里表达一种学习方法取代另一种方法的意思。",
+      "knowledge": "动词+介词·substitute for（代替、取代）与account for（解释/占比例）辨析",
+      "evidence": "reading full paragraphs ... understand a writer's tone",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-037",
+      "kind": "phrase",
+      "prompt": "Our debate coach warned us not to ____ conclusions when we only have one or two examples.",
+      "options": [
+        "adapt to",
+        "jump to"
+      ],
+      "answerIndex": 1,
+      "explanation": "jump to conclusions表示在证据不足时仓促下结论，与仅有一两个例子的提醒相符。adapt to表示适应环境或变化，不能表达这里应避免的草率推断行为。",
+      "knowledge": "固定搭配·jump to conclusions",
+      "evidence": "when we only have one or two examples",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-038",
+      "kind": "phrase",
+      "prompt": "The documentary shows how solar panels ____ sunlight into clean electricity for remote mountain schools.",
+      "options": [
+        "convert",
+        "exchange"
+      ],
+      "answerIndex": 0,
+      "explanation": "太阳能电池板将阳光转化为清洁电能，改变了能量形态且后接介词into，应用convert；exchange意为交换、兑换同类或等价事物，常与for连用，不能表示物理能量转换。",
+      "knowledge": "动词辨析与搭配·convert...into...（把……转化为……）与exchange辨析",
+      "evidence": "sunlight into clean electricity",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-039",
+      "kind": "phrase",
+      "prompt": "Because both proposals had strong merits, the committee decided to ____ making a final choice until next Friday.",
+      "options": [
+        "hold on to",
+        "hold off on"
+      ],
+      "answerIndex": 1,
+      "explanation": "由于两份提案各有明显优点，委员会决定直到下周五再做最终选择，hold off on doing sth.意为暂缓、推迟做某事；hold on to意为紧紧抓住、保留不放，与until next Friday的推迟语境不符。",
+      "knowledge": "短语动词·hold off on（推迟、暂缓做某事）与hold on to（抓紧/保留）辨析",
+      "evidence": "both proposals had strong merits ... making a final choice until next Friday",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-040",
+      "kind": "phrase",
+      "prompt": "Contrary ____ what some students believe, effective time management includes regular breaks.",
+      "options": [
+        "to",
+        "with"
+      ],
+      "answerIndex": 0,
+      "explanation": "contrary to表示与某种看法相反，to后可接what引导的名词性从句，故应选to。contrary with不是这里表示相反关系的固定搭配；句意是有效管理时间也包括定期休息。",
+      "knowledge": "介词搭配·contrary to",
+      "evidence": "Contrary ... what some students believe",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-041",
+      "kind": "phrase",
+      "prompt": "All students who wish to use the 3D printer after school must operate the machine ____ the safety manual.",
+      "options": [
+        "in accordance with",
+        "in comparison with"
+      ],
+      "answerIndex": 0,
+      "explanation": "放学后使用3D打印机的学生必须依照、严格遵守安全手册操作机器，in accordance with意为按照、依据规则或指南；in comparison with意为与……相比较，操作机器与安全手册不存在比较关系。",
+      "knowledge": "介词短语·in accordance with（依照、遵照）与in comparison with（与……相比）辨析",
+      "evidence": "must operate the machine ... the safety manual",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-042",
+      "kind": "phrase",
+      "prompt": "Before submitting your research paper, check that every statistic you quote is ____ reliable survey data.",
+      "options": [
+        "brought up by",
+        "backed up by"
+      ],
+      "answerIndex": 1,
+      "explanation": "提交研究论文前，应核实所引用的每项统计数据都有可靠的调查数据加以支撑佐证，backed up by意为由……支持或证实；brought up by意为由某人抚养长大或被某人提出，不能用调查数据作逻辑主语。",
+      "knowledge": "短语动词被动式·be backed up by（由……证实/支持）与be brought up by（由……抚养/提出）辨析",
+      "evidence": "every statistic you quote is ... reliable survey data",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-043",
+      "kind": "phrase",
+      "prompt": "During the mountain hike, our guide reminded us to ____ loose stones along the narrow cliff path.",
+      "options": [
+        "watch out for",
+        "make up for"
+      ],
+      "answerIndex": 0,
+      "explanation": "在狭窄悬崖小道徒步时，向导提醒我们当心、留意松动的石头，watch out for意为提防、密切注意；make up for意为补偿、弥补，与防范山路落石的安全提醒毫无关系。",
+      "knowledge": "短语动词·watch out for（当心、提防）与make up for（弥补）辨析",
+      "evidence": "loose stones along the narrow cliff path",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-044",
+      "kind": "phrase",
+      "prompt": "The ancient wooden pagoda has ____ centuries of strong winds and earthquakes thanks to its flexible joint design.",
+      "options": [
+        "lived up to",
+        "stood up to"
+      ],
+      "answerIndex": 1,
+      "explanation": "得益于柔性的榫卯结构，古老木塔经受住了数百年的强风与地震考验，stood up to表示建筑物或材料耐受住恶劣环境；lived up to意为达到期望或不辜负，宾语通常是expectations而非自然灾害。",
+      "knowledge": "短语动词·stand up to（经受住、抵御）与live up to（不辜负期望）辨析",
+      "evidence": "centuries of strong winds and earthquakes",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-045",
+      "kind": "phrase",
+      "prompt": "At first the two club leaders disagreed on the budget, but they eventually ____ a compromise that satisfied everyone.",
+      "options": [
+        "ruled out",
+        "worked out"
+      ],
+      "answerIndex": 1,
+      "explanation": "两位社长从预算分歧走向取得大家认可的折中方案，应用worked out，表示通过讨论制定、商定。ruled out表示排除或否决，与最终找到各方都满意的解决方案这一转折语境不符。",
+      "knowledge": "短语动词·work out（制定出、达成妥协）与wear out（磨损/使疲惫）辨析",
+      "evidence": "a compromise that satisfied everyone",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-046",
+      "kind": "phrase",
+      "prompt": "Many rare birds that ____ this coastal wetland rely on the mudflats for food during their winter migration.",
+      "options": [
+        "are native to",
+        "are capable of"
+      ],
+      "answerIndex": 0,
+      "explanation": "空白后宾语是地点名词短语this coastal wetland，are native to表示动植物原产于、原本栖息于某地；are capable of意为有能力做某事，不能直接接地点名词。",
+      "knowledge": "形容词短语·be native to（原产于、栖息于某地）与be capable of（有能力做）辨析",
+      "evidence": "Many rare birds that ... this coastal wetland",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-047",
+      "kind": "phrase",
+      "prompt": "When writing an argumentative essay, you should ____ your main point at the beginning of each body paragraph.",
+      "options": [
+        "set aside",
+        "set forth"
+      ],
+      "answerIndex": 1,
+      "explanation": "写议论文时，应当在每个主体段开头清晰阐述、提出核心论点，set forth意为阐明、陈述观点或计划；set aside意为留出时间金钱或把……搁置一旁不理，与亮明中心论点的要求相反。",
+      "knowledge": "短语动词·set forth（阐明、陈述）与set aside（留出时间金钱/搁置）辨析",
+      "evidence": "When writing an argumentative essay ... your main point at the beginning",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "phrase-048",
+      "kind": "phrase",
+      "prompt": "The student photography exhibition was ____ a great success that the school decided to keep it open for another week.",
+      "options": [
+        "such",
+        "so"
+      ],
+      "answerIndex": 0,
+      "explanation": "空白后为冠词a + 形容词great + 单数可数名词success + that从句，必须使用such构成such a great success that...；so修饰单数可数名词时语序必须为so great a success that...，不能直接置于冠词a之前。",
+      "knowledge": "结果状语从句搭配·such + a/an + adj. + 可数名词单数 + that...",
+      "evidence": "a great success that the school decided",
+      "difficulty": "challenge"
+    }
+  ]
+}

@@ -146,10 +146,12 @@ export interface CorrectRequest {
 
 export class ApiError extends Error {
   status: number;
-  constructor(message: string, status: number) {
+  jobTerminal: boolean;
+  constructor(message: string, status: number, jobTerminal = false) {
     super(message);
     this.name = "ApiError";
     this.status = status;
+    this.jobTerminal = jobTerminal;
   }
 }
 
@@ -219,7 +221,7 @@ export function errorText(error: unknown): string {
 export { isAbort };
 
 let sessionPromise: Promise<unknown> | undefined;
-function ensureSession() {
+export function ensureSession() {
   return sessionPromise ??= postJson('/api/session', {}).catch(error => { sessionPromise=undefined; throw error; });
 }
 function delay(ms:number,signal?:AbortSignal) {
@@ -230,8 +232,19 @@ function delay(ms:number,signal?:AbortSignal) {
     signal?.addEventListener('abort',abort,{once:true});
   });
 }
-async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknown,signal?:AbortSignal):Promise<T> {
+export interface ResumeJobOptions {
+  resumeJobId?: string;
+  resumeRequestId?: string;
+  /** Persist before the request leaves the browser, including a retry after reload. */
+  onSubmitting?: (requestId: string) => void;
+  onSubmitted?: (jobId: string) => void;
+}
+async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknown,signal?:AbortSignal,resume?:ResumeJobOptions):Promise<T> {
   await ensureSession(); signal?.throwIfAborted();
+  if(resume?.resumeJobId) {
+    if(!/^\d{4}-\d{2}-\d{2}_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(resume.resumeJobId))throw new ApiError('保存的任务编号无效，请重新生成这一部分。',400,true);
+    return pollLearningJob<T>(resume.resumeJobId,signal);
+  }
   const payload={...(input as Record<string,unknown>)};
   const uploadIds:string[]=[];
   if(Array.isArray(payload.images)) {
@@ -245,31 +258,47 @@ async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknow
     }
     delete payload.images;
   }
-  const submission={kind,payload,uploadIds,requestId:crypto.randomUUID()};
+  const requestId=resume?.resumeRequestId||crypto.randomUUID();
+  if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId))throw new ApiError('保存的提交编号无效，请重新生成这一部分。',400,true);
+  const submission={kind,payload,uploadIds,requestId};
+  resume?.onSubmitting?.(requestId);
   let job:{jobId:string;pollUrl:string};
   try {job=await postJson('/api/ai/jobs',submission,signal);}
   catch(error){
     // A disconnected submission may have been accepted: reuse its id exactly once.
-    if(!(error instanceof ApiError)||error.status!==0)throw error;
-    await delay(1200,signal);job=await postJson('/api/ai/jobs',submission,signal);
+    if(!(error instanceof ApiError)||error.status!==0){
+      if(error instanceof ApiError&&[400,404,409,413,422,429].includes(error.status))error.jobTerminal=true;
+      throw error;
+    }
+    await delay(1200,signal);
+    try {job=await postJson('/api/ai/jobs',submission,signal);}
+    catch(retryError){
+      if(retryError instanceof ApiError&&[400,404,409,413,422,429].includes(retryError.status))retryError.jobTerminal=true;
+      throw retryError;
+    }
   }
+  resume?.onSubmitted?.(job.jobId);
+  return pollLearningJob<T>(job.jobId,signal);
+}
+async function pollLearningJob<T>(jobId:string,signal?:AbortSignal):Promise<T> {
   const deadline=Date.now()+200000;
   while(Date.now()<deadline) {
     await delay(1800,signal);
     let view:{status:string;result?:{status:number;body:unknown};error?:string};
-    try {view=await getJson(`/api/ai/jobs/${encodeURIComponent(job.jobId)}`,signal);}
+    try {view=await getJson(`/api/ai/jobs/${encodeURIComponent(jobId)}`,signal);}
     catch(error){
       // Poll throttling does not cancel an accepted background task. Back off
       // without creating another paid task or clearing the student's input.
       if(error instanceof ApiError&&(error.status===0||error.status===429||error.status>=500)){await delay(error.status===429?5000:1800,signal);continue;}
+      if(error instanceof ApiError&&(error.status===400||error.status===404||error.status===410))error.jobTerminal=true;
       throw error;
     }
     if(view.result) {
       if(view.result.status>=200&&view.result.status<300)return view.result.body as T;
       const body=view.result.body as {error?:string};
-      throw new ApiError(body?.error||friendlyStatus(view.result.status),view.result.status);
+      throw new ApiError(body?.error||friendlyStatus(view.result.status),view.result.status,true);
     }
-    if(view.status==='failed')throw new ApiError(view.error||'AI 处理没有完成，请重试；输入已保留。',502);
+    if(view.status==='failed')throw new ApiError(view.error||'AI 处理没有完成，请重试；输入已保留。',502,true);
   }
   throw new ApiError('AI 处理时间较长，请稍后重试；输入已保留。',504);
 }
@@ -300,7 +329,7 @@ export const api = {
   bank: (signal?: AbortSignal) => getJson<BankResponse>("/api/bank", signal),
   paper: (id: string, signal?: AbortSignal) => getJson<Paper>(`/api/paper?${new URLSearchParams({ id }).toString()}`, signal),
   grade: async (body: GradeRequest, signal?: AbortSignal) => {await ensureSession();return postJson<Grade>("/api/grade", body, signal);},
-  generate: (body: GenerateRequest, signal?: AbortSignal) => learningJob<Paper>('generate',body,signal),
+  generate: (body: GenerateRequest, signal?: AbortSignal, resume?:ResumeJobOptions) => learningJob<Paper>('generate',body,signal,resume),
   correct: (body: CorrectRequest, signal?: AbortSignal) => learningJob<Correction>('correct',body,signal),
   challenge: async (body: ChallengeRequest, signal?: AbortSignal):Promise<ChallengeResponse> => {
     await ensureSession();

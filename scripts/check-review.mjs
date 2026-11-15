@@ -158,6 +158,27 @@ if(!process.argv.includes('--helpers-only')){
     refresh().replaceAll(imported);assert.deepEqual(refresh().progress.learned,['exchange']);assert.ok(refresh().progress.review.exchange);
     assert.deepEqual(refresh().progress.words.exchange.topics,['communication']);assert.deepEqual(refresh().progress.words.exchange.pos,['noun','verb']);
   });
+  await test('exam completion stores grades and mistakes once across reload and backup import',async()=>{
+    const {api,refresh,read,exports}=await mount({version:1,learned:[],starred:[]});
+    const records=[{paperId:'paper-one',title:'模拟阅读',type:'reading',origin:'original',score:5,maxScore:10}];
+    const mistakes=[{id:'paper-one:2',kind:'exercise',type:'reading',title:'阅读第2题',prompt:'Choose the main idea.',context:'Test passage.',correctAnswer:'B',yourAnswer:'A',explanation:'Evidence supports B.',knowledge:'主旨大意'}];
+    api.recordExam('exam-attempt-one',records,mistakes);
+    assert.equal(refresh().progress.practice.length,1);assert.equal(refresh().progress.mistakes['paper-one:2'].misses,1);
+    assert.deepEqual(read().examAttempts,['exam-attempt-one']);
+    refresh().recordExam('exam-attempt-one',records,mistakes);
+    assert.equal(refresh().progress.practice.length,1);assert.equal(refresh().progress.mistakes['paper-one:2'].misses,1);
+    const imported=exports.parseProgress(JSON.parse(JSON.stringify(read())));
+    const remounted=await mount(imported);remounted.api.recordExam('exam-attempt-one',records,mistakes);
+    assert.equal(remounted.refresh().progress.practice.length,1);
+    remounted.refresh().recordExam('exam-attempt-two',records,mistakes);
+    assert.equal(remounted.refresh().progress.practice.length,2);assert.equal(remounted.refresh().progress.mistakes['paper-one:2'].misses,2);
+  });
+  await test('invalid exam aggregates cannot partially append scores or a completion marker',async()=>{
+    const {api,refresh}=await mount({version:1,learned:[],starred:[]});
+    api.recordExam('invalid',[{paperId:'p',title:'p',type:'grammar',origin:'ai',score:99,maxScore:10}],[]);
+    assert.equal(refresh().progress.practice.length,0);assert.deepEqual(refresh().progress.examAttempts,[]);
+    api.recordExam('empty',[],[]);assert.deepEqual(refresh().progress.examAttempts,[]);
+  });
 }
 globalThis.fetch=originalFetch;globalThis.window=originalWindow;
 console.log(JSON.stringify({passed:checks.filter(check=>check.passed).length,failed:checks.filter(check=>!check.passed).length,checks},null,2));

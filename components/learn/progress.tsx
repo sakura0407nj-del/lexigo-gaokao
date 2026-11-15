@@ -52,6 +52,7 @@ export interface Progress {
   wrongbook: Record<string, WrongEntry>;
   dictation: DictationAttempt[];
   practice: PracticeRecord[];
+  examAttempts: string[];
   corrections: CorrectionRecord[];
   days: string[];
   mistakes: Record<string, MistakeEntry>;
@@ -80,7 +81,7 @@ function normalizedWord(word:Word):Word{return canonicalizeWord(word,wordAliases
 function migrated(progress:Progress):Progress{return aliasesReady?migrateProgress(progress,wordAliases).progress:progress;}
 
 export function emptyProgress(): Progress {
-  return { version: 1, learned: [], starred: [], words: {}, wrongbook: {}, dictation: [], practice: [], corrections: [], days: [], mistakes: {}, review: {}, log: {}, dailyGoal: 20 };
+  return { version: 1, learned: [], starred: [], words: {}, wrongbook: {}, dictation: [], practice: [], examAttempts: [], corrections: [], days: [], mistakes: {}, review: {}, log: {}, dailyGoal: 20 };
 }
 
 export function todayKey(date = new Date()): string {
@@ -197,6 +198,7 @@ export function parseProgress(input: unknown): Progress {
       }))
       .slice(-HISTORY_LIMIT);
   }
+  if (Array.isArray(input.examAttempts)) result.examAttempts = [...new Set(input.examAttempts.filter(isString).filter(id => id.length > 0 && id.length <= 160))].slice(-HISTORY_LIMIT);
   if (isRecord(input.mistakes)) {
     for (const [key, raw] of Object.entries(input.mistakes)) {
       const entry = parseMistake(key, raw);
@@ -247,9 +249,11 @@ interface ProgressApi {
   toggleStarred: (word: Word) => void;
   reviewWord: (word: Word, known: boolean) => void;
   setDailyGoal: (goal: DailyGoal) => void;
+  markStudyDay: () => void;
   recordDictation: (attempt: Omit<DictationAttempt, "at">, results: { word: Word; correct: boolean; answer: string }[]) => void;
   removeWrong: (id: string) => void;
   recordPractice: (record: Omit<PracticeRecord, "at">) => void;
+  recordExam: (attemptId: string, records: Omit<PracticeRecord, "at">[], mistakes: MistakeDraft[]) => void;
   recordCorrection: (record: Omit<CorrectionRecord, "at">) => void;
   addMistakes: (drafts: MistakeDraft[]) => number;
   masterMistake: (id: string) => void;
@@ -259,6 +263,18 @@ interface ProgressApi {
 }
 
 const ProgressContext = createContext<ProgressApi | null>(null);
+
+/** Keep the exam completion marker, scores and mistake intake in one storage write. */
+export function applyExamRecord(current: Progress, attemptId: string, records: Omit<PracticeRecord, "at">[], mistakes: MistakeDraft[], at = new Date().toISOString()): Progress {
+  if (!attemptId || attemptId.length > 160 || current.examAttempts.includes(attemptId) || records.length < 1 || records.length > 8) return current;
+  if (records.some(record => !Number.isFinite(record.score) || !Number.isFinite(record.maxScore) || record.score < 0 || record.maxScore <= 0 || record.score > record.maxScore || !TYPES.includes(record.type))) return current;
+  return markToday({
+    ...current,
+    examAttempts: [...current.examAttempts, attemptId].slice(-HISTORY_LIMIT),
+    practice: [...current.practice, ...records.map(record => ({ ...record, at }))].slice(-HISTORY_LIMIT),
+    mistakes: mergeMistakes(current.mistakes, mistakes, at),
+  });
+}
 
 interface StoreSnapshot {
   progress: Progress;
@@ -375,6 +391,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setProgress((current) => (current.dailyGoal === goal ? current : { ...current, dailyGoal: goal }));
   }, []);
 
+  const markStudyDay = useCallback(() => setProgress(current => markToday(current)), []);
+
   const toggleStarred = useCallback((word: Word) => {
     word=normalizedWord(word);
     setProgress((current) => {
@@ -416,6 +434,10 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
 
   const recordPractice = useCallback((record: Omit<PracticeRecord, "at">) => {
     setProgress((current) => markToday({ ...current, practice: [...current.practice, { ...record, at: new Date().toISOString() }].slice(-HISTORY_LIMIT) }));
+  }, []);
+
+  const recordExam = useCallback((attemptId: string, records: Omit<PracticeRecord, "at">[], mistakes: MistakeDraft[]) => {
+    setProgress(current => applyExamRecord(current, attemptId, records, mistakes));
   }, []);
 
   const recordCorrection = useCallback((record: Omit<CorrectionRecord, "at">) => {
@@ -464,9 +486,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       toggleStarred,
       reviewWord,
       setDailyGoal,
+      markStudyDay,
       recordDictation,
       removeWrong,
       recordPractice,
+      recordExam,
       recordCorrection,
       addMistakes,
       masterMistake,
@@ -474,7 +498,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       replaceAll,
       clearAll,
     };
-  }, [progress, hydrated, storageAvailable, toggleLearned, toggleStarred, reviewWord, setDailyGoal, recordDictation, removeWrong, recordPractice, recordCorrection, addMistakes, masterMistake, restoreMistake, replaceAll, clearAll]);
+  }, [progress, hydrated, storageAvailable, toggleLearned, toggleStarred, reviewWord, setDailyGoal, markStudyDay, recordDictation, removeWrong, recordPractice, recordExam, recordCorrection, addMistakes, masterMistake, restoreMistake, replaceAll, clearAll]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpenText, Search, SlidersHorizontal, Sparkles, StopCircle, X } from "lucide-react";
+import { BookOpenText, FileCheck2, Search, SlidersHorizontal, Sparkles, StopCircle, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ExerciseType, Paper } from "@/lib/learning-types";
 import { api, errorText, isAbort, ORIGIN_LABEL, TYPE_LABEL, type BankResponse, type Level, type Origin } from "./api";
@@ -174,7 +174,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
   return (
     <section className="view">
       <div ref={topRef} className="scroll-mt-6" />
-      <SectionHeader eyebrow="Practice" title="练习与命题" description="做历年真题或原创模拟，提交后由服务器判分并给出逐题解析；也可以按主题和难度让 AI 命一套新题。" />
+      <SectionHeader eyebrow="Practice" title="练习与命题" description="做历年真题或原创模拟，提交后由服务器判分并给出逐题解析；也可以按主题和难度让 AI 命一套新题。" action={<a href="#exam" className="btn btn-primary"><FileCheck2 aria-hidden className="size-4" />定制模拟卷</a>} />
 
       {paper ? (
         <PaperPlayer

@@ -125,26 +125,39 @@ async function getUpload(owner: string, id: string) {
 }
 
 export async function loadLearningJob(id: string) { return await jobStore().get(key('jobs', id), {type: 'json'}) as LearningJob | null; }
-function sameSubmission(job: LearningJob, input: ReturnType<typeof parseJobSubmission>) {
+function requestJobId(owner: string, day: string, requestId: string) {
+  const digest = signPublicValue('job-id', `${owner}:${day}:${requestId}`);
+  const hex = Buffer.from(digest, 'base64url').toString('hex');
+  return `${day}_${hex.slice(0,8)}-${hex.slice(8,12)}-4${hex.slice(13,16)}-8${hex.slice(17,20)}-${hex.slice(20,32)}`;
+}
+function reusableJob(job: LearningJob, now = Date.now()) {
+  return Number.isFinite(job.createdAt) && Number.isFinite(job.expiresAt) && job.createdAt > now - DAY_MS && job.expiresAt > now;
+}
+function sameSubmission(job: LearningJob, input: ReturnType<typeof parseJobSubmission>, owner: string) {
+  if (job.owner !== owner || !reusableJob(job)) throw new PublicApiError(404, '任务不存在或已过期，请重新提交。');
   if (JSON.stringify([job.kind, job.payload, job.uploadIds]) !== JSON.stringify([input.kind, input.payload, input.uploadIds])) throw new PublicApiError(409, '这次提交编号已用于其他内容，请重新提交。');
   return {job, created: false};
 }
 export async function createLearningJob(input: ReturnType<typeof parseJobSubmission>, user: string, ipHash: string) {
-  const owner = privateOwner(user), day = quotaDay();
+  const now = Date.now(), owner = privateOwner(user), day = quotaDay(now);
   const requestId = input.requestId || randomUUID();
   // Caller IDs are namespaced by the signed visitor identity before becoming job IDs.
-  const digest = signPublicValue('job-id', `${owner}:${day}:${requestId}`);
-  const hex = Buffer.from(digest, 'base64url').toString('hex');
-  const id = `${day}_${hex.slice(0,8)}-${hex.slice(8,12)}-4${hex.slice(13,16)}-8${hex.slice(17,20)}-${hex.slice(20,32)}`;
-  const existing = await loadLearningJob(id);
-  if (existing) return sameSubmission(existing, input);
+  const id = requestJobId(owner, day, requestId);
+  const [previous, existing] = await Promise.all([
+    input.requestId ? loadLearningJob(requestJobId(owner, quotaDay(now - DAY_MS), requestId)) : Promise.resolve(null),
+    loadLearningJob(id),
+  ]);
+  // A resumed submission keeps its original job and quota even after Beijing midnight.
+  // Ignore an expired prior-day record; never extend a job's original 24-hour lifetime.
+  if (previous && reusableJob(previous)) return sameSubmission(previous, input, owner);
+  if (existing) return sameSubmission(existing, input, owner);
   await Promise.all(input.uploadIds.map(uploadId => getUpload(owner, uploadId)));
-  const job: LearningJob = {id, owner, user, kind: input.kind, payload: input.payload, uploadIds: input.uploadIds, createdAt: Date.now(), expiresAt: Date.now() + DAY_MS};
+  const job: LearningJob = {id, owner, user, kind: input.kind, payload: input.payload, uploadIds: input.uploadIds, createdAt: now, expiresAt: now + DAY_MS};
   const {modified} = await jobStore().setJSON(key('jobs', id), job, {onlyIfNew: true, metadata: {expiresAt: job.expiresAt}});
   if (!modified) {
     const winner = await loadLearningJob(id);
     if (!winner) throw new PublicApiError(503, '任务状态暂时不可用，请稍后重试。');
-    return sameSubmission(winner, input);
+    return sameSubmission(winner, input, owner);
   }
   try { await reserveJobQuota(user, ipHash, id); }
   catch (error) {

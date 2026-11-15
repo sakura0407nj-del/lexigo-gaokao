@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api, errorText, isAbort, type BankResponse } from "./api";
 import { CorrectionView } from "./correction-view";
 import { DictationView } from "./dictation-view";
@@ -19,6 +19,8 @@ import { useSpeech } from "./use-speech";
 import { VocabularyView } from "./vocabulary-view";
 
 const TAB_IDS = new Set<string>(TABS.map((tab) => tab.id));
+const ExamView = lazy(() => import("./exam-view").then(module => ({ default: module.ExamView })));
+const GameView = lazy(() => import("./game-view").then(module => ({ default: module.GameView })));
 
 export function LearnApp() {
   return (
@@ -43,7 +45,7 @@ function Shell() {
   useEffect(() => {
     const fromHash = () => {
       const hash = window.location.hash.slice(1);
-      if (TAB_IDS.has(hash)) setTab(hash as TabId);
+      if (TAB_IDS.has(hash)) { setTab(hash as TabId); window.scrollTo({ top: 0 }); }
     };
     fromHash();
     window.addEventListener("hashchange", fromHash);
@@ -113,6 +115,8 @@ function Shell() {
           {tab === "vocab" ? <VocabularyView speech={speech} frequencyNote={status?.frequencyNote} /> : null}
           {tab === "dictation" ? <DictationView speech={speech} /> : null}
           {tab === "practice" ? <PracticeView bank={bank} bankError={bankError} onReloadBank={reloadBank} aiNotice={ai.notice} /> : null}
+          {tab === "exam" ? <Suspense fallback={<p role="status">正在准备模拟卷工作台…</p>}><ExamView aiNotice={ai.notice} /></Suspense> : null}
+          {tab === "game" ? <Suspense fallback={<p role="status">正在准备英语闯关…</p>}><GameView speech={speech} /></Suspense> : null}
           {tab === "mistakes" ? <MistakesView onNavigate={select} /> : null}
           {tab === "essay" ? <CorrectionView key="essay" kind="essay" aiNotice={ai.notice} /> : null}
           {tab === "questions" ? <CorrectionView key="questions" kind="questions" aiNotice={ai.notice} /> : null}
