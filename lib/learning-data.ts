@@ -1,0 +1,12 @@
+import vocabulary from '@/data/words.json';
+import exercises from '@/data/papers.json';
+import pastExercises from '@/data/past-papers.json';
+import references from '@/data/sources.json';
+import tips from '@/data/knowledge.json';
+import type {Word,Paper} from './learning-types';
+export const words=vocabulary as Word[];
+export const papers=[...exercises,...pastExercises] as Paper[];
+export const sources=[{title:'2016–2022 高考真题数据 · GAOKAO-Bench',url:'https://github.com/OpenLMLab/GAOKAO-Bench',description:'本站收录通过结构及答案/解析一致性筛查的 84 组、532 小题。保留年份与卷别，属于开源数据转录，以原试卷为准。Apache-2.0 许可及修改说明见页尾。',kind:'真题数据'},{title:'开源数据许可与修改说明',url:'/licenses/NOTICE.txt',description:'ECDICT 词库及 GAOKAO-Bench 数据署名、来源和转换说明。',kind:'许可'},...references];
+export const knowledge=tips;
+export const frequencyNote='词库收录 ECDICT 中去重后的 gk 标签词条，不能据此保证覆盖每省最新考纲。高/中/低频取通用语料中的有效排名：前 2000、2001–5000、5000 以后；没有有效排名的词显示“未标频”。这是通用英语词频，不是历年高考出现次数。';
+export const counts={high:words.filter(w=>w.frequency==='high'&&w.rank>0).length,medium:words.filter(w=>w.frequency==='medium'&&w.rank>0).length,low:words.filter(w=>w.frequency==='low'&&w.rank>0).length,unknown:words.filter(w=>!(w.rank>0)).length};

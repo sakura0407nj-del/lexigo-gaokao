@@ -1,0 +1,1942 @@
+[
+  {
+    "title": "社区阳光阅读志愿项目",
+    "passage": "Last autumn, our high school launched a volunteering program called \"Sunshine Readers\" in cooperation with the local community center. As a member of the school book club, I eagerly signed up for the project, hoping to share my love for literature with younger children in our neighborhood.\n\nEvery Saturday morning, ten student volunteers walked to the community library. Before the children arrived, we cleaned the reading tables, arranged colorful cushions on the floor, and selected storybooks suitable for different age groups. When the session began, each volunteer was paired with two or three primary school students. My regular partners were seven-year-old Leo and eight-year-old Maya. At first, Leo was quite shy and struggled to pronounce long words. Instead of correcting him immediately, I encouraged him to guess the meanings from the lively pictures and read along with me using funny voices.\n\nGradually, the quiet corner turned into a lively space filled with laughter and curious questions. Over three months, I witnessed a remarkable change in Leo. Not only did he start reading short paragraphs independently, but he also volunteered to act out stories in front of the whole group. Meanwhile, Maya began bringing her own favorite books from home to share with other children.\n\nThis volunteering experience offered me much more than just community service hours. By preparing reading activities and solving unexpected problems, I developed greater patience and communication skills. More importantly, seeing the bright smiles on the children's faces made me realize how small acts of kindness can warm an entire community.",
+    "instructions": "阅读下列短文，从每题所给的A、B、C、D四个选项中选出最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Why did the author join the \"Sunshine Readers\" program?",
+        "options": [
+          "A. To earn extra money for the school book club.",
+          "B. To pass on a passion for reading to young kids.",
+          "C. To complete a compulsory school writing task.",
+          "D. To borrow storybooks from the community library."
+        ],
+        "answer": "B",
+        "explanation": "细节理解题。根据第一段第二句中的“hoping to share my love for literature with younger children in our neighborhood”可知，作者加入该项目是为了与社区的孩子们分享对文学的热爱，即传递阅读热情，因此B项正确。A项“为读书俱乐部赚取额外资金”、C项“完成学校必修写作任务”和D项“从社区图书馆借故事书”在文中均未提及。",
+        "knowledge": "细节理解",
+        "evidence": "hoping to share my love for literature with younger children in our neighborhood",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "How did the author help Leo when he had difficulty reading?",
+        "options": [
+          "A. By asking Maya to read the words for him.",
+          "B. By pointing out his pronunciation mistakes right away.",
+          "C. By using pictures and interesting voices to guide him.",
+          "D. By giving him advanced books without illustrations."
+        ],
+        "answer": "C",
+        "explanation": "细节理解题。根据第二段最后一句“Instead of correcting him immediately, I encouraged him to guess the meanings from the lively pictures and read along with me using funny voices.”可知，作者没有立即纠正他，而是鼓励他通过生动的图片猜测词义，并用有趣的声音跟着一起读，故C项正确。A项在文中未提及；B项与原文“Instead of correcting him immediately”相反；D项与原文“lively pictures”不符。",
+        "knowledge": "细节理解",
+        "evidence": "encouraged him to guess the meanings from the lively pictures and read along with me using funny voices",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "What change happened to Leo after three months?",
+        "options": [
+          "A. He became confident enough to perform stories publicly.",
+          "B. He started bringing his own books from home every week.",
+          "C. He was chosen as the leader of the school book club.",
+          "D. He began writing original stories for other children."
+        ],
+        "answer": "A",
+        "explanation": "细节理解题。根据第三段第三句“Not only did he start reading short paragraphs independently, but he also volunteered to act out stories in front of the whole group.”可知，Leo不仅开始独立阅读短段落，还主动提出在大家面前表演故事，说明他变得足够自信去公开表演故事，故A项正确。B项是Maya的行为（Maya began bringing her own favorite books）；C项和D项在文中均无依据。",
+        "knowledge": "细节理解",
+        "evidence": "he also volunteered to act out stories in front of the whole group",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "What did the author gain from the volunteering experience?",
+        "options": [
+          "A. A job offer from the local community center.",
+          "B. Academic prizes for literature studies.",
+          "C. Improved patience and communication abilities.",
+          "D. Free membership at the city bookstore."
+        ],
+        "answer": "C",
+        "explanation": "细节理解题。根据最后一段第二句“By preparing reading activities and solving unexpected problems, I developed greater patience and communication skills.”可知，通过准备阅读活动和解决突发问题，作者培养了更好的耐心和沟通能力，故C项正确。A、B、D三项在文中均未提及。",
+        "knowledge": "细节理解",
+        "evidence": "I developed greater patience and communication skills",
+        "points": 2.5
+      }
+    ],
+    "minutes": 7,
+    "type": "reading",
+    "topic": "School volunteering and community reading",
+    "level": "基础",
+    "id": "reading-001",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "可持续花园与科学观察",
+    "passage": "For decades, conventional gardening prioritized neatness over nature. Gardeners regularly cleared fallen leaves, applied synthetic fertilizers, and planted non-native flowers chosen solely for their bright colors. However, a quiet revolution is transforming backyards and community plots into sustainable gardens—living laboratories where ecological health and scientific observation go hand in hand.\n\nA sustainable garden is designed to work with local ecosystems rather than against them. By replacing thirsty lawns with native plants, gardeners provide essential food and shelter for local pollinators like bees and butterflies. Fallen leaves are left on the ground to act as natural mulch, retaining soil moisture and nourishing beneficial microbes as they decay. Instead of reaching for chemical sprays at the first sign of pests, sustainable gardeners wait for natural predators, such as ladybugs and birds, to restore the balance.\n\nBeyond its environmental benefits, this approach turns the gardener into an active citizen scientist. Maintaining a thriving ecological garden requires close, patient observation. Many gardeners keep detailed journals to record when specific flowers bloom, which insects visit them, and how rainfall patterns affect plant growth. Digital platforms now allow enthusiasts to upload photographs of insects and birds found in their yards, contributing valuable data to professional biodiversity databases.\n\nDr. Elena Vance, an urban ecologist, notes that these small, closely watched spaces are crucial for modern science. \"Professional researchers cannot monitor every neighborhood,\" she explains. \"When everyday people observe their gardens scientifically, they help us track shifts in wildlife populations and plant behaviors across vast geographic areas.\" Ultimately, sustainable gardening proves that tending a small patch of earth can cultivate both local biodiversity and a deeper scientific understanding of our natural world.",
+    "instructions": "阅读下列短文，从每题所给的A、B、C、D四个选项中选出最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "How does sustainable gardening differ from conventional gardening?",
+        "options": [
+          "A. It focuses on keeping the garden completely neat and tidy.",
+          "B. It relies on natural processes rather than artificial chemicals.",
+          "C. It prioritizes non-native flowers for their bright colors.",
+          "D. It requires clearing fallen leaves regularly to protect soil."
+        ],
+        "answer": "B",
+        "explanation": "细节理解题。根据第一段中的“applied synthetic fertilizers”以及第二段中的“A sustainable garden is designed to work with local ecosystems rather than against them.”和“Instead of reaching for chemical sprays... sustainable gardeners wait for natural predators... to restore the balance.”可知，传统园艺使用合成化肥，而可持续园艺依靠自然过程（如落叶腐殖、天敌灭虫）而非人工化学药剂，故B项正确。A、C、D三项均为第一段提到的传统园艺（conventional gardening）的做法，与可持续园艺相反，故排除。",
+        "knowledge": "细节理解",
+        "evidence": "A sustainable garden is designed to work with local ecosystems rather than against them.",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Why do sustainable gardeners leave fallen leaves on the ground?",
+        "options": [
+          "A. To attract more birds to eat pests.",
+          "B. To make the garden look more colorful.",
+          "C. To keep soil wet and feed tiny organisms.",
+          "D. To prevent native plants from growing too fast."
+        ],
+        "answer": "C",
+        "explanation": "细节理解题。根据第二段中的“Fallen leaves are left on the ground to act as natural mulch, retaining soil moisture and nourishing beneficial microbes as they decay.”可知，落叶留在地上充当天然覆盖物，可以在腐烂过程中保持土壤水分（keep soil wet）并滋养有益微生物（feed tiny organisms），故C项正确。A项吸引鸟类吃害虫是停止使用化学喷雾后的自然结果，与落叶无关；B项和D项在文中均未提及。",
+        "knowledge": "细节理解",
+        "evidence": "Fallen leaves are left on the ground to act as natural mulch, retaining soil moisture and nourishing beneficial microbes as they decay.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "How do gardeners contribute to professional scientific research according to Paragraph 3?",
+        "options": [
+          "A. By sharing their observations of backyard wildlife online.",
+          "B. By inviting urban ecologists to work in their community plots.",
+          "C. By developing new digital platforms for biodiversity databases.",
+          "D. By experimenting with different rainfall patterns in their yards."
+        ],
+        "answer": "A",
+        "explanation": "细节理解题。根据第三段中的“Digital platforms now allow enthusiasts to upload photographs of insects and birds found in their yards, contributing valuable data to professional biodiversity databases.”可知，园艺爱好者通过数字平台上传在院子里发现的昆虫和鸟类照片，即在线分享他们对后院野生生物的观察，从而为专业生物多样性数据库提供有价值的数据，故A项正确。B项“邀请城市生态学家来工作”、C项“开发新的数字平台”和D项“试验不同的降雨模式”均与文意不符。",
+        "knowledge": "细节理解",
+        "evidence": "Digital platforms now allow enthusiasts to upload photographs of insects and birds found in their yards, contributing valuable data to professional biodiversity databases.",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "What is the main purpose of the text?",
+        "options": [
+          "A. To teach readers how to identify beneficial insects.",
+          "B. To criticize the use of synthetic fertilizers in agriculture.",
+          "C. To advertise a digital platform for amateur photographers.",
+          "D. To introduce sustainable gardening and its scientific value."
+        ],
+        "answer": "D",
+        "explanation": "写作意图题。通读全文可知，文章第一段引出可持续园艺与科学观察结合的主题，第二段介绍可持续园艺的具体生态做法，第三、四段重点阐述这种园艺方式如何让普通人成为公民科学家并为现代科学研究做出贡献。因此，文章的主要目的是介绍可持续园艺及其科学价值，故D项正确。A项“教读者识别有益昆虫”文中未涉及；B项“批评农业中使用合成化肥”偏离主旨，文章仅在开头对比传统园艺时提及；C项“为业余摄影师宣传数字平台”属于曲解文意。",
+        "knowledge": "主旨大意与写作意图",
+        "evidence": "Ultimately, sustainable gardening proves that tending a small patch of earth can cultivate both local biodiversity and a deeper scientific understanding of our natural world.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "reading",
+    "topic": "Sustainable gardens and scientific observation",
+    "level": "标准",
+    "id": "reading-002",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "皮影戏的跨文化焕新",
+    "passage": "Inside a small theater in Florence, Italy, a warm glow illuminates a white cloth screen. Behind it, Chinese master puppeteer Chen Wei works alongside Clara Rossi, an Italian stage designer. Together, they are preparing for a unique performance that blends traditional Chinese shadow puppetry with classic Italian opera.\n\nShadow puppetry, an ancient storytelling art form in China, uses flat, cut-out figures made of leather. Puppeteers manipulate these figures with thin rods against a lit screen to create the illusion of moving images. For decades, however, the craft faced declining interest among younger audiences drawn to digital entertainment.\n\nSeeking new vitality for his family's art, Chen traveled to Europe last year for a cultural exchange program. There he met Rossi, who was immediately fascinated by how expressive the leather figures could be. Yet their collaboration was not without obstacles. Traditional Chinese shadow plays rely heavily on folk percussion and high-pitched regional vocals, which initially felt unfamiliar to European ears. Meanwhile, Italian opera scores proved too slow for the rapid, acrobatic movements typical of Chen's puppets.\n\nInstead of giving up, the pair spent months experimenting. Rossi redesigned the puppets' joints to allow smoother, more gradual gestures that matched operatic melodies. In return, Chen introduced translucent dyes from his hometown to give characters from Italian folklore a vibrant, dreamlike quality on the screen.\n\nThe premiere was met with enthusiastic applause. Audience members praised how the visual poetry of the east enhanced the dramatic music of the west. For Chen and Rossi, the project proved that traditional arts do not need to remain frozen in time; through open-minded dialogue, they can speak a universal language.",
+    "instructions": "阅读下列短文，从每题所给的A、B、C、D四个选项中选出最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "What challenge did traditional Chinese shadow puppetry face before Chen's trip?",
+        "options": [
+          "A. A shortage of high-quality leather materials.",
+          "B. A loss of appeal among younger generations.",
+          "C. Strict rules limiting international performances.",
+          "D. Competition from traditional European theater."
+        ],
+        "answer": "B",
+        "explanation": "细节理解题。根据第二段最后一句“For decades, however, the craft faced declining interest among younger audiences drawn to digital entertainment.”可知，几十年来，受数字娱乐吸引，年轻观众对这项手艺的兴趣在下降，即在年轻一代中失去了吸引力（B项正确）。A项“缺乏高品质皮革材料”、C项“限制国际演出的严格规定”及D项“来自欧洲传统戏剧的竞争”在文中均未提及。",
+        "knowledge": "细节理解",
+        "evidence": "faced declining interest among younger audiences drawn to digital entertainment",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Why was it difficult for Chen and Rossi to combine their arts at first?",
+        "options": [
+          "A. They could not understand each other's language.",
+          "B. The theater in Florence lacked proper lighting equipment.",
+          "C. Their artistic styles and musical rhythms did not match.",
+          "D. European audiences refused to watch stories about folklore."
+        ],
+        "answer": "C",
+        "explanation": "细节理解题。根据第三段最后两句可知，中国传统皮影戏依赖民间打击乐和高亢的地方唱腔，欧洲观众起初感到陌生；而意大利歌剧乐谱对于陈伟皮影典型的快速翻腾动作来说又显得太慢。由此可见，最初结合困难是因为两者的艺术风格和音乐节奏不匹配（C项正确）。A项“语言不通”、B项“缺乏照明设备”和D项“欧洲观众拒绝看民间传说”均偏离文意。",
+        "knowledge": "细节理解",
+        "evidence": "Meanwhile, Italian opera scores proved too slow for the rapid, acrobatic movements typical of Chen's puppets.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "How did Rossi contribute to the joint performance?",
+        "options": [
+          "A. By adjusting the structure of the puppets for gentler movements.",
+          "B. By composing faster music to suit the traditional puppets.",
+          "C. By teaching Chen how to sing classic Italian opera.",
+          "D. By bringing special translucent dyes from her hometown."
+        ],
+        "answer": "A",
+        "explanation": "细节理解题。根据第四段第二句“Rossi redesigned the puppets' joints to allow smoother, more gradual gestures that matched operatic melodies.”可知，Rossi重新设计了皮影的关节，使其能够做出更平滑、更舒缓的动作以配合歌剧旋律（A项正确）。B项“创作更快的音乐”和C项“教陈唱意大利歌剧”文中未提；D项“带来半透明染料”是陈伟的贡献，张冠李戴。",
+        "knowledge": "细节理解",
+        "evidence": "Rossi redesigned the puppets' joints to allow smoother, more gradual gestures",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "What is the main message conveyed in the last paragraph?",
+        "options": [
+          "A. Western music is more popular than eastern visual arts.",
+          "B. Traditional arts must remain unchanged to keep their value.",
+          "C. Digital technology is essential for saving ancient crafts.",
+          "D. Cross-cultural cooperation can breathe new life into traditional arts."
+        ],
+        "answer": "D",
+        "explanation": "推理判断题。根据最后一段最后一句“...the project proved that traditional arts do not need to remain frozen in time; through open-minded dialogue, they can speak a universal language.”可知，该项目证明传统艺术不必停滞在过去，通过开放的跨文化对话与合作，它们能焕发新生并成为世界通用的艺术语言（D项正确）。A项无中生有；B项与“do not need to remain frozen in time”直接相反；C项“数字技术至关重要”在尾段未提及。",
+        "knowledge": "推理判断与段落大意",
+        "evidence": "traditional arts do not need to remain frozen in time; through open-minded dialogue, they can speak a universal language",
+        "points": 2.5
+      }
+    ],
+    "minutes": 7,
+    "type": "reading",
+    "topic": "Traditional arts and cultural exchange",
+    "level": "标准",
+    "id": "reading-003",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "阅读理解：健康习惯与团队协作",
+    "passage": "In modern workplaces and schools, healthy habits are frequently viewed as strictly personal endeavors. An individual chooses to jog at dawn, prepare nutritious meals, or prioritize eight hours of sleep. However, recent behavioral observations suggest that wellness is rarely sustained in isolation. Instead, the integration of teamwork into daily routines can transform fragile personal resolutions into durable lifestyle changes.\n\nWhen people attempt to reform their habits alone, willpower often proves to be an unreliable resource. Fatigue, academic pressure, or unexpected deadlines can easily derail a solitary runner. By contrast, when a group commits to a shared objective—such as a departmental walking challenge or a dormitory lights-out pact—accountability shifts from internal discipline to collective support. In a team setting, skipping a morning workout is no longer just a private compromise; it means letting down partners who are waiting at the track. This social bond acts as a psychological buffer against the temptation to quit.\n\nConversely, the practice of maintaining healthy routines together strengthens team cohesion in return. When colleagues or classmates navigate physical challenges side by side, hierarchical barriers tend to soften. Sharing the discomfort of a steep hike or trading recipes for balanced lunches builds a reservoir of mutual trust. Furthermore, collective wellness habits directly enhance group productivity. Well-rested, physically active members exhibit sharper focus and greater emotional resilience during high-stakes projects, reducing the friction that typically arises from burnout.\n\nTo cultivate this synergy, organizations should move beyond merely distributing health brochures. Designing environments that invite cooperative participation—such as group stretching breaks—ensures that well-being becomes an embedded cultural norm rather than a lonely struggle.",
+    "instructions": "阅读下列短文，从每题所给的A、B、C、D四个选项中选出最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Why do personal health resolutions often fail according to the passage?",
+        "options": [
+          "A. Individuals lack access to professional fitness equipment.",
+          "B. Personal willpower can easily be weakened by external pressures.",
+          "C. Modern workplaces forbid employees from exercising together.",
+          "D. Nutritious meals require too much time to prepare alone."
+        ],
+        "answer": "B",
+        "explanation": "细节理解题。根据第二段前两句可知，当人们试图独自改变习惯时，意志力往往是不可靠的资源，疲劳、学业压力或突发截止日期很容易让独自跑步的人偏离轨道。因此B项“个人意志力容易被外部压力削弱”正确。A项“缺乏专业健身设备”、C项“现代工作场所禁止员工一起锻炼”和D项“独自准备营养餐耗时过多”在文中均未提及。",
+        "knowledge": "细节理解",
+        "evidence": "When people attempt to reform their habits alone, willpower often proves to be an unreliable resource. Fatigue, academic pressure, or unexpected deadlines can easily derail a solitary runner.",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "What does the underlined phrase \"a psychological buffer\" in Paragraph 2 refer to?",
+        "options": [
+          "A. A mental shield against giving up.",
+          "B. A strict penalty for arriving late.",
+          "C. A medical treatment for physical fatigue.",
+          "D. A private excuse for skipping workouts."
+        ],
+        "answer": "A",
+        "explanation": "词义猜测题。根据第二段最后两句可知，在团队环境中，不参加晨练意味着让在跑道上等待的伙伴失望，这种社会纽带起到了对抗放弃诱惑的“心理缓冲（保护屏障）”作用。因此A项“防止放弃的心理屏障”正确。B项“迟到的严厉惩罚”、C项“身体疲劳的医疗手段”和D项“逃避锻炼的私人借口”均不符合上下文语境。",
+        "knowledge": "词义猜测",
+        "evidence": "This social bond acts as a psychological buffer against the temptation to quit.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "How does practicing healthy habits together benefit a team?",
+        "options": [
+          "A. It eliminates all academic and work deadlines.",
+          "B. It helps establish stricter hierarchical boundaries.",
+          "C. It fosters mutual trust and improves group efficiency.",
+          "D. It replaces the need for high-stakes projects."
+        ],
+        "answer": "C",
+        "explanation": "细节理解题。根据第三段内容可知，共同维持健康习惯可以软化等级障碍、建立相互信任的储备（builds a reservoir of mutual trust），并且直接提升团队生产力（enhance group productivity）。因此C项“培养相互信任并提高团队效率”正确。A项“消除所有截止日期”与原文不符；B项与原文“hierarchical barriers tend to soften”相反；D项“取代高风险项目的需求”曲解文意。",
+        "knowledge": "细节理解",
+        "evidence": "Sharing the discomfort of a steep hike or trading recipes for balanced lunches builds a reservoir of mutual trust. Furthermore, collective wellness habits directly enhance group productivity.",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "What is the author's main purpose in writing the text?",
+        "options": [
+          "A. To criticize organizations for distributing health brochures.",
+          "B. To compare different types of physical exercises for students.",
+          "C. To advocate integrating teamwork with healthy habit formation.",
+          "D. To explain the biological connection between sleep and focus."
+        ],
+        "answer": "C",
+        "explanation": "写作意图题。通读全文，第一段提出将团队合作融入日常惯例能将脆弱的个人决心转化为持久的生活方式改变；第二段阐述团队对维持健康习惯的促进作用；第三段阐述共同践行健康习惯对团队凝聚力和效率的反哺；第四段呼吁组织机构营造合作参与的健康环境。因此作者旨在倡导将团队合作与健康习惯的养成结合起来，C项正确。A项过于片面；B、D两项偏离文章主旨。",
+        "knowledge": "主旨大意与写作意图",
+        "evidence": "Instead, the integration of teamwork into daily routines can transform fragile personal resolutions into durable lifestyle changes.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "reading",
+    "topic": "Healthy habits and teamwork",
+    "level": "挑战",
+    "id": "reading-004",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "语法填空：校园志愿服务与社区阅读推广",
+    "passage": "Last autumn, our school launched a community reading program to encourage young children to read more. As [1] (volunteer), my classmates and I visited a local community center every Saturday afternoon. At first, many kids were too shy [2] (speak) in front of strangers. To make them feel comfortable, we [3] (careful) selected colorful picture books and read stories with funny voices. Slowly, the children began to warm up and share their favorite characters [4] us. One little boy, [5] used to hide behind his mother, even volunteered to act out a short play. Seeing the bright smiles on their faces gave us [6] strong sense of achievement. By the end of the term, we [7] (collect) hundreds of donated books from students and teachers to set up a permanent reading corner there. Today, the reading corner [8] (visit) by dozens of children after school every day. Participating in this project not only improves our communication skills, [9] also teaches us the value of giving back to society. We hope that more students will join us in the future [10] (spread) the joy of reading.",
+    "instructions": "阅读下面短文，在空白处填入1个适当的单词或括号内单词的正确形式。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1] (volunteer)",
+        "answer": "volunteers",
+        "explanation": "考查可数名词的复数形式。根据后面的主语“my classmates and I”（我的同学们和我）可知，此处表示复数概念，volunteer为可数名词，前无冠词修饰，因此需用复数形式volunteers。",
+        "knowledge": "名词复数",
+        "evidence": "As [1] (volunteer), my classmates and I visited",
+        "points": 1.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2] (speak)",
+        "answer": "to speak",
+        "explanation": "考查非谓语动词（动词不定式）。此处为固定结构“too + 形容词/副词 + to do sth.”，意为“太……而不能……”，句意为“起初，许多孩子太害羞而不敢在陌生人面前说话”，故填to speak。",
+        "knowledge": "非谓语动词（不定式）",
+        "evidence": "too shy [2] (speak) in front of strangers",
+        "points": 1.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3] (careful)",
+        "answer": "carefully",
+        "explanation": "考查副词。空处修饰后面的谓语动词“selected”（挑选），修饰动词需用副词形式。形容词careful变副词直接加-ly，故填carefully。",
+        "knowledge": "词性转换（形容词变副词）",
+        "evidence": "we [3] (careful) selected colorful picture books",
+        "points": 1.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "with",
+        "explanation": "考查介词及固定搭配。“share sth. with sb.”为固定短语，意为“与某人分享某物”，句意为“孩子们开始活跃起来，并与我们分享他们最喜欢的角色”，故填with。",
+        "knowledge": "介词与固定搭配",
+        "evidence": "share their favorite characters [4] us",
+        "points": 1.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "who",
+        "explanation": "考查非限制性定语从句。分析句子结构可知，空处引导非限制性定语从句，修饰先行词“One little boy”（一个小男孩），指人，且关系词在从句中作主语。注意非限制性定语从句不能用that引导，故填who。",
+        "knowledge": "定语从句关系代词",
+        "evidence": "One little boy, [5] used to hide behind his mother",
+        "points": 1.5
+      },
+      {
+        "id": "6",
+        "prompt": "Blank [6]",
+        "answer": "a",
+        "explanation": "考查不定冠词。固定短语“a sense of achievement”意为“成就感”。此处sense前有形容词strong修饰，且strong以辅音音素开头，故填不定冠词a。",
+        "knowledge": "冠词",
+        "evidence": "gave us [6] strong sense of achievement",
+        "points": 1.5
+      },
+      {
+        "id": "7",
+        "prompt": "Blank [7] (collect)",
+        "answer": "had collected",
+        "explanation": "考查动词的时态。根据时间状语“By the end of the term”（到那学期末为止）及全文过去的语境可知，收集书籍的动作发生在“过去的过去”，句子应用过去完成时（had + 过去分词），故填had collected。",
+        "knowledge": "动词时态（过去完成时）",
+        "evidence": "By the end of the term, we [7] (collect) hundreds of donated books",
+        "points": 1.5
+      },
+      {
+        "id": "8",
+        "prompt": "Blank [8] (visit)",
+        "answer": "is visited",
+        "explanation": "考查动词的时态、语态和主谓一致。根据时间状语“Today”和“every day”可知，此处描述现在的客观事实，应用一般现在时；主语“the reading corner”（阅读角）为单数，且与动词visit之间是被动关系（由“by dozens of children”也可看出），故用一般现在时的被动语态is visited。",
+        "knowledge": "被动语态与时态",
+        "evidence": "Today, the reading corner [8] (visit) by dozens of children",
+        "points": 1.5
+      },
+      {
+        "id": "9",
+        "prompt": "Blank [9]",
+        "answer": "but",
+        "explanation": "考查并列连词。此处为固定并列句型“not only... but (also)...”，意为“不仅……而且……”，连接两个并列的谓语动词improves和teaches，故填but。",
+        "knowledge": "并列连词",
+        "evidence": "not only improves our communication skills, [9] also teaches us",
+        "points": 1.5
+      },
+      {
+        "id": "10",
+        "prompt": "Blank [10] (spread)",
+        "answer": "to spread",
+        "explanation": "考查非谓语动词（动词不定式）。句中已有谓语动词“will join”，空处表示更多学生加入我们的目的，即“为了传播阅读的快乐”，作目的状语应用动词不定式，故填to spread。",
+        "knowledge": "非谓语动词（不定式作目的状语）",
+        "evidence": "join us in the future [10] (spread) the joy of reading",
+        "points": 1.5
+      }
+    ],
+    "minutes": 10,
+    "type": "grammar",
+    "topic": "School volunteering and community reading",
+    "level": "基础",
+    "id": "grammar-001",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "语法填空：可持续校园花园与科学观察",
+    "passage": "Creating a sustainable garden on campus offers students a valuable living laboratory. Last semester, a group of students [1] (transform) an unused corner of our schoolyard into an ecological garden. Instead of [2] (rely) on chemical fertilizers, they introduced kitchen compost to enrich the soil naturally.\nEvery afternoon, members gather to record their observations of local insects [3] a shared notebook. These daily observations, [4] are uploaded to a shared school database, help the biology club track seasonal changes. Among all the plants, milkweed has proved to be the [5] (popular) choice for visiting butterflies. By watching these creatures closely, students gain [6] deeper understanding of biodiversity than they ever could from textbooks alone.\nCurrently, rainwater [7] (collect) in large wooden barrels to water the beds during dry spells. This simple irrigation system saves water [8] teaches learners the importance of resource conservation. The garden has become so successful that neighboring schools are now asking for [9] (guide) on starting their own projects. Clearly, when young people engage [10] (active) with nature, both their scientific curiosity and environmental awareness grow together.",
+    "instructions": "阅读下面短文，在空白处填入1个适当的单词或括号内单词的正确形式。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "[1] (transform)",
+        "answer": "transformed",
+        "explanation": "考查动词时态。根据时间状语“Last semester（上学期）”可知，此处描述过去发生的事情，应用一般过去时。故填transformed。",
+        "knowledge": "动词的时态（一般过去时）",
+        "evidence": "Last semester, a group of students [1] (transform) an unused corner",
+        "points": 1.5
+      },
+      {
+        "id": "2",
+        "prompt": "[2] (rely)",
+        "answer": "relying",
+        "explanation": "考查非谓语动词。短语“Instead of”中的of为介词，其后接动词时应用动名词形式作宾语。故填relying。",
+        "knowledge": "非谓语动词（动名词）",
+        "evidence": "Instead of [2] (rely) on chemical fertilizers",
+        "points": 1.5
+      },
+      {
+        "id": "3",
+        "prompt": "[3]",
+        "answer": "in",
+        "explanation": "表示把观察记录写在笔记本中，用介词 in：record observations in a notebook。这里考查介词搭配，不再使用可能有 how/whether/when 等多种理解的开放宾语从句。",
+        "knowledge": "介词搭配：in a notebook",
+        "evidence": "record their observations of local insects [3] a shared notebook",
+        "points": 1.5
+      },
+      {
+        "id": "4",
+        "prompt": "[4]",
+        "answer": "which",
+        "explanation": "考查定语从句。分析句子结构可知，空处引导非限制性定语从句，修饰先行词“These daily observations”，指物，且关系词在从句中作主语，应用关系代词which引导。that不能引导非限制性定语从句。故填which。",
+        "knowledge": "定语从句（关系代词）",
+        "evidence": "These daily observations, [4] are uploaded to a shared school database",
+        "points": 1.5
+      },
+      {
+        "id": "5",
+        "prompt": "[5] (popular)",
+        "answer": "most popular",
+        "explanation": "考查形容词最高级。根据范围状语“Among all the plants（在所有植物中）”以及空前的定冠词“the”可知，此处表示最高级含义，popular为多音节形容词，其最高级形式为most popular。故填most popular。",
+        "knowledge": "形容词的最高级",
+        "evidence": "Among all the plants, milkweed has proved to be the [5] (popular) choice",
+        "points": 1.5
+      },
+      {
+        "id": "6",
+        "prompt": "[6]",
+        "answer": "a",
+        "explanation": "考查冠词。短语“gain a deeper understanding of...”意为“对……获得更深刻的理解”，understanding在此处表示具体的某种理解，常与不定冠词连用，且deeper以辅音音素开头。故填a。",
+        "knowledge": "冠词（不定冠词的固定搭配）",
+        "evidence": "students gain [6] deeper understanding of biodiversity",
+        "points": 1.5
+      },
+      {
+        "id": "7",
+        "prompt": "[7] (collect)",
+        "answer": "is collected|is being collected",
+        "explanation": "考查动词时态、语态和主谓一致。根据时间状语“Currently（目前）”可知，句子描述现阶段经常性的动作或正在进行的动作，可用一般现在时或现在进行时；主语“rainwater（雨水）”为不可数名词，与动词“collect（收集）”之间是被动关系，应用被动语态。故填is collected或is being collected。",
+        "knowledge": "动词的时态、语态与主谓一致",
+        "evidence": "Currently, rainwater [7] (collect) in large wooden barrels",
+        "points": 1.5
+      },
+      {
+        "id": "8",
+        "prompt": "[8]",
+        "answer": "and",
+        "explanation": "考查连词。分析句子结构可知，谓语动词“saves water”与“teaches learners...”在逻辑上构成并列顺承关系，共同说明该灌溉系统的双重益处，故应用并列连词and连接。",
+        "knowledge": "并列连词",
+        "evidence": "This simple irrigation system saves water [8] teaches learners",
+        "points": 1.5
+      },
+      {
+        "id": "9",
+        "prompt": "[9] (guide)",
+        "answer": "guidance",
+        "explanation": "考查词性转换（名词）。介词“for”后需接名词作宾语，ask for guidance意为“寻求指导/建议”，guidance为不可数名词。故填guidance。",
+        "knowledge": "词性转换（动词转名词）",
+        "evidence": "asking for [9] (guide) on starting their own projects.",
+        "points": 1.5
+      },
+      {
+        "id": "10",
+        "prompt": "[10] (active)",
+        "answer": "actively",
+        "explanation": "考查词性转换（副词）。空处修饰动词“engage”，应用副词形式作状语，表示“积极地参与”。故填actively。",
+        "knowledge": "词性转换（形容词转副词）",
+        "evidence": "when young people engage [10] (active) with nature",
+        "points": 1.5
+      }
+    ],
+    "minutes": 10,
+    "type": "grammar",
+    "topic": "Sustainable gardens and scientific observation",
+    "level": "标准",
+    "id": "grammar-002",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "传统皮影戏的文化交流",
+    "passage": "Shadow puppetry is an ancient form of storytelling and entertainment [1] uses flat articulated figures to create the impression of moving humans and other three-dimensional objects. [2] (originate) in China many centuries ago, this traditional art form gradually spread to other parts of the world through trade routes. The puppets, usually [3] (make) of leather or paper, are manipulated by puppeteers behind a translucent screen.\n\nIn recent years, international cultural exchange programs [4] (bring) new life to this centuries-old craft. Last month, a group of Chinese folk artists traveled to Europe, where they gave [5] impressive performance together with local musicians. By combining Eastern visual art [6] Western classical music, they created a unique show that fascinated the audience. Many young viewers were so amazed by the delicate figures that they expressed a strong desire [7] (learn) the skills.\n\nSuch cross-cultural cooperation not only helps preserve [8] (tradition) techniques, [9] also promotes mutual understanding among different peoples. It proves that art has the power to bridge gaps, [10] (natural) connecting hearts across borders.",
+    "instructions": "阅读下面短文，在空白处填入1个适当的单词或括号内单词的正确形式。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "answer": "that|which",
+        "explanation": "考查定语从句。句意：皮影戏是一种古老的讲故事和娱乐形式，它使用扁平的关节人偶来营造移动的人和其他三维物体的印象。分析句子结构可知，空格处引导限制性定语从句，先行词为“an ancient form of storytelling and entertainment”，指物，且关系词在从句中作主语，故填that或which。",
+        "knowledge": "定语从句关系代词",
+        "evidence": "an ancient form of storytelling and entertainment [1] uses flat articulated figures",
+        "points": 1.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2] (originate)",
+        "answer": "Originating",
+        "explanation": "考查非谓语动词。句意：这种传统艺术形式起源于两千多年前的中国，通过贸易路线逐渐传播到世界其他地方。分析句子结构可知，句中已有谓语动词“spread”，故空格处应用非谓语动词；主语“this traditional art form”与动词“originate”之间为主动关系（originate为不及物动词，无被动语态），故用现在分词形式作状语。位于句首，首字母需大写，故填Originating。",
+        "knowledge": "现在分词作状语",
+        "evidence": "[2] (originate) in China over two thousand years ago, this traditional art form gradually spread",
+        "points": 1.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3] (make)",
+        "answer": "made",
+        "explanation": "考查非谓语动词。句意：这些通常由皮革或纸制成的木偶，由半透明幕布后面的木偶师操纵。分析句子结构可知，句中已有谓语“are manipulated”，空格处作后置定语修饰主语“The puppets”；“The puppets”与“make”之间是逻辑上的动宾关系（由……制成：be made of），故用过去分词形式made。",
+        "knowledge": "过去分词作定语",
+        "evidence": "The puppets, usually [3] (make) of leather or paper, are manipulated",
+        "points": 1.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4] (bring)",
+        "answer": "have brought",
+        "explanation": "考查动词时态和主谓一致。句意：近年来，国际文化交流项目为这项有着数百年历史的手工艺带来了新的生机。根据时间状语“In recent years”（近年来）可知，句子应用现在完成时；主语“international cultural exchange programs”为复数名词，助动词用have，故填have brought。",
+        "knowledge": "现在完成时及主谓一致",
+        "evidence": "In recent years, international cultural exchange programs [4] (bring) new life",
+        "points": 1.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "an",
+        "explanation": "考查冠词。句意：上个月，一群中国民间艺术家前往欧洲，在那里他们与当地音乐家一起进行了一场令人印象深刻的演出。此处泛指“一场令人印象深刻的演出”，“performance”在此处为可数名词单数，且修饰词“impressive”以元音音素开头，故填不定冠词an。",
+        "knowledge": "不定冠词的用法",
+        "evidence": "where they gave [5] impressive performance together with local musicians",
+        "points": 1.5
+      },
+      {
+        "id": "6",
+        "prompt": "Blank [6]",
+        "answer": "with",
+        "explanation": "考查介词和固定搭配。句意：通过将东方视觉艺术与西方古典音乐相结合，他们创造了一场令观众着迷的独特演出。“combine... with...”为固定搭配，意为“把……与……结合起来”，故填介词with。",
+        "knowledge": "介词固定搭配",
+        "evidence": "By combining Eastern visual art [6] Western classical music",
+        "points": 1.5
+      },
+      {
+        "id": "7",
+        "prompt": "Blank [7] (learn)",
+        "answer": "to learn",
+        "explanation": "考查非谓语动词。句意：许多年轻观众对这些精致的人偶惊叹不已，纷纷表达了学习这项技艺的强烈愿望。名词“desire”（愿望，渴望）后常接动词不定式作后置定语，表示“做某事的愿望”，故填to learn。",
+        "knowledge": "动词不定式作定语",
+        "evidence": "expressed a strong desire [7] (learn) the skills",
+        "points": 1.5
+      },
+      {
+        "id": "8",
+        "prompt": "Blank [8] (tradition)",
+        "answer": "traditional",
+        "explanation": "考查词性转换（名词变形容词）。句意：这种跨文化合作不仅有助于保护传统技艺，而且促进了不同民族之间的相互理解。空格处修饰后面的名词“techniques”，应用形容词形式作定语。“tradition”的形容词形式为traditional（传统的）。",
+        "knowledge": "形容词修饰名词",
+        "evidence": "not only helps preserve [8] (tradition) techniques",
+        "points": 1.5
+      },
+      {
+        "id": "9",
+        "prompt": "Blank [9]",
+        "answer": "but",
+        "explanation": "考查并列连词。句意：这种跨文化合作不仅有助于保护传统技艺，而且促进了不同民族之间的相互理解。句中“not only... but (also)...”为固定并列连词结构，意为“不仅……而且……”，故填but。",
+        "knowledge": "并列连词固定结构",
+        "evidence": "not only helps preserve [8] (tradition) techniques, [9] also promotes mutual understanding",
+        "points": 1.5
+      },
+      {
+        "id": "10",
+        "prompt": "Blank [10] (natural)",
+        "answer": "naturally",
+        "explanation": "考查词性转换（形容词变副词）。句意：这证明了艺术具有弥合差距的力量，自然而然地连接着跨越国界的心灵。空格处修饰后面的非谓语动词“connecting”，应用副词形式作状语。“natural”的副词形式为naturally（自然地）。",
+        "knowledge": "副词修饰动词/非谓语动词",
+        "evidence": "[10] (natural) connecting hearts across borders",
+        "points": 1.5
+      }
+    ],
+    "minutes": 10,
+    "type": "grammar",
+    "topic": "Traditional arts and cultural exchange",
+    "level": "标准",
+    "id": "grammar-003",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "语法填空：健康习惯与团队合作",
+    "passage": "Developing healthy routines is essential for individual well-being, yet it often proves challenging when pursued alone. Over the past few years, many schools and workplaces [1] (introduce) group wellness programs to address this issue. Instead of relying solely on personal willpower, participants form small support groups in [2] members share daily fitness goals and healthy meal plans.\n\nTeamwork transforms solitary discipline into a collective journey. When [3] (face) with the temptation to skip a morning jog, an individual is more likely to persist if teammates are waiting. This mutual accountability not only strengthens physical endurance [4] builds deeper social bonds. Moreover, taking part in group activities can help some students manage stress more [5] (effective) than exercising in isolation.\n\nTo make a wellness team work, clear communication is vital. Goals should be realistic, [6] (allow) everyone to progress at a comfortable pace. Celebrating modest achievements together creates [7] supportive atmosphere. Ultimately, the combination of healthy habits and cooperative spirit [8] (enable) people to achieve more than they ever could by [9] (they). By supporting one another, team members discover that staying healthy is no longer a burden, but a [10] (reward) shared experience.",
+    "instructions": "阅读下面短文，在空白处填入1个适当的单词或括号内单词的正确形式。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1] (introduce)",
+        "answer": "have introduced",
+        "explanation": "考查动词的时态和主谓一致。句首的时间状语“Recently”（最近）常与现在完成时连用，表示过去发生的动作对现在造成的影响或结果。主语“many schools and workplaces”为复数概念，助动词应用have，故填have introduced。",
+        "knowledge": "动词时态与主谓一致（现在完成时）",
+        "evidence": "Recently, many schools and workplaces [1] (introduce) group wellness programs",
+        "points": 1.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "answer": "which",
+        "explanation": "空前已有介词 in，先行词 support groups 指事物，组成 in which 引导定语从句，相当于 where。介词后不能用 that；whose 不能单独作介词宾语。",
+        "knowledge": "介词 + which 引导定语从句",
+        "evidence": "small support groups in [2] members share daily fitness goals",
+        "points": 1.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3] (face)",
+        "answer": "faced",
+        "explanation": "考查非谓语动词（状语从句的省略）。固定搭配“be faced with”意为“面临，面对”。在When引导的时间状语从句中，当从句主语与主句主语“an individual”一致且含有be动词时，可省略从句的主语和be动词（即When an individual is faced with...省略为When faced with...），故填过去分词faced。",
+        "knowledge": "非谓语动词（过去分词/状语从句省略）",
+        "evidence": "When [3] (face) with the temptation to skip a morning jog",
+        "points": 1.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "but",
+        "explanation": "考查并列连词。此处为固定句型“not only... but (also)...”，意为“不仅……而且……”，连接两个并列的谓语动词短语“strengthens physical endurance”和“builds deeper social bonds”。题目要求只填一个词，故填but。",
+        "knowledge": "并列连词（not only...but also...）",
+        "evidence": "This mutual accountability not only strengthens physical endurance [4] builds deeper social bonds.",
+        "points": 1.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5] (effective)",
+        "answer": "effectively",
+        "explanation": "考查词性转换（形容词变副词）。此处需用副词修饰谓语动词“reduces”，并与前面的“more”构成副词比较级“more effectively”（更有效地），故填effectively。",
+        "knowledge": "副词修饰动词",
+        "evidence": "reduces stress more [5] (effective) than exercising in isolation.",
+        "points": 1.5
+      },
+      {
+        "id": "6",
+        "prompt": "Blank [6] (allow)",
+        "answer": "allowing",
+        "explanation": "考查非谓语动词。句子主干“Goals should be realistic”结构完整，逗号后无连词，因此allow需用非谓语形式。前面的主句内容与allow之间为主动关系，表示自然而然的结果，故用现在分词allowing作结果状语。",
+        "knowledge": "非谓语动词（现在分词作结果状语）",
+        "evidence": "Goals should be realistic, [6] (allow) everyone to progress at a comfortable pace.",
+        "points": 1.5
+      },
+      {
+        "id": "7",
+        "prompt": "Blank [7]",
+        "answer": "a",
+        "explanation": "考查冠词。“atmosphere”（氛围）在此处表示泛指一种支持性的氛围，常作可数名词单数使用，且修饰词“supportive”以辅音音素开头，故填不定冠词a。",
+        "knowledge": "冠词（不定冠词a）",
+        "evidence": "Celebrating modest achievements together creates [7] supportive atmosphere.",
+        "points": 1.5
+      },
+      {
+        "id": "8",
+        "prompt": "Blank [8] (enable)",
+        "answer": "enables",
+        "explanation": "考查动词的时态和主谓一致。全文阐述客观事实，使用一般现在时。本句的真正核心主语是单数名词“the combination”（结合），而非介词短语中的复数名词habits，因此谓语动词应用第三人称单数形式，故填enables。",
+        "knowledge": "主谓一致与一般现在时",
+        "evidence": "Ultimately, the combination of healthy habits and cooperative spirit [8] (enable) people to achieve more",
+        "points": 1.5
+      },
+      {
+        "id": "9",
+        "prompt": "Blank [9] (they)",
+        "answer": "themselves",
+        "explanation": "考查反身代词。介词短语“by oneself”为固定搭配，意为“独自，靠自己”。此处指代前面的“they”（即people），故填反身代词themselves。",
+        "knowledge": "代词（反身代词）",
+        "evidence": "achieve more than they ever could by [9] (they).",
+        "points": 1.5
+      },
+      {
+        "id": "10",
+        "prompt": "Blank [10] (reward)",
+        "answer": "rewarding",
+        "explanation": "考查词性转换（动词/名词变形容词）。此处位于冠词“a”之后、名词短语“shared experience”之前，需用形容词作定语修饰名词“experience”。reward的形容词形式rewarding意为“值得做的，有益的，有回报的”，符合语境，故填rewarding。",
+        "knowledge": "形容词作定语（-ing形容词）",
+        "evidence": "staying healthy is no longer a burden, but a [10] (reward) shared experience.",
+        "points": 1.5
+      }
+    ],
+    "minutes": 10,
+    "type": "grammar",
+    "topic": "Healthy habits and teamwork",
+    "level": "挑战",
+    "id": "grammar-004",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "高中生如何创办社区读书角",
+    "passage": "Starting a community reading corner is a wonderful way for high school students to share their love of books and serve local families. It does not require a huge budget, just careful planning and enthusiasm. [1] \n\nFirst, find a suitable location in your neighborhood. [2] Talk to the managers of these places and explain how a small bookshelf could benefit young visitors and their parents. Most community leaders are very supportive of youth-led educational projects.\n\nOnce you have a spot, it is time to gather reading materials. You can organize a book drive at your school by placing collection boxes in the library or near the main entrance. [3] Gently used picture books, folk tales, and science magazines are always great choices for children.\n\n[4] Sort the books by age group or theme, and use colorful labels so children can easily find what they like. Adding a few comfortable cushions or a small rug can also make the corner much more inviting.\n\nFinally, keep the reading corner active by holding regular storytelling sessions. [5] By reading aloud and playing simple word games, you will inspire young children to become lifelong readers while building strong bonds within your community.",
+    "instructions": "阅读下面短文，从短文后的选项中选出可以填入空白处的最佳选项。选项中有两项为多余选项。",
+    "options": [
+      "A. Next, make the space attractive and easy to use.",
+      "B. However, buying brand-new bookshelves can be very expensive.",
+      "C. Ask your classmates and teachers to donate books they no longer need.",
+      "D. Here are some simple steps to help you get your project off the ground.",
+      "E. Local community centers, quiet parks, or even small cafes are great options.",
+      "F. You can invite several schoolmates to take turns volunteering on weekends.",
+      "G. Many students prefer reading digital books on their phones nowadays."
+    ],
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "answer": "D",
+        "explanation": "前文介绍了高中生创办社区读书角的意义以及它只需要细心规划和热情，后文各段以“First”、“Once you have a spot”、“Finally”引出具体步骤。D项“这里有一些简单的步骤可以帮助你启动项目”承上启下，完美统领全文。其他选项均无法起到总领下文步骤的作用。",
+        "knowledge": "上下文逻辑衔接与篇章结构（总起句）",
+        "evidence": "It does not require a huge budget, just careful planning and enthusiasm.",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "answer": "E",
+        "explanation": "前一句提出“首先，在你的社区找一个合适的位置”，后一句提到“与这些地方（these places）的管理者交谈”。E项“当地的社区中心、安静的公园甚至小咖啡馆都是不错的选择”具体列举了地点，且与后文的“these places”形成明确的指代呼应。B项和G项偏离主题。",
+        "knowledge": "代词指代与前后语义衔接",
+        "evidence": "First, find a suitable location in your neighborhood. [2] Talk to the managers of these places",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "answer": "C",
+        "explanation": "本段主题是收集阅读材料（gather reading materials）。前句提到在学校组织图书募捐活动，C项“请你的同学和老师捐赠他们不再需要的书籍”是对校园募捐活动的具体展开，且与后句“八九成新的图画书、民间故事和科学杂志”紧密衔接。",
+        "knowledge": "段落内部细节支撑与词汇复现",
+        "evidence": "You can organize a book drive at your school by placing collection boxes in the library or near the main entrance.",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "A",
+        "explanation": "本空位于段首，为段落主题句。后文提到按年龄或主题分类书籍、使用彩色标签方便查找（easy to use），以及添加舒适的靠垫或小地毯让角落更吸引人（inviting/attractive）。A项“接下来，让这个空间既有吸引力又易于使用”准确概括了本段内容，且“Next”与前文的“First”、“Once...”构成先后顺序。",
+        "knowledge": "段落主旨概括与过渡词逻辑",
+        "evidence": "Sort the books by age group or theme, and use colorful labels so children can easily find what they like.",
+        "points": 2.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "F",
+        "explanation": "前一句提出“通过定期举办讲故事活动让读书角保持活跃”，后一句提到“通过大声朗读和玩简单的文字游戏，你将激励孩子们……”。F项“你可以邀请几位同学在周末轮流做志愿者”承接前文的“定期举办活动”，说明了活动的具体人员安排。干扰项B和G与本段志愿服务及讲故事的主题无关。",
+        "knowledge": "语境因果与顺承关系分析",
+        "evidence": "Finally, keep the reading corner active by holding regular storytelling sessions.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "seven",
+    "topic": "School volunteering and community reading",
+    "level": "基础",
+    "id": "seven-001",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "可持续花园与科学观察",
+    "passage": "Creating a sustainable garden is more than just a weekend hobby; it can serve as a living laboratory right outside your door. By blending ecological principles with careful daily observation, gardeners can support local wildlife while deepening their understanding of nature. [1] \n\nThe first step in establishing such a space is selecting native plants. Plants suited to the local climate can often manage with less extra watering once they are established. [2] When native flowers bloom, they attract pollinators like bees and butterflies, forming the foundation of a healthy food web.\n\nOnce the garden is planted, the role of the gardener shifts from laborer to scientific observer. Keeping a garden journal is an effective way to track changes over time. [3] For instance, noting when specific birds arrive or which plants resist drought best provides valuable insights into microclimates. \n\n[4] Many research institutions run citizen science programs that rely on public contributions. By uploading photos of leaf-eating caterpillars or recording the first frost date, amateur gardeners help professional ecologists monitor biodiversity shifts on a broader scale.\n\nUltimately, a sustainable garden teaches patience and curiosity. Nature does not always follow human schedules, and unexpected challenges like pest outbreaks will occur. [5] Instead of reaching for harmful pesticides, an observant gardener waits to see if natural predators, such as ladybugs, will restore the balance. Through this mindful approach, the backyard becomes both a sanctuary for wildlife and a classroom for lifelong learning.",
+    "instructions": "根据短文内容，从短文后的选项中选出能填入空白处的最佳选项。选项中有两项为多余选项。",
+    "options": [
+      "A. However, these problems actually offer the best opportunities to witness ecological resilience in action.",
+      "B. Therefore, importing exotic shrubs from distant regions is usually the fastest way to boost soil quality.",
+      "C. This systematic approach turns a simple backyard patch into a rich source of ecological data.",
+      "D. Furthermore, individual observations can contribute to much larger scientific endeavors.",
+      "E. As a result, these species can be a practical choice for a garden that needs less maintenance.",
+      "F. You should record details such as temperature patterns, rainfall, and the behavior of visiting insects.",
+      "G. Commercial greenhouses often use artificial lighting to speed up the growth of seasonal vegetables."
+    ],
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "answer": "C",
+        "explanation": "前文提到可持续花园不仅是周末爱好，还可以作为门外的“活体实验室”（living laboratory），通过将生态原则与日常观察结合，园丁可以加深对自然的理解。C项“这种系统的方法将一块简单的后院土地变成了丰富的生态数据来源”承接上文，“This systematic approach”指代前文的“blending ecological principles with careful daily observation”，“backyard patch”与“outside your door”呼应，“ecological data”与“living laboratory”相契合。其他选项均无法在首段结尾起到总结升华并引出下文的作用。",
+        "knowledge": "上下文逻辑与指代关系",
+        "evidence": "serve as a living laboratory right outside your door. By blending ecological principles with careful daily observation",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "answer": "E",
+        "explanation": "空前谈适应本地气候的植物在成活后往往需要较少的额外浇水，E 项以 As a result 承接这一优点，指出它们可用于维护需求较少的花园。these species 指前文 native plants。这里表达条件性的常见优势，并非声称所有本地植物都不需浇水或施肥。",
+        "knowledge": "因果逻辑与词汇复现",
+        "evidence": "Because these species have evolved alongside local insects and climate conditions, they require minimal watering and no chemical fertilizers.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "answer": "F",
+        "explanation": "本段主题是园丁作为科学观察者记录花园日志（Keeping a garden journal）。后一句用“For instance”举例说明记录特定鸟类到达的时间或植物的抗旱性。F项“你应该记录诸如温度变化模式、降雨量以及来访昆虫的行为等细节”具体阐述了花园日志应该记录的内容，与前文的“track changes”和后文的举例紧密衔接。",
+        "knowledge": "例证逻辑与上下文衔接",
+        "evidence": "Keeping a garden journal is an effective way to track changes over time. [3] For instance, noting when specific birds arrive",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "D",
+        "explanation": "设空处位于段首，为本段主题句。后文提到许多研究机构开展依赖公众贡献的“公民科学项目”（citizen science programs），业余园丁通过上传照片或记录数据帮助生态学家在更广泛的范围内监测生物多样性。D项“此外，个人的观察可以为更宏大的科学事业做出贡献”准确概括了本段大意，且“individual observations”承接上一段的个人日志，“much larger scientific endeavors”引出下文的“citizen science programs”和“on a broader scale”。",
+        "knowledge": "段落主旨与递进过渡",
+        "evidence": "Many research institutions run citizen science programs that rely on public contributions.",
+        "points": 2.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "A",
+        "explanation": "前一句提到自然并不总是遵循人类的时间表，像害虫爆发这样意想不到的挑战（unexpected challenges like pest outbreaks）将会发生。后一句提到观察敏锐的园丁不会使用有害农药，而是等待瓢虫等天敌来恢复平衡。A项“然而，这些问题实际上提供了亲眼见证生态恢复力发挥作用的最佳机会”中，“these problems”指代前文的“unexpected challenges like pest outbreaks”，“witness ecological resilience in action”引出后文天敌恢复生态平衡的过程。",
+        "knowledge": "转折逻辑与代词指代",
+        "evidence": "unexpected challenges like pest outbreaks will occur. [5] Instead of reaching for harmful pesticides, an observant gardener waits to see if natural predators, such as ladybugs, will restore the balance.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "seven",
+    "topic": "Sustainable gardens and scientific observation",
+    "level": "标准",
+    "id": "seven-002",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "传统艺术的跨文化交流",
+    "passage": "Traditional art forms carry the deep history and values of a community. However, in an increasingly interconnected world, preserving these traditions requires more than simply displaying them in local museums. [1] Through cross-cultural exchange, traditional crafts and performances gain fresh vitality and global appreciation.\n\nWhen artisans travel abroad to demonstrate their skills, language barriers often exist. Yet, the physical process of creation speaks a universal language. Watching a master potter shape clay on a spinning wheel or a musician pluck an ancient stringed instrument requires no translation. [2] Curiosity naturally bridges the gap between different cultural backgrounds.\n\nFurthermore, interacting with international artists encourages healthy innovation. [3] For instance, a traditional silk weaver might experiment with modern color palettes after visiting a contemporary art gallery overseas. Meanwhile, foreign designers often gain inspiration from traditional patterns and sustainable techniques. This two-way learning ensures that heritage remains dynamic rather than frozen in time.\n\n[4] Many young people today discover traditional arts through short videos and virtual exhibitions. Online platforms allow rural craftspeople to showcase their daily routines to viewers thousands of miles away. By reading comments and answering questions during live streams, masters can build genuine connections with global enthusiasts.\n\nUltimately, sharing traditional arts with the world does not dilute their authenticity. [5] When people from diverse backgrounds appreciate and respect each other's artistic heritage, they build a solid foundation for lasting mutual understanding.",
+    "instructions": "阅读下面短文，从短文后的选项中选出可以填入空白处的最佳选项。选项中有两项为多余选项。",
+    "options": [
+      "A. Digital technology has also expanded the reach of these exchanges.",
+      "B. Instead, it enriches human creativity and fosters global harmony.",
+      "C. Audiences are immediately drawn to the rhythm and beauty of the craft.",
+      "D. They need to step onto the world stage and interact with diverse audiences.",
+      "E. Traditional methods are sometimes too complicated for beginners to learn.",
+      "F. Exposure to new perspectives inspires craftspeople to adapt their work without losing its core identity.",
+      "G. Local governments have invested heavily in building new cultural centers."
+    ],
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "answer": "D",
+        "explanation": "前文指出保护传统不仅仅是在当地博物馆展示它们（requires more than simply displaying them in local museums），后文提到通过跨文化交流（Through cross-cultural exchange），传统工艺获得新活力。D项“它们需要走上世界舞台，与多元化的受众互动”承上启下，其中的They指代前文的these traditions，“走上世界舞台”与前文的“当地博物馆”形成对比，并引出后文的“跨文化交流”。G项虽然提到当地政府建文化中心，但与后文的跨文化交流无关。",
+        "knowledge": "上下文逻辑衔接与代词指代",
+        "evidence": "preserving these traditions requires more than simply displaying them in local museums.",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "answer": "C",
+        "explanation": "前文描述了观看陶艺大师制作陶器或音乐家弹奏古乐器不需要翻译（requires no translation），后文指出好奇心自然地架起了不同文化背景之间的桥梁。C项“观众会立刻被手工艺的节奏和美感所吸引”顺承前文具体的观看场景，说明无需语言翻译也能吸引观众，进而引出后文文化桥梁的建立。E项讨论学习难度，偏离了本段关于“观赏艺术跨越语言障碍”的主题。",
+        "knowledge": "语境顺承与细节支撑",
+        "evidence": "Watching a master potter shape clay on a spinning wheel or a musician pluck an ancient stringed instrument requires no translation.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "answer": "F",
+        "explanation": "本段首句提出“与国际艺术家互动鼓励健康的创新（healthy innovation）”，后文举例说明传统丝绸编织者在参观海外当代艺术馆后尝试现代色彩。F项“接触新视角会激发手工艺人在不失核心特色的前提下调整自己的作品”是对首句“健康创新”的具体解释，并自然引出后文丝绸编织者的例子。",
+        "knowledge": "论点与例证衔接",
+        "evidence": "Furthermore, interacting with international artists encourages healthy innovation.",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "A",
+        "explanation": "设空处位于第四段段首，为本段主题句。后文连续提到了短视频（short videos）、虚拟展览（virtual exhibitions）、网络平台（Online platforms）和直播（live streams）。A项“数字技术也扩大了这些交流的范围”准确概括了本段关于数字和网络技术助力文化交流的核心内容。",
+        "knowledge": "段落主题句概括",
+        "evidence": "Many young people today discover traditional arts through short videos and virtual exhibitions.",
+        "points": 2.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "B",
+        "explanation": "前文指出“向世界分享传统艺术并不会冲淡其真实性（does not dilute their authenticity）”，B项“相反，它丰富了人类的创造力并促进了全球和谐”中的Instead（相反）与前文的否定句形成鲜明的转折对比关系，it指代前文的sharing traditional arts with the world，且“促进全球和谐”与尾句的“建立持久相互理解的坚实基础”语义一致。",
+        "knowledge": "转折对比逻辑与指代关系",
+        "evidence": "Ultimately, sharing traditional arts with the world does not dilute their authenticity.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "seven",
+    "topic": "Traditional arts and cultural exchange",
+    "level": "标准",
+    "id": "seven-003",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "健康习惯与团队合作：互促共进的力量",
+    "passage": "Developing healthy personal habits is often viewed as a solitary endeavor. We set individual alarm clocks for morning runs and prepare nutritious meals on our own. [1] In fact, there is a profound, reciprocal relationship between maintaining personal wellness and functioning effectively within a team.\n\nWhen individuals prioritize sleep, balanced nutrition, and regular exercise, they bring higher energy and sharper focus to collective tasks. Fatigue and poor health, conversely, often lead to irritability and lapses in concentration. [2] By taking care of our bodies and minds, we ensure that we are reliable assets rather than burdens to our collaborators.\n\nSimultaneously, a supportive team environment acts as a powerful catalyst for sustaining good habits. Willpower is a finite resource that easily wanes when we face stress alone. [3] Whether it is a group of colleagues taking brisk walking breaks together or sports teammates holding each other accountable for hydration, shared routines make healthy choices the default option.\n\n[4] To truly integrate wellness into teamwork, groups must cultivate psychological safety. Team members should feel comfortable setting boundaries to protect their rest without fearing that they will be judged as uncommitted. Open communication about workload prevents burnout and preserves long-term productivity.\n\nUltimately, personal health and collective success are not competing priorities. [5] When we invest in our own well-being, we strengthen the group; when we build empathetic teams, we make healthy living sustainable for everyone involved.",
+    "instructions": "根据短文内容，从短文后的选项中选出能填入空白处的最佳选项。选项中有两项为多余选项。",
+    "options": [
+      "A. However, this perspective overlooks the social dimension of well-being.",
+      "B. However, establishing strict rules is the only way to guarantee team efficiency.",
+      "C. Instead, they reinforce each other in a continuous upward spiral.",
+      "D. Yet, merely exercising together is not enough to build a healthy team culture.",
+      "E. Working alongside peers who share similar wellness goals provides built-in motivation.",
+      "F. These physical deficits can subtly erode team morale and hinder group problem-solving.",
+      "G. Personal fitness goals should always be kept separate from professional responsibilities."
+    ],
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "answer": "A",
+        "explanation": "前文指出“养成健康的个人习惯通常被视为一种孤立的努力（solitary endeavor）”，并列举了独自晨跑和备餐的例子；后文则用“In fact”引出个人健康与团队高效运作之间存在深刻且相辅相成的关系。A项“然而，这种观点忽视了健康的社会维度”起到了承上启下的转折作用，“this perspective”指代首句的孤立观点，“social dimension”呼应后文的“within a team”。B项的“however”虽表转折，但“制定严格规则”偏离了首段探讨健康习惯与团队关系的主旨；G项与后文观点完全相悖。",
+        "knowledge": "转折关系与指代衔接",
+        "evidence": "Developing healthy personal habits is often viewed as a solitary endeavor.",
+        "points": 2.5
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "answer": "F",
+        "explanation": "空前句提到“相反，疲劳和健康状况不佳往往会导致易怒和注意力不集中”。F项“这些身体上的不足会暗中削弱团队士气，阻碍团队解决问题”紧承上文，其中“These physical deficits”精准指代前句的“Fatigue and poor health”，且阐述了个人不健康状态对团队（team morale, group problem-solving）的负面影响，与后句“确保我们成为合作者可靠的助力而非负担”逻辑严密。干扰项D和E均未承接前句的负面身体状态。",
+        "knowledge": "指代呼应与因果逻辑",
+        "evidence": "Fatigue and poor health, conversely, often lead to irritability and lapses in concentration.",
+        "points": 2.5
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "answer": "E",
+        "explanation": "第三段首句指出“支持性的团队环境是维持良好习惯的强大催化剂”，接着提到独自面对压力时意志力容易消退。后文则列举了同事一起快走休息、队友互相监督补水等具体例子。E项“与拥有相似健康目标的同伴并肩努力能提供内在动力”既承接了前文“独自意志力有限”的问题，又顺畅引出后文同伴共同践行健康习惯的实例。D项否定了一起锻炼的作用，与后文正面的例子矛盾。",
+        "knowledge": "例证关系与上下文语义衔接",
+        "evidence": "Whether it is a group of colleagues taking brisk walking breaks together or sports teammates holding each other accountable",
+        "points": 2.5
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "answer": "D",
+        "explanation": "空处位于第四段段首，需起到连接上一段与开启本段主题的作用。上一段末尾刚刚讲述了同事一起散步、队友互相监督等外在的共同健康行为，而本段接着指出“为了真正将健康融入团队合作，团队必须培养心理安全感（psychological safety）”，探讨设定界限、沟通工作量等更深层的文化层面。D项“然而，仅仅一起锻炼并不足以建立健康的团队文化”完美地从第三段的具体行动过渡到第四段的深层团队文化构建。B项“制定严格规则是唯一方法”与本段强调的心理安全感和包容氛围不符。",
+        "knowledge": "段落过渡与主题句定位",
+        "evidence": "To truly integrate wellness into teamwork, groups must cultivate psychological safety.",
+        "points": 2.5
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "answer": "C",
+        "explanation": "空前句指出“归根结底，个人健康和集体成功并不是相互竞争的优先事项（not competing priorities）”。空后句总结道：投资自身健康能强化团队，建立共情团队能让健康生活可持续。C项“相反，它们在持续向上的螺旋中相互强化”与前句形成“不是……而是（not... Instead...）”的逻辑结构，“they”指代“personal health and collective success”，“reinforce each other”完美概括了后句双向促进的排比结构。G项将个人健康与职业责任割裂，完全违背全文主旨。",
+        "knowledge": "对比转折与总结概括",
+        "evidence": "Ultimately, personal health and collective success are not competing priorities.",
+        "points": 2.5
+      }
+    ],
+    "minutes": 8,
+    "type": "seven",
+    "topic": "Healthy habits and teamwork",
+    "level": "挑战",
+    "id": "seven-004",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "完形填空：社区图书角的暖心志愿行",
+    "passage": "Last autumn, our school volunteer club launched a weekend reading program at the neighborhood center. At first, I was [1] to join because I had never worked with young children before. However, my best friend Leo [2] me to give it a try, saying it would be a rewarding experience.\n\nOn our first Saturday, we arrived early to [3] the small reading corner. We wiped the tables, arranged colorful picture books on the shelves, and placed soft mats on the floor. Soon, a group of kids [4] in, looking curious and energetic. My task was to read stories to three children. Everything went [5] until I noticed a quiet boy named Timmy sitting alone in the back. He [6] to look at any books and kept his head down.\n\nRemembering our club teacher's [7] on patience, I walked over with a book about dinosaurs. I sat beside him and began pointing at the bright [8] without forcing him to speak. Slowly, Timmy raised his eyes. When I imitated the roar of a T-Rex, a small [9] finally appeared on his face. To my [10], he whispered that he knew the names of every dinosaur on the page.\n\nFrom that day on, Timmy became the most [11] reader in our group. He even started sharing his favorite stories with other children. Looking back, I feel [12] that I stepped out of my comfort zone. Volunteering not only helped the children [13] the joy of reading, [14] taught me how a little warmth can [15] someone's heart.",
+    "instructions": "阅读下面短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "options": [
+          "A. hesitant",
+          "B. eager",
+          "C. proud",
+          "D. grateful"
+        ],
+        "answer": "A",
+        "explanation": "考查形容词词义辨析。根据后文“because I had never worked with young children before（因为我以前从未和年幼的孩子打过交道）”以及下一句的转折词“However”可知，作者起初对加入这个项目是“犹豫的（hesitant）”。B项eager（渴望的）、C项proud（自豪的）、D项grateful（感激的）均与后文缺乏经验导致的不确定心理不符。",
+        "knowledge": "形容词词义辨析与上下文逻辑",
+        "evidence": "because I had never worked with young children before",
+        "points": 1
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "options": [
+          "A. forbade",
+          "B. encouraged",
+          "C. forced",
+          "D. warned"
+        ],
+        "answer": "B",
+        "explanation": "考查动词词义辨析。根据后文“saying it would be a rewarding experience（说这会是一次有意义的经历）”可知，好朋友Leo是在“鼓励（encouraged）”作者试一试。A项forbade（禁止）、C项forced（强迫）、D项warned（警告）均不符合朋友善意劝说的语境。",
+        "knowledge": "动词词义辨析",
+        "evidence": "saying it would be a rewarding experience",
+        "points": 1
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "options": [
+          "A. look for",
+          "B. set up",
+          "C. give away",
+          "D. tear down"
+        ],
+        "answer": "B",
+        "explanation": "考查动词短语辨析。根据后文“We wiped the tables, arranged colorful picture books on the shelves, and placed soft mats on the floor（我们擦了桌子，把彩色绘本摆在书架上，并在地板上铺上软垫）”可知，他们早到是为了“布置、搭建（set up）”小小的阅读角。A项look for（寻找）、C项give away（赠送；泄露）、D项tear down（拆除）均与具体布置场地的动作不符。",
+        "knowledge": "动词短语辨析",
+        "evidence": "We wiped the tables, arranged colorful picture books on the shelves, and placed soft mats on the floor",
+        "points": 1
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "options": [
+          "A. broke",
+          "B. flooded",
+          "C. slipped",
+          "D. fell"
+        ],
+        "answer": "B",
+        "explanation": "考查动词词义辨析。根据后文“looking curious and energetic（看起来充满好奇且精力充沛）”可知，很快有一群孩子“涌入（flooded in）”阅读角。A项broke in（破门而入；插嘴）、C项slipped in（悄悄溜进，与energetic不符）、D项fell in（陷入；集合）均不合语境。",
+        "knowledge": "动词词义及搭配辨析",
+        "evidence": "Soon, a group of kids [4] in, looking curious and energetic",
+        "points": 1
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "options": [
+          "A. smoothly",
+          "B. Secretly",
+          "C. Terribly",
+          "D. slowly"
+        ],
+        "answer": "A",
+        "explanation": "考查副词词义辨析。根据后文“until I noticed a quiet boy named Timmy sitting alone in the back（直到我注意到一个叫Timmy的安静男孩独自坐在后面）”可知，在此之前一切都进展得很“顺利（smoothly）”。go smoothly为常用搭配，意为“进展顺利”。B项secretly（秘密地）、C项terribly（糟糕地）、D项slowly（缓慢地）均不符合由顺境转入发现问题的语境。",
+        "knowledge": "副词词义辨析",
+        "evidence": "Everything went [5] until I noticed a quiet boy named Timmy sitting alone in the back",
+        "points": 1
+      },
+      {
+        "id": "6",
+        "prompt": "Blank [6]",
+        "options": [
+          "A. promised",
+          "B. pretended",
+          "C. refused",
+          "D. Happened"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。根据前文“sitting alone in the back（独自坐在后面）”和后文“and kept his head down（一直低着头）”可知，他“拒绝（refused）”看任何书。A项promised（承诺）、B项pretended（假装）、D项happened（碰巧）均与“一直低着头”的表现矛盾。",
+        "knowledge": "动词词义辨析与动作描写",
+        "evidence": "sitting alone in the back. He [6] to look at any books and kept his head down",
+        "points": 1
+      },
+      {
+        "id": "7",
+        "prompt": "Blank [7]",
+        "options": [
+          "A. doubt",
+          "B. advice",
+          "C. report",
+          "D. excuse"
+        ],
+        "answer": "B",
+        "explanation": "考查名词词义辨析。根据后文“on patience, I walked over with a book about dinosaurs（关于耐心的……，我拿着一本关于恐龙的书走了过去）”可知，作者想起了社团老师关于耐心的“建议（advice）”。A项doubt（怀疑）、C项report（报告）、D项excuse（借口）均不符合老师指导志愿者的语境。",
+        "knowledge": "名词词义辨析",
+        "evidence": "Remembering our club teacher's [7] on patience",
+        "points": 1
+      },
+      {
+        "id": "8",
+        "prompt": "Blank [8]",
+        "options": [
+          "A. walls",
+          "B. shelves",
+          "C. curtains",
+          "D. pictures"
+        ],
+        "answer": "D",
+        "explanation": "考查名词词义辨析。前文提到作者拿着一本关于恐龙的书（a book about dinosaurs），且前文提到了适合儿童的彩色绘本（colorful picture books），因此作者坐在他旁边指着书里鲜艳的“图画/图片（pictures）”。A项walls（墙壁）、B项shelves（书架）、C项curtains（窗帘）均偏离了“一起看恐龙书”这一核心动作。",
+        "knowledge": "名词词义辨析与语境衔接",
+        "evidence": "walked over with a book about dinosaurs. I sat beside him and began pointing at the bright [8]",
+        "points": 1
+      },
+      {
+        "id": "9",
+        "prompt": "Blank [9]",
+        "options": [
+          "A. smile",
+          "B. tear",
+          "C. Fear",
+          "D. mask"
+        ],
+        "answer": "A",
+        "explanation": "考查名词词义辨析。前文提到作者模仿霸王龙的咆哮声逗孩子，结合后文Timmy开始轻声和作者交流可知，他的脸上终于露出了浅浅的“微笑（smile）”。B项tear（眼泪）、C项fear（恐惧）、D项mask（面具）均不符合破冰成功后的积极氛围。",
+        "knowledge": "名词词义辨析与情感变化",
+        "evidence": "When I imitated the roar of a T-Rex, a small [9] finally appeared on his face",
+        "points": 1
+      },
+      {
+        "id": "10",
+        "prompt": "Blank [10]",
+        "options": [
+          "A. sorrow",
+          "B. regret",
+          "C. surprise",
+          "D. anger"
+        ],
+        "answer": "C",
+        "explanation": "考查名词词义辨析。前文说Timmy孤僻低头不看书，但此时“he whispered that he knew the names of every dinosaur on the page（他小声说他知道书页上每一种恐龙的名字）”，这让作者感到“惊讶（surprise）”。to one's surprise意为“令某人惊讶的是”。A项sorrow（悲伤）、B项regret（后悔）、D项anger（愤怒）均与语境不符。",
+        "knowledge": "名词词义辨析及固定搭配",
+        "evidence": "he whispered that he knew the names of every dinosaur on the page",
+        "points": 1
+      },
+      {
+        "id": "11",
+        "prompt": "Blank [11]",
+        "options": [
+          "A. careless",
+          "B. active",
+          "C. nervous",
+          "D. silent"
+        ],
+        "answer": "B",
+        "explanation": "考查形容词词义辨析。根据后文“He even started sharing his favorite stories with other children（他甚至开始和其他孩子分享他最喜欢的故事）”可知，Timmy从原来的安静孤僻变成了小组里最“活跃的、积极的（active）”读者。A项careless（粗心的）、C项nervous（紧张的）、D项silent（沉默的）均与他主动分享故事的表现相悖。",
+        "knowledge": "形容词词义辨析与人物转变",
+        "evidence": "He even started sharing his favorite stories with other children",
+        "points": 1
+      },
+      {
+        "id": "12",
+        "prompt": "Blank [12]",
+        "options": [
+          "A. glad",
+          "B. anxious",
+          "C. ashamed",
+          "D. confused"
+        ],
+        "answer": "A",
+        "explanation": "考查形容词词义辨析。回顾整个经历，作者帮助了Timmy并获得了成长，因此感到很“高兴、庆幸（glad）”自己走出了舒适区。B项anxious（焦虑的）、C项ashamed（羞愧的）、D项confused（困惑的）均为负面情绪，不符合文章主旨。",
+        "knowledge": "形容词词义辨析",
+        "evidence": "Looking back, I feel [12] that I stepped out of my comfort zone",
+        "points": 1
+      },
+      {
+        "id": "13",
+        "prompt": "Blank [13]",
+        "options": [
+          "A. hide",
+          "B. forget",
+          "C. discover",
+          "D. doubt"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。志愿活动帮助孩子们“发现（discover）”了阅读的乐趣。A项hide（隐藏）、B项forget（忘记）、D项doubt（怀疑）均不符合社区阅读项目帮助孩子爱上阅读的积极意义。",
+        "knowledge": "动词词义辨析",
+        "evidence": "Volunteering not only helped the children [13] the joy of reading",
+        "points": 1
+      },
+      {
+        "id": "14",
+        "prompt": "Blank [14]",
+        "options": [
+          "A. or",
+          "B. so",
+          "C. for",
+          "D. but"
+        ],
+        "answer": "D",
+        "explanation": "考查连词及固定句型。前文有“not only helped...”，此处与“not only”构成固定搭配“not only... but (also)...（不仅……而且……）”，其中的also可以省略，故填but。A项or（或者）、B项so（因此）、C项for（因为）均不能与not only构成该并列递进结构。",
+        "knowledge": "并列连词与固定句型",
+        "evidence": "Volunteering not only helped the children [13] the joy of reading, [14] taught me",
+        "points": 1
+      },
+      {
+        "id": "15",
+        "prompt": "Blank [15]",
+        "options": [
+          "A. break",
+          "B. touch",
+          "C. test",
+          "D. Follow"
+        ],
+        "answer": "B",
+        "explanation": "考查动词词义辨析。根据前文作者用耐心和陪伴让Timmy敞开心扉的故事可知，小小的温暖也能“触动、温暖（touch）”一个人的心。touch one's heart为常见搭配，意为“触动某人的心灵”。A项break（打碎，break one's heart意为伤透某人的心）、C项test（测试）、D项follow（跟随）均不符合升华主题的语境。",
+        "knowledge": "动词词义辨析与主旨升华",
+        "evidence": "taught me how a little warmth can [15] someone's heart",
+        "points": 1
+      }
+    ],
+    "minutes": 15,
+    "type": "cloze",
+    "topic": "School volunteering and community reading",
+    "level": "基础",
+    "id": "cloze-001",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "完形填空：可持续菜园与科学观察",
+    "passage": "When Clara joined the school gardening club, her only goal was to grow large tomatoes. At first, whenever she spotted insects on the leaves, she immediately [1] reaching for chemical sprays. However, Mr. Jenkins, the club advisor, [2] her hand gently. \"Wait and watch first,\" he suggested, handing her a small notebook.\n\nReluctantly, Clara began to [3] the garden every afternoon. Sitting quietly among the raised beds, she noticed details she had previously [4]. Beneath the broad leaves, tiny ladybugs were [5] feeding on the aphids that harmed the stems. Meanwhile, earthworms tunneled through the damp soil, naturally [6] air and nutrients to the roots. What seemed like a chaotic collection of bugs was actually a balanced [7].\n\nInspired by these discoveries, Clara decided to [8] her approach. Instead of using chemicals, she planted marigolds around the borders to [9] pests away with their strong scent. She also started a compost bin, turning kitchen scraps into rich [10] for the beds. Throughout the season, she carefully [11] the growth rates of different plants and shared her findings with the club.\n\nBy autumn, the garden produced a modest but healthy harvest. More importantly, Clara had [12] a deeper appreciation for nature's quiet rhythms. She realized that sustainable gardening is not about [13] nature to follow human rules, [14] about listening to what the environment needs. Her notebook, once empty, was now [15] with sketches and observations—a true scientist's guide to patience.",
+    "instructions": "阅读下面短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Blank [1]",
+        "options": [
+          "A. considered",
+          "B. practiced",
+          "C. delayed",
+          "D. avoided"
+        ],
+        "answer": "A",
+        "explanation": "考查动词词义辨析。根据前文“spotted insects on the leaves（发现叶子上有昆虫）”以及后文老师制止她的动作可知，她第一反应是“考虑/想要”去拿化学喷雾。consider doing sth. 意为“考虑做某事”，符合语境。B项practiced（练习）、C项delayed（推迟）、D项avoided（避免）均与她想直接除虫的初衷不符。",
+        "knowledge": "动词词义辨析与上下文逻辑",
+        "evidence": "whenever she spotted insects on the leaves, she immediately [1] reaching for chemical sprays",
+        "points": 1
+      },
+      {
+        "id": "2",
+        "prompt": "Blank [2]",
+        "options": [
+          "A. shook",
+          "B. stopped",
+          "C. washed",
+          "D. raised"
+        ],
+        "answer": "B",
+        "explanation": "考查动词词义辨析。根据后文老师说的话“Wait and watch first（先等待并观察）”可知，老师温和地“拦住/阻止”了她去拿喷雾的手。B项stopped符合语境。A项shook（摇晃/握手）、C项washed（洗）、D项raised（举起）均不符合语境。",
+        "knowledge": "动词词义辨析与动作描写",
+        "evidence": "Mr. Jenkins, the club advisor, [2] her hand gently. \"Wait and watch first,\"",
+        "points": 1
+      },
+      {
+        "id": "3",
+        "prompt": "Blank [3]",
+        "options": [
+          "A. decorate",
+          "B. advertise",
+          "C. observe",
+          "D. expand"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。对应前文老师的建议“watch first（先观察）”以及给她的笔记本，此处指Clara开始每天下午“观察”菜园。C项observe（观察）符合语境。A项decorate（装饰）、B项advertise（宣传）、D项expand（扩大）均与后文安静地坐着看昆虫的行为不符。",
+        "knowledge": "词汇复现与动词辨析",
+        "evidence": "\"Wait and watch first,\" he suggested... Clara began to [3] the garden every afternoon.",
+        "points": 1
+      },
+      {
+        "id": "4",
+        "prompt": "Blank [4]",
+        "options": [
+          "A. overlooked",
+          "B. created",
+          "C. doubted",
+          "D. memorized"
+        ],
+        "answer": "A",
+        "explanation": "考查动词词义辨析。以前她只顾着用药除虫，现在安静地坐下来，注意到了以前“忽略/未注意到”的细节。A项overlooked（忽略、未注意到）符合语境。B项created（创造）、C项doubted（怀疑）、D项memorized（记忆）均不符合逻辑。",
+        "knowledge": "动词词义辨析与转折对比",
+        "evidence": "Sitting quietly among the raised beds, she noticed details she had previously [4].",
+        "points": 1
+      },
+      {
+        "id": "5",
+        "prompt": "Blank [5]",
+        "options": [
+          "A. accidentally",
+          "B. busily",
+          "C. awkwardly",
+          "D. unwillingly"
+        ],
+        "answer": "B",
+        "explanation": "考查副词词义辨析。在宽大的叶子下面，小瓢虫正在“忙碌地”捕食伤害茎秆的蚜虫。B项busily（忙碌地）生动地描绘出自然界生物活动的景象。A项accidentally（偶然地）、C项awkwardly（笨拙地）、D项unwillingly（不情愿地）均不符合生态习性描述。",
+        "knowledge": "副词词义辨析",
+        "evidence": "tiny ladybugs were [5] feeding on the aphids that harmed the stems.",
+        "points": 1
+      },
+      {
+        "id": "6",
+        "prompt": "Blank [6]",
+        "options": [
+          "A. blocking",
+          "B. selling",
+          "C. delivering",
+          "D. comparing"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。蚯蚓在潮湿的土壤中穿行，自然地为植物根部“输送”空气和养分。deliver sth. to... 意为“向……输送/传递某物”，符合科学常识与语境。A项blocking（阻挡）、B项selling（售卖）、D项comparing（比较）均不符合语境。",
+        "knowledge": "动词词义辨析与搭配",
+        "evidence": "earthworms tunneled through the damp soil, naturally [6] air and nutrients to the roots.",
+        "points": 1
+      },
+      {
+        "id": "7",
+        "prompt": "Blank [7]",
+        "options": [
+          "A. competition",
+          "B. system",
+          "C. experiment",
+          "D. argument"
+        ],
+        "answer": "B",
+        "explanation": "考查名词词义辨析。瓢虫吃害虫、蚯蚓松土输送养分，这些看似混乱的虫子实际上构成了一个平衡的（生态）“系统”。B项system（系统、体系）符合语境。A项competition（比赛/竞争）、C项experiment（实验）、D项argument（争论）均无法体现和谐平衡的整体概念。",
+        "knowledge": "名词词义辨析与语篇主旨",
+        "evidence": "What seemed like a chaotic collection of bugs was actually a balanced [7].",
+        "points": 1
+      },
+      {
+        "id": "8",
+        "prompt": "Blank [8]",
+        "options": [
+          "A. defend",
+          "B. hide",
+          "C. adjust",
+          "D. repeat"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。受到这些发现的启发，Clara决定“调整”她的方法，不再使用化学药剂。C项adjust（调整、改变）符合语境。A项defend（辩护/防御）、B项hide（隐藏）、D项repeat（重复）均与后文改用生态种植方法的行为相悖。",
+        "knowledge": "动词词义辨析与因果逻辑",
+        "evidence": "Inspired by these discoveries, Clara decided to [8] her approach. Instead of using chemicals...",
+        "points": 1
+      },
+      {
+        "id": "9",
+        "prompt": "Blank [9]",
+        "options": [
+          "A. drive",
+          "B. carry",
+          "C. blow",
+          "D.wash"
+        ],
+        "answer": "A",
+        "explanation": "考查动词短语辨析。她在边缘种植万寿菊，利用其强烈的气味将害虫“驱赶”走。drive... away 意为“把……赶走/驱逐”，符合植物防虫的语境。B项carry（携带）、C项blow（吹）、D项wash（冲刷）均不能与气味驱虫搭配。",
+        "knowledge": "动词词义及短语搭配",
+        "evidence": "she planted marigolds around the borders to [9] pests away with their strong scent.",
+        "points": 1
+      },
+      {
+        "id": "10",
+        "prompt": "Blank [10]",
+        "options": [
+          "A. medicine",
+          "B. plastic",
+          "C. shade",
+          "D. fertilizer"
+        ],
+        "answer": "D",
+        "explanation": "考查名词词义辨析。根据前半句“started a compost bin, turning kitchen scraps into...（建立堆肥箱，把厨余垃圾变成……）”可知，厨余堆肥会变成肥沃的“肥料”。D项fertilizer（肥料）符合常识与语境。A项medicine（药）、B项plastic（塑料）、C项shade（阴凉处）均不符合堆肥的产物。",
+        "knowledge": "名词词义辨析与生活常识",
+        "evidence": "started a compost bin, turning kitchen scraps into rich [10] for the beds.",
+        "points": 1
+      },
+      {
+        "id": "11",
+        "prompt": "Blank [11]",
+        "options": [
+          "A. recorded",
+          "B. predicted",
+          "C. imagined",
+          "D. ignored"
+        ],
+        "answer": "A",
+        "explanation": "考查动词词义辨析。结合第一段的notebook以及最后一段的“with sketches and observations”可知，整个季节她都仔细“记录”不同植物的生长速度。A项recorded（记录）符合科学观察的做法。B项predicted（预测）、C项imagined（想象）、D项ignored（忽视）均与分享真实发现（findings）不符。",
+        "knowledge": "动词词义辨析与前后呼应",
+        "evidence": "she carefully [11] the growth rates of different plants and shared her findings",
+        "points": 1
+      },
+      {
+        "id": "12",
+        "prompt": "Blank [12]",
+        "options": [
+          "A. lost",
+          "B. gained",
+          "C. demanded",
+          "D. borrowed"
+        ],
+        "answer": "B",
+        "explanation": "考查动词词义辨析。更重要的是，通过这次经历，Clara对大自然宁静的规律“获得/产生”了更深的理解与欣赏。gain an appreciation for... 意为“对……产生欣赏/理解”。A项lost（失去）、C项demanded（要求）、D项borrowed（借）均不符合个人成长的积极语境。",
+        "knowledge": "动词词义辨析与搭配",
+        "evidence": "More importantly, Clara had [12] a deeper appreciation for nature's quiet rhythms.",
+        "points": 1
+      },
+      {
+        "id": "13",
+        "prompt": "Blank [13]",
+        "options": [
+          "A. begging",
+          "B. allowing",
+          "C. forcing",
+          "D. reminding"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。她意识到可持续园艺不是“强迫”自然界遵循人类的规则（如起初想直接用化学喷雾消灭所有虫子）。C项forcing（强迫）与后文listening（倾听）形成鲜明对比。A项begging（乞求）、B项allowing（允许）、D项reminding（提醒）均不符合语境。",
+        "knowledge": "动词词义辨析与对比逻辑",
+        "evidence": "sustainable gardening is not about [13] nature to follow human rules",
+        "points": 1
+      },
+      {
+        "id": "14",
+        "prompt": "Blank [14]",
+        "options": [
+          "A. or",
+          "B. so",
+          "C. and",
+          "D. but"
+        ],
+        "answer": "D",
+        "explanation": "考查连词与固定句型。此处构成 not... but... 句型，意为“不是……而是……”：可持续园艺不是强迫自然遵循人类规则，而是倾听环境的需求。D项but符合语法和逻辑结构。A项or、B项so、C项and均不能构成此并列转折结构。",
+        "knowledge": "连词辨析与固定句式",
+        "evidence": "not about [13] nature to follow human rules, [14] about listening to what the environment needs.",
+        "points": 1
+      },
+      {
+        "id": "15",
+        "prompt": "Blank [15]",
+        "options": [
+          "A. filled",
+          "B. covered",
+          "C. replaced",
+          "D. equipped"
+        ],
+        "answer": "A",
+        "explanation": "考查动词词义及固定搭配。她的笔记本曾经是空白的（once empty），现在“充满/写满”了素描和观察记录。be filled with... 意为“充满……”，与empty形成反义呼应。B项covered（覆盖，通常指表面）、C项replaced（取代）、D项equipped（装备）均不符合笔记本内部写满内容的语境。",
+        "knowledge": "固定搭配与反义呼应",
+        "evidence": "Her notebook, once empty, was now [15] with sketches and observations",
+        "points": 1
+      }
+    ],
+    "minutes": 15,
+    "type": "cloze",
+    "topic": "Sustainable gardens and scientific observation",
+    "level": "标准",
+    "id": "cloze-002",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "跨越国界的皮影情缘",
+    "instructions": "阅读下面短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "passage": "When Clara arrived in Xi'an as an exchange student, she felt disconnected from the unfamiliar surroundings. Everything seemed foreign until she [1] a small courtyard theater one rainy afternoon. Inside, an elderly craftsman named Master Zhao was performing shadow puppetry. Behind the illuminated screen, leather figures [2] to life, dancing to the rhythm of traditional drums. Clara was deeply [3] by the ancient art.\n\nDriven by curiosity, she visited Master Zhao the next day and asked if she could learn the craft. Although they didn't share a common [4], Master Zhao welcomed her with a warm smile. The training was far more [5] than Clara had imagined. Carving the leather required extreme [6]; a single slip of the knife could ruin hours of work. At first, her fingers were sore and her movements [7]. Feeling frustrated, she nearly [8], but Master Zhao patiently guided her hands, showing her how to [9] the puppets' joints with thin bamboo sticks.\n\nGradually, Clara began to understand the stories behind the characters. One day, she [10] adapting a European fairy tale using Chinese shadow puppets for the university's international festival. Master Zhao's eyes lit up with [11]. Together, they designed new figures that [12] Western costumes with traditional Chinese carving techniques.\n\nOn the night of the performance, the audience [13] into thunderous applause. Watching the shadows dance harmoniously, Clara realized that art needs no [14]. It serves as a timeless [15] connecting hearts across different cultures.",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "[1]",
+        "options": [
+          "A. took over",
+          "B. stumbled upon",
+          "C. set up",
+          "D. looked after"
+        ],
+        "answer": "B",
+        "explanation": "考查动词短语辨析。根据前文“she felt disconnected from the unfamiliar surroundings”及后文她进入剧院看到皮影戏可知，她是在某个雨天下午“偶然发现”了一个小四合院剧场。stumble upon意为“偶然发现，无意中遇到”，符合语境。A项take over（接管）、C项set up（建立）、D项look after（照顾）均不符合文意。",
+        "knowledge": "动词短语辨析与上下文语境",
+        "evidence": "until she [1] a small courtyard theater one rainy afternoon",
+        "points": 1
+      },
+      {
+        "id": "2",
+        "prompt": "[2]",
+        "options": [
+          "A. came",
+          "B. returned",
+          "C. adapted",
+          "D. replied"
+        ],
+        "answer": "A",
+        "explanation": "考查固定搭配与动词词义辨析。根据“Behind the illuminated screen, leather figures [2] to life”可知，在亮起的幕布后面，皮影人物变得栩栩如生。come to life为固定短语，意为“变得逼真，苏醒过来，活跃起来”。B项return（返回）、C项adapt（适应，改编）、D项reply（回答）均不能构成此意。",
+        "knowledge": "动词词义辨析与固定搭配",
+        "evidence": "Behind the illuminated screen, leather figures [2] to life",
+        "points": 1
+      },
+      {
+        "id": "3",
+        "prompt": "[3]",
+        "options": [
+          "A. confused",
+          "B. frightened",
+          "C. fascinated",
+          "D. amused"
+        ],
+        "answer": "C",
+        "explanation": "考查形容词词义辨析。根据下一段首句“Driven by curiosity, she visited Master Zhao the next day and asked if she could learn the craft.”可知，Clara被这门古老的艺术深深“迷住/吸引”了。fascinated意为“着迷的，被深深吸引的”，符合语境。A项confused（困惑的）、B项frightened（害怕的）、D项amused（被逗乐的，侧重好玩好笑）均不如C项准确体现她对古老艺术的向往。",
+        "knowledge": "形容词词义辨析与情感态度",
+        "evidence": "Clara was deeply [3] by the ancient art.",
+        "points": 1
+      },
+      {
+        "id": "4",
+        "prompt": "[4]",
+        "options": [
+          "A. interest",
+          "B. language",
+          "C. belief",
+          "D. goal"
+        ],
+        "answer": "B",
+        "explanation": "考查名词词义辨析。根据首句“When Clara arrived in Xi'an as an exchange student”以及后文赵师傅通过微笑欢迎她、手把手教她可知，两人没有共同的“语言”。language意为“语言”，符合跨文化交流的语境。而两人都热爱皮影，说明有共同的interest（兴趣）和goal（目标），故排除A、D；C项belief（信仰）与文意无关。",
+        "knowledge": "名词词义辨析与文化背景",
+        "evidence": "Although they didn't share a common [4], Master Zhao welcomed her with a warm smile.",
+        "points": 1
+      },
+      {
+        "id": "5",
+        "prompt": "[5]",
+        "options": [
+          "A. rewarding",
+          "B. relaxing",
+          "C. demanding",
+          "D. entertaining"
+        ],
+        "answer": "C",
+        "explanation": "考查形容词词义辨析。后文提到“a single slip of the knife could ruin hours of work. At first, her fingers were sore...”（刀稍微一滑就可能毁掉几个小时的工作。起初她的手指酸痛……），说明训练远比她想象的要“费力/要求高”。demanding意为“要求高的，费力的”，符合语境。A项rewarding（有回报的）、B项relaxing（轻松的）、D项entertaining（有趣的）均与后文描述的困难不符。",
+        "knowledge": "形容词词义辨析与下文逻辑印证",
+        "evidence": "The training was far more [5] than Clara had imagined.",
+        "points": 1
+      },
+      {
+        "id": "6",
+        "prompt": "[6]",
+        "options": [
+          "A. courage",
+          "B. generosity",
+          "C. honesty",
+          "D. precision"
+        ],
+        "answer": "D",
+        "explanation": "考查名词词义辨析。根据分号后的解释“a single slip of the knife could ruin hours of work”（刀稍微一滑就可能毁掉几小时的心血）可知，雕刻皮革需要极高的“精确度/严谨”。precision意为“精确，准确”，符合语境。A项courage（勇气）、B项generosity（慷慨）、C项honesty（诚实）均与雕刻技艺的精细要求无关。",
+        "knowledge": "名词词义辨析与同义解释线索",
+        "evidence": "Carving the leather required extreme [6]; a single slip of the knife could ruin hours of work.",
+        "points": 1
+      },
+      {
+        "id": "7",
+        "prompt": "[7]",
+        "options": [
+          "A. clumsy",
+          "B. rapid",
+          "C. gentle",
+          "D. fluent"
+        ],
+        "answer": "A",
+        "explanation": "考查形容词词义辨析。根据前文“At first, her fingers were sore”以及后文“Feeling frustrated... Master Zhao patiently guided her hands”可知，她刚开始学的时候动作很“笨拙”。clumsy意为“笨拙的，不灵巧的”，符合初学者受挫的语境。B项rapid（迅速的）、C项gentle（温柔的）、D项fluent（流利的，娴熟的）均不符合语境。",
+        "knowledge": "形容词词义辨析与句内并列逻辑",
+        "evidence": "At first, her fingers were sore and her movements [7].",
+        "points": 1
+      },
+      {
+        "id": "8",
+        "prompt": "[8]",
+        "options": [
+          "A. showed off",
+          "B. gave up",
+          "C. calmed down",
+          "D. stood out"
+        ],
+        "answer": "B",
+        "explanation": "考查动词短语辨析。根据前文“Feeling frustrated”（感到挫败）及后文“but Master Zhao patiently guided her hands”（但赵师傅耐心地指导她的双手）可知，她几乎要“放弃”了。give up意为“放弃”，符合语境。A项show off（炫耀）、C项calm down（冷静下来）、D项stand out（脱颖而出）均不符合转折前的消极情绪。",
+        "knowledge": "动词短语辨析与转折逻辑",
+        "evidence": "Feeling frustrated, she nearly [8], but Master Zhao patiently guided her hands",
+        "points": 1
+      },
+      {
+        "id": "9",
+        "prompt": "[9]",
+        "options": [
+          "A. repair",
+          "B. cover",
+          "C. control",
+          "D. Polishes"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析。根据常识和语境“showing her how to [9] the puppets' joints with thin bamboo sticks”可知，皮影戏是用细竹竿来“控制/操纵”皮影人物的关节。control意为“控制，操纵”，符合语境。A项repair（修理）、B项cover（覆盖）、D项polish（擦亮，润色，且形式不对）均不符合皮影戏的表演操作。",
+        "knowledge": "动词词义辨析与语境常识",
+        "evidence": "showing her how to [9] the puppets' joints with thin bamboo sticks.",
+        "points": 1
+      },
+      {
+        "id": "10",
+        "prompt": "[10]",
+        "options": [
+          "A. admitted",
+          "B. postponed",
+          "C. avoided",
+          "D. proposed"
+        ],
+        "answer": "D",
+        "explanation": "考查动词词义辨析。根据后文“adapting a European fairy tale using Chinese shadow puppets for the university's international festival”及赵师傅积极的反应可知，这是Clara“提议/提出”的一个想法。propose意为“提议，建议”，后接动名词adapting，符合语境。A项admit（承认）、B项postpone（推迟）、C项avoid（避免）均与后文两人愉快合作制作新皮影的情节不符。",
+        "knowledge": "动词词义辨析与情节发展",
+        "evidence": "One day, she [10] adapting a European fairy tale using Chinese shadow puppets",
+        "points": 1
+      },
+      {
+        "id": "11",
+        "prompt": "[11]",
+        "options": [
+          "A. doubt",
+          "B. approval",
+          "C. sympathy",
+          "D. relief"
+        ],
+        "answer": "B",
+        "explanation": "考查名词词义辨析。根据“Master Zhao's eyes lit up”（赵师傅眼睛一亮）和后文“Together, they designed new figures”（他们一起设计了新人物）可知，赵师傅对她的提议表示“赞许/认可”。approval意为“赞成，认可”，符合语境。A项doubt（怀疑）、C项sympathy（同情）、D项relief（宽慰，松了一口气）均与“eyes lit up”表达的兴奋与赞同不符。",
+        "knowledge": "名词词义辨析与情感描写",
+        "evidence": "Master Zhao's eyes lit up with [11].",
+        "points": 1
+      },
+      {
+        "id": "12",
+        "prompt": "[12]",
+        "options": [
+          "A. combined",
+          "B. compared",
+          "C. replaced",
+          "D. confused"
+        ],
+        "answer": "A",
+        "explanation": "考查动词词义辨析及固定搭配。根据前文用中国皮影改编欧洲童话可知，他们设计的新皮影人物将西方服饰与中国传统雕刻技艺“结合”在了一起。combine... with...意为“把……与……结合起来”，符合中西文化交融的主题。B项compare（比较）、C项replace（取代）、D项confuse（使困惑，混淆）均不符合合作创新的文意。",
+        "knowledge": "动词词义辨析与固定搭配",
+        "evidence": "Together, they designed new figures that [12] Western costumes with traditional Chinese carving techniques.",
+        "points": 1
+      },
+      {
+        "id": "13",
+        "prompt": "[13]",
+        "options": [
+          "A. crashed",
+          "B. divided",
+          "C. erupted",
+          "D. bumped"
+        ],
+        "answer": "C",
+        "explanation": "考查动词词义辨析与固定搭配。根据“into thunderous applause”可知，演出现场观众“爆发出”雷鸣般的掌声。erupt into applause为常用搭配，意为“爆发出掌声”。A项crash（撞击，坠毁）、B项divide（分割）、D项bump（碰撞）均不能与applause搭配使用。",
+        "knowledge": "动词词义辨析与固定搭配",
+        "evidence": "On the night of the performance, the audience [13] into thunderous applause.",
+        "points": 1
+      },
+      {
+        "id": "14",
+        "prompt": "[14]",
+        "options": [
+          "A. practice",
+          "B. translation",
+          "C. stage",
+          "D. patience"
+        ],
+        "answer": "B",
+        "explanation": "考查名词词义辨析。根据前文她和赵师傅虽然语言不通（didn't share a common language），但依然通过皮影艺术达成默契，并成功演出了中西合璧的故事，可知Clara意识到艺术是不需要“翻译”的。translation意为“翻译”，与第4空的language相呼应。艺术显然需要A项practice（练习）、C项stage（舞台）和D项patience（耐心），故排除。",
+        "knowledge": "名词词义辨析与首尾呼应",
+        "evidence": "Watching the shadows dance harmoniously, Clara realized that art needs no [14].",
+        "points": 1
+      },
+      {
+        "id": "15",
+        "prompt": "[15]",
+        "options": [
+          "A. barrier",
+          "B. boundary",
+          "C. secret",
+          "D. bridge"
+        ],
+        "answer": "D",
+        "explanation": "考查名词词义辨析。根据后文定语“connecting hearts across different cultures”（连接不同文化间心灵的……）可知，艺术充当了一座永恒的“桥梁”。bridge意为“桥梁，纽带”，符合文化交流的主旨。A项barrier（障碍）、B项boundary（边界，界限）、C项secret（秘密）均不符合“连接心灵”的比喻意义。",
+        "knowledge": "名词词义辨析与主旨升华",
+        "evidence": "It serves as a timeless [15] connecting hearts across different cultures.",
+        "points": 1
+      }
+    ],
+    "minutes": 15,
+    "type": "cloze",
+    "topic": "Traditional arts and cultural exchange",
+    "level": "标准",
+    "id": "cloze-003",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  },
+  {
+    "title": "完形填空：晨跑俱乐部的坚持与协作",
+    "instructions": "阅读下面短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "passage": "Staying up late had become my daily routine during my first semester of high school. Exhausted every morning, I decided to [1] this unhealthy lifestyle by joining the school’s sunrise running club. \n\nOn the first day, my legs felt like heavy stones after a short distance. Watching experienced runners move effortlessly ahead, I was tempted to [2]. Just as I slowed down, Leo, the club captain, jogged back to my side. Instead of pushing me to speed up, he [3] his pace to match mine and taught me how to regulate my breathing. \"Running isn't a solo struggle here; we [4] each other,\" he said warmly.\n\nGradually, the group's discipline began to [5] my own daily habits. To keep up with the team, I started turning off my phone early and getting [6] sleep. In the mornings, we didn't just run; we exchanged nutritious breakfast recipes and [7] our progress in a shared notebook. Whenever someone felt unmotivated, the rest of the team would offer timely [8]. \n\nOne rainy Friday, our coach suggested a relay challenge. Each member had to complete a tough lap while others [9] from the trackside. When the baton was handed to me, the slippery ground made me [10], nearly causing a fall. Yet, hearing my teammates' loud cheers, I regained my [11] and crossed the line safely.\n\nMonths later, my [12] had improved dramatically, and my focus in class sharpened. More importantly, I realized that building healthy habits is far more [13] when supported by a community. True teamwork doesn't demand immediate perfection; rather, it [14] patience, shared goals, and the willingness to lift others up when they [15].",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Select the best word for blank [1].",
+        "options": [
+          "A. defend",
+          "B. abandon",
+          "C. maintain",
+          "D. tolerate"
+        ],
+        "answer": "B",
+        "explanation": "根据前文“熬夜成了日常，每天早上都很疲惫”以及后文“通过加入晨跑俱乐部”可知，作者决定“放弃/摒弃（abandon）”这种不健康的生活方式。A项defend（辩护/保卫）、C项maintain（维持）、D项tolerate（容忍）均与做出积极改变的语境相悖。",
+        "knowledge": "动词词义辨析与上下文逻辑",
+        "evidence": "Exhausted every morning, I decided to [1] this unhealthy lifestyle by joining the school’s sunrise running club.",
+        "points": 1
+      },
+      {
+        "id": "2",
+        "prompt": "Select the best word for blank [2].",
+        "options": [
+          "A. quit",
+          "B. cheer",
+          "C. boast",
+          "D. accelerate"
+        ],
+        "answer": "A",
+        "explanation": "由前句“跑了一小段后双腿像沉重的石头”以及“看着有经验的跑者轻松跑在前面”可知，作者产生了“放弃（quit）”的念头。B项cheer（欢呼）、C项boast（自夸）、D项accelerate（加速）均不符合双腿沉重且受挫时的心理。",
+        "knowledge": "动词词义辨析与情感态度推断",
+        "evidence": "On the first day, my legs felt like heavy stones after a short distance. Watching experienced runners move effortlessly ahead, I was tempted to [2].",
+        "points": 1
+      },
+      {
+        "id": "3",
+        "prompt": "Select the best word for blank [3].",
+        "options": [
+          "A. maintained",
+          "B. adjusted",
+          "C. recorded",
+          "D. ignored"
+        ],
+        "answer": "B",
+        "explanation": "根据前文“Instead of pushing me to speed up（没有催我加速）”和后文“to match mine（以配合我的速度）”可知，队长跑回来并“调整（adjusted）”了他的步速。A项maintained（保持原速）无法配合慢下来的作者；C项recorded（记录）、D项ignored（忽视）语义不通。",
+        "knowledge": "动词词义辨析与语境衔接",
+        "evidence": "Instead of pushing me to speed up, he [3] his pace to match mine",
+        "points": 1
+      },
+      {
+        "id": "4",
+        "prompt": "Select the best word for blank [4].",
+        "options": [
+          "A. outrun",
+          "B. evaluate",
+          "C. support",
+          "D. replace"
+        ],
+        "answer": "C",
+        "explanation": "队长说“在这里跑步不是一个人的孤军奋战”，结合他降速陪跑、教呼吸技巧的行为，可知团队成员之间是互相“支持（support）”的。A项outrun（跑得比……快）、B项evaluate（评估）、D项replace（取代）均不符合团队互助的主题。",
+        "knowledge": "动词词义辨析与主题把握",
+        "evidence": "Running isn't a solo struggle here; we [4] each other",
+        "points": 1
+      },
+      {
+        "id": "5",
+        "prompt": "Select the best word for blank [5].",
+        "options": [
+          "A. reshape",
+          "B. expose",
+          "C. test",
+          "D. delay"
+        ],
+        "answer": "A",
+        "explanation": "第一段提到作者原本熬夜，后文提到“为了跟上团队，我开始早早关手机”，说明团队的自律开始“重塑/改变（reshape）”作者自己的日常习惯。B项expose（暴露）、C项test（测试）、D项delay（推迟）均不能体现旧习惯向好习惯转变的过程。",
+        "knowledge": "动词词义辨析与篇章因果关系",
+        "evidence": "Gradually, the group's discipline began to [5] my own daily habits.",
+        "points": 1
+      },
+      {
+        "id": "6",
+        "prompt": "Select the best word for blank [6].",
+        "options": [
+          "A. brief",
+          "B. irregular",
+          "C. sufficient",
+          "D. light"
+        ],
+        "answer": "C",
+        "explanation": "为了早起跟上晨跑团队，作者早早关掉手机，目的是获得“充足的（sufficient）”睡眠，从而改变过去熬夜疲惫的状态。A项brief（短暂的）、B项irregular（不规律的）、D项light（浅的）均与健康作息相悖。",
+        "knowledge": "形容词词义辨析与常识逻辑",
+        "evidence": "To keep up with the team, I started turning off my phone early and getting [6] sleep.",
+        "points": 1
+      },
+      {
+        "id": "7",
+        "prompt": "Select the best word for blank [7].",
+        "options": [
+          "A. hid",
+          "B. tracked",
+          "C. predicted",
+          "D. doubted"
+        ],
+        "answer": "B",
+        "explanation": "结合宾语“our progress（我们的进步/进展）”和地点状语“in a shared notebook（在共享笔记本上）”可知，大家在本子上“记录/追踪（tracked）”各自的进步。A项hid（隐藏）、C项predicted（预测）、D项doubted（怀疑）均不合常理。",
+        "knowledge": "动词词义辨析与动宾搭配",
+        "evidence": "we exchanged nutritious breakfast recipes and [7] our progress in a shared notebook.",
+        "points": 1
+      },
+      {
+        "id": "8",
+        "prompt": "Select the best word for blank [8].",
+        "options": [
+          "A. criticism",
+          "B. encouragement",
+          "C. warnings",
+          "D. apologies"
+        ],
+        "answer": "B",
+        "explanation": "前文的条件是“Whenever someone felt unmotivated（每当有人感到缺乏动力时）”，在互助团队中，其他成员自然会给予及时的“鼓励（encouragement）”。A项criticism（批评）、C项warnings（警告）、D项apologies（道歉）均不符合积极的团队氛围。",
+        "knowledge": "名词词义辨析与语境对应",
+        "evidence": "Whenever someone felt unmotivated, the rest of the team would offer timely [8].",
+        "points": 1
+      },
+      {
+        "id": "9",
+        "prompt": "Select the best word for blank [9].",
+        "options": [
+          "A. rested",
+          "B. watched",
+          "C. wandered",
+          "D. competed"
+        ],
+        "answer": "B",
+        "explanation": "这是一个接力挑战（relay challenge），每个人跑一圈，此时其他人在跑道旁“观看（watched）”并为队友加油（对应后文的loud cheers）。A项rested（休息）不如watched更能呼应后文关注赛况并呐喊助威的情景；C项wandered（闲逛）态度散漫；D项competed（竞争）有误，因为接力赛队友是在场边等候关注而非同时在跑道旁竞争。",
+        "knowledge": "动词词义辨析与场景复现",
+        "evidence": "Each member had to complete a tough lap while others [9] from the trackside.",
+        "points": 1
+      },
+      {
+        "id": "10",
+        "prompt": "Select the best word for blank [10].",
+        "options": [
+          "A. slip",
+          "B. freeze",
+          "C. jump",
+          "D. wave"
+        ],
+        "answer": "A",
+        "explanation": "主语是“the slippery ground（湿滑的地面）”，后文结果是“nearly causing a fall（差点摔倒）”，因此是湿滑的地面让作者“滑了一下（slip）”。B项freeze（呆住/结冰）、C项jump（跳跃）、D项wave（挥手）均与地面湿滑差点摔倒的因果关系不符。",
+        "knowledge": "动词词义辨析与因果逻辑",
+        "evidence": "the slippery ground made me [10], nearly causing a fall.",
+        "points": 1
+      },
+      {
+        "id": "11",
+        "prompt": "Select the best word for blank [11].",
+        "options": [
+          "A. memory",
+          "B. Sight",
+          "C. balance",
+          "D. patience"
+        ],
+        "answer": "C",
+        "explanation": "前文说作者脚下一滑差点摔倒（nearly causing a fall），后文说安全冲过终点线（crossed the line safely），说明听到队友的欢呼声后，作者重新找回了身体与心理上的“平衡（balance）”。A项memory（记忆）、B项sight（视力）、D项patience（耐心）均无法衔接“差点摔倒”到“安全过线”的动作。",
+        "knowledge": "名词词义辨析与动作衔接",
+        "evidence": "Yet, hearing my teammates' loud cheers, I regained my [11] and crossed the line safely.",
+        "points": 1
+      },
+      {
+        "id": "12",
+        "prompt": "Select the best word for blank [12].",
+        "options": [
+          "A. ambition",
+          "B. fitness",
+          "C. status",
+          "D. honesty"
+        ],
+        "answer": "B",
+        "explanation": "经过几个月的晨跑、充足睡眠和营养早餐，作者得到显著提升的应当是“体能/健康状况（fitness）”，且与后半句“课堂注意力也变得敏锐”形成身心两方面的积极变化。A项ambition（野心）、C项status（地位）、D项honesty（诚实）均偏离了健康习惯带来的直接益处。",
+        "knowledge": "名词词义辨析与主旨呼应",
+        "evidence": "Months later, my [12] had improved dramatically, and my focus in class sharpened.",
+        "points": 1
+      },
+      {
+        "id": "13",
+        "prompt": "Select the best word for blank [13].",
+        "options": [
+          "A. complicated",
+          "B. sustainable",
+          "C. temporary",
+          "D. demanding"
+        ],
+        "answer": "B",
+        "explanation": "作者从第一天想放弃，到在团队支持下坚持了几个月并养成好习惯，感悟到在群体的支持下，培养健康习惯变得更加“可持续（sustainable）”。A项complicated（复杂的）、C项temporary（暂时的）、D项demanding（费力的/要求高的）均为负面或消极词汇，不符合全文褒扬团队作用的基调。",
+        "knowledge": "形容词词义辨析与语篇升华",
+        "evidence": "I realized that building healthy habits is far more [13] when supported by a community.",
+        "points": 1
+      },
+      {
+        "id": "14",
+        "prompt": "Select the best word for blank [14].",
+        "options": [
+          "A. lacks",
+          "B. avoids",
+          "C. involves",
+          "D. limits"
+        ],
+        "answer": "C",
+        "explanation": "前句说“真正的团队合作并不要求立即做到完美；相反，它……耐心、共同的目标以及扶起他人的意愿”。这里是对真正团队合作内涵的阐述，故填“包含/需要（involves）”。A项lacks（缺乏）、B项avoids（避免）、D项limits（限制）均与句意完全相反。",
+        "knowledge": "动词词义辨析与句间逻辑",
+        "evidence": "True teamwork doesn't demand immediate perfection; rather, it [14] patience, shared goals",
+        "points": 1
+      },
+      {
+        "id": "15",
+        "prompt": "Select the best word for blank [15].",
+        "options": [
+          "A. struggle",
+          "B. succeed",
+          "C. lead",
+          "D. celebrate"
+        ],
+        "answer": "A",
+        "explanation": "根据前文“lift others up（把他人扶起来/振作起来）”以及全文讲述的“当作者跑不动想放弃、缺乏动力、雨天打滑时队友给予帮助”可知，是在他人“苦苦挣扎/遇到困难（struggle）”时伸出援手，这也与第二段队长的原话“Running isn't a solo struggle”形成词汇呼应。B项succeed（成功）、C项lead（领先）、D项celebrate（庆祝）时均不需要“lift up”。",
+        "knowledge": "动词词义辨析与首尾呼应",
+        "evidence": "the willingness to lift others up when they [15].",
+        "points": 1
+      }
+    ],
+    "minutes": 15,
+    "type": "cloze",
+    "topic": "Healthy habits and teamwork",
+    "level": "挑战",
+    "id": "cloze-004",
+    "source": "原创模拟 · 教学情境创作 · Gemini 编写 · Codex 复核",
+    "origin": "original"
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "card_01",
+    "title": "定语从句关系词的精准判定：缺什么补什么",
+    "category": "定语从句",
+    "body": "判断定语从句的关系词，先找先行词，再分析从句缺少的成分。关系代词 who/whom/which/that 可在从句中作主语、宾语等；whose 表所属关系，在名词前作定语，例如 a student whose work is excellent。若空缺承担时间、地点或原因状语，可根据语境使用 when/where/why，或合适的“介词 + which”。不要仅因先行词是地点就填 where：the school that I visited 中 visited 缺宾语，应使用关系代词。非限制性从句不用 that；介词提前时，指物常用 which、指人用 whom。",
+    "examples": [
+      "This is the museum which/that we visited last month.（从句谓语visited是及物动词，缺少宾语，故用关系代词which或that，不能因为museum是地点就用where。）",
+      "This is the museum where we worked as volunteers last month.（从句谓语worked是不及物动词，主干成分完整，先行词在从句中作地点状语，故用关系副词where。）"
+    ],
+    "pitfall": "看到先行词是表示地点的名词（如factory, school）或抽象地点名词（如situation, case, point）就机械地填where，忽略了从句中及物动词其实缺少宾语。",
+    "practice": "题目：We have reached a stage ______ we must take effective measures to protect the environment. 解析与答案：填where。从句主谓宾成分完整（we must take effective measures），先行词stage为抽象地点名词，在从句中作地点状语，相当于in which，故填where。"
+  },
+  {
+    "id": "card_02",
+    "title": "时态选择的时间锚点与语境逻辑",
+    "category": "时态",
+    "body": "判断时态要结合动作发生的时间、参照点和说话者想强调的意义。若叙述过去事件之前已经完成的动作，常用过去完成时 had done；若强调过去动作与现在的联系，可用现在完成时。have been doing 更突出持续的活动过程。since 和 over the past few years 常与完成时连用，但不能脱离整句机械判断。客观事实通常用一般现在时；固定时刻表也可用一般现在时表达未来安排。题目若存在不止一种符合语境的时态，应说明各自表达重点。",
+    "examples": [
+      "By the time the firefighters arrived, the volunteers had put out the fire.（以arrived为过去时间锚点，“扑灭火”发生在“到达”之前，即“过去的过去”，故用过去完成时had put out。）",
+      "Great changes have taken place in our hometown over the past decade.（over the past decade表示从过去延续至今的时间段，主语与谓语需用现在完成时have taken place。）"
+    ],
+    "pitfall": "混淆一般过去时（did）与现在完成时（have done）：一般过去时仅陈述过去发生的事实，与现在无关；现在完成时则强调过去动作对当下的影响或延续至今的状态。",
+    "practice": "题目：I ______ (look) for my lost key all morning, but I still haven't found it. 参考：have been looking 强调一直寻找的过程；have looked 在强调已经作过寻找时也可能成立。应结合完整时间语境判断，不把开放语境当成只有一种形式。"
+  },
+  {
+    "id": "card_03",
+    "title": "被动语态的识别与不可用被动的特殊动词",
+    "category": "被动语态",
+    "body": "主语承受动作，而且动词在该用法中可以带宾语时，通常可用被动语态“be + 过去分词”。还要匹配时间与主语单复数，如 is being repaired、has been completed。happen、occur、take place、break out 等不及物用法不用被动；belong to 表归属时也不用被动。look、sound、prove 等作系动词时不用被动，但同一个词换成及物用法后规则可能改变：The theory has been proved correct 是正确句子。sell well、wash easily 描述物品特性时常用主动形式表达被动含义，不能据此断言这些动词永远不能用被动。",
+    "examples": [
+      "The new library is being built right now and will be completed next year.（主语library是“建造”和“完成”的承受者，结合时间状语分别使用现在进行时的被动和一般将来时的被动。）",
+      "The theory proved to be practical after several experiments.（prove在此作系动词，意为“证明是、结果是”，直接跟形容词或不定式，绝对不可写成was proved。）"
+    ],
+    "pitfall": "受中文表达习惯影响，将happen、take place、break out、belong to或consist of等不及物动词（短语）错误地写成被动语态（如was happened, is belonged to）。",
+    "practice": "题目：Great medical progress ______ (make) since the new policy was carried out. 解析与答案：填has been made。主语progress与make之间为被动关系，且since引导的从句表明主句需用现在完成时，且progress为不可数名词，故填has been made。"
+  },
+  {
+    "id": "card_04",
+    "title": "非谓语动词的三步定位法：析结构、找主语、判先后",
+    "category": "非谓语动词",
+    "body": "先判断空格所在结构需要谓语还是非谓语，不要仅凭“句中出现了一个动词”就决定。确定为非谓语后，分析它在句中作定语、状语、宾语还是补语，再找逻辑主语并判断主动、被动及时间关系。不定式常表达目的或尚未发生的动作；现在分词常有主动、进行的意味；过去分词常表示被动或完成，但这些是常见用法而非万能等式。having done 可突出先于谓语的动作，being done 表示进行中的被动。作状语时还应避免逻辑主语悬垂，如 Seeing the result, I smiled。",
+    "examples": [
+      "Seeing the inspiring film, the students felt deeply moved.（句子主语the students与see是主动关系且动作几乎同时发生，故用现在分词Seeing作时间或原因状语。）",
+      "The meeting to be held tomorrow is of great importance.（修饰名词meeting，由于时间是tomorrow表将来，且会议是“被举办”，故用不定式的被动形式to be held作后置定语。）"
+    ],
+    "pitfall": "作状语时未能确保分词的逻辑主语与主句主语一致（即造成悬垂分词），或机械认为句首用动词一定填doing而忽略了表目的的To do和表被动的Done。",
+    "practice": "题目：______ (equip) with advanced knowledge, the graduates are confident about their future. 解析与答案：填Equipped。句中已有系动词are，equip需用非谓语；固定搭配be equipped with表状态，主语graduates与equip为被动关系，故填过去分词Equipped作状语。"
+  },
+  {
+    "id": "card_05",
+    "title": "主谓一致的核心原则：剥离修饰与就近就远",
+    "category": "主谓一致",
+    "body": "解决主谓一致问题的首要任务是“剥离修饰成分，锁定核心主语”。高中考题常在主语后插入长定语从句、分词短语或介词短语来干扰视线。此时应严格遵循三大原则：一是语法一致，单数名词、不可数名词、动名词短语、不定式或主语从句作主语时，谓语通常用单数；二是就远原则，主语后接with, along with, as well as, rather than等词时，谓语单复数仅由最前面的核心主语决定；三是就近原则，由either...or..., neither...nor..., not only...but also...或there be连接的并列主语，谓语与靠近它的主语保持一致。",
+    "examples": [
+      "The teacher, together with his students, is doing an experiment in the lab.（含有together with，遵循就远原则，真正的核心主语是单数名词The teacher，故谓语用is。）",
+      "Listening to English podcasts regularly helps improve our pronunciation.（核心主语是动名词短语Listening to English podcasts，而非复数名词podcasts，故谓语用第三人称单数helps。）"
+    ],
+    "pitfall": "被主语后面紧挨着的复数名词（如介词宾语或定语从句中的名词）误导，从而错误地使用复数谓语动词。",
+    "practice": "题目：Neither the players nor the coach ______ (be) satisfied with the result of the match yesterday. 解析与答案：填was。neither...nor...连接主语遵循就近原则，靠近谓语的主语是单数名词the coach，且时间为yesterday，故填was。"
+  },
+  {
+    "id": "card_06",
+    "title": "冠词的泛指、特指与抽象名词具体化",
+    "category": "冠词",
+    "body": "选择冠词先看名词是否可数、单复数及语境是泛指还是特指。可数名词单数表示“一个”时常用 a/an；a/an 的选择取决于后一个词的起始音素，因此是 an hour、a university。the 常指双方已知、前文提及或语境中可唯一确定的事物。带有定语不等于一定特指，例如 I need a book that explains grammar 中仍可用 a。复数和不可数名词表泛指时常用零冠词。抽象名词表示某个具体的人或事时可能转为可数用法，如 The show was a great success，不能把这种变化机械推广到所有抽象名词。",
+    "examples": [
+      "Working as a volunteer in the community is an unforgettable experience.（experience作“经历”讲时是可数名词，unforgettable以元音音素开头，表泛指“一次难忘的经历”，故用an。）",
+      "The book recommended by our headteacher is worth reading twice.（book受后置过去分词短语recommended by...限定，属于明确的特指，故句首用The。）"
+    ],
+    "pitfall": "仅凭首字母是否为a, e, i, o, u来判断用a还是an（如误写an useful book），或忽略不可数名词在被限定词修饰表特指时也需要加the。",
+    "practice": "题目：As ______ matter of fact, the sports meeting turned out to be ______ great success. 解析与答案：第一空填a（固定短语as a matter of fact）；第二空填a（success在此处抽象名词具体化，指“一件成功的事”，故加不定冠词a）。"
+  },
+  {
+    "id": "card_07",
+    "title": "词性转换的句法定位与拼写变形规律",
+    "category": "词形变化",
+    "body": "先根据句法位置判断空格需要的词性，再考虑具体词形：修饰名词常用形容词；修饰动词、形容词或整句常用副词；缺少主语或宾语中心词时常需名词，但还要留意动名词等结构。确定词性后检查意义是否需要否定前缀，以及名词的单复数。派生规律应按词族积累，例如 contribute→contribution、possible→possibly、different→difference；不能把个别词的变化概括为“所有以 t 结尾的词都改成 ce”。词尾相似也不意味着词性和拼写变化相同。",
+    "examples": [
+      "Fortunately, the trapped tourists were rescued before the storm hit.（位于句首并用逗号隔开，修饰整个句子，需用副词；根据语境“获救”是好消息，故将fortunate变为Fortunately。）",
+      "His carelessness in the final exam led to the loss of many points.（形容词性物主代词His后接名词作主语，且导致丢分说明是“粗心”，故由care变形为否定意义的名词carelessness。）"
+    ],
+    "pitfall": "只完成了词性转换，却漏掉了名词的复数形式（如different变为difference后未加s），或忽略了上下文逻辑所需的否定前缀。",
+    "practice": "题目：The scientist made a great ______ (contribute) to the development of hybrid rice. 解析与答案：填contribution。冠词a和形容词great后面必须接可数名词单数作made的宾语，故将动词contribute转换为名词contribution。"
+  },
+  {
+    "id": "card_08",
+    "title": "语篇衔接手段：逻辑连接词与代词指代链",
+    "category": "语篇衔接",
+    "body": "七选五和写作中的衔接，要同时看语义与形式。代词 it/they/this 等常回指前文，但也可能指向后文或语境，不宜机械规定只能指前面的名词。做题时核对单复数、指代对象和语义是否连贯。连接词可提示转折、因果、递进或例证，如 however、therefore、moreover、for instance；同一个语段可能有多种合适的连接方式，仍须把选项代入全文检查。不能只因选项含有 however 就选它，还应看空前后是否真的存在转折。",
+    "examples": [
+      "Many students find it hard to balance study and rest. However, this problem can be solved by making a daily schedule.（However体现前后句转折关系，this problem精准回指前句中“难以平衡学习与休息”这一现象。）",
+      "Regular exercise strengthens our heart and lungs. Furthermore, it helps reduce mental stress effectively.（Furthermore表递进补充，代词it指代前句主语Regular exercise，使两句紧密咬合。）"
+    ],
+    "pitfall": "在“七选五”中只看重个别原词复现（词汇重叠），而忽略了选项中代词的单复数是否与前文名词匹配，或看错了上下文的正反逻辑走向。",
+    "practice": "题目：Some apps are designed to help us focus. ______, others constantly send notifications that distract our attention. (填合适连接副词) 解析与答案：填However / By contrast。前句讲Some...有助于专注，后句讲others...分散注意力，前后形成鲜明对比与转折。"
+  },
+  {
+    "id": "card_09",
+    "title": "阅读理解推理判断题的文本证据原则",
+    "category": "阅读推断",
+    "body": "推理判断题要求结论有文本依据，推导幅度与题目相符。先定位证据，再区分作者明确说了什么、合理暗示了什么，以及自己额外想象了什么。干扰项常偷换对象或因果、扩大适用范围，或加入文本没有支持的细节。must/never/all 等绝对词需要强证据，但并非看到它们就一定排除。正确选项可能是同义改写，也可能保留原文措辞，不能按“照抄原文就错”判断。最后将选项与问题一起读，确认回答的是所问内容而非仅仅陈述了文中某个事实。",
+    "examples": [
+      "原文：Hardly anyone in the village bought the new machine at first, as its price equaled their half-year income. 正确推论：The new machine was too expensive for the villagers to afford initially.（将“价格等于半年收入且没人买”同义转换为“太贵买不起”。）",
+      "原文：Some researchers believe this method might improve memory in elderly patients. 错误推论：The method has been proven to cure memory loss completely.（将might夸大为proven，将improve偷换为cure completely，犯了绝对化错误。）"
+    ],
+    "pitfall": "把原文完全一致的字面陈述句当成infer题的答案，或者脱离文本证据、仅凭个人生活经验进行过度推理（想得太多太远）。",
+    "practice": "题目：原文“Although the library extended its opening hours, the number of visitors remained unchanged.”可推断出什么？ 解析与答案：可推断出“延长开放时间并未成功吸引更多读者（Extending hours failed to attract more readers）”。紧扣原文让步关系与结果进行一步同义推导即可。"
+  },
+  {
+    "id": "card_10",
+    "title": "完形填空的瞻前顾后与语境复现法则",
+    "category": "完形填空",
+    "body": "完形填空考查在特定语篇中精准运用词汇的能力，切忌孤立地按单句语法做题。解题应坚持“先通读抓主旨，再瞻前顾后找线索”。大部分空格的答案都在上下文中有迹可循，主要体现为：第一，同义词、近义词或上下义词的语境复现（前文埋伏笔，后文出答案，或反之）；第二，情感态度的一致性，把握主人公情绪或事件发展的“抑扬”主线；第三，动作链的逻辑先后与因果必然性。遇到难以抉择的近义词辨析时，不仅要看中文释义，更要看该词在当前语境中的搭配习惯与色彩是否契合全文基调。",
+    "examples": [
+      "At first, Tom felt extremely nervous on the stage. ... However, after seeing his mother's encouraging smile, his ______ gradually disappeared.（后文提示看到鼓励的微笑且含转折词However，说明消失的是前文提到的nervous状态，故空格填anxiety或nervousness，属于近义复现。）",
+      "She carefully wrapped the fragile vase in thick paper so that it wouldn't get ______ during the long journey.（前文线索fragile“易碎的”和carefully wrapped“小心包裹”直接决定了后文目的是防止“损坏”，故填damaged或broken。）"
+    ],
+    "pitfall": "遇到第一个空就匆忙选定答案，导致误判故事基调，一步错步步错；或者只看空格所在的那半句话，无视跨句甚至跨段的词汇呼应。",
+    "practice": "题目：The mountain path was covered with thick ice, making every step ______. Still, the climbers decided to move on. (A. easy B. dangerous C. boring) 解析与答案：选B。前文covered with thick ice（覆满厚冰）及后文Still（尽管如此仍继续）构成因果与转折线索，说明每一步都很“危险”。"
+  },
+  {
+    "id": "card_11",
+    "title": "应用文写作的得体性、要点覆盖与三段式架构",
+    "category": "应用文",
+    "body": "高中应用文（书信、邮件、通知、发言稿等）高分的关键在于“要点齐全、语气得体、逻辑清晰”。动笔前务必审清体裁、收信人身份及全部内容要点，通常采用经典三段式架构：首段开门见山（自我介绍+寒暄+写信目的）；中段围绕题目要求的2至3个核心要点展开，善用firstly, in addition等衔接词分条阐述，并适当补充合理的细节支撑（原因、具体安排或益处）；尾段表达期盼、祝愿或感谢。语言上要注意交际得体性，对长辈或机构多用礼貌委婉句式（如I would appreciate it if...），避免生硬的祈使句。",
+    "examples": [
+      "I am writing to sincerely invite you to be a judge for our school's English Speech Contest to be held next Friday.（首段开门见山交代写信目的，同时自然融入活动名称与时间，信息密度高。）",
+      "I would greatly appreciate it if you could take my application into consideration. Looking forward to your early reply.（尾段使用委婉客气的固定句式表达期盼，符合正式书信的语域要求。）"
+    ],
+    "pitfall": "审题不清导致漏掉隐含要点（如题目要求“提出建议并说明理由”却只写了建议），或堆砌与语境不符的生僻长难句而忽视了交际语言的自然得体。",
+    "practice": "题目：礼貌提醒外教 Smith 先生周六上午九点有讲座。示例：Just a friendly reminder that the lecture begins at 9 a.m. this Saturday. We look forward to seeing you there. 信息明确、语气友好即可，不必堆叠客套话。"
+  },
+  {
+    "id": "card_12",
+    "title": "读后续写：情节衔接、人物一致与有效细节",
+    "category": "读后续写",
+    "body": "读后续写首先要读懂原文的事件、人物关系、叙述视角和情感变化，再分析给定的两个段首句。第一段的发展应能自然衔接第二段开头，第二段则推进事件并作合乎情境的收束。细节描写可结合动作、对话、感受与环境，不必每句都用复杂结构或夸张情绪。结局应符合原文逻辑和题目要求，不要强加与故事无关的道德说教。语言准确、内容连贯比堆砌“高级句型”更重要；保留原人物性格，也要注意时态和代词指代的一致。",
+    "examples": [
+      "Hearing the good news, tears of relief welled up in her eyes, and she hugged her mother tightly, whispering, \"We finally made it!\"（融合了非谓语作状语、无灵主语tears welled up、动作hugged及伴随动作whispering，生动展现激动心情。）",
+      "Bathed in the warm golden sunlight, the stray dog wagged its tail happily, as if expressing its deep gratitude to the kind boy.（借环境描写warm golden sunlight烘托温馨结局，通过细节动作wagged its tail实现人与动物的情感共鸣。）"
+    ],
+    "pitfall": "第一段结尾与所给的第二段段首句脱节甚至产生逻辑矛盾；或者通篇只有平铺直叙的流水账事件陈述，缺乏细腻的动作、心理与情感互动描写。",
+    "practice": "题目：将简单句“He was very afraid and ran away quickly.”改写为具有画面感的读后续写细节句。 解析与答案：Seized by a sudden wave of panic, he turned around and fled at top speed, with his heart pounding wildly in his chest.（运用过去分词短语表心理、具体动词fled及with复合结构描写生理反应，增强张力。）"
+  }
+]

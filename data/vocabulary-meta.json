@@ -1,0 +1,12 @@
+{
+  "count": 3677,
+  "source": "https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv",
+  "sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc",
+  "selection": "All unique entries carrying the gk tag in ECDICT",
+  "frequency": "min(positive BNC rank, positive frq rank): high <=2000; medium 2001–5000; low >5000 or missing. General corpus proxy, not Gaokao exam counts.",
+  "counts": {
+    "high": 1718,
+    "medium": 1214,
+    "low": 745
+  }
+}

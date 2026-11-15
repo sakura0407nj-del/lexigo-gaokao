@@ -1,0 +1,11 @@
+[
+  {"title":"教育部课程标准（2017年版2020年修订）发布通知","url":"https://www.moe.gov.cn/srcsite/A26/s8001/202006/t20200603_462199.html","description":"历史版本课程标准发布通知，用于了解课程结构；不将其宣称为最新考纲。","kind":"课程标准"},
+  {"title":"人教社高中英语课程标准 PDF（2020年修订）","url":"https://www.pep.com.cn/xw/zt/rjwy/gzkb2020/202205/P020220517522153664167.pdf","description":"历史版本完整标准；具体考试要求请核对本省当年规定。","kind":"课程标准"},
+  {"title":"上海2025高考英语试卷专家评析","url":"https://www.shmeea.edu.cn/page/02200/20250609/19465.html","description":"上海市教育考试院发布的试题评析，不是完整试卷。上海题型与全国卷有所不同。","kind":"官方评析"},
+  {"title":"上海2021高考英语试卷专家评析","url":"https://www.shmeea.edu.cn/page/08000/20210609/15329.html","description":"考试院专家解读，供理解考查方向使用。","kind":"官方评析"},
+  {"title":"ECDICT词典与词频字段说明","url":"https://github.com/skywind3000/ECDICT","description":"词库中 gk 标签代表高考词条；BNC/frq 是通用语料词频，不能当作高考试卷实际出现次数。MIT 许可。","kind":"词库来源"},
+  {"title":"人教版2019教材词目社区整理","url":"https://github.com/cyforkk/pep-english-words","description":"七册词目整理来源。本站重新按单元起始词划分，修正上游部分等量均分与边界错误；释义采用词典与学习用途释义。不是出版社官方授权应用。","kind":"教材词目"},
+  {"title":"教材词目原整理仓库","url":"https://github.com/lilinji/English","description":"社区整理的教材词目资料；不同印次有出入时，以手中人教版2019教材为准。","kind":"教材词目"},
+  {"title":"词库 MIT 许可全文","url":"/licenses/ECDICT.txt","description":"ECDICT 许可及署名。","kind":"许可"},
+  {"title":"真题数据 Apache-2.0 许可全文","url":"/licenses/GAOKAO-Bench.txt","description":"GAOKAO-Bench 许可全文；转换及筛选说明见数据署名页。","kind":"许可"}
+]

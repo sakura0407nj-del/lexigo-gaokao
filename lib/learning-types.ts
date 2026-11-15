@@ -1,0 +1,7 @@
+export type Frequency = 'high' | 'medium' | 'low';
+export type ExerciseType = 'reading' | 'grammar' | 'seven' | 'cloze';
+export interface Word { id: string; word: string; phonetic: string; translation: string; frequency: Frequency; rank: number; frequencyKnown?:boolean; frequencyBand?:Frequency|'unknown'; example?: string; exampleZh?: string; accepted?: string[]; book?: string; unit?: string; pos?: string[]; topics?: string[]; textbooks?: {bookId:string;bookTitle:string;unitId:string;unitTitle:string;originalId?:string}[]; inGaokao?:boolean; aliasIds?:string[] }
+export interface Question { id: string; prompt: string; options?: string[]; answer?: string; explanation?: string; knowledge?: string; evidence?: string; points: number }
+export interface Paper { id: string; title: string; type: ExerciseType; level: '基础' | '标准' | '挑战'; topic: string; passage: string; instructions: string; options?: string[]; questions: Question[]; minutes: number; source: string; origin: 'original' | 'ai' | 'past'; sealed?: string; expiresAt?: string }
+export interface Grade { score: number; maxScore: number; items: { id: string; yourAnswer: string; correctAnswer: string; correct: boolean; explanation: string; knowledge?: string; evidence?: string }[] }
+export interface Correction { summary: string; score: number; maxScore: number; dimensions: {name: string; score: number; max: number; comment: string}[]; errors: {original: string; corrected: string; reason: string; category: string}[]; revised: string; advice: string[]; recognized?: string; uncertainty?: string[] }
