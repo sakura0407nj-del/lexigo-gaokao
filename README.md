@@ -1,6 +1,8 @@
 # 拾词 LexiGo · 高考英语学习室
 
-面向高中生的英语学习网站，手机和电脑浏览器均可使用，无需登录 ChatGPT。React + Vite 提供前端，Netlify Functions 运行公共 API，私有 Netlify Blobs 暂存异步 AI 任务。GitHub 保存源代码，Netlify 从指定分支构建网站。
+面向高中生的英语学习网站，手机和电脑浏览器均可使用，无需登录 ChatGPT。React + Vite 提供前端，Netlify Functions 运行公共 API，私有 Netlify Blobs 暂存异步 AI 任务。GitHub 保存源代码；当前由维护者检查并构建后，通过 Netlify CLI 更新固定的 beta 草稿网址，尚未配置 GitHub 推送自动部署。
+
+在线学习：[拾词 LexiGo · beta](https://beta--lexigo-gaokao-66876.netlify.app)。
 
 ## 学习内容
 
@@ -43,28 +45,40 @@ npm run build
 
 ## GitHub 与 Netlify 部署
 
-1. 将清理后的源码推送到独立 GitHub 仓库。在 Netlify 选择 **Import an existing project → GitHub**，授权该仓库。
-2. 构建命令 `npm run build`；发布目录 `dist-public`；Functions 目录 `netlify/functions`。这些设置已写入 `netlify.toml`。
-3. 在 Netlify 项目环境变量中配置下表参数，作用域包含 **Functions**。若使用不同部署上下文，确保目标生产或分支上下文也有相应变量。不要将密钥写入 GitHub、`netlify.toml` 或 `VITE_*` 变量。
-4. 检查项目可见性为 **Public**，分享的部署未要求团队登录。访客不需要 ChatGPT 或 Netlify 账户。
-5. 发布后检查词库、会话、听写、AI 提交/轮询与图片批改。`/api/status` 仅报告必需配置是否存在；“已配置”不表示实时探测过供应商，实际可用性以任务结果为准。
+源码仓库：[sakura0407nj-del/lexigo-gaokao](https://github.com/sakura0407nj-del/lexigo-gaokao)。英语网站使用独立的 Netlify 项目 `lexigo-gaokao-66876`，不修改其他网站。
 
-| 环境变量 | 用途 |
+当前使用 **Netlify draft deploy 的固定 beta 别名**，不是 Git 分支自动部署。以后更新源码、通过检查、重新运行部署脚本，就会更新同一别名网址。GitHub 提交本身不会自动发布网站。
+
+### 本地维护者更新
+
+```sh
+npx netlify login
+npx netlify link --id 916eafc6-a5f4-4f2d-9517-c1d9c85e4247
+npm run typecheck
+npm test
+npm run build
+node scripts/deploy-netlify.mjs --check
+node scripts/deploy-netlify.mjs
+```
+
+脚本读取本机被 Git 忽略的 `.dev.vars`，验证项目关联、检查静态构建是否含有密钥，然后只为本英语项目发布 `beta` 草稿别名。它使用已有的 Netlify CLI 登录，不创建新凭据、不切换套餐。发布目录是 `dist-public`，Functions 目录是 `netlify/functions`；脚本不会打印密钥或含密钥的命令。
+
+**Free 方案的环境配置**：此账户不支持付费方案的细分站点环境变量作用域。脚本使用 CLI 正式提供的 `--secret-env`，把 `AI_API_KEY` 和 `PAPER_SECRET` 作为本次部署的 Functions 专用私密变量传递，模型名称使用部署变量。私密值不写入源码、`netlify.toml` 或 `VITE_*` 变量，不依靠公开网页保存。因为变量属于单次部署，每次更新都应通过该脚本重新提供，直接上传静态目录不能恢复 AI 服务。
+
+| `.dev.vars` 配置项 | 用途 |
 | --- | --- |
 | `AI_API_KEY` | 服务器访问模型服务的密钥 |
 | `AI_MODEL` | 首选模型 ID，示例为 `[ASP]gemini-4-argon` |
-| `AI_FALLBACK_MODEL` | 首选通道不可用时的备用模型 ID |
-| `PAPER_SECRET` | 随机私钥，用于会话、调度签名及试卷加密；保持稳定，轮换会使旧会话/试卷失效 |
+| `AI_FALLBACK_MODEL` | 首选通道不可用时的备用模型 ID，可选 |
+| `PAPER_SECRET` | 至少 32 字符的随机私钥，用于会话、调度签名及试卷加密；保持稳定，轮换会使旧会话/试卷失效 |
 
-模型传输实现位于 `lib/learning-server.ts`，使用配置好的兼容 Chat Completions 服务。更换供应商时需调整该文件中的服务地址与模型 ID；密钥始终留在服务器。
+模型传输位于 `lib/learning-server.ts`。更换供应商时需调整服务地址与模型 ID；密钥仍由服务器环境提供。部署详情只记录脱敏后的网址和状态，保存在被忽略的 `work/deployment/`。
 
-### 持续分享 beta 版本
+项目可见性设置为 Public，访客无需 ChatGPT 或 Netlify 账户。`/api/status` 仅说明必需配置是否存在；“已配置”不等于实时探测了供应商。每次发布后，应实际检查 AI 任务提交、轮询、命题与批改。
 
-普通分支部署支持持久化测试网址，如 `https://beta--项目名.netlify.app`。在 **Developer settings → Continuous deployment → Branches and deploy contexts** 启用 `beta` 分支；推送到同一分支更新同一网址。正式版使用正常生产部署流程。
+草稿别名部署不等于生产部署，托管运行、请求和流量仍占免费额度；额度用尽或平台暂停时，可用性以 Netlify 状态为准。脚本不升级付费方案。未来如需 GitHub 自动发布，需要另外连接该仓库并配置其环境与部署流程，不能把当前手动别名更新称为自动部署。
 
-分支部署本身不计生产部署费用，但请求、运行和流量仍占托管额度。账户显示生产部署额度不足时，不能据此保证 beta 仍可部署：以正常部署结果为准，不改变账户限制或自动升级付费方案。Blobs 在同一 Netlify 项目的各部署间共享，请为英语网站使用独立项目。
-
-参考：[分支部署](https://docs.netlify.com/deploy/deploy-types/branch-deploys/)、[托管额度](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/)、[后台函数](https://docs.netlify.com/build/functions/background-functions/)。GitHub Pages 只能托管静态页面，不能单独运行本站需要的私密 AI 后端。
+参考：[Netlify CLI 部署](https://docs.netlify.com/api-and-cli-guides/cli-guides/get-started-with-cli/)、[托管额度](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/)、[后台函数](https://docs.netlify.com/build/functions/background-functions/)。GitHub Pages 只能托管静态页面，不能单独运行本站需要的私密 AI 后端。
 
 ## 隐私与任务机制
 

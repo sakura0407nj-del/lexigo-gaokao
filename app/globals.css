@@ -448,6 +448,7 @@ select {
   background: rgb(217 102 31 / 0.35);
 }
 .hero-title {
+  text-wrap: balance;
   margin-top: 10px;
   font-family: var(--font-serif);
   font-size: clamp(1.9rem, 5vw, 3.1rem);
@@ -457,6 +458,7 @@ select {
   letter-spacing: 0.02em;
 }
 .hero-title em {
+  white-space: nowrap;
   font-style: normal;
   background: linear-gradient(transparent 62%, var(--lime) 62% 92%, transparent 92%);
   padding: 0 2px;
