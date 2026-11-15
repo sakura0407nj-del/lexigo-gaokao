@@ -52,12 +52,14 @@ export function PaperPlayer({
   initialAnswers,
   initialElapsed = 0,
   restored = false,
+  gradePaper = api.grade,
 }: {
   paper: Paper;
   onBack?: () => void;
   initialAnswers?: Record<string, string>;
   initialElapsed?: number;
   restored?: boolean;
+  gradePaper?: typeof api.grade;
 }) {
   const { recordPractice, addMistakes } = useProgress();
   const [collected, setCollected] = useState(0);
@@ -145,7 +147,7 @@ export function PaperPlayer({
     controllerRef.current = controller;
     try {
       const trimmed = Object.fromEntries(Object.entries(answers).map(([key, value]) => [key, value.trim()]));
-      const result = await api.grade({ paperId: paper.id, answers: trimmed, ...(paper.sealed ? { sealed: paper.sealed } : {}) }, controller.signal);
+      const result = await gradePaper({ paperId: paper.id, answers: trimmed, ...(paper.sealed ? { sealed: paper.sealed } : {}) }, controller.signal);
       latestDraft.current.active = false;
       setGrade(result);
       clearDraft(paper.id);

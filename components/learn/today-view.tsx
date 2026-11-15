@@ -115,7 +115,7 @@ export function TodayView({ status, statusError, speech, onNavigate }: { status:
         </button>
         <button type="button" className="study-expansion-card study-expansion-game" onClick={() => onNavigate("game")}>
           <Gamepad2 aria-hidden className="size-6" />
-          <span><strong>带着单词去闯关</strong><small>选对英语之门 · 集结你的知识小队</small></span><ArrowRight aria-hidden className="size-5" />
+          <span><strong>英语游乐场</strong><small>词性海洋大鱼吃小鱼 · Sky Run 英语闯关</small></span><ArrowRight aria-hidden className="size-5" />
         </button>
       </div>
 

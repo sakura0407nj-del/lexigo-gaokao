@@ -116,6 +116,8 @@ export interface GradeRequest {
 }
 
 export interface GenerateRequest {
+  stage?: 'high' | 'primary';
+  grade?: 3 | 4 | 5 | 6;
   type: ExerciseType;
   level: Level;
   topic: string;
@@ -137,6 +139,8 @@ export interface ChallengeResponse {
 }
 
 export interface CorrectRequest {
+  stage?: 'high' | 'primary';
+  grade?: 3 | 4 | 5 | 6;
   kind: "essay" | "questions";
   text: string;
   prompt?: string;

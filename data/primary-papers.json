@@ -1,0 +1,1322 @@
+[
+  {
+    "id": "primary-g3-reading-1",
+    "grade": 3,
+    "title": "三年级英语阅读理解一：书包里的学习用品",
+    "type": "reading",
+    "level": "基础",
+    "topic": "学校学习",
+    "passage": "Hello, I am Lily. I am eight years old. I have a new blue schoolbag. Two storybooks, one red pencil box, and an orange ruler are in it. In my pencil box, I have three pencils and a white eraser. My friend Ben sits next to me. He has a green pen.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "minutes": 6,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "What color is Lily's new schoolbag?",
+        "options": [
+          "A. Red.",
+          "B. Blue.",
+          "C. Green.",
+          "D. White."
+        ],
+        "answer": "B",
+        "explanation": "根据短文第三句可知，Lily的新书包是蓝色的（blue），故选B。",
+        "evidence": "I have a new blue schoolbag.",
+        "knowledge": "颜色形容词与细节信息定位",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "How many storybooks are in Lily's schoolbag?",
+        "options": [
+          "A. One.",
+          "B. Three.",
+          "C. Two.",
+          "D. Four."
+        ],
+        "answer": "C",
+        "explanation": "短文中提到书包里有两本故事书（Two storybooks），故选C。",
+        "evidence": "Two storybooks, one red pencil box, and an orange ruler are in it.",
+        "knowledge": "基数词与物品数量细节理解",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "Where is the white eraser?",
+        "options": [
+          "A. Under the chair.",
+          "B. On the book.",
+          "C. In Ben's bag.",
+          "D. In Lily's pencil box."
+        ],
+        "answer": "D",
+        "explanation": "短文明确说明在Lily的铅笔盒里有三支铅笔和一块白色橡皮，因此白色橡皮在她的铅笔盒里，故选D。",
+        "evidence": "In my pencil box, I have three pencils and a white eraser.",
+        "knowledge": "方位介词in与地点细节理解",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "What does Ben have?",
+        "options": [
+          "A. A green pen.",
+          "B. An orange ruler.",
+          "C. A red pencil box.",
+          "D. A blue schoolbag."
+        ],
+        "answer": "A",
+        "explanation": "短文最后一句提到Ben有一支绿色的钢笔（a green pen），故选A。",
+        "evidence": "He has a green pen.",
+        "knowledge": "人物对应物品的细节辨析",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g3-reading-2",
+    "grade": 3,
+    "title": "三年级英语阅读理解二：爷爷的小动物",
+    "type": "reading",
+    "level": "标准",
+    "topic": "动物世界",
+    "passage": "My grandpa has a small yard. Two white rabbits and a yellow dog are in the yard. The rabbits have long ears and short tails. They like fresh carrots. The yellow dog is Coco. Coco is under the apple tree now. Look, three little birds are in the tree. They are very cute.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "What animals are in Grandpa's yard?",
+        "options": [
+          "A. Two cats and a dog.",
+          "B. One rabbit and two dogs.",
+          "C. Two white rabbits and a yellow dog.",
+          "D. Three ducks and a fish."
+        ],
+        "answer": "C",
+        "explanation": "短文第二句指出院子里有两只白兔和一只黄狗，故选C。",
+        "evidence": "Two white rabbits and a yellow dog are in the yard.",
+        "knowledge": "动物名称与数量细节提取",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "What do the rabbits like?",
+        "options": [
+          "A. Fresh carrots.",
+          "B. Red apples.",
+          "C. Warm milk.",
+          "D. Sweet bread."
+        ],
+        "answer": "A",
+        "explanation": "短文中提到兔子们喜欢新鲜的胡萝卜（fresh carrots），故选A。",
+        "evidence": "They like fresh carrots.",
+        "knowledge": "代词指代与喜好细节理解",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "Where is Coco now?",
+        "options": [
+          "A. In the room.",
+          "B. On the chair.",
+          "C. Behind the house.",
+          "D. Under the apple tree."
+        ],
+        "answer": "D",
+        "explanation": "根据短文内容，小黄狗Coco现在在苹果树下面（under the apple tree），故选D。",
+        "evidence": "Coco is under the apple tree now.",
+        "knowledge": "方位介词under与位置细节理解",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "How many little birds are in the tree?",
+        "options": [
+          "A. One.",
+          "B. Three.",
+          "C. Two.",
+          "D. Five."
+        ],
+        "answer": "B",
+        "explanation": "短文倒数第二句说明树上有三只小鸟（three little birds），故选B。",
+        "evidence": "Look, three little birds are in the tree.",
+        "knowledge": "数量词与场景细节定位",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g3-grammar-1",
+    "grade": 3,
+    "title": "三年级英语语法完形一：温馨的周末早晨",
+    "type": "grammar",
+    "level": "基础",
+    "topic": "家庭人物",
+    "passage": "Today is a sunny Sunday. My family (1) ____ at home in the morning. My father has two red (2) ____ in his hand. My mother makes warm milk for my little sister and me. (3) ____ is very kind to us. Where is our cute white cat? Look, it is (4) ____ the wooden chair. We (5) ____ a happy family.",
+    "instructions": "阅读短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. is",
+          "B. am",
+          "C. be",
+          "D. have"
+        ],
+        "answer": "A",
+        "explanation": "主语My family在此处作为一个整体表示“我们一家人”，后面接介词短语at home表示状态，在所给选项中应搭配第三人称单数be动词is，故选A。",
+        "evidence": "My family (1) ____ at home in the morning.",
+        "knowledge": "be动词在一般现在时中的基本用法",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. apple",
+          "B. apples",
+          "C. milk",
+          "D. bread"
+        ],
+        "answer": "B",
+        "explanation": "空白前有基数词two（两个），后面应接可数名词的复数形式apples，故选B。",
+        "evidence": "My father has two red (2) ____ in his hand.",
+        "knowledge": "可数名词复数形式与数词搭配",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. He",
+          "B. It",
+          "C. They",
+          "D. She"
+        ],
+        "answer": "D",
+        "explanation": "前一句主语是My mother（我的妈妈），此处作主语指代妈妈，应用人称代词主格She，故选D。",
+        "evidence": "My mother makes warm milk for my little sister and me. (3) ____ is very kind to us.",
+        "knowledge": "人称代词主格的性别与单复数指代",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. who",
+          "B. very",
+          "C. under",
+          "D. how"
+        ],
+        "answer": "C",
+        "explanation": "前文询问小猫在哪里（Where is our little cat?），回答位置时需用方位介词under与the chair构成“在椅子下面”，故选C。",
+        "evidence": "Where is our cute white cat? Look, it is (4) ____ the wooden chair.",
+        "knowledge": "常用方位介词表示位置",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. am",
+          "B. is",
+          "C. are",
+          "D. has"
+        ],
+        "answer": "C",
+        "explanation": "主语We（我们）是第一人称复数，表达“我们是幸福的一家人”应用be动词are，故选C。",
+        "evidence": "We (5) ____ a happy family.",
+        "knowledge": "人称代词We与be动词are的主谓一致",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g3-grammar-2",
+    "grade": 3,
+    "title": "三年级英语语法完形二：野餐的食物篮",
+    "type": "grammar",
+    "level": "标准",
+    "topic": "食物饮品",
+    "passage": "Tom and Mia are in the green park now. They (1) ____ a big picnic basket on the grass. One yellow banana and four sweet (2) ____ are in the basket. Tom is very thirsty. (3) ____ wants some cold milk. Mia has a small sandwich in (4) ____ hand. Their brown dog is (5) ____ the basket. It is a good day.",
+    "instructions": "阅读短文，从每题所给的A、B、C、D四个选项中选出可以填入空白处的最佳选项。",
+    "minutes": 8,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. has",
+          "B. is",
+          "C. am",
+          "D. have"
+        ],
+        "answer": "D",
+        "explanation": "主语They（他们）是第三人称复数，表示“他们有一个大野餐篮”应使用动词原形have，故选D。",
+        "evidence": "They (1) ____ a big picnic basket on the grass.",
+        "knowledge": "have与has在人称单复数中的区分",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. pear",
+          "B. pears",
+          "C. water",
+          "D. juice"
+        ],
+        "answer": "B",
+        "explanation": "空白前有数词four（四个），后接可数名词复数形式pears，故选B。",
+        "evidence": "One yellow banana and four sweet (2) ____ are in the basket.",
+        "knowledge": "数词four后的可数名词复数",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. He",
+          "B. She",
+          "C. We",
+          "D. It"
+        ],
+        "answer": "A",
+        "explanation": "前一句提到Tom口渴了（Tom is thirsty.），此处指代男孩Tom并在句首作主语，应用人称代词He，故选A。",
+        "evidence": "Tom is very thirsty. (3) ____ wants some cold milk.",
+        "knowledge": "人称代词He的上下文指代",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. he",
+          "B. she",
+          "C. her",
+          "D. they"
+        ],
+        "answer": "C",
+        "explanation": "名词hand前需要形容词性物主代词作定语，主语是女孩Mia，因此用her表示“她的手”，故选C。",
+        "evidence": "Mia has a small sandwich in (4) ____ hand.",
+        "knowledge": "形容词性物主代词her修饰名词",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. who",
+          "B. near",
+          "C. what",
+          "D. very"
+        ],
+        "answer": "B",
+        "explanation": "句意为“他们的小狗在篮子附近”，空白后是名词短语the basket，需填入介词near构成方位短语，故选B。",
+        "evidence": "Their brown dog is (5) ____ the basket.",
+        "knowledge": "方位介词near表示位置关系",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g4-reading-1",
+    "grade": 4,
+    "title": "班级植物角",
+    "type": "reading",
+    "level": "基础",
+    "topic": "学校与爱护植物",
+    "passage": "Our classroom has a sunny plant corner near the window. Every morning, Lily waters the small green plants before the first lesson. Right now, Ben is wiping the big leaves with a soft cloth. Miss Chen can tell us the name of each plant, and we write the names on little cards. We never pick the flowers because we want everyone to enjoy them. Looking after the plants makes our classroom bright and welcoming.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Where is the plant corner in the classroom?",
+        "options": [
+          "A. Behind the door.",
+          "B. Near the window.",
+          "C. Next to the library.",
+          "D. Under the teacher's desk."
+        ],
+        "answer": "B",
+        "explanation": "根据短文第一句可知，植物角在窗户旁边（near the window），所以选 B。",
+        "evidence": "Our classroom has a sunny plant corner near the window.",
+        "knowledge": "细节理解：地点信息定位",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "When does Lily water the small green plants?",
+        "options": [
+          "A. After school.",
+          "B. At lunchtime.",
+          "C. Before the first lesson.",
+          "D. During the art class."
+        ],
+        "answer": "C",
+        "explanation": "短文提到 Lily 每天早上在第一节课前给绿色小植物浇水，因此选 C。",
+        "evidence": "Every morning, Lily waters the small green plants before the first lesson.",
+        "knowledge": "细节理解：日常时间与动作",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "What is Ben doing right now?",
+        "options": [
+          "A. He is drawing a flower.",
+          "B. He is opening the window.",
+          "C. He is buying a new pot.",
+          "D. He is wiping the big leaves."
+        ],
+        "answer": "D",
+        "explanation": "短文明确说明此时 Ben 正在用软布擦拭大叶子（wiping the big leaves），故选 D。",
+        "evidence": "Right now, Ben is wiping the big leaves with a soft cloth.",
+        "knowledge": "细节理解：现在进行时动作识别",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "What is the passage mainly about?",
+        "options": [
+          "A. Caring for the classroom plant corner.",
+          "B. Buying fruit at a small shop.",
+          "C. Playing games on the playground.",
+          "D. Visiting a big farm on Sunday."
+        ],
+        "answer": "A",
+        "explanation": "全文围绕同学们和老师在教室植物角照顾植物展开，最后一句点明照顾植物让教室明亮又温馨，因此主旨是 A。",
+        "evidence": "Looking after the plants makes our classroom bright and welcoming.",
+        "knowledge": "主旨大意：归纳段落核心内容",
+        "points": 2
+      }
+    ],
+    "minutes": 6,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g4-reading-2",
+    "grade": 4,
+    "title": "周六家庭野餐",
+    "type": "reading",
+    "level": "标准",
+    "topic": "家庭周末活动",
+    "passage": "It is Saturday morning, and Leo goes to Green Park with his parents and his cousin May. They put a blue mat on the grass under a tall tree. Mom takes sweet oranges and warm rice balls out of a basket. Look! May is flying a bird kite with Dad near the lake. Leo can ride his bike along the park path. After lunch, they put all their rubbish into a bin.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Where do Leo's family put the blue mat?",
+        "options": [
+          "A. On the grass under a tall tree.",
+          "B. Inside a small boat.",
+          "C. Near the park gate.",
+          "D. On a long wooden bench."
+        ],
+        "answer": "A",
+        "explanation": "短文第二句说明他们把蓝色野餐垫铺在一棵大树下的草地上，因此选 A。",
+        "evidence": "They put a blue mat on the grass under a tall tree.",
+        "knowledge": "细节理解：方位介词短语理解",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "What food does Mom take out of the basket?",
+        "options": [
+          "A. Bread and cold milk.",
+          "B. Apples and hot noodles.",
+          "C. Sweet oranges and warm rice balls.",
+          "D. Cakes and grape juice."
+        ],
+        "answer": "C",
+        "explanation": "短文提到妈妈从篮子里拿出甜橙和热饭团（sweet oranges and warm rice balls），所以选 C。",
+        "evidence": "Mom takes sweet oranges and warm rice balls out of a basket.",
+        "knowledge": "细节理解：具体物品信息提取",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "Who is flying a bird kite with Dad near the lake?",
+        "options": [
+          "A. Leo.",
+          "B. May.",
+          "C. Mom.",
+          "D. Grandma."
+        ],
+        "answer": "B",
+        "explanation": "由“Look! May is flying a bird kite with Dad near the lake.”可知，正在和爸爸一起放风筝的是 May，故选 B。",
+        "evidence": "Look! May is flying a bird kite with Dad near the lake.",
+        "knowledge": "细节理解：人物与动作匹配",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "What is the main idea of this story?",
+        "options": [
+          "A. Leo learns how to cook lunch at home.",
+          "B. May buys a new bike at a shop.",
+          "C. The children clean their classroom on Friday.",
+          "D. Leo's family enjoys a clean and happy Saturday in the park."
+        ],
+        "answer": "D",
+        "explanation": "短文讲述了周六早上 Leo 一家去公园铺垫子分享食物、放风筝、骑车，并在午饭后收好垃圾，整体写一家人在公园度过整洁又愉快的周六，故选 D。",
+        "evidence": "It is Saturday morning, and Leo goes to Green Park with his parents and his cousin May.",
+        "knowledge": "主旨大意：故事整体概括",
+        "points": 2
+      }
+    ],
+    "minutes": 6,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g4-grammar-1",
+    "grade": 4,
+    "title": "放学后的音乐社团",
+    "type": "grammar",
+    "level": "基础",
+    "topic": "兴趣爱好与日常校园",
+    "passage": "After school on Tuesday afternoon, good friends Mia and Tom go to the sunny music room together. Mia usually (1) ____ the piano for twenty minutes first. Listen! Tom (2) ____ a happy English song with the music teacher right now. Mia can (3) ____ the small drums a little too. Their blue music notebooks are (4) ____ the wooden desk near the window. The children love music very much, and the teacher is always kind to (5) ____.",
+    "instructions": "阅读短文，从每题所给的 A、B、C、D 四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. play",
+          "B. plays",
+          "C. playing",
+          "D. to play"
+        ],
+        "answer": "B",
+        "explanation": "句中有频度副词 usually，表示经常性的动作，用一般现在时；主语 Mia 是第三人称单数，因此谓语动词用 plays，选 B。",
+        "evidence": "Mia usually (1) ____ the piano for twenty minutes first.",
+        "knowledge": "一般现在时：第三人称单数动词形式",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. sing",
+          "B. sings",
+          "C. is singing",
+          "D. are singing"
+        ],
+        "answer": "C",
+        "explanation": "前有提示词“Listen!”且句末有“right now”，说明动作正在进行，主语 Tom 为单数，应用现在进行时 is singing，选 C。",
+        "evidence": "Listen! Tom (2) ____ a happy English song with the music teacher right now.",
+        "knowledge": "现在进行时：Listen! 与 right now 语境提示",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. play",
+          "B. plays",
+          "C. playing",
+          "D. to play"
+        ],
+        "answer": "A",
+        "explanation": "情态动词 can 后面需要接动词原形，因此填 play，选 A。",
+        "evidence": "Mia can (3) ____ the small drums a little too.",
+        "knowledge": "情态动词：can 后接动词原形",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. to",
+          "B. for",
+          "C. of",
+          "D. on"
+        ],
+        "answer": "D",
+        "explanation": "表示音乐笔记本放在木制课桌“上面”，应用方位介词 on，选 D。",
+        "evidence": "Their blue music notebooks are (4) ____ the wooden desk near the window.",
+        "knowledge": "介词：常见方位介词 on 的用法",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. they",
+          "B. them",
+          "C. their",
+          "D. theirs"
+        ],
+        "answer": "B",
+        "explanation": "介词 to 后面应接人称代词宾格作宾语，指代前面的 the children，因此用 them，选 B。",
+        "evidence": "The children love music very much, and the teacher is always kind to (5) ____.",
+        "knowledge": "代词：介词后接人称代词宾格",
+        "points": 2
+      }
+    ],
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g4-grammar-2",
+    "grade": 4,
+    "title": "看望奶奶的菜园",
+    "type": "grammar",
+    "level": "标准",
+    "topic": "家庭生活与自然劳动",
+    "passage": "Grandma lives near our home, and she has a small sunny vegetable garden behind her house. Every Sunday afternoon, my brother and I (1) ____ her in the yard. Look! Grandma (2) ____ ripe red tomatoes into a bamboo basket right now. My strong brother can (3) ____ the heavy water bucket for her. There are some cute yellow ducks swimming (4) ____ the little pond nearby. We feel very happy when we share fresh vegetables with (5) ____ family.",
+    "instructions": "阅读短文，从每题所给的 A、B、C、D 四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. helps",
+          "B. helping",
+          "C. help",
+          "D. to help"
+        ],
+        "answer": "C",
+        "explanation": "时间状语“Every Sunday afternoon”表示经常性动作，用一般现在时；主语“my brother and I”是复数，动词用原形 help，选 C。",
+        "evidence": "Every Sunday afternoon, my brother and I (1) ____ her in the yard.",
+        "knowledge": "一般现在时：复数主语的动词形式",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. puts",
+          "B. is putting",
+          "C. put",
+          "D. to put"
+        ],
+        "answer": "B",
+        "explanation": "句首有“Look!”且句末有“right now”，表明动作正在发生，主语 Grandma 是单数，所以用现在进行时 is putting，选 B。",
+        "evidence": "Look! Grandma (2) ____ ripe red tomatoes into a bamboo basket right now.",
+        "knowledge": "现在进行时：Look! 与 right now 语境判断",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. carries",
+          "B. carrying",
+          "C. to carry",
+          "D. carry"
+        ],
+        "answer": "D",
+        "explanation": "情态动词 can 后接动词原形，所以填 carry，选 D。",
+        "evidence": "My strong brother can (3) ____ the heavy water bucket for her.",
+        "knowledge": "情态动词：can 后接动词原形",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. in",
+          "B. under",
+          "C. between",
+          "D. behind"
+        ],
+        "answer": "A",
+        "explanation": "鸭子在小池塘“里面”游水，应使用介词 in，选 A。",
+        "evidence": "There are some cute yellow ducks swimming (4) ____ the little pond nearby.",
+        "knowledge": "介词：地点介词 in 的用法",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. we",
+          "B. us",
+          "C. our",
+          "D. ours"
+        ],
+        "answer": "C",
+        "explanation": "空格后面是名词 family，需要用形容词性物主代词 our 来修饰，表示“我们的家人”，选 C。",
+        "evidence": "We feel very happy when we share fresh vegetables with (5) ____ family.",
+        "knowledge": "代词：形容词性物主代词修饰名词",
+        "points": 2
+      }
+    ],
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g5-reading-1",
+    "grade": 5,
+    "title": "班级科学植物角",
+    "type": "reading",
+    "level": "基础",
+    "topic": "学校生活与植物观察",
+    "passage": "Our Grade Five class started a small plant corner near the sunny classroom window last month. Every Monday and Thursday, Lin Tao and I water the green tomato plants before morning reading. My flower pot has three small green tomatoes now, and Lin Tao's plant is taller than mine. Miss Wang often tells us not to give them too much water on rainy days. Next Friday afternoon, we will draw colorful pictures of the leaves in our science notebooks. Everyone in our class feels very happy to watch the young plants grow week by week.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Where did the class put the small plant corner?",
+        "options": [
+          "A. Outside the school gate.",
+          "B. Near the sunny classroom window.",
+          "C. Behind the teacher's desk.",
+          "D. Next to the school library."
+        ],
+        "answer": "B",
+        "explanation": "根据短文第一句可知，植物角设在阳光充足的教室窗户附近，因此选 B。",
+        "evidence": "Our Grade Five class started a small plant corner near the sunny classroom window last month.",
+        "knowledge": "细节理解（地点信息）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "Whose plant is taller right now?",
+        "options": [
+          "A. The writer's plant.",
+          "B. Miss Wang's plant.",
+          "C. Lin Tao's plant.",
+          "D. The art teacher's plant."
+        ],
+        "answer": "C",
+        "explanation": "短文中作者提到 Lin Tao's plant is taller than mine，说明林涛的植物更高，故选 C。",
+        "evidence": "My flower pot has three small green tomatoes now, and Lin Tao's plant is taller than mine.",
+        "knowledge": "细节理解（形容词比较级）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "What will the students do next Friday?",
+        "options": [
+          "A. Buy new flower pots.",
+          "B. Make tomato soup at school.",
+          "C. Move the plants to the playground.",
+          "D. Draw pictures of the leaves."
+        ],
+        "answer": "D",
+        "explanation": "短文倒数第二句提到下周五他们将在科学笔记本上画叶子的图画，因此选 D。",
+        "evidence": "Next Friday afternoon, we will draw colorful pictures of the leaves in our science notebooks.",
+        "knowledge": "细节理解（一般将来时计划）",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "Why does Miss Wang give the students advice about watering?",
+        "options": [
+          "A. To help them look after the plants.",
+          "B. To stop them from growing plants.",
+          "C. To ask them to fill the pots with water.",
+          "D. To move their plants to another classroom."
+        ],
+        "answer": "A",
+        "explanation": "老师提醒同学们雨天不要浇太多水，结合全班照顾植物的情境，可以推断她是在帮助大家正确照料植物，因此选 A。其余选项没有原文支持。",
+        "evidence": "Miss Wang often tells us not to give them too much water on rainy days.",
+        "knowledge": "阅读推断：根据具体建议判断说话人的目的",
+        "points": 2
+      }
+    ],
+    "minutes": 6,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g5-reading-2",
+    "grade": 5,
+    "title": "看望乡下的爷爷奶奶",
+    "type": "reading",
+    "level": "标准",
+    "topic": "家庭生活与周末出行",
+    "passage": "Yesterday was a sunny Saturday, and my family took an early bus to my grandparents' mountain village. The small village is much quieter than our busy city street. In the morning, I helped Grandma collect warm brown eggs in the yard and put them carefully into a bamboo basket. After a delicious lunch, Grandpa walked with me by the clear river and showed me three white ducks under a stone bridge. Before we went home, Grandma gave us a big bag of fresh potatoes. I really hope we can visit them again next month.",
+    "instructions": "阅读短文，根据短文内容选择最佳答案。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "How did the family go to the village yesterday?",
+        "options": [
+          "A. By early bus.",
+          "B. By fast train.",
+          "C. By bike.",
+          "D. On foot."
+        ],
+        "answer": "A",
+        "explanation": "短文第一句明确提到全家昨天乘坐早班公交车去爷爷奶奶的村子，因此选 A。",
+        "evidence": "Yesterday was a sunny Saturday, and my family took an early bus to my grandparents' mountain village.",
+        "knowledge": "细节理解（交通方式与过去事实）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "What did the writer do in the morning?",
+        "options": [
+          "A. Swam in the clear river.",
+          "B. Cooked potatoes for lunch.",
+          "C. Helped Grandma collect eggs.",
+          "D. Fed three ducks under a bridge."
+        ],
+        "answer": "C",
+        "explanation": "根据短文第三句可知，作者上午帮奶奶在院子里捡鸡蛋并放进篮子里，故选 C。",
+        "evidence": "In the morning, I helped Grandma collect warm brown eggs in the yard and put them carefully into a bamboo basket.",
+        "knowledge": "细节理解（一般过去时活动细节）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "What did Grandma give the family before they went home?",
+        "options": [
+          "A. Three little ducks.",
+          "B. A basket of apples.",
+          "C. Warm sweaters.",
+          "D. A bag of fresh potatoes."
+        ],
+        "answer": "D",
+        "explanation": "短文倒数第二句说明回家前奶奶给了他们一袋新鲜土豆，因此选 D。",
+        "evidence": "Before we went home, Grandma gave us a big bag of fresh potatoes.",
+        "knowledge": "细节理解（故事具体细节）",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "How did the writer feel about the trip to the village?",
+        "options": [
+          "A. Tired and angry.",
+          "B. Happy and hoping to go again.",
+          "C. Afraid of the quiet river.",
+          "D. Bored with farm work."
+        ],
+        "answer": "B",
+        "explanation": "从作者结尾表示希望下个月还能再去拜访爷爷奶奶，可以推断作者喜欢这次乡村之行，故选 B。",
+        "evidence": "I really hope we can visit them again next month.",
+        "knowledge": "推理判断（人物态度与想法推断）",
+        "points": 2
+      }
+    ],
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g5-grammar-1",
+    "grade": 5,
+    "title": "周六公园放风筝",
+    "type": "grammar",
+    "level": "基础",
+    "topic": "周末活动与友谊",
+    "passage": "Last Saturday afternoon, the autumn weather was windy and cool. Chen Jie (1) ____ to the city park with her cousin Mia after lunch. Many children were flying colorful kites on the green grass. Chen Jie had a blue bird kite, and Mia's red fish kite was (2) ____ than hers. At first, Chen Jie could not fly her kite very high. Mia (3) ____ climbs hills and plays outdoor sports, so she ran fast across the grass to help. Soon the blue kite flew high up into the bright sky. They will (4) ____ their kites to the park again next weekend. Both girls (5) ____ told their family about the kites before dinner.",
+    "instructions": "阅读短文，从每题所给的 A、B、C、D 四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. go",
+          "B. goes",
+          "C. went",
+          "D. going"
+        ],
+        "answer": "C",
+        "explanation": "前文时间状语为 Last Saturday afternoon（上周六下午），讲述过去发生的事情，谓语动词应用过去式 went，故选 C。",
+        "evidence": "Last Saturday afternoon, the autumn weather was windy and cool. Chen Jie (1) ____ to the city park with her cousin Mia after lunch.",
+        "knowledge": "一般过去时（动词过去式）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. big",
+          "B. bigger",
+          "C. biggest",
+          "D. the biggest"
+        ],
+        "answer": "B",
+        "explanation": "空格后有比较级标志词 than，表示米娅的风筝比她的更大，应用形容词比较级 bigger，故选 B。",
+        "evidence": "Chen Jie had a blue bird kite, and Mia's red fish kite was (2) ____ than hers.",
+        "knowledge": "形容词比较级（than 的搭配）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. often",
+          "B. yesterday",
+          "C. tomorrow",
+          "D. ago"
+        ],
+        "answer": "A",
+        "explanation": "句中谓语动词 climbs 和 plays 为一般现在时第三人称单数，表示日常习惯，应用频度副词 often（经常），故选 A。",
+        "evidence": "Mia (3) ____ climbs hills and plays outdoor sports, so she ran fast across the grass to help.",
+        "knowledge": "频度副词与一般现在时搭配",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. brought",
+          "B. brings",
+          "C. bringing",
+          "D. bring"
+        ],
+        "answer": "D",
+        "explanation": "句中有将来时间状语 next weekend 且前面有助动词 will，其后应接动词原形 bring，故选 D。",
+        "evidence": "They will (4) ____ their kites to the park again next weekend.",
+        "knowledge": "一般将来时（will + 动词原形）",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. happy",
+          "B. happier",
+          "C. happily",
+          "D. happiness"
+        ],
+        "answer": "C",
+        "explanation": "空格位于主语 Both girls 与谓语动词 told 之间，用副词 happily 修饰 told，表示“开心地告诉家人”，因此选 C。happy、happier 是形容词，happiness 是名词，均不适合这个位置。",
+        "evidence": "Both girls (5) ____ told their family about the kites before dinner.",
+        "knowledge": "词性辨析：副词修饰动词",
+        "points": 2
+      }
+    ],
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g5-grammar-2",
+    "grade": 5,
+    "title": "周日家庭大扫除",
+    "type": "grammar",
+    "level": "标准",
+    "topic": "家庭责任与日常生活",
+    "passage": "Every Sunday morning, our whole family cleans the house together after breakfast. My brother and I (1) ____ tidy our small bedrooms before nine o'clock. Yesterday morning, Dad washed the bathroom floor, and Mom (2) ____ fresh vegetables and fruit for lunch. My bedroom is (3) ____ than the bright living room, so I finished my cleaning work very quickly. Then I helped my little brother put (4) ____ favorite storybooks onto the wooden shelf. Next Sunday, our kind aunt will visit us, and we are going to (5) ____ a delicious strawberry cake for her. Working together makes our home clean and warm.",
+    "instructions": "阅读短文，从每题所给的 A、B、C、D 四个选项中选出可以填入空白处的最佳选项。",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. usually",
+          "B. last night",
+          "C. next week",
+          "D. yesterday"
+        ],
+        "answer": "A",
+        "explanation": "前文 Every Sunday morning 表明这是规律性的日常习惯，句子使用一般现在时 tidy，应搭配频度副词 usually（通常），故选 A。",
+        "evidence": "My brother and I (1) ____ tidy our small bedrooms before nine o'clock.",
+        "knowledge": "频度副词在一般现在时中的应用",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. buy",
+          "B. buys",
+          "C. bought",
+          "D. buying"
+        ],
+        "answer": "C",
+        "explanation": "句首的时间状语为 Yesterday（昨天），且前半句用了过去式 washed，并列谓语也应用动词过去式 bought，故选 C。",
+        "evidence": "Yesterday morning, Dad washed the bathroom floor, and Mom (2) ____ fresh vegetables and fruit for lunch.",
+        "knowledge": "一般过去时（并列谓语动词过去式）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. small",
+          "B. smaller",
+          "C. smallest",
+          "D. the smallest"
+        ],
+        "answer": "B",
+        "explanation": "空格后有比较词 than，将“我的卧室”与“客厅”作比较，应用形容词比较级 smaller，故选 B。",
+        "evidence": "My bedroom is (3) ____ than the bright living room, so I finished my cleaning work very quickly.",
+        "knowledge": "形容词比较级（两者比较）",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. he",
+          "B. him",
+          "C. hers",
+          "D. his"
+        ],
+        "answer": "D",
+        "explanation": "空格后是名词 storybooks（故事书），且前文指代 my brother，修饰名词应用形容词性物主代词 his（他的），故选 D。",
+        "evidence": "Then I helped my little brother put (4) ____ favorite storybooks onto the wooden shelf.",
+        "knowledge": "形容词性物主代词修饰名词",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. make",
+          "B. made",
+          "C. makes",
+          "D. making"
+        ],
+        "answer": "A",
+        "explanation": "句首 Next Sunday 表示将来时间，be going to 后接动词原形表示计划打算，因此填 make，故选 A。",
+        "evidence": "Next Sunday, our kind aunt will visit us, and we are going to (5) ____ a delicious strawberry cake for her.",
+        "knowledge": "一般将来时（be going to + 动词原形）",
+        "points": 2
+      }
+    ],
+    "minutes": 8,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original"
+  },
+  {
+    "id": "primary-g6-reading-1",
+    "grade": 6,
+    "title": "六年级阅读理解练习一：修理旧图书",
+    "type": "reading",
+    "level": "基础",
+    "topic": "校园志愿服务与合作",
+    "passage": "Last Thursday afternoon, Nora and her classmate Leo stayed after school as library volunteers. Mrs. Chen showed them two boxes of storybooks for the younger students. Several covers were torn, and some pages were loose, so the books were harder to read than the new ones on the shelf. First, Nora sorted the books by size while Leo cleaned the covers with a soft cloth. Next, they used clear tape to repair the torn corners carefully. At five o'clock, they placed thirty neat books onto a low cart near the reading rug. Next Monday, the second-grade students will borrow them during their morning reading hour. Walking home together, Nora and Leo felt tired, yet they were proud of their helpful work.",
+    "instructions": "阅读短文，根据短文内容从每题所给的 A、B、C、D 四个选项中选出最佳答案。",
+    "minutes": 8,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Why were the storybooks in the two boxes harder to read than the new ones?",
+        "options": [
+          "A. Several covers were torn and some pages were loose.",
+          "B. They were written in a foreign language.",
+          "C. The library lights were too dark in the afternoon.",
+          "D. The pages were wet from the rain outside."
+        ],
+        "answer": "A",
+        "explanation": "根据短文第三句可知，盒子里的一些故事书封皮破损、书页松动，所以比架上的新书更难阅读，故选 A。",
+        "evidence": "Several covers were torn, and some pages were loose, so the books were harder to read than the new ones on the shelf.",
+        "knowledge": "事实细节理解（原因细节）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "What did Leo do first while Nora sorted the books by size?",
+        "options": [
+          "A. He read stories to the second-grade students.",
+          "B. He carried the low cart to the classroom.",
+          "C. He cleaned the covers with a soft cloth.",
+          "D. He wrote labels on the new bookshelves."
+        ],
+        "answer": "C",
+        "explanation": "根据短文第四句可知，Nora 按大小分类图书时，Leo 先用软布擦干净封面，因此正确答案是 C。",
+        "evidence": "First, Nora sorted the books by size while Leo cleaned the covers with a soft cloth.",
+        "knowledge": "事实细节理解（动作先后顺序）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "What can we infer about the thirty repaired books?",
+        "options": [
+          "A. They will be sold at a weekend market.",
+          "B. Younger students will be able to use them again next week.",
+          "C. Mrs. Chen will take them home on Friday.",
+          "D. Only sixth-grade students may read them."
+        ],
+        "answer": "B",
+        "explanation": "根据短文中“Next Monday, the second-grade students will borrow them during their morning reading hour.”可推断，这些修好的书下周又能供低年级学生借阅使用了，故选 B。",
+        "evidence": "Next Monday, the second-grade students will borrow them during their morning reading hour.",
+        "knowledge": "基于文本的合理推断",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "What is the main idea of the passage?",
+        "options": [
+          "A. How to buy cheap storybooks for a school library.",
+          "B. Why second-grade students enjoy morning reading.",
+          "C. Why library carts should stay near the reading rug.",
+          "D. How two student volunteers repaired old books for younger readers."
+        ],
+        "answer": "D",
+        "explanation": "全文围绕 Nora 和 Leo 放学后作为图书馆志愿者整理并修补旧故事书、方便低年级同学下周借阅展开，D 项最准确地概括了文章主旨。",
+        "evidence": "Last Thursday afternoon, Nora and her classmate Leo stayed after school as library volunteers.",
+        "knowledge": "主旨大意归纳",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g6-reading-2",
+    "grade": 6,
+    "title": "六年级阅读理解练习二：松溪河畔护鸟行",
+    "type": "reading",
+    "level": "标准",
+    "topic": "自然观察与环境保护",
+    "passage": "Every winter, wild ducks fly from colder northern lakes to Pine River near Maya's city. Last Saturday morning, Maya joined a nature club walk along the riverbank with her uncle. The air was colder than usual, so she wore a thick coat and carried a small notebook in her pocket. Their guide, Mr. Lin, asked everyone to walk quietly and stay on the wooden path so they would not frighten the birds. Through Mr. Lin's binoculars, Maya counted eighteen ducks resting near the reeds. Before leaving, the group picked up plastic bottles and snack bags near the bridge because trash can harm river animals. Maya decided to make a classroom poster next week to teach her friends how to protect winter birds.",
+    "instructions": "阅读短文，根据短文内容从每题所给的 A、B、C、D 四个选项中选出最佳答案。",
+    "minutes": 8,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "Why did Mr. Lin ask the group to walk quietly and stay on the wooden path?",
+        "options": [
+          "A. Because the grass near the river was too wet to cross.",
+          "B. So that they would not frighten the birds.",
+          "C. Because the wooden path was shorter than the road.",
+          "D. So that they could catch fish near the bridge."
+        ],
+        "answer": "B",
+        "explanation": "短文第四句明确说明，向导林先生让大家安静行走并留在木栈道上，是为了不惊吓到水鸟，故选 B。",
+        "evidence": "Their guide, Mr. Lin, asked everyone to walk quietly and stay on the wooden path so they would not frighten the birds.",
+        "knowledge": "事实细节理解（目的细节）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "What did the group do before leaving the riverbank?",
+        "options": [
+          "A. They fed bread to the eighteen ducks.",
+          "B. They built a new wooden bridge over the river.",
+          "C. They swam in the cold water near the reeds.",
+          "D. They picked up plastic bottles and snack bags near the bridge."
+        ],
+        "answer": "D",
+        "explanation": "根据短文倒数第二句可知，离开前大家捡起了桥边的塑料瓶和零食袋，以免垃圾伤害河流动物，故选 D。",
+        "evidence": "Before leaving, the group picked up plastic bottles and snack bags near the bridge because trash can harm river animals.",
+        "knowledge": "事实细节理解（具体行为）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "What can we infer about Maya from the end of the passage?",
+        "options": [
+          "A. She wants more classmates to care about protecting winter birds.",
+          "B. She plans to keep a wild duck in her apartment.",
+          "C. She forgot to bring her notebook home from the river.",
+          "D. She will move to a northern city next winter."
+        ],
+        "answer": "A",
+        "explanation": "短文最后一句提到 Maya 决定下周制作一张教室海报，教朋友们如何保护越冬鸟类，由此可推断她希望更多同学关注并参与护鸟，故选 A。",
+        "evidence": "Maya decided to make a classroom poster next week to teach her friends how to protect winter birds.",
+        "knowledge": "基于文本的人物意图推断",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "What is the best title for this passage?",
+        "options": [
+          "A. Buying a Pair of Binoculars",
+          "B. A Winter Morning Watching and Protecting River Birds",
+          "C. How to Build a Wooden Path in the Forest",
+          "D. Uncle's Favorite Notebook"
+        ],
+        "answer": "B",
+        "explanation": "全文讲述了 Maya 周六冬日清晨在松溪河畔观察野鸭、清理河岸垃圾并决定宣传护鸟的经历，B 项最贴合全文主旨。",
+        "evidence": "Last Saturday morning, Maya joined a nature club walk along the riverbank with her uncle.",
+        "knowledge": "主旨大意与最佳标题选择",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g6-grammar-1",
+    "grade": 6,
+    "title": "六年级语法完形填空一：火车站接表弟",
+    "type": "grammar",
+    "level": "基础",
+    "topic": "家庭出行与日常衔接",
+    "passage": "Last Sunday morning, Emma and her father went to the city train station to meet her cousin Peter from Nanjing. The morning sky was dark and cloudy, (1) ____ Emma put a small blue umbrella into her backpack before leaving home. They arrived at the station twenty minutes early, and the bright waiting hall was much (2) ____ than it usually is on busy weekdays. At ten o'clock, Peter walked out of the north gate and smiled happily when he (3) ____ Emma's colorful welcome sign. One box of history books in Peter's travel bag (4) ____ quite heavy, so Emma's father helped him carry it to the bus stop outside. Next weekend, the two cousins (5) ____ the science museum near Emma's school together.",
+    "instructions": "阅读短文，根据上下文和语法规则，从每题所给的 A、B、C、D 四个选项中选出可以填入相应空白处的最佳答案。",
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. or",
+          "B. so",
+          "C. but",
+          "D. although"
+        ],
+        "answer": "B",
+        "explanation": "前半句说早上多云，后半句说 Emma 出门前把小雨伞放进背包，前后是因果关系，应选表示“因此、所以”的连词 so，故选 B。",
+        "evidence": "The morning sky was dark and cloudy, (1) ____ Emma put a small blue umbrella into her backpack before leaving home.",
+        "knowledge": "并列连词辨析（因果衔接 so）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. quiet",
+          "B. quietly",
+          "C. quieter",
+          "D. quietest"
+        ],
+        "answer": "C",
+        "explanation": "空格前有系动词 was 和修饰比较级的 much，空格后有比较标志词 than，因此应填形容词比较级 quieter，故选 C。",
+        "evidence": "They arrived at the station twenty minutes early, and the bright waiting hall was much (2) ____ than it usually is on busy weekdays.",
+        "knowledge": "形容词比较级（much + 比较级 + than）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. sees",
+          "B. is seeing",
+          "C. will see",
+          "D. saw"
+        ],
+        "answer": "D",
+        "explanation": "全文叙述上周日上午（Last Sunday morning）发生的事情，主句谓语 walked 和 smiled 均为一般过去时，when 引导的时间状语从句也应用一般过去时 saw，故选 D。",
+        "evidence": "At ten o'clock, Peter walked out of the north gate and smiled happily when he (3) ____ Emma's colorful welcome sign.",
+        "knowledge": "一般过去时（过去时间语境中的动词过去式）",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. was",
+          "B. were",
+          "C. are",
+          "D. have"
+        ],
+        "answer": "A",
+        "explanation": "本句主语的核心词是单数名词 One box（of books 修饰 box），且讲述上周日过去发生的事，谓语动词需用第三人称单数过去式 was，故选 A。",
+        "evidence": "One box of history books in Peter's travel bag (4) ____ quite heavy, so Emma's father helped him carry it to the bus stop outside.",
+        "knowledge": "主谓一致与一般过去时（One box of ... 作主语）",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. visited",
+          "B. visits",
+          "C. will visit",
+          "D. will visiting"
+        ],
+        "answer": "C",
+        "explanation": "句首时间状语 Next weekend（下周末）表示将来时间，谓语动词应使用一般将来时 will visit，故选 C。",
+        "evidence": "Next weekend, the two cousins (5) ____ the science museum near Emma's school together.",
+        "knowledge": "一般将来时（Next weekend 时间标志）",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "primary-g6-grammar-2",
+    "grade": 6,
+    "title": "六年级语法完形填空二：阳台小菜园与健康午餐",
+    "type": "grammar",
+    "level": "标准",
+    "topic": "家庭劳动与健康饮食",
+    "passage": "Yesterday afternoon, Tom and his younger sister Lucy cleaned the sunny balcony of their family apartment with their mother. Two months ago, they (1) ____ small cherry tomatoes in three wooden pots near the window there. Every pot of tomatoes (2) ____ clean water and warm sunlight, so the two children check the dry soil every evening after school. This week, the ripe red tomatoes on the balcony look (3) ____ than the green ones in the supermarket near their neighborhood. Before dinner, Lucy washed both the ripe tomatoes (4) ____ a green pepper carefully in the kitchen sink. Tomorrow evening, their parents (5) ____ a fresh vegetable salad with those homegrown tomatoes for the whole family.",
+    "instructions": "阅读短文，根据上下文和语法规则，从每题所给的 A、B、C、D 四个选项中选出可以填入相应空白处的最佳答案。",
+    "minutes": 7,
+    "source": "Gemini 原创小学英语练习（非真题） · Codex 审校",
+    "origin": "original",
+    "questions": [
+      {
+        "id": "1",
+        "prompt": "(1) 请选择正确选项。",
+        "options": [
+          "A. plant",
+          "B. planted",
+          "C. will plant",
+          "D. are planting"
+        ],
+        "answer": "B",
+        "explanation": "句首有明确过去时间状语 Two months ago（两个月前），表示过去发生的动作，应使用一般过去时 planted，故选 B。",
+        "evidence": "Two months ago, they (1) ____ small cherry tomatoes in three wooden pots near the window there.",
+        "knowledge": "一般过去时（... ago 时间标志）",
+        "points": 2
+      },
+      {
+        "id": "2",
+        "prompt": "(2) 请选择正确选项。",
+        "options": [
+          "A. need",
+          "B. needing",
+          "C. needs",
+          "D. to need"
+        ],
+        "answer": "C",
+        "explanation": "后半句 the children check the soil every evening after school 表明此处描述日常事实，用一般现在时；主语核心词是单数 Every pot，因此谓语动词用第三人称单数形式 needs，故选 C。",
+        "evidence": "Every pot of tomatoes (2) ____ clean water and warm sunlight, so the two children check the dry soil every evening after school.",
+        "knowledge": "主谓一致（Every + 单数名词作主语）",
+        "points": 2
+      },
+      {
+        "id": "3",
+        "prompt": "(3) 请选择正确选项。",
+        "options": [
+          "A. fresher",
+          "B. fresh",
+          "C. freshest",
+          "D. freshly"
+        ],
+        "answer": "A",
+        "explanation": "感官系动词 look 后接形容词作表语，且句中有比较连词 than，因此应填形容词比较级 fresher，故选 A。",
+        "evidence": "This week, the ripe red tomatoes on the balcony look (3) ____ than the green ones in the supermarket near their neighborhood.",
+        "knowledge": "系动词后接形容词比较级（look + 比较级 + than）",
+        "points": 2
+      },
+      {
+        "id": "4",
+        "prompt": "(4) 请选择正确选项。",
+        "options": [
+          "A. but",
+          "B. because",
+          "C. or",
+          "D. and"
+        ],
+        "answer": "D",
+        "explanation": "both A and B 是固定的并列结构，表示“A 和 B 两者都”。这里说 Lucy 把成熟的番茄和一个青椒都仔细洗了，因此选 D，填 and。",
+        "evidence": "Before dinner, Lucy washed both the ripe tomatoes (4) ____ a green pepper carefully in the kitchen sink.",
+        "knowledge": "并列结构：both…and…（两者都）",
+        "points": 2
+      },
+      {
+        "id": "5",
+        "prompt": "(5) 请选择正确选项。",
+        "options": [
+          "A. made",
+          "B. makes",
+          "C. will make",
+          "D. was making"
+        ],
+        "answer": "C",
+        "explanation": "句首时间状语 Tomorrow evening（明天晚上）表示将来时间，谓语动词应用一般将来时 will make，故选 C。",
+        "evidence": "Tomorrow evening, their parents (5) ____ a fresh vegetable salad with those homegrown tomatoes for the whole family.",
+        "knowledge": "一般将来时（Tomorrow evening 时间标志）",
+        "points": 2
+      }
+    ]
+  }
+]

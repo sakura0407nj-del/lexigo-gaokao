@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "p3-mother",
+    "word": "mother",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "母亲；妈妈",
+    "example": "My mother makes warm soup for us.",
+    "exampleZh": "我妈妈为我们做热汤。"
+  },
+  {
+    "id": "p3-father",
+    "word": "father",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "父亲；爸爸",
+    "example": "My father reads a story to me.",
+    "exampleZh": "我爸爸给我读一个故事。"
+  },
+  {
+    "id": "p3-sister",
+    "word": "sister",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "姐姐；妹妹",
+    "example": "My sister has a yellow schoolbag.",
+    "exampleZh": "我的姐姐有一个黄色的书包。"
+  },
+  {
+    "id": "p3-brother",
+    "word": "brother",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "哥哥；弟弟",
+    "example": "My brother likes his toy car.",
+    "exampleZh": "我的弟弟喜欢他的玩具小汽车。"
+  },
+  {
+    "id": "p3-baby",
+    "word": "baby",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "婴儿；小宝宝",
+    "example": "The baby smiles at my mother.",
+    "exampleZh": "小宝宝朝我妈妈微笑。"
+  },
+  {
+    "id": "p3-teacher",
+    "word": "teacher",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "老师；教师",
+    "example": "Our teacher writes on the blackboard.",
+    "exampleZh": "我们的老师在黑板上写字。"
+  },
+  {
+    "id": "p3-student",
+    "word": "student",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "学生",
+    "example": "Every student has a new notebook.",
+    "exampleZh": "每个学生都有一个新笔记本。"
+  },
+  {
+    "id": "p3-book",
+    "word": "book",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "书；书本",
+    "example": "This picture book is very funny.",
+    "exampleZh": "这本图画书非常有趣。"
+  },
+  {
+    "id": "p3-pen",
+    "word": "pen",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "钢笔；笔",
+    "example": "I write my name with a blue pen.",
+    "exampleZh": "我用一支蓝色的笔写我的名字。"
+  },
+  {
+    "id": "p3-read",
+    "word": "read",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ],
+    "translation": "读；阅读",
+    "example": "We read English books in class.",
+    "exampleZh": "我们在课堂上读英语书。"
+  },
+  {
+    "id": "p3-house",
+    "word": "house",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "房子；住宅",
+    "example": "There is a small garden near our house.",
+    "exampleZh": "我们房子附近有一个小花园。"
+  },
+  {
+    "id": "p3-room",
+    "word": "room",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "房间",
+    "example": "My room is clean and bright.",
+    "exampleZh": "我的房间既干净又明亮。"
+  },
+  {
+    "id": "p3-bed",
+    "word": "bed",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "床",
+    "example": "There is a soft bear on my bed.",
+    "exampleZh": "我的床上有一只柔软的小熊。"
+  },
+  {
+    "id": "p3-chair",
+    "word": "chair",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "椅子",
+    "example": "Please sit on this wooden chair.",
+    "exampleZh": "请坐在这把木椅上。"
+  },
+  {
+    "id": "p3-sleep",
+    "word": "sleep",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ],
+    "translation": "睡觉",
+    "example": "I sleep in my quiet bedroom at night.",
+    "exampleZh": "我晚上在安静的卧室里睡觉。"
+  },
+  {
+    "id": "p3-apple",
+    "word": "apple",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "苹果",
+    "example": "She puts a red apple in her bag.",
+    "exampleZh": "她把一个红苹果放进包里。"
+  },
+  {
+    "id": "p3-banana",
+    "word": "banana",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "香蕉",
+    "example": "The monkey wants a sweet banana.",
+    "exampleZh": "这只猴子想要一根甜香蕉。"
+  },
+  {
+    "id": "p3-milk",
+    "word": "milk",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "牛奶",
+    "example": "I drink warm milk every morning.",
+    "exampleZh": "我每天早上喝热牛奶。"
+  },
+  {
+    "id": "p3-bread",
+    "word": "bread",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "面包",
+    "example": "We have fresh bread for breakfast.",
+    "exampleZh": "我们早餐吃新鲜的面包。"
+  },
+  {
+    "id": "p3-eat",
+    "word": "eat",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "吃",
+    "example": "We eat lunch together at school.",
+    "exampleZh": "我们在学校一起吃午饭。"
+  },
+  {
+    "id": "p3-cat",
+    "word": "cat",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "猫",
+    "example": "The white cat naps on the sofa.",
+    "exampleZh": "那只白猫在沙发上打盹。"
+  },
+  {
+    "id": "p3-dog",
+    "word": "dog",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "狗",
+    "example": "My brown dog runs after a ball.",
+    "exampleZh": "我的棕色小狗追着球跑。"
+  },
+  {
+    "id": "p3-bird",
+    "word": "bird",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鸟；小鸟",
+    "example": "A little bird is in the tree.",
+    "exampleZh": "树上有一只小鸟。"
+  },
+  {
+    "id": "p3-fish",
+    "word": "fish",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鱼",
+    "example": "The orange fish swims in the bowl.",
+    "exampleZh": "那条橙色的鱼在鱼缸里游。"
+  },
+  {
+    "id": "p3-rabbit",
+    "word": "rabbit",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "兔子",
+    "example": "The rabbit has two long ears.",
+    "exampleZh": "这只兔子有两只长耳朵。"
+  },
+  {
+    "id": "p3-sun",
+    "word": "sun",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "太阳；阳光",
+    "example": "The sun is bright in the sky.",
+    "exampleZh": "天空中的太阳很明亮。"
+  },
+  {
+    "id": "p3-rain",
+    "word": "rain",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "雨；雨水",
+    "example": "The flowers grow fast after the rain.",
+    "exampleZh": "雨后花儿长得很快。"
+  },
+  {
+    "id": "p3-hot",
+    "word": "hot",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "热的；炎热的",
+    "example": "It is very hot in summer.",
+    "exampleZh": "夏天天气非常炎热。"
+  },
+  {
+    "id": "p3-cold",
+    "word": "cold",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "冷的；寒冷的",
+    "example": "The wind is cold today.",
+    "exampleZh": "今天的风很冷。"
+  },
+  {
+    "id": "p3-green",
+    "word": "green",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "绿色的",
+    "example": "The grass is green in spring.",
+    "exampleZh": "春天的草是绿色的。"
+  },
+  {
+    "id": "p3-head",
+    "word": "head",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "头；头部",
+    "example": "He nods his head to say yes.",
+    "exampleZh": "他点点头表示同意。"
+  },
+  {
+    "id": "p3-hand",
+    "word": "hand",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "手",
+    "example": "Raise your hand in class, please.",
+    "exampleZh": "上课时请举起你的手。"
+  },
+  {
+    "id": "p3-eye",
+    "word": "eye",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "眼睛",
+    "example": "Close one eye and look through the tube.",
+    "exampleZh": "闭上一只眼睛，透过管子看。"
+  },
+  {
+    "id": "p3-ear",
+    "word": "ear",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "耳朵",
+    "example": "The puppy has one black ear.",
+    "exampleZh": "这只小狗有一只黑耳朵。"
+  },
+  {
+    "id": "p3-run",
+    "word": "run",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ],
+    "translation": "跑；奔跑",
+    "example": "The children run on the playground.",
+    "exampleZh": "孩子们在操场上奔跑。"
+  },
+  {
+    "id": "p3-shirt",
+    "word": "shirt",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "衬衫",
+    "example": "His white shirt is very clean.",
+    "exampleZh": "他的白衬衫非常干净。"
+  },
+  {
+    "id": "p3-coat",
+    "word": "coat",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "外套；大衣",
+    "example": "Put on your warm coat before going out.",
+    "exampleZh": "出门前穿上你的暖和外套。"
+  },
+  {
+    "id": "p3-shoe",
+    "word": "shoe",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鞋；鞋子",
+    "example": "My left shoe is under the desk.",
+    "exampleZh": "我的左脚鞋子在书桌下面。"
+  },
+  {
+    "id": "p3-hat",
+    "word": "hat",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "帽子",
+    "example": "She wears a yellow sun hat.",
+    "exampleZh": "她戴着一顶黄色的遮阳帽。"
+  },
+  {
+    "id": "p3-wear",
+    "word": "wear",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "穿；戴",
+    "example": "I wear my blue jacket on windy days.",
+    "exampleZh": "刮风的日子里我穿我的蓝夹克。"
+  },
+  {
+    "id": "p3-morning",
+    "word": "morning",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ],
+    "translation": "早晨；上午",
+    "example": "We have four classes in the morning.",
+    "exampleZh": "我们上午有四节课。"
+  },
+  {
+    "id": "p3-night",
+    "word": "night",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ],
+    "translation": "夜晚；晚上",
+    "example": "Stars shine in the sky at night.",
+    "exampleZh": "夜晚星星在天空中闪烁。"
+  },
+  {
+    "id": "p3-day",
+    "word": "day",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ],
+    "translation": "一天；白天",
+    "example": "Sunday is a fun day for my family.",
+    "exampleZh": "星期天对我们全家来说是开心的一天。"
+  },
+  {
+    "id": "p3-now",
+    "word": "now",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "现在；目前",
+    "example": "Dinner is ready now.",
+    "exampleZh": "晚饭现在准备好了。"
+  },
+  {
+    "id": "p3-early",
+    "word": "early",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "提早；早早地",
+    "example": "I wake up early every school day.",
+    "exampleZh": "每个上学日我都早早醒来。"
+  },
+  {
+    "id": "p3-play",
+    "word": "play",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "玩；玩耍",
+    "example": "We play games after school.",
+    "exampleZh": "我们放学后玩游戏。"
+  },
+  {
+    "id": "p3-sing",
+    "word": "sing",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "唱；唱歌",
+    "example": "They sing a happy song together.",
+    "exampleZh": "他们一起唱一首快乐的歌。"
+  },
+  {
+    "id": "p3-dance",
+    "word": "dance",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "跳舞",
+    "example": "The girls can dance very well.",
+    "exampleZh": "这些女孩跳舞跳得很好。"
+  },
+  {
+    "id": "p3-draw",
+    "word": "draw",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "画；绘画",
+    "example": "I draw a red house with crayons.",
+    "exampleZh": "我用蜡笔画了一座红房子。"
+  },
+  {
+    "id": "p3-swim",
+    "word": "swim",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "游泳",
+    "example": "Ducks can swim in the river.",
+    "exampleZh": "鸭子会在河里游泳。"
+  },
+  {
+    "id": "p3-school",
+    "word": "school",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "学校",
+    "example": "Our school has a big library.",
+    "exampleZh": "我们学校有一个大图书馆。"
+  },
+  {
+    "id": "p3-park",
+    "word": "park",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "公园",
+    "example": "We fly kites in the park.",
+    "exampleZh": "我们在公园里放风筝。"
+  },
+  {
+    "id": "p3-here",
+    "word": "here",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在这里；向这里",
+    "example": "Please come here and sit down.",
+    "exampleZh": "请到这里来坐下。"
+  },
+  {
+    "id": "p3-there",
+    "word": "there",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在那里；往那里",
+    "example": "Put your umbrella over there.",
+    "exampleZh": "把你的雨伞放在那边。"
+  },
+  {
+    "id": "p3-home",
+    "word": "home",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "回家；在家",
+    "example": "We walk home together after class.",
+    "exampleZh": "下课后我们一起走路回家。"
+  },
+  {
+    "id": "p3-happy",
+    "word": "happy",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "快乐的；开心的",
+    "example": "She is happy to see her friend.",
+    "exampleZh": "她见到朋友很开心。"
+  },
+  {
+    "id": "p3-sad",
+    "word": "sad",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "难过的；悲伤的",
+    "example": "The boy is sad because his toy is lost.",
+    "exampleZh": "小男孩很难过，因为他的玩具丢了。"
+  },
+  {
+    "id": "p3-big",
+    "word": "big",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "大的",
+    "example": "An elephant has two big ears.",
+    "exampleZh": "大象有两只大耳朵。"
+  },
+  {
+    "id": "p3-small",
+    "word": "small",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "小的",
+    "example": "I have a small green ruler.",
+    "exampleZh": "我有一把绿色的小尺子。"
+  },
+  {
+    "id": "p3-good",
+    "word": "good",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "好的；优秀的",
+    "example": "Tom is a good friend to me.",
+    "exampleZh": "汤姆是我的好朋友。"
+  },
+  {
+    "id": "p4-family",
+    "word": "family",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "家庭；家人",
+    "example": "My family eats dinner together every evening.",
+    "exampleZh": "我的家人每天晚上一起吃晚饭。"
+  },
+  {
+    "id": "p4-friend",
+    "word": "friend",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "朋友",
+    "example": "Lily is my good friend at school.",
+    "exampleZh": "莉莉是我在学校里的好朋友。"
+  },
+  {
+    "id": "p4-cousin",
+    "word": "cousin",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "堂（表）兄弟姐妹",
+    "example": "My cousin plays football with me on Sunday.",
+    "exampleZh": "我的表兄星期天和我一起踢足球。"
+  },
+  {
+    "id": "p4-parent",
+    "word": "parent",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "父（母）亲",
+    "example": "Every parent wants to see the school show.",
+    "exampleZh": "每位家长都想看学校演出。"
+  },
+  {
+    "id": "p4-help",
+    "word": "help",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "verb"
+    ],
+    "translation": "帮助",
+    "example": "I often help my grandma water the flowers.",
+    "exampleZh": "我经常帮奶奶浇花。"
+  },
+  {
+    "id": "p4-classroom",
+    "word": "classroom",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "教室",
+    "example": "Our classroom has four big windows.",
+    "exampleZh": "我们的教室有四扇大窗户。"
+  },
+  {
+    "id": "p4-desk",
+    "word": "desk",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "书桌；课桌",
+    "example": "Please put your storybook on the desk.",
+    "exampleZh": "请把你的故事书放在课桌上。"
+  },
+  {
+    "id": "p4-pencil",
+    "word": "pencil",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "铅笔",
+    "example": "Can I borrow your pencil for art class?",
+    "exampleZh": "美术课我可以借用一下你的铅笔吗？"
+  },
+  {
+    "id": "p4-lesson",
+    "word": "lesson",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "课程；一节课",
+    "example": "Our first lesson starts at eight thirty.",
+    "exampleZh": "我们的第一节课八点半开始。"
+  },
+  {
+    "id": "p4-write",
+    "word": "write",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ],
+    "translation": "写；书写",
+    "example": "We write new English words in our notebooks.",
+    "exampleZh": "我们在笔记本上写新的英语单词。"
+  },
+  {
+    "id": "p4-kitchen",
+    "word": "kitchen",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "厨房",
+    "example": "Dad is making warm soup in the kitchen.",
+    "exampleZh": "爸爸正在厨房里做热汤。"
+  },
+  {
+    "id": "p4-garden",
+    "word": "garden",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "花园；菜园",
+    "example": "Many red roses grow in our small garden.",
+    "exampleZh": "我们的小花园里长着许多红玫瑰。"
+  },
+  {
+    "id": "p4-window",
+    "word": "window",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "窗户",
+    "example": "Sunlight comes in through the clean window.",
+    "exampleZh": "阳光透过干净的窗户照进来。"
+  },
+  {
+    "id": "p4-door",
+    "word": "door",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "门",
+    "example": "Please close the door when you leave the room.",
+    "exampleZh": "你离开房间时请关上门。"
+  },
+  {
+    "id": "p4-clean",
+    "word": "clean",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ],
+    "translation": "打扫；弄干净",
+    "example": "We clean our living room every Saturday morning.",
+    "exampleZh": "我们每个星期六早上打扫客厅。"
+  },
+  {
+    "id": "p4-orange",
+    "word": "orange",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "橙子；柑橘",
+    "example": "She puts a sweet orange into her lunch box.",
+    "exampleZh": "她把一个甜橙放进午餐盒里。"
+  },
+  {
+    "id": "p4-grape",
+    "word": "grape",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "葡萄",
+    "example": "He washes a big purple grape before eating it.",
+    "exampleZh": "他吃那颗紫色大葡萄前先把它洗干净。"
+  },
+  {
+    "id": "p4-rice",
+    "word": "rice",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "米饭；大米",
+    "example": "I would like a bowl of white rice for lunch.",
+    "exampleZh": "午饭我想要一碗白米饭。"
+  },
+  {
+    "id": "p4-juice",
+    "word": "juice",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "果汁",
+    "example": "Mom pours cold apple juice into two glasses.",
+    "exampleZh": "妈妈把冰苹果汁倒进两个玻璃杯里。"
+  },
+  {
+    "id": "p4-cook",
+    "word": "cook",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "烹饪；做饭",
+    "example": "My parents cook delicious noodles on weekends.",
+    "exampleZh": "我父母周末会煮美味的面条。"
+  },
+  {
+    "id": "p4-horse",
+    "word": "horse",
+    "grade": 4,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "马",
+    "example": "A brown horse runs fast across the green grass.",
+    "exampleZh": "一匹棕色的马飞快地跑过绿草地。"
+  },
+  {
+    "id": "p4-cow",
+    "word": "cow",
+    "grade": 4,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "奶牛；母牛",
+    "example": "The black and white cow eats grass on the farm.",
+    "exampleZh": "那头黑白相间的奶牛在农场里吃草。"
+  },
+  {
+    "id": "p4-sheep",
+    "word": "sheep",
+    "grade": 4,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "绵羊",
+    "example": "Three white sheep stand near the wooden fence.",
+    "exampleZh": "三只白绵羊站在木栅栏旁边。"
+  },
+  {
+    "id": "p4-duck",
+    "word": "duck",
+    "grade": 4,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鸭子",
+    "example": "A little yellow duck swims happily in the pond.",
+    "exampleZh": "一只小黄鸭在池塘里快乐地游水。"
+  },
+  {
+    "id": "p4-chicken",
+    "word": "chicken",
+    "grade": 4,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鸡；鸡肉",
+    "example": "Grandpa feeds the chicken in the yard every morning.",
+    "exampleZh": "爷爷每天早上在院子里喂那只鸡。"
+  },
+  {
+    "id": "p4-cloud",
+    "word": "cloud",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "云；云朵",
+    "example": "A soft white cloud floats in the blue sky.",
+    "exampleZh": "一朵柔软的白云飘在蓝天上。"
+  },
+  {
+    "id": "p4-wind",
+    "word": "wind",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "风",
+    "example": "The autumn wind blows the yellow leaves down.",
+    "exampleZh": "秋风把黄叶吹落下来。"
+  },
+  {
+    "id": "p4-warm",
+    "word": "warm",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "温暖的；暖和的",
+    "example": "Spring days are warm and sunny in our town.",
+    "exampleZh": "我们小镇的春天温暖又晴朗。"
+  },
+  {
+    "id": "p4-cool",
+    "word": "cool",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "凉爽的",
+    "example": "The evening air feels cool after the rain.",
+    "exampleZh": "雨后的傍晚空气让人觉得凉爽。"
+  },
+  {
+    "id": "p4-beautiful",
+    "word": "beautiful",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "美丽的；漂亮的",
+    "example": "We can see a beautiful rainbow after the shower.",
+    "exampleZh": "阵雨过后我们能看到一道美丽的彩虹。"
+  },
+  {
+    "id": "p4-hair",
+    "word": "hair",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "头发；毛发",
+    "example": "My sister brushes her long black hair every morning.",
+    "exampleZh": "我姐姐每天早上梳理她长长的黑发。"
+  },
+  {
+    "id": "p4-face",
+    "word": "face",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "脸；面部",
+    "example": "He washes his face with warm water before bed.",
+    "exampleZh": "他睡前用温水洗脸。"
+  },
+  {
+    "id": "p4-mouth",
+    "word": "mouth",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "嘴；口",
+    "example": "Do not talk with food in your mouth.",
+    "exampleZh": "嘴里有食物时不要说话。"
+  },
+  {
+    "id": "p4-leg",
+    "word": "leg",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "腿",
+    "example": "The runner stretches each leg before the race.",
+    "exampleZh": "跑步选手在赛前伸展每一条腿。"
+  },
+  {
+    "id": "p4-walk",
+    "word": "walk",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ],
+    "translation": "步行；走",
+    "example": "I walk to school with my brother every day.",
+    "exampleZh": "我每天和哥哥一起步行去上学。"
+  },
+  {
+    "id": "p4-dress",
+    "word": "dress",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "连衣裙",
+    "example": "Anna wears her new pink dress to the party.",
+    "exampleZh": "安娜穿着她的新粉色连衣裙去参加聚会。"
+  },
+  {
+    "id": "p4-skirt",
+    "word": "skirt",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "短裙；半身裙",
+    "example": "This blue skirt looks nice with a white shirt.",
+    "exampleZh": "这条蓝色短裙配白衬衫很好看。"
+  },
+  {
+    "id": "p4-trousers",
+    "word": "trousers",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "裤子",
+    "example": "His gray trousers are a little long for him.",
+    "exampleZh": "他的灰色裤子对他来说有一点长。"
+  },
+  {
+    "id": "p4-jacket",
+    "word": "jacket",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "夹克衫；短上衣",
+    "example": "Put on your warm jacket before going out.",
+    "exampleZh": "出门前穿上你的保暖夹克衫。"
+  },
+  {
+    "id": "p4-buy",
+    "word": "buy",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "买；购买",
+    "example": "We want to buy a pair of sports shoes.",
+    "exampleZh": "我们想买一双运动鞋。"
+  },
+  {
+    "id": "p4-today",
+    "word": "today",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在今天；今天",
+    "example": "We have a music class at school today.",
+    "exampleZh": "我们今天在学校有一节音乐课。"
+  },
+  {
+    "id": "p4-tomorrow",
+    "word": "tomorrow",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在明天；明天",
+    "example": "Our class will visit the science museum tomorrow.",
+    "exampleZh": "我们班明天要去参观科学博物馆。"
+  },
+  {
+    "id": "p4-usually",
+    "word": "usually",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "通常",
+    "example": "I usually read a storybook for twenty minutes at night.",
+    "exampleZh": "我晚上通常读二十分钟故事书。"
+  },
+  {
+    "id": "p4-always",
+    "word": "always",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "总是；一直",
+    "example": "Tom always says hello to his teachers in the morning.",
+    "exampleZh": "汤姆早上总是向他的老师们问好。"
+  },
+  {
+    "id": "p4-later",
+    "word": "later",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "稍后；随后",
+    "example": "It is raining now, so we can play outside later.",
+    "exampleZh": "现在正在下雨，我们可以稍后再去外面玩。"
+  },
+  {
+    "id": "p4-jump",
+    "word": "jump",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "跳；跳跃",
+    "example": "The children jump rope together on the playground.",
+    "exampleZh": "孩子们在操场上一起跳绳。"
+  },
+  {
+    "id": "p4-ride",
+    "word": "ride",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "骑（车、马等）",
+    "example": "Can you ride a bike in the park?",
+    "exampleZh": "你会在公园里骑自行车吗？"
+  },
+  {
+    "id": "p4-watch",
+    "word": "watch",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "观看；注视",
+    "example": "We watch a funny cartoon after finishing homework.",
+    "exampleZh": "我们完成作业后看一部有趣的动画片。"
+  },
+  {
+    "id": "p4-listen",
+    "word": "listen",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "听；倾听",
+    "example": "Please listen to the teacher carefully in class.",
+    "exampleZh": "上课时请认真听老师讲课。"
+  },
+  {
+    "id": "p4-open",
+    "word": "open",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "打开",
+    "example": "Let us open our books to page twelve.",
+    "exampleZh": "让我们把书打开到第十二页。"
+  },
+  {
+    "id": "p4-library",
+    "word": "library",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "图书馆",
+    "example": "We keep quiet when we read in the library.",
+    "exampleZh": "我们在图书馆看书时保持安静。"
+  },
+  {
+    "id": "p4-zoo",
+    "word": "zoo",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "动物园",
+    "example": "Many children go to the zoo to see pandas.",
+    "exampleZh": "许多孩子去动物园看大熊猫。"
+  },
+  {
+    "id": "p4-shop",
+    "word": "shop",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "商店",
+    "example": "There is a small fruit shop near our home.",
+    "exampleZh": "我们家附近有一家小水果店。"
+  },
+  {
+    "id": "p4-nearby",
+    "word": "nearby",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在附近",
+    "example": "My grandparents live nearby, so we visit them often.",
+    "exampleZh": "我的祖父母住在附近，所以我们经常去看望他们。"
+  },
+  {
+    "id": "p4-outside",
+    "word": "outside",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在外面；向外面",
+    "example": "The sun is shining, so the children play outside.",
+    "exampleZh": "阳光灿烂，所以孩子们在外面玩耍。"
+  },
+  {
+    "id": "p4-tired",
+    "word": "tired",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "疲倦的；累的",
+    "example": "He feels tired after running two hundred meters.",
+    "exampleZh": "跑完两百米后他觉得累了。"
+  },
+  {
+    "id": "p4-hungry",
+    "word": "hungry",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "饥饿的",
+    "example": "I am hungry now and want some bread.",
+    "exampleZh": "我现在饿了，想吃一些面包。"
+  },
+  {
+    "id": "p4-thirsty",
+    "word": "thirsty",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "口渴的",
+    "example": "Drink some water when you feel thirsty.",
+    "exampleZh": "你觉得口渴的时候喝点水吧。"
+  },
+  {
+    "id": "p4-kind",
+    "word": "kind",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "友善的；和蔼的",
+    "example": "Our English teacher is kind to every student.",
+    "exampleZh": "我们的英语老师对每个学生都很友善。"
+  },
+  {
+    "id": "p4-funny",
+    "word": "funny",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "滑稽的；好笑的",
+    "example": "The little monkey makes a funny face at us.",
+    "exampleZh": "那只小猴子朝我们做了一个滑稽的鬼脸。"
+  },
+  {
+    "id": "p5-uncle",
+    "word": "uncle",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "叔叔；舅舅；伯父",
+    "example": "My uncle works at a science museum in the city.",
+    "exampleZh": "我的叔叔在城里的一家科学博物馆工作。"
+  },
+  {
+    "id": "p5-aunt",
+    "word": "aunt",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "阿姨；姑姑；舅妈",
+    "example": "My aunt often makes warm soup for our family.",
+    "exampleZh": "我的阿姨经常为我们一家人做热汤。"
+  },
+  {
+    "id": "p5-neighbor",
+    "word": "neighbor",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "邻居",
+    "example": "Our kind neighbor waters our plants when we travel.",
+    "exampleZh": "我们外出旅行时，善良的邻居帮我们浇花。"
+  },
+  {
+    "id": "p5-visitor",
+    "word": "visitor",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "访客；参观者",
+    "example": "Each visitor gets a small map at the school gate.",
+    "exampleZh": "每位访客在学校门口都会拿到一张小地图。"
+  },
+  {
+    "id": "p5-meet",
+    "word": "meet",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "verb"
+    ],
+    "translation": "遇见；见面",
+    "example": "We usually meet our friends at the park on Sunday.",
+    "exampleZh": "星期天我们通常在公园和朋友见面。"
+  },
+  {
+    "id": "p5-subject",
+    "word": "subject",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "科目；学科",
+    "example": "Music is my favorite subject at primary school.",
+    "exampleZh": "音乐是我在小学最喜欢的科目。"
+  },
+  {
+    "id": "p5-science",
+    "word": "science",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "科学",
+    "example": "We do fun experiments in our science class every week.",
+    "exampleZh": "我们每周都在科学课上做有趣的实验。"
+  },
+  {
+    "id": "p5-homework",
+    "word": "homework",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "家庭作业",
+    "example": "Lily finishes her homework before dinner every evening.",
+    "exampleZh": "莉莉每天晚上晚饭前完成家庭作业。"
+  },
+  {
+    "id": "p5-question",
+    "word": "question",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "问题",
+    "example": "Tom asked a good question after the reading lesson.",
+    "exampleZh": "阅读课后汤姆提了一个好问题。"
+  },
+  {
+    "id": "p5-answer",
+    "word": "answer",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ],
+    "translation": "回答；答复",
+    "example": "Please answer the teacher in a clear and loud voice.",
+    "exampleZh": "请用清晰响亮的声音回答老师。"
+  },
+  {
+    "id": "p5-bathroom",
+    "word": "bathroom",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "浴室；洗手间",
+    "example": "Wash your hands in the bathroom before you eat.",
+    "exampleZh": "吃饭前去洗手间洗洗手。"
+  },
+  {
+    "id": "p5-bedroom",
+    "word": "bedroom",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "卧室",
+    "example": "There is a small bookshelf next to my bedroom window.",
+    "exampleZh": "我卧室的窗户旁边有一个小书架。"
+  },
+  {
+    "id": "p5-sofa",
+    "word": "sofa",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "沙发",
+    "example": "Grandpa is reading a newspaper on the living room sofa.",
+    "exampleZh": "爷爷正在客厅的沙发上看报纸。"
+  },
+  {
+    "id": "p5-table",
+    "word": "table",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "桌子；餐桌",
+    "example": "We put fresh apples and plates on the kitchen table.",
+    "exampleZh": "我们把新鲜的苹果和盘子放在厨房桌子上。"
+  },
+  {
+    "id": "p5-tidy",
+    "word": "tidy",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ],
+    "translation": "整理；收拾",
+    "example": "I help my sister tidy the study every Saturday morning.",
+    "exampleZh": "每个星期六早上我帮妹妹整理书房。"
+  },
+  {
+    "id": "p5-vegetable",
+    "word": "vegetable",
+    "grade": 5,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "蔬菜",
+    "example": "Carrots are a healthy vegetable for growing children.",
+    "exampleZh": "对成长中的孩子来说，胡萝卜是一种健康的蔬菜。"
+  },
+  {
+    "id": "p5-tomato",
+    "word": "tomato",
+    "grade": 5,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "西红柿；番茄",
+    "example": "Mom cut a red tomato to make egg noodles for lunch.",
+    "exampleZh": "妈妈切了一个红番茄来做午饭的鸡蛋面。"
+  },
+  {
+    "id": "p5-potato",
+    "word": "potato",
+    "grade": 5,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "土豆；马铃薯",
+    "example": "Dad baked a big potato with cheese for my dinner.",
+    "exampleZh": "爸爸烤了一个加奶酪的大土豆给我当晚饭。"
+  },
+  {
+    "id": "p5-breakfast",
+    "word": "breakfast",
+    "grade": 5,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "早餐；早饭",
+    "example": "I drink warm milk and eat bread for breakfast every day.",
+    "exampleZh": "我每天早饭喝热牛奶、吃面包。"
+  },
+  {
+    "id": "p5-share",
+    "word": "share",
+    "grade": 5,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "分享；分担",
+    "example": "Good friends often share sweet fruit at lunchtime.",
+    "exampleZh": "好朋友经常在午饭时间分享香甜的水果。"
+  },
+  {
+    "id": "p5-elephant",
+    "word": "elephant",
+    "grade": 5,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "大象",
+    "example": "The elephant has two big ears and a very long nose.",
+    "exampleZh": "大象有两只大耳朵和一个很长的鼻子。"
+  },
+  {
+    "id": "p5-tiger",
+    "word": "tiger",
+    "grade": 5,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "老虎",
+    "example": "A strong tiger is walking slowly near the zoo river.",
+    "exampleZh": "一只强壮的老虎正在动物园河边慢慢地走。"
+  },
+  {
+    "id": "p5-panda",
+    "word": "panda",
+    "grade": 5,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "熊猫",
+    "example": "The cute panda enjoys eating green bamboo in the morning.",
+    "exampleZh": "这只可爱的熊猫喜欢在早上吃绿竹子。"
+  },
+  {
+    "id": "p5-monkey",
+    "word": "monkey",
+    "grade": 5,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "猴子",
+    "example": "That little monkey can climb up the tall tree quickly.",
+    "exampleZh": "那只小猴子能快速爬上高高的树。"
+  },
+  {
+    "id": "p5-feed",
+    "word": "feed",
+    "grade": 5,
+    "topic": "动物世界",
+    "pos": [
+      "verb"
+    ],
+    "translation": "喂养；饲养",
+    "example": "Do not feed the animals when you visit the city zoo.",
+    "exampleZh": "参观城市动物园时请不要喂动物。"
+  },
+  {
+    "id": "p5-season",
+    "word": "season",
+    "grade": 5,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "季节",
+    "example": "Each season brings different flowers and weather to our town.",
+    "exampleZh": "每个季节都给我们的城镇带来不同的花朵和天气。"
+  },
+  {
+    "id": "p5-spring",
+    "word": "spring",
+    "grade": 5,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "春天；春季",
+    "example": "Tree leaves turn green when warm spring arrives.",
+    "exampleZh": "温暖的春天到来时，树叶变绿了。"
+  },
+  {
+    "id": "p5-summer",
+    "word": "summer",
+    "grade": 5,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "夏天；夏季",
+    "example": "Many students go swimming during the hot summer holiday.",
+    "exampleZh": "许多学生在炎热的暑假期间去游泳。"
+  },
+  {
+    "id": "p5-autumn",
+    "word": "autumn",
+    "grade": 5,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "秋天；秋季",
+    "example": "Farmers pick sweet oranges on the hill in cool autumn.",
+    "exampleZh": "凉爽的秋天里，农民们在山上摘甜橙子。"
+  },
+  {
+    "id": "p5-snowy",
+    "word": "snowy",
+    "grade": 5,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "下雪的；多雪的",
+    "example": "Children like making snowmen on a snowy winter morning.",
+    "exampleZh": "孩子们喜欢在下雪的冬日早晨堆雪人。"
+  },
+  {
+    "id": "p5-tooth",
+    "word": "tooth",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "牙齿",
+    "example": "My little brother lost a front tooth last week.",
+    "exampleZh": "我弟弟上周掉了一颗门牙。"
+  },
+  {
+    "id": "p5-stomach",
+    "word": "stomach",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "胃；肚子",
+    "example": "His stomach hurt after he drank too much cold juice.",
+    "exampleZh": "喝了太多冷果汁后，他的肚子疼了。"
+  },
+  {
+    "id": "p5-healthy",
+    "word": "healthy",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "健康的；有益健康的",
+    "example": "Fresh fruit and enough sleep keep our bodies healthy.",
+    "exampleZh": "新鲜水果和充足睡眠让我们的身体保持健康。"
+  },
+  {
+    "id": "p5-exercise",
+    "word": "exercise",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ],
+    "translation": "锻炼；运动",
+    "example": "We should exercise on the playground for one hour a day.",
+    "exampleZh": "我们每天应该在操场上锻炼一小时。"
+  },
+  {
+    "id": "p5-rest",
+    "word": "rest",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ],
+    "translation": "休息",
+    "example": "You need to rest in bed when you have a bad cold.",
+    "exampleZh": "当你重感冒时，你需要卧床休息。"
+  },
+  {
+    "id": "p5-sweater",
+    "word": "sweater",
+    "grade": 5,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "毛衣；针织衫",
+    "example": "Put on your thick sweater because the wind is cold today.",
+    "exampleZh": "穿上你的厚毛衣吧，因为今天风很冷。"
+  },
+  {
+    "id": "p5-glove",
+    "word": "glove",
+    "grade": 5,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "手套",
+    "example": "Ben found one blue glove under his school desk.",
+    "exampleZh": "本在他的课桌下面找到了一只蓝色手套。"
+  },
+  {
+    "id": "p5-scarf",
+    "word": "scarf",
+    "grade": 5,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "围巾",
+    "example": "Grandma knitted a soft red scarf for my birthday.",
+    "exampleZh": "奶奶为我的生日织了一条柔软的红围巾。"
+  },
+  {
+    "id": "p5-uniform",
+    "word": "uniform",
+    "grade": 5,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "校服；制服",
+    "example": "Every student wears a clean school uniform on Monday.",
+    "exampleZh": "每个学生星期一都穿干净的校服。"
+  },
+  {
+    "id": "p5-choose",
+    "word": "choose",
+    "grade": 5,
+    "topic": "衣物用品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "选择；挑选",
+    "example": "You can choose a pair of comfortable shoes for the trip.",
+    "exampleZh": "你可以为这次旅行挑选一双舒适的鞋子。"
+  },
+  {
+    "id": "p5-yesterday",
+    "word": "yesterday",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在昨天；昨日",
+    "example": "We planted three young trees in the garden yesterday.",
+    "exampleZh": "我们昨天在花园里种了三棵小树苗。"
+  },
+  {
+    "id": "p5-already",
+    "word": "already",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "已经",
+    "example": "It is seven o'clock, and Mom is already cooking in the kitchen.",
+    "exampleZh": "现在七点了，妈妈已经在厨房做饭了。"
+  },
+  {
+    "id": "p5-often",
+    "word": "often",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "经常；常常",
+    "example": "My sister often reads storybooks before going to sleep.",
+    "exampleZh": "我姐姐经常在睡觉前读故事书。"
+  },
+  {
+    "id": "p5-sometimes",
+    "word": "sometimes",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "有时；间或",
+    "example": "I usually walk to school, but sometimes I ride my bike.",
+    "exampleZh": "我通常步行去上学，但有时我骑自行车。"
+  },
+  {
+    "id": "p5-soon",
+    "word": "soon",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "不久；很快",
+    "example": "The school bus will arrive at our stop very soon.",
+    "exampleZh": "校车很快就会到达我们这一站。"
+  },
+  {
+    "id": "p5-practice",
+    "word": "practice",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "练习；训练",
+    "example": "They practice playing the piano every afternoon after class.",
+    "exampleZh": "他们每天下午放学后练习弹钢琴。"
+  },
+  {
+    "id": "p5-learn",
+    "word": "learn",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "学习；学会",
+    "example": "I want to learn how to make paper boats this weekend.",
+    "exampleZh": "这个周末我想学习如何折纸船。"
+  },
+  {
+    "id": "p5-travel",
+    "word": "travel",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "旅行；游历",
+    "example": "My parents plan to travel to Beijing by train next month.",
+    "exampleZh": "我父母计划下个月坐火车去北京旅行。"
+  },
+  {
+    "id": "p5-visit",
+    "word": "visit",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "参观；拜访",
+    "example": "We will visit our grandparents in the countryside tomorrow.",
+    "exampleZh": "我们明天要去乡下看望爷爷奶奶。"
+  },
+  {
+    "id": "p5-collect",
+    "word": "collect",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "收集；采集",
+    "example": "Some students like to collect colorful leaves in autumn.",
+    "exampleZh": "一些学生喜欢在秋天收集五颜六色的树叶。"
+  },
+  {
+    "id": "p5-museum",
+    "word": "museum",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "博物馆",
+    "example": "We saw many old pictures in the history museum.",
+    "exampleZh": "我们在历史博物馆里看到了许多旧照片。"
+  },
+  {
+    "id": "p5-hospital",
+    "word": "hospital",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "医院",
+    "example": "The doctor works in a big hospital near the park.",
+    "exampleZh": "这位医生在公园附近的一家大医院工作。"
+  },
+  {
+    "id": "p5-village",
+    "word": "village",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "村庄；乡村",
+    "example": "A clear river runs through the quiet mountain village.",
+    "exampleZh": "一条清澈的小河穿过安静的山村。"
+  },
+  {
+    "id": "p5-inside",
+    "word": "inside",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在里面；往里面",
+    "example": "It started to rain, so all the children ran inside.",
+    "exampleZh": "开始下雨了，所以所有的孩子都跑进屋里去了。"
+  },
+  {
+    "id": "p5-away",
+    "word": "away",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "离开；向远处",
+    "example": "The little bird flew away when the cat came near.",
+    "exampleZh": "当猫靠近时，小鸟飞走了。"
+  },
+  {
+    "id": "p5-excited",
+    "word": "excited",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "兴奋的；激动的",
+    "example": "The class felt excited about the school sports day.",
+    "exampleZh": "全班同学对学校运动会感到很兴奋。"
+  },
+  {
+    "id": "p5-angry",
+    "word": "angry",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "生气的；愤怒的",
+    "example": "Leo was not angry when his friend broke the pencil.",
+    "exampleZh": "当朋友弄断铅笔时，利奥没有生气。"
+  },
+  {
+    "id": "p5-clever",
+    "word": "clever",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "聪明的；机灵的",
+    "example": "The clever dog opened the garden gate with its nose.",
+    "exampleZh": "那只聪明的狗用鼻子推开了花园门。"
+  },
+  {
+    "id": "p5-polite",
+    "word": "polite",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "有礼貌的；客气的",
+    "example": "A polite student always says thank you to the bus driver.",
+    "exampleZh": "有礼貌的学生总是对公交车司机说谢谢。"
+  },
+  {
+    "id": "p5-brave",
+    "word": "brave",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "勇敢的",
+    "example": "The brave girl spoke in front of the whole school.",
+    "exampleZh": "那个勇敢的女孩在全校师生面前发言了。"
+  },
+  {
+    "id": "p6-classmate",
+    "word": "classmate",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "同班同学",
+    "example": "My new classmate sits next to me in the science lab.",
+    "exampleZh": "我的新同班同学在科学实验室里坐在我旁边。"
+  },
+  {
+    "id": "p6-tourist",
+    "word": "tourist",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "游客；观光客",
+    "example": "A friendly tourist asked us for directions to the museum.",
+    "exampleZh": "一位友好的游客向我们询问去博物馆的路。"
+  },
+  {
+    "id": "p6-volunteer",
+    "word": "volunteer",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "志愿者",
+    "example": "Each volunteer wore a red cap at the community park.",
+    "exampleZh": "在社区公园里，每位志愿者都戴着一顶红帽子。"
+  },
+  {
+    "id": "p6-team",
+    "word": "team",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "translation": "队伍；团队",
+    "example": "Our basketball team practices on the playground every Friday.",
+    "exampleZh": "我们的篮球队每周五在操场上训练。"
+  },
+  {
+    "id": "p6-invite",
+    "word": "invite",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "verb"
+    ],
+    "translation": "邀请",
+    "example": "We will invite our neighbors to the weekend garden party.",
+    "exampleZh": "我们将邀请邻居们来参加周末花园聚会。"
+  },
+  {
+    "id": "p6-dictionary",
+    "word": "dictionary",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "词典；字典",
+    "example": "You can use an English dictionary to check the new word.",
+    "exampleZh": "你可以用英语词典查这个生词。"
+  },
+  {
+    "id": "p6-project",
+    "word": "project",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "项目；专题研究",
+    "example": "Our group made a poster for the science project.",
+    "exampleZh": "我们小组为科学项目做了一张海报。"
+  },
+  {
+    "id": "p6-history",
+    "word": "history",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "translation": "历史",
+    "example": "We learned about the history of our town in class today.",
+    "exampleZh": "今天我们在课堂上了解了我们小镇的历史。"
+  },
+  {
+    "id": "p6-improve",
+    "word": "improve",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ],
+    "translation": "提高；改善",
+    "example": "Reading aloud every morning helps me improve my English.",
+    "exampleZh": "每天早上大声朗读帮助我提高英语水平。"
+  },
+  {
+    "id": "p6-explain",
+    "word": "explain",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ],
+    "translation": "解释；说明",
+    "example": "Could you explain this math problem to me again?",
+    "exampleZh": "你能再给我解释一下这道数学题吗？"
+  },
+  {
+    "id": "p6-apartment",
+    "word": "apartment",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "公寓套房",
+    "example": "My aunt lives in a bright apartment near the library.",
+    "exampleZh": "我姑姑住在图书馆附近一套明亮的公寓里。"
+  },
+  {
+    "id": "p6-balcony",
+    "word": "balcony",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "阳台",
+    "example": "Grandma waters her green plants on the sunny balcony.",
+    "exampleZh": "奶奶在阳光充足的阳台上给绿植浇水。"
+  },
+  {
+    "id": "p6-roof",
+    "word": "roof",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ],
+    "translation": "屋顶",
+    "example": "Raindrops fell softly on the red roof all night.",
+    "exampleZh": "雨点整晚轻轻地落在红色的屋顶上。"
+  },
+  {
+    "id": "p6-repair",
+    "word": "repair",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ],
+    "translation": "修理；修补",
+    "example": "My father can repair the broken wooden chair with his tools.",
+    "exampleZh": "我爸爸能用他的工具修理那把坏了的木椅。"
+  },
+  {
+    "id": "p6-comfortable",
+    "word": "comfortable",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "舒适的；舒服的",
+    "example": "This soft sofa is very comfortable after a long walk.",
+    "exampleZh": "走了很长一段路后，这张柔软的沙发坐起来非常舒适。"
+  },
+  {
+    "id": "p6-meal",
+    "word": "meal",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "一餐；饭食",
+    "example": "We cooked a warm meal for our family on Sunday evening.",
+    "exampleZh": "周日晚上我们为家人做了一顿热腾腾的饭菜。"
+  },
+  {
+    "id": "p6-salad",
+    "word": "salad",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "沙拉",
+    "example": "Mom made a fresh fruit salad with apples and bananas.",
+    "exampleZh": "妈妈用苹果和香蕉做了一份新鲜的水果沙拉。"
+  },
+  {
+    "id": "p6-honey",
+    "word": "honey",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "蜂蜜",
+    "example": "She put a spoon of sweet honey into her warm milk.",
+    "exampleZh": "她在温牛奶里放了一勺甜蜂蜜。"
+  },
+  {
+    "id": "p6-taste",
+    "word": "taste",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "品尝；尝起来",
+    "example": "Please taste the vegetable soup before adding more salt.",
+    "exampleZh": "在加更多盐之前，请先尝一尝这碗蔬菜汤。"
+  },
+  {
+    "id": "p6-prepare",
+    "word": "prepare",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "准备；预备",
+    "example": "The students helped prepare sandwiches for the school picnic.",
+    "exampleZh": "学生们帮忙为学校野餐准备三明治。"
+  },
+  {
+    "id": "p6-dolphin",
+    "word": "dolphin",
+    "grade": 6,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "海豚",
+    "example": "The clever dolphin jumped high above the blue water.",
+    "exampleZh": "那只聪明的海豚高高跃出蓝色的水面。"
+  },
+  {
+    "id": "p6-whale",
+    "word": "whale",
+    "grade": 6,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "鲸；鲸鱼",
+    "example": "A blue whale is much larger than any land animal.",
+    "exampleZh": "蓝鲸比任何陆地动物都要大得多。"
+  },
+  {
+    "id": "p6-kangaroo",
+    "word": "kangaroo",
+    "grade": 6,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "袋鼠",
+    "example": "A mother kangaroo carries her baby in a warm pouch.",
+    "exampleZh": "袋鼠妈妈把幼崽装在温暖的育儿袋里。"
+  },
+  {
+    "id": "p6-insect",
+    "word": "insect",
+    "grade": 6,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ],
+    "translation": "昆虫",
+    "example": "We watched a tiny green insect resting on a leaf.",
+    "exampleZh": "我们观察了一只停在树叶上的绿色小昆虫。"
+  },
+  {
+    "id": "p6-protect",
+    "word": "protect",
+    "grade": 6,
+    "topic": "动物世界",
+    "pos": [
+      "verb"
+    ],
+    "translation": "保护",
+    "example": "We should protect wild birds and their forest homes.",
+    "exampleZh": "我们应该保护野生鸟类和它们的森林家园。"
+  },
+  {
+    "id": "p6-winter",
+    "word": "winter",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "冬天；冬季",
+    "example": "The lake often freezes during the cold winter.",
+    "exampleZh": "在寒冷的冬天里，这个湖经常结冰。"
+  },
+  {
+    "id": "p6-forest",
+    "word": "forest",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "森林",
+    "example": "Tall pine trees grow thickly across the quiet forest.",
+    "exampleZh": "高大的松树在安静的森林里茂密地生长。"
+  },
+  {
+    "id": "p6-river",
+    "word": "river",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "河；江",
+    "example": "A clean river runs past the small village.",
+    "exampleZh": "一条清澈的小河从这个小村庄旁流过。"
+  },
+  {
+    "id": "p6-mountain",
+    "word": "mountain",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "高山；山岳",
+    "example": "We climbed to the top of the mountain before noon.",
+    "exampleZh": "我们在中午前爬到了山顶。"
+  },
+  {
+    "id": "p6-environment",
+    "word": "environment",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ],
+    "translation": "自然环境；环境",
+    "example": "Using cloth bags is good for our environment.",
+    "exampleZh": "使用布袋对我们的环境有益。"
+  },
+  {
+    "id": "p6-shoulder",
+    "word": "shoulder",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "肩膀",
+    "example": "He carried his schoolbag on his left shoulder.",
+    "exampleZh": "他把书包背在左肩上。"
+  },
+  {
+    "id": "p6-illness",
+    "word": "illness",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ],
+    "translation": "疾病；生病",
+    "example": "Good sleep and fresh food help prevent illness.",
+    "exampleZh": "充足的睡眠和新鲜的食物有助于预防疾病。"
+  },
+  {
+    "id": "p6-safe",
+    "word": "safe",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "安全的",
+    "example": "Check that the road is safe before you cross it.",
+    "exampleZh": "过马路前先确认路面安全。"
+  },
+  {
+    "id": "p6-strong",
+    "word": "strong",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "强壮的；结实的",
+    "example": "Daily exercise keeps her legs strong and healthy.",
+    "exampleZh": "每天锻炼使她的双腿保持强壮健康。"
+  },
+  {
+    "id": "p6-breathe",
+    "word": "breathe",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ],
+    "translation": "呼吸",
+    "example": "We went outside to breathe the cool morning air.",
+    "exampleZh": "我们走到户外去呼吸清晨凉爽的空气。"
+  },
+  {
+    "id": "p6-pocket",
+    "word": "pocket",
+    "grade": 6,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "口袋；衣袋",
+    "example": "I kept the bus card in my coat pocket.",
+    "exampleZh": "我把公交卡放在外套口袋里。"
+  },
+  {
+    "id": "p6-button",
+    "word": "button",
+    "grade": 6,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "纽扣；按钮",
+    "example": "One white button fell off my school shirt.",
+    "exampleZh": "我校服衬衫上掉了一颗白纽扣。"
+  },
+  {
+    "id": "p6-umbrella",
+    "word": "umbrella",
+    "grade": 6,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "translation": "雨伞",
+    "example": "Take a folding umbrella because dark clouds are gathering.",
+    "exampleZh": "带上一把折叠伞吧，因为乌云正在聚集。"
+  },
+  {
+    "id": "p6-pack",
+    "word": "pack",
+    "grade": 6,
+    "topic": "衣物用品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "收拾（行李）；打包",
+    "example": "Remember to pack a warm sweater for the camping trip.",
+    "exampleZh": "记得为露营旅行打包一件保暖毛衣。"
+  },
+  {
+    "id": "p6-carry",
+    "word": "carry",
+    "grade": 6,
+    "topic": "衣物用品",
+    "pos": [
+      "verb"
+    ],
+    "translation": "携带；搬运",
+    "example": "Let me help you carry that heavy box of books.",
+    "exampleZh": "让我帮你搬那箱沉重的书吧。"
+  },
+  {
+    "id": "p6-recently",
+    "word": "recently",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "最近；不久前",
+    "example": "Our school library has added many science books recently.",
+    "exampleZh": "我们学校图书馆最近增加了许多科学书籍。"
+  },
+  {
+    "id": "p6-finally",
+    "word": "finally",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "最后；终于",
+    "example": "After three tries, Leo finally solved the puzzle.",
+    "exampleZh": "尝试了三次之后，利奥终于解开了这道谜题。"
+  },
+  {
+    "id": "p6-together",
+    "word": "together",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "一起；共同",
+    "example": "The classmates walked home together after choir practice.",
+    "exampleZh": "合唱训练结束后，同学们一起走路回家。"
+  },
+  {
+    "id": "p6-carefully",
+    "word": "carefully",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "仔细地；小心地",
+    "example": "She wrote her name carefully at the top of the test paper.",
+    "exampleZh": "她在试卷顶部仔细地写下了自己的名字。"
+  },
+  {
+    "id": "p6-quickly",
+    "word": "quickly",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "迅速地；快地",
+    "example": "The children ran quickly into the hall when the rain started.",
+    "exampleZh": "开始下雨时，孩子们迅速跑进了大厅。"
+  },
+  {
+    "id": "p6-plan",
+    "word": "plan",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "计划；打算",
+    "example": "We plan to visit the science museum this Saturday.",
+    "exampleZh": "我们计划这个星期六去参观科学博物馆。"
+  },
+  {
+    "id": "p6-join",
+    "word": "join",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "参加；加入",
+    "example": "May wants to join the school chess club this term.",
+    "exampleZh": "梅这学期想加入学校国际象棋社团。"
+  },
+  {
+    "id": "p6-decide",
+    "word": "decide",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "决定",
+    "example": "They will decide which song to sing at the show.",
+    "exampleZh": "他们将决定在演出中唱哪首歌。"
+  },
+  {
+    "id": "p6-finish",
+    "word": "finish",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "完成；结束",
+    "example": "I always finish my homework before watching cartoons.",
+    "exampleZh": "我总是在看动画片之前完成家庭作业。"
+  },
+  {
+    "id": "p6-remember",
+    "word": "remember",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ],
+    "translation": "记得；牢记",
+    "example": "Please remember to return the library book on Friday.",
+    "exampleZh": "请记得在星期五归还图书馆的书。"
+  },
+  {
+    "id": "p6-city",
+    "word": "city",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "城市",
+    "example": "Many buses and subways run through the busy city.",
+    "exampleZh": "许多公交车和地铁穿过这座繁忙的城市。"
+  },
+  {
+    "id": "p6-station",
+    "word": "station",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "车站；火车站",
+    "example": "We met our cousins at the train station at ten o'clock.",
+    "exampleZh": "我们十点钟在火车站见到了表兄妹。"
+  },
+  {
+    "id": "p6-airport",
+    "word": "airport",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ],
+    "translation": "机场；航空站",
+    "example": "Uncle Tim arrived at the airport early for his flight.",
+    "exampleZh": "蒂姆叔叔为了赶航班早早到达了机场。"
+  },
+  {
+    "id": "p6-abroad",
+    "word": "abroad",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "在国外；到国外",
+    "example": "Her older sister traveled abroad to study art last year.",
+    "exampleZh": "她姐姐去年出国学习艺术了。"
+  },
+  {
+    "id": "p6-far",
+    "word": "far",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ],
+    "translation": "远；遥远地",
+    "example": "Do not swim too far from the beach.",
+    "exampleZh": "不要游得离海滩太远。"
+  },
+  {
+    "id": "p6-worried",
+    "word": "worried",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "担心的；发愁的",
+    "example": "Ben felt worried when he could not find his notebook.",
+    "exampleZh": "当本找不到自己的笔记本时，他感到很担心。"
+  },
+  {
+    "id": "p6-proud",
+    "word": "proud",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "自豪的；骄傲的",
+    "example": "Our teacher was proud of everyone after the speech contest.",
+    "exampleZh": "演讲比赛结束后，老师为我们每个人感到自豪。"
+  },
+  {
+    "id": "p6-careful",
+    "word": "careful",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "小心的；仔细的",
+    "example": "Be careful with the hot soup when you carry the bowl.",
+    "exampleZh": "端碗的时候要小心热汤。"
+  },
+  {
+    "id": "p6-generous",
+    "word": "generous",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "慷慨的；大方的",
+    "example": "Anna is generous and often shares her colored pencils with us.",
+    "exampleZh": "安娜很大方，经常和我们分享她的彩色铅笔。"
+  },
+  {
+    "id": "p6-honest",
+    "word": "honest",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "translation": "诚实的",
+    "example": "An honest student always tells the truth about mistakes.",
+    "exampleZh": "诚实的学生总是如实说出错误。"
+  }
+]

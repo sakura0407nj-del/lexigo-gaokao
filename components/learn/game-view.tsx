@@ -4,22 +4,24 @@ import {ArrowLeft, ArrowRight, Pause, Play, RotateCcw, Volume2, Trophy, Users, Z
 import {applyAnswer, buildGameQuestions, createGameState, gameResult} from '@/lib/game-engine';
 import type {GameAnswer, GameChoice, GameConfig, GameQuestion, GameState} from '@/lib/game-types';
 import type {Word} from '@/lib/learning-types';
+import type {PrimaryGrade, PrimaryWord, PrimaryWordsResponse} from '@/lib/primary-types';
+import {scopedStorageKey} from '@/lib/learning-stage';
 import bank from '@/data/game-sentences.json';
-import {api, errorText, type CatalogResponse} from '@/components/learn/api';
+import {api, getJson, errorText, type CatalogResponse} from '@/components/learn/api';
 import {useProgress} from '@/components/learn/progress';
 import type {SpeechState} from '@/components/learn/use-speech';
 import {GameScene} from './game-scene';
 import './game.css';
 
-type Run = {id: string; questions: GameQuestion[]; state: GameState; answers: GameAnswer[]; index: number; feedback: GameAnswer | null; phase: 'play' | 'result'; remaining: number; timed: boolean; paused: boolean; scope: string; reviewSaved?: boolean};
+type Run = {id: string; questions: GameQuestion[]; state: GameState; answers: GameAnswer[]; index: number; feedback: GameAnswer | null; phase: 'play' | 'result'; remaining: number; timed: boolean; paused: boolean; scope: string; reviewSaved?: boolean; primaryGrade?: PrimaryGrade};
 const STORE = 'lexigo.game-run.v1';
 const HISTORY = 'lexigo.game-history.v1';
 const BEST = 'lexigo.game-best.v1';
 const labels = {word: '词义快选', sentence: '语境填空', phrase: '短语搭配', mix: '综合闯关'};
-function restore(): Run | null {
-  try {const raw = localStorage.getItem(STORE); if (!raw || raw.length > 250000) return null; const r = JSON.parse(raw) as Run;
+function restore(primaryGrade?: PrimaryGrade): Run | null {
+  try {const raw = localStorage.getItem(scopedStorageKey(STORE,primaryGrade)); if (!raw || raw.length > 250000) return null; const r = JSON.parse(raw) as Run;
     if (!r || !Array.isArray(r.questions) || !r.questions.length || r.questions.length > 20 || !Array.isArray(r.answers) || !r.state || !Number.isInteger(r.index) || r.index < 0 || r.index >= r.questions.length || !['play', 'result'].includes(r.phase)) return null;
-    if (r.questions.some(q => typeof q.id !== 'string' || q.id.length > 150 || typeof q.prompt !== 'string' || q.prompt.length > 3000 || !Array.isArray(q.options) || q.options.length !== 2 || q.options.some(option => typeof option !== 'string' || option.length > 2000) || ![0, 1].includes(q.answerIndex) || !['word', 'sentence', 'phrase'].includes(q.kind) || typeof q.explanation !== 'string' || typeof q.knowledge !== 'string')) return null;
+    if (r.primaryGrade !== primaryGrade || r.questions.some(q => typeof q.id !== 'string' || q.id.length > 150 || typeof q.prompt !== 'string' || q.prompt.length > 3000 || !Array.isArray(q.options) || q.options.length !== 2 || q.options.some(option => typeof option !== 'string' || option.length > 2000) || ![0, 1].includes(q.answerIndex) || !['word', 'sentence', 'phrase'].includes(q.kind) || typeof q.explanation !== 'string' || typeof q.knowledge !== 'string' || primaryGrade && (q.kind !== 'word' || (q.word as PrimaryWord | undefined)?.grade !== primaryGrade))) return null;
     if (new Set(r.questions.map(q => q.id)).size !== r.questions.length || r.answers.length > r.questions.length || r.answers.length !== r.index + (r.feedback ? 1 : 0)) return null;
     let state = createGameState(r.questions.length); const answers: GameAnswer[] = [];
     for (const [index, prior] of r.answers.entries()) {if (!prior || prior.questionId !== r.questions[index].id || ![null, 0, 1].includes(prior.selectedIndex) || state.finished) return null; const result = applyAnswer(state, r.questions[index], prior.selectedIndex); state = result.state; answers.push(result.answer);}
@@ -37,17 +39,22 @@ function replayQuestions(answers: readonly GameAnswer[]): GameQuestion[] {
     return {...question, answerIndex, options: answerIndex === 0 ? [correct, distractor] : [distractor, correct]};
   });
 }
-export function GameView({speech}: {speech: SpeechState}) {
+function primaryRunnerPool(items: readonly PrimaryWord[], grade: PrimaryGrade, selectedIds?: readonly string[]): PrimaryWord[] {
+  const ids = selectedIds ? new Set(selectedIds) : null;
+  return items.filter(word => word.grade === grade && (!ids || ids.has(word.id)));
+}
+export function GameView({speech, primaryGrade}: {speech: SpeechState; primaryGrade?: PrimaryGrade}) {
   const {progress, addMistakes, reviewWord, markStudyDay, storageAvailable} = useProgress();
-  const [catalog, setCatalog] = useState<CatalogResponse | null>(null), [kind, setKind] = useState<GameConfig['kind']>('mix');
+  const storageKey = scopedStorageKey(STORE,primaryGrade), historyKey = scopedStorageKey(HISTORY,primaryGrade), bestKey = scopedStorageKey(BEST,primaryGrade);
+  const [catalog, setCatalog] = useState<CatalogResponse | null>(null), [kind, setKind] = useState<GameConfig['kind']>(primaryGrade ? 'word' : 'mix');
   const [source, setSource] = useState('all'), [book, setBook] = useState(''), [unit, setUnit] = useState('');
   const [length, setLength] = useState<10 | 15 | 20>(15), [difficulty, setDifficulty] = useState<GameConfig['difficulty']>('all'), [timed, setTimed] = useState(false);
-  const [run, setRun] = useState<Run | null>(restore), [busy, setBusy] = useState(false), [error, setError] = useState(''), [note, setNote] = useState(''), [confirm, setConfirm] = useState(false), [saved, setSaved] = useState(false);
-  const [best, setBest] = useState(() => {try {const value = Number(localStorage.getItem(BEST)); return Number.isInteger(value) && value >= 0 && value <= 200 ? value : 0;} catch {return 0;}});
+  const [run, setRun] = useState<Run | null>(()=>restore(primaryGrade)), [busy, setBusy] = useState(false), [error, setError] = useState(''), [note, setNote] = useState(''), [confirm, setConfirm] = useState(false), [saved, setSaved] = useState(false);
+  const [best, setBest] = useState(() => {try {const value = Number(localStorage.getItem(bestKey)); return Number.isInteger(value) && value >= 0 && value <= 200 ? value : 0;} catch {return 0;}});
   const current = useRef(run), locked = useRef(false), active = useRef(true), dialog = useRef<HTMLDialogElement>(null); current.current = run;
-  const update = useCallback((next: Run | null) => {current.current = next; setRun(next); try {if (next) localStorage.setItem(STORE, JSON.stringify(next)); else localStorage.removeItem(STORE);} catch {setNote('浏览器未能保存本局；请在离开前完成练习。');}}, []);
-  useEffect(() => {active.current = true; const controller = new AbortController(); api.catalog(controller.signal).then(setCatalog).catch(() => {}); return () => {active.current = false; controller.abort();};}, []);
-  useEffect(() => {const hide = () => {const r = current.current; if (document.hidden && r?.phase === 'play') update({...r, paused: true});}; const leave = () => {const r = current.current; if (r?.phase === 'play') {try {localStorage.setItem(STORE, JSON.stringify({...r, paused: true}));} catch {}}}; document.addEventListener('visibilitychange', hide); window.addEventListener('pagehide', leave); return () => {document.removeEventListener('visibilitychange', hide); window.removeEventListener('pagehide', leave); leave();};}, [update]);
+  const update = useCallback((next: Run | null) => {current.current = next; setRun(next); try {if (next) localStorage.setItem(storageKey, JSON.stringify(next)); else localStorage.removeItem(storageKey);} catch {setNote('浏览器未能保存本局；请在离开前完成练习。');}}, [storageKey]);
+  useEffect(() => {active.current = true; const controller = new AbortController(); if (!primaryGrade) api.catalog(controller.signal).then(setCatalog).catch(() => {}); return () => {active.current = false; controller.abort();};}, [primaryGrade]);
+  useEffect(() => {const hide = () => {const r = current.current; if (document.hidden && r?.phase === 'play') update({...r, paused: true});}; const leave = () => {const r = current.current; if (r?.phase === 'play') {try {localStorage.setItem(storageKey, JSON.stringify({...r, paused: true}));} catch {}}}; document.addEventListener('visibilitychange', hide); window.addEventListener('pagehide', leave); return () => {document.removeEventListener('visibilitychange', hide); window.removeEventListener('pagehide', leave); leave();};}, [update,storageKey]);
   const answer = useCallback((choice: GameChoice | null) => {
     const r = current.current;
     if (!r || r.phase !== 'play' || r.feedback || r.paused || document.hidden || locked.current) return;
@@ -65,7 +72,14 @@ export function GameView({speech}: {speech: SpeechState}) {
     setBusy(true); setError(''); setNote(''); setSaved(false);
     try {
       let words: Word[] = [], scope = '通用高中句子与短语';
-      if (kind === 'word' || kind === 'mix') {
+      if (primaryGrade) {
+        const response = await getJson<PrimaryWordsResponse>(`/api/primary/words?grade=${primaryGrade}`);
+        if (response.grade !== primaryGrade) throw new Error('返回的词库年级不正确，请稍后重试。');
+        const ids = source === 'favorites' ? progress.starred : source === 'wrong' ? Object.values(progress.wrongbook).map(item=>item.word.id) : undefined;
+        words = primaryRunnerPool(response.items,primaryGrade,ids);
+        scope = `小学 ${primaryGrade} 年级通用词汇${source === 'favorites' ? ' · 我的收藏' : source === 'wrong' ? ' · 我的听写错词' : ''}；不标注为某一教材版本`;
+        if (!words.length) throw new Error('当前年级和所选范围暂无词语，请先收藏或听写，或改选本年级词库。');
+      } else if (kind === 'word' || kind === 'mix') {
         if (source === 'wrong') {words = Object.values(progress.wrongbook).map(item => item.word); scope = '我的听写错词';}
         else {const ids = source === 'favorites' ? progress.starred : undefined; if (source === 'favorites' && !ids?.length) throw new Error('收藏夹暂无单词，请先收藏词语。');
           if (source === 'book' && !book) throw new Error('请先选择教材册次。');
@@ -75,26 +89,26 @@ export function GameView({speech}: {speech: SpeechState}) {
         }
         if (!buildGameQuestions(words, bank, {kind: 'word', length, seed: Date.now()}).length) throw new Error('所选范围中没有足够可区分的词语；请扩大范围或切换句子模式。');
       }
-      const questions = buildGameQuestions(words, bank, {kind, length, difficulty, seed: crypto.randomUUID()});
+      const questions = buildGameQuestions(words, primaryGrade ? [] : bank, {kind: primaryGrade ? 'word' : kind, length, difficulty, seed: crypto.randomUUID()});
       if (!questions.length) throw new Error('当前设置没有可用题目，请更换题型或难度。');
       if (!active.current) return;
       if (questions.length < length) setNote(`当前范围仅有 ${questions.length} 道可用题，本局按实际题数进行，未混入其他来源的词语。`);
-      if (kind === 'mix') scope += '；句子/短语来自通用高中题库，不按教材单元编排';
-      locked.current = false; update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, timed, paused: false, scope});
+      if (!primaryGrade && kind === 'mix') scope += '；句子/短语来自通用高中题库，不按教材单元编排';
+      locked.current = false; update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, timed, paused: false, scope, ...(primaryGrade ? {primaryGrade} : {})});
     } catch (e) {if (active.current) setError(e instanceof Error ? e.message : errorText(e));} finally {if (active.current) setBusy(false);}
   };
-  const next = () => {const r = current.current; if (!r?.feedback || r.phase !== 'play') return; locked.current = false; if (r.state.finished) {update({...r, phase: 'result'}); const highest = Math.max(best, r.state.peakCrowd); setBest(highest); try {const raw = localStorage.getItem(HISTORY); const parsed: unknown = raw && raw.length < 40000 ? JSON.parse(raw) : []; const history = Array.isArray(parsed) ? parsed.filter(item => item && typeof item.id === 'string' && item.id !== r.id).slice(-29) : []; localStorage.setItem(HISTORY, JSON.stringify([...history, {id: r.id, at: new Date().toISOString(), ...gameResult(r.state)}])); localStorage.setItem(BEST, String(highest));} catch {setNote('本局总结未能写入本地历史；当前结果仍可查看。');} return;} update({...r, index: r.index + 1, feedback: null, remaining: 12});};
-  const replayWrong = () => {if (!run) return; const questions = replayQuestions(run.answers); if (!questions.length) return; locked.current = false; setSaved(false); update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, paused: false, timed: false, scope: '上一局答错/未答题重练；选项已重新排列，左右正确门数量均衡'});};
+  const next = () => {const r = current.current; if (!r?.feedback || r.phase !== 'play') return; locked.current = false; if (r.state.finished) {update({...r, phase: 'result'}); const highest = Math.max(best, r.state.peakCrowd); setBest(highest); try {const raw = localStorage.getItem(historyKey); const parsed: unknown = raw && raw.length < 40000 ? JSON.parse(raw) : []; const history = Array.isArray(parsed) ? parsed.filter(item => item && typeof item.id === 'string' && item.id !== r.id).slice(-29) : []; localStorage.setItem(historyKey, JSON.stringify([...history, {id: r.id, at: new Date().toISOString(), ...gameResult(r.state)}])); localStorage.setItem(bestKey, String(highest));} catch {setNote('本局总结未能写入本地历史；当前结果仍可查看。');} return;} update({...r, index: r.index + 1, feedback: null, remaining: 12});};
+  const replayWrong = () => {if (!run) return; const questions = replayQuestions(run.answers); if (!questions.length) return; locked.current = false; setSaved(false); update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, paused: false, timed: false, scope: '上一局答错/未答题重练；选项已重新排列，左右正确门数量均衡', ...(primaryGrade ? {primaryGrade} : {})});};
   const question = run?.questions[run.index], result = run ? gameResult(run.state) : null;
   return <section className="english-game">
     <header className="game-heading"><div><p>LEXIGO · SKY RUN</p><h1>让知识，带队向前</h1><span>选对英语之门，壮大你的学习小队。{best > 0 ? ` 本机最高队伍 ${best} 人。` : ''}</span></div><span className="game-free">无需 AI · 不消耗额度</span></header>
     {(!storageAvailable || note) && <p className="game-note" role="status">{note || '浏览器存储不可用，学习记录可能无法保留。'}</p>}
-    {!run && <><div className="game-preview"><GameScene crowd={28} lane={null} feedback={null} /><div><span>WORD RUNNER</span><strong>一次选择，一步进步。</strong><p>词义 · 语境 · 搭配<br />让英语复习多一点动感。</p></div></div>
-      <div className="game-setup"><div className="game-kind-grid">{(Object.keys(labels) as GameConfig['kind'][]).map(item => <button type="button" key={item} className={kind === item ? 'selected' : ''} onClick={() => setKind(item)}><span>{labels[item]}</span><small>{item === 'word' ? '中文释义 → 英语' : item === 'sentence' ? '放回句子看语境' : item === 'phrase' ? '常见搭配辨析' : '三类轮换训练'}</small></button>)}</div>
-        <div className="game-fields">{(kind === 'word' || kind === 'mix') && <><label>单词来源<select value={source} onChange={e => setSource(e.target.value)}><option value="all">全部词库随机抽取</option><option value="book">人教版 2019 教材</option><option value="favorites">我的收藏</option><option value="wrong">我的听写错词</option></select></label>{source === 'book' && <><label>教材册次<select value={book} onChange={e => {setBook(e.target.value); setUnit('');}}><option value="">请选择</option>{catalog?.books.map(item => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label><label>单元<select value={unit} onChange={e => setUnit(e.target.value)}><option value="">全册</option>{catalog?.books.find(item => item.id === book)?.units.map(item => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label></>}</>}
-          <label>本局关卡<select value={length} onChange={e => setLength(Number(e.target.value) as 10 | 15 | 20)}>{[10, 15, 20].map(n => <option key={n} value={n}>{n} 关</option>)}</select></label><label>句子与短语难度<select disabled={kind === 'word'} value={difficulty} onChange={e => setDifficulty(e.target.value as GameConfig['difficulty'])}><option value="all">全部难度</option><option value="foundation">基础</option><option value="standard">标准</option><option value="challenge">挑战</option></select></label></div>
+    {!run && <><div className="game-preview"><GameScene crowd={28} lane={null} feedback={null} /><div><span>WORD RUNNER</span><strong>一次选择，一步进步。</strong><p>{primaryGrade ? `小学 ${primaryGrade} 年级 · 词义练习` : '词义 · 语境 · 搭配'}<br />让英语复习多一点动感。</p></div></div>
+      <div className="game-setup"><div className="game-kind-grid">{(primaryGrade ? ['word'] as const : Object.keys(labels) as GameConfig['kind'][]).map(item => <button type="button" key={item} className={kind === item ? 'selected' : ''} onClick={() => setKind(item)}><span>{labels[item]}</span><small>{item === 'word' ? '中文释义 → 英语' : item === 'sentence' ? '放回句子看语境' : item === 'phrase' ? '常见搭配辨析' : '三类轮换训练'}</small></button>)}</div>
+        <div className="game-fields">{(kind === 'word' || kind === 'mix') && <><label>单词来源<select value={source} onChange={e => setSource(e.target.value)}><option value="all">{primaryGrade ? `小学 ${primaryGrade} 年级词库` : '全部词库随机抽取'}</option>{!primaryGrade && <option value="book">人教版 2019 教材</option>}<option value="favorites">我的收藏</option><option value="wrong">我的听写错词</option></select></label>{source === 'book' && <><label>教材册次<select value={book} onChange={e => {setBook(e.target.value); setUnit('');}}><option value="">请选择</option>{catalog?.books.map(item => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label><label>单元<select value={unit} onChange={e => setUnit(e.target.value)}><option value="">全册</option>{catalog?.books.find(item => item.id === book)?.units.map(item => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label></>}</>}
+          <label>本局关卡<select value={length} onChange={e => setLength(Number(e.target.value) as 10 | 15 | 20)}>{[10, 15, 20].map(n => <option key={n} value={n}>{n} 关</option>)}</select></label>{!primaryGrade && <label>句子与短语难度<select disabled={kind === 'word'} value={difficulty} onChange={e => setDifficulty(e.target.value as GameConfig['difficulty'])}><option value="all">全部难度</option><option value="foundation">基础</option><option value="standard">标准</option><option value="challenge">挑战</option></select></label>}</div>
         <label className="game-toggle"><input type="checkbox" checked={timed} onChange={e => setTimed(e.target.checked)} /><span>开启 12 秒冲刺<small>默认自由思考；离开页面自动暂停。</small></span></label>
-        <p className="game-scope">单词取自所选词库；句子与短语为通用高中原创练习，不与教材单元逐一对应。二选一练习用于巩固，不代表已完全掌握。</p>
+        <p className="game-scope">{primaryGrade ? `仅使用小学 ${primaryGrade} 年级通用词汇，不含高中句子与短语，不对应指定教材。二选一练习用于巩固，不代表已完全掌握。` : '单词取自所选词库；句子与短语为通用高中原创练习，不与教材单元逐一对应。二选一练习用于巩固，不代表已完全掌握。'}</p>
         {error && <p role="alert" className="game-error">{error}</p>}<button type="button" className="game-primary" disabled={busy} onClick={begin}><Play size={18} />{busy ? '正在准备关卡…' : '召集小队，出发'}</button>
       </div></>}
     {run && question && <><div className="game-scorebar"><span><Users size={17} /><strong>{run.state.crowd}</strong> 队员</span><span><Zap size={17} /><strong>{run.state.combo}</strong> 连对</span><span>{run.state.answered} / {run.questions.length} 关</span>{run.phase === 'play' && <button type="button" onClick={() => update({...run, paused: !run.paused})}>{run.paused ? <Play size={17} /> : <Pause size={17} />}{run.paused ? '继续' : '暂停'}</button>}<button type="button" onClick={() => {if (run.phase === 'result') update(null); else {setConfirm(true); update({...run, paused: true});}}}>结束本局</button></div>

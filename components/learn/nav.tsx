@@ -12,7 +12,7 @@ export const TABS: { id: TabId; label: string; short: string; icon: LucideIcon; 
   { id: "dictation", label: "听写练习", short: "听写", icon: Headphones, group: "learn" },
   { id: "practice", label: "练习与命题", short: "练习", icon: Sparkles, group: "learn" },
   { id: "exam", label: "定制模拟卷", short: "试卷", icon: FileCheck2, group: "learn" },
-  { id: "game", label: "英语闯关", short: "闯关", icon: Gamepad2, group: "learn" },
+  { id: "game", label: "英语游乐场", short: "游戏", icon: Gamepad2, group: "learn" },
   { id: "mistakes", label: "错题集", short: "错题", icon: BookX, group: "learn" },
   { id: "knowledge", label: "知识卡", short: "知识", icon: Lightbulb, group: "learn" },
   { id: "essay", label: "作文批改", short: "作文", icon: PenLine, group: "tools" },

@@ -20,7 +20,7 @@ import { VocabularyView } from "./vocabulary-view";
 
 const TAB_IDS = new Set<string>(TABS.map((tab) => tab.id));
 const ExamView = lazy(() => import("./exam-view").then(module => ({ default: module.ExamView })));
-const GameView = lazy(() => import("./game-view").then(module => ({ default: module.GameView })));
+const GameHub = lazy(() => import("./game-hub").then(module => ({ default: module.GameHub })));
 
 export function LearnApp() {
   return (
@@ -45,7 +45,8 @@ function Shell() {
   useEffect(() => {
     const fromHash = () => {
       const hash = window.location.hash.slice(1);
-      if (TAB_IDS.has(hash)) { setTab(hash as TabId); window.scrollTo({ top: 0 }); }
+      if (hash === "game-fish" || hash === "game-runner") { setTab("game"); window.scrollTo({ top: 0 }); }
+      else if (TAB_IDS.has(hash)) { setTab(hash as TabId); window.scrollTo({ top: 0 }); }
     };
     fromHash();
     window.addEventListener("hashchange", fromHash);
@@ -81,6 +82,8 @@ function Shell() {
   const select = useCallback((next: TabId) => {
     setTab(next);
     if (window.location.hash.slice(1) !== next) window.history.replaceState(null, "", `#${next}`);
+    // Selecting the game navigation always returns to its choice page, even from a deep route.
+    if (next === "game") window.dispatchEvent(new Event("hashchange"));
     window.scrollTo({ top: 0 });
     mainRef.current?.focus({ preventScroll: true });
   }, []);
@@ -116,7 +119,7 @@ function Shell() {
           {tab === "dictation" ? <DictationView speech={speech} /> : null}
           {tab === "practice" ? <PracticeView bank={bank} bankError={bankError} onReloadBank={reloadBank} aiNotice={ai.notice} /> : null}
           {tab === "exam" ? <Suspense fallback={<p role="status">正在准备模拟卷工作台…</p>}><ExamView aiNotice={ai.notice} /></Suspense> : null}
-          {tab === "game" ? <Suspense fallback={<p role="status">正在准备英语闯关…</p>}><GameView speech={speech} /></Suspense> : null}
+          {tab === "game" ? <Suspense fallback={<p role="status">正在准备英语游乐场…</p>}><GameHub speech={speech} /></Suspense> : null}
           {tab === "mistakes" ? <MistakesView onNavigate={select} /> : null}
           {tab === "essay" ? <CorrectionView key="essay" kind="essay" aiNotice={ai.notice} /> : null}
           {tab === "questions" ? <CorrectionView key="questions" kind="questions" aiNotice={ai.notice} /> : null}

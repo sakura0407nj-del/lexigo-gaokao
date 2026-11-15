@@ -1,6 +1,7 @@
 import {randomUUID} from 'node:crypto';
 import {getStore} from '@netlify/blobs';
 import {z} from 'zod';
+import {educationFields,validEducationContext} from './education-context';
 import {privateOwner, PublicApiError, signPublicValue, verifyPublicValue} from './public-session';
 
 export type LearningJobKind = 'generate' | 'correct' | 'challenge';
@@ -17,8 +18,8 @@ const ID = /^\d{4}-\d{2}-\d{2}_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-
 const uuid = z.string().uuid();
 const weakness = z.object({knowledge: z.string().max(400), prompt: z.string().max(1200), yourAnswer: z.string().max(500).optional(), correctAnswer: z.string().max(1000).optional()});
 const schemas = {
-  generate: z.object({type: z.enum(['reading', 'grammar', 'seven', 'cloze']), level: z.enum(['基础', '标准', '挑战']), topic: z.string().trim().min(1).max(150), weaknesses: z.array(weakness).max(8).optional()}).strict(),
-  correct: z.object({kind: z.enum(['essay', 'questions']), text: z.string().max(16000).default(''), prompt: z.string().max(6000).optional(), maxScore: z.union([z.literal(15), z.literal(25)]).default(15)}).strict(),
+  generate: z.object({...educationFields,type: z.enum(['reading', 'grammar', 'seven', 'cloze']), level: z.enum(['基础', '标准', '挑战']), topic: z.string().trim().min(1).max(150), weaknesses: z.array(weakness).max(8).optional()}).strict().refine(validEducationContext).refine(v=>v.stage!=='primary'||v.type==='reading'||v.type==='grammar'),
+  correct: z.object({...educationFields,kind: z.enum(['essay', 'questions']), text: z.string().max(16000).default(''), prompt: z.string().max(6000).optional(), maxScore: z.union([z.literal(15), z.literal(25)]).default(15)}).strict().refine(validEducationContext).refine(v=>v.stage!=='primary'||v.maxScore===15),
   challenge: z.object({prompt: z.string().min(1).max(3000), context: z.string().max(6000).optional(), correctAnswer: z.string().min(1).max(2500), studentAnswer: z.string().trim().min(1).max(2500), explanation: z.string().max(2500).optional()}).strict(),
 };
 

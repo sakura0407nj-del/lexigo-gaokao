@@ -2,12 +2,14 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore, type ReactNode } from "react";
 import type { ExerciseType, Frequency, Paper, Word } from "@/lib/learning-types";
+import {scopedStorageKey} from '@/lib/learning-stage';
 import {canonicalizeWord, canonicalWordId, migrateProgress, type WordAliases} from "@/lib/progress-migration";
 import {getJson} from "./api";
 import { mergeMistakes, parseMistake, type MistakeDraft, type MistakeEntry } from "./mistakes";
 import { DAILY_GOALS, parseDayLog, parseReviewEntry, scheduleReview, type DailyGoal, type DayLog, type ReviewEntry, type StudyEventKind } from "./review";
 
 export interface DictationAttempt {
+  attemptId?: string;
   at: string;
   band: string;
   total: number;
@@ -61,7 +63,7 @@ export interface Progress {
   dailyGoal: DailyGoal;
 }
 
-const STORAGE_KEY = "lexigo.progress.v1";
+const STORAGE_KEY = scopedStorageKey("lexigo.progress.v1");
 const HISTORY_LIMIT = 200;
 const LOG_DAYS = 180;
 let wordAliases:WordAliases={};
@@ -159,6 +161,7 @@ export function parseProgress(input: unknown): Progress {
       .filter((item) => isString(item.at) && isNumber(item.total) && isNumber(item.correct) && item.correct <= item.total)
       .map((item) => ({
         at: item.at as string,
+        ...(isString(item.attemptId)&&item.attemptId.length<=160?{attemptId:item.attemptId}:{}),
         band: isString(item.band) ? item.band : "all",
         total: item.total as number,
         correct: item.correct as number,
@@ -407,6 +410,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
 
   const recordDictation = useCallback<ProgressApi["recordDictation"]>((attempt, results) => {
     setProgress((current) => {
+      if(attempt.attemptId&&current.dictation.some(record=>record.attemptId===attempt.attemptId))return current;
       const wrongbook = { ...current.wrongbook };
       const now = new Date().toISOString();
       for (const result of results) {

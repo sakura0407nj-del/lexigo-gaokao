@@ -98,7 +98,7 @@ function correctionToText(result: Correction) {
   return lines.join("\n");
 }
 
-export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: string }) {
+export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; aiNotice?: string; primaryGrade?:3|4|5|6 }) {
   const { recordCorrection, addMistakes } = useProgress();
   const [collected, setCollected] = useState(0);
   const [maxScore, setMaxScore] = useState<15 | 25>(15);
@@ -205,6 +205,7 @@ export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: stri
       const data = await api.correct(
         {
           kind,
+          ...(primaryGrade?{stage:'primary' as const,grade:primaryGrade}:{}),
           text: text.trim(),
           maxScore,
           ...(prompt.trim() ? { prompt: prompt.trim() } : {}),
@@ -224,6 +225,7 @@ export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: stri
   }
 
   function loadSample() {
+    if(primaryGrade){setPrompt(isEssay?'用简单的英语介绍你喜欢的动物，写3到5句话。':'选择正确单词：I ____ a student. A. am B. is C. are D. be');setText(isEssay?'I like cats. My cat have white fur. She is small and very cute. I plays with her after school.':'1. B');setMaxScore(15);return;}
     const sample = SAMPLES[kind];
     setPrompt(sample.prompt);
     setText(sample.text);
@@ -242,9 +244,9 @@ export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: stri
     <section className="view">
       <SectionHeader
         eyebrow={isEssay ? "Writing" : "Answer Check"}
-        title={isEssay ? "作文批改" : "题目批改"}
+        title={isEssay ? primaryGrade?`小学${primaryGrade}年级 · 写作小老师`:"作文批改" : "题目批改"}
         description={
-          isEssay
+          primaryGrade ? '根据所选年级讲解真实错误，保留孩子原本的表达；支持输入文字或上传清晰照片。' : isEssay
             ? "粘贴作文或上传手写照片，按高考评分维度给出分数、逐句纠错和修改稿。"
             : "粘贴题目和学生答案（或上传题目截图），逐题判断并讲解。"
         }
@@ -259,9 +261,9 @@ export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: stri
         <fieldset className="field">
           <legend className="field-label">{isEssay ? "写作类型" : "满分"}</legend>
           <div className="segmented">
-            {([15, 25] as const).map((value) => (
+            {(primaryGrade?[15] as const:[15, 25] as const).map((value) => (
               <button key={value} type="button" className={cx("seg", maxScore === value && "is-active")} aria-pressed={maxScore === value} onClick={() => setMaxScore(value)} disabled={submitting}>
-                {isEssay ? (value === 15 ? "应用文 · 15 分" : "读后续写 · 25 分") : `${value} 分`}
+                {primaryGrade?'小学练习反馈 · 15 分':isEssay ? (value === 15 ? "应用文 · 15 分" : "读后续写 · 25 分") : `${value} 分`}
               </button>
             ))}
           </div>
@@ -303,7 +305,7 @@ export function CorrectionView({ kind, aiNotice }: { kind: Kind; aiNotice?: stri
             disabled={submitting}
           />
           {isEssay && words > 0 ? (
-            <p className="hint">{maxScore === 15 ? "应用文建议约 80 词。" : "读后续写两段合计建议约 150 词。"}当前 {words} 词。</p>
+            <p className="hint">{primaryGrade?'从几个正确的句子开始，按老师布置的要求写作。':maxScore === 15 ? "应用文建议约 80 词。" : "读后续写两段合计建议约 150 词。"}当前 {words} 词。</p>
           ) : null}
         </div>
 

@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {createHmac} from 'node:crypto';
+import {dirname,resolve} from 'node:path';
 
 const require=createRequire(import.meta.url),ts=require('typescript');
 const records=new Map(),metadata=new Map();
@@ -16,10 +17,21 @@ const store={
 class PublicApiError extends Error{constructor(status,message){super(message);this.status=status}}
 const sign=(scope,value)=>createHmac('sha256','public-idempotency-test-fixture').update(scope+'\0'+value).digest('base64url');
 const session={PublicApiError,privateOwner:user=>sign('owner',user),signPublicValue:sign,verifyPublicValue:(scope,value,signature)=>sign(scope,value)===signature};
-const module={exports:{}};
-const code=ts.transpileModule(readFileSync('lib/job-store.ts','utf8'),{fileName:'job-store.ts',compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
-new Function('require','module','exports',code)(name=>name==='@netlify/blobs'?{getStore:()=>store}:name==='./public-session'?session:require(name),module,module.exports);
-const jobs=module.exports,realNow=Date.now;
+const modules=new Map();
+function load(file){
+  const absolute=resolve(file);
+  if(absolute===resolve('lib/public-session.ts'))return session;
+  if(modules.has(absolute))return modules.get(absolute).exports;
+  const module={exports:{}};modules.set(absolute,module);
+  const code=ts.transpileModule(readFileSync(absolute,'utf8'),{fileName:absolute,compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
+  const localRequire=name=>{
+    if(name==='@netlify/blobs')return {getStore:()=>store};
+    if(name.startsWith('.')){const candidate=resolve(dirname(absolute),name);return load(existsSync(candidate)?candidate:candidate+'.ts');}
+    return createRequire(absolute)(name);
+  };
+  new Function('require','module','exports',code)(localRequire,module,module.exports);return module.exports;
+}
+const jobs=load('lib/job-store.ts'),realNow=Date.now;
 let now=Date.parse('2026-11-15T15:59:59.000Z');Date.now=()=>now;
 const beforeMidnight=now,afterMidnight=Date.parse('2026-11-15T16:00:01.000Z');
 const requestId='11111111-1111-4111-8111-111111111111';

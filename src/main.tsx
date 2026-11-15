@@ -1,5 +1,5 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
-import {LearnApp} from '../components/learn/learn-app';
+import {StageApp} from '../components/learn/stage-app';
 import '../app/globals.css';
-createRoot(document.getElementById('root')!).render(<StrictMode><LearnApp/></StrictMode>);
+createRoot(document.getElementById('root')!).render(<StrictMode><StageApp/></StrictMode>);

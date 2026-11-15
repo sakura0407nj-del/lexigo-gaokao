@@ -1,6 +1,7 @@
 import type { Paper } from "@/lib/learning-types";
+import {scopedStorageKey} from '@/lib/learning-stage';
 
-const KEY = "lexigo.practice-draft.v1";
+const KEY = scopedStorageKey("lexigo.practice-draft.v1");
 const MAX_AGE = 14 * 24 * 60 * 60 * 1000;
 const AI_AGE = 7 * 24 * 60 * 60 * 1000;
 const CLOCK_TOLERANCE = 5 * 60 * 1000;

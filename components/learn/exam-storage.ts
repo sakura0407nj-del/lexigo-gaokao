@@ -2,8 +2,9 @@ import { z } from 'zod';
 import type { CustomExam, ExamConfig, ExamReport } from '@/lib/exam-types';
 import type { ExerciseType } from '@/lib/learning-types';
 import type { GenerateRequest } from './api';
+import {scopedStorageKey} from '@/lib/learning-stage';
 
-export const EXAM_STORAGE_KEY = 'lexigo.exam.v1';
+export const EXAM_STORAGE_KEY = scopedStorageKey('lexigo.exam.v1');
 const DAY = 86400000;
 const text = (n: number) => z.string().max(n);
 const number = (max = 10000) => z.number().finite().min(0).max(max);

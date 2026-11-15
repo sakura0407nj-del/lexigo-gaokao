@@ -158,6 +158,32 @@ if(!process.argv.includes('--helpers-only')){
     refresh().replaceAll(imported);assert.deepEqual(refresh().progress.learned,['exchange']);assert.ok(refresh().progress.review.exchange);
     assert.deepEqual(refresh().progress.words.exchange.topics,['communication']);assert.deepEqual(refresh().progress.words.exchange.pos,['noun','verb']);
   });
+  await test('dictation attempt completion is atomic and deduplicates across reload and backup import',async()=>{
+    const mounted=await mount({version:1,learned:[],starred:[],words:{}});
+    const word={id:'primary-g3-dictation-fixture',word:'apple',translation:'苹果',phonetic:'',frequency:'high',rank:0,frequencyKnown:false,frequencyBand:'unknown'};
+    const attempt={attemptId:'dictation-attempt-one',band:'all',source:'frequency',scope:'测试用普通词汇',total:1,correct:0};
+    const results=[{word,correct:false,answer:'aple'}];
+    mounted.api.recordDictation(attempt,results);
+    const once=mounted.read();assert.equal(once.dictation.length,1);assert.equal(once.dictation[0].attemptId,attempt.attemptId);assert.equal(once.wrongbook[word.id].misses,1);
+    mounted.refresh().recordDictation(attempt,results);
+    assert.deepEqual(mounted.read(),once,'A duplicate completion must not partially increment mistakes or append history');
+    const reloaded=await mount(mounted.read());reloaded.api.recordDictation(attempt,results);
+    assert.equal(reloaded.refresh().progress.dictation.length,1);assert.equal(reloaded.refresh().progress.wrongbook[word.id].misses,1);
+    const imported=reloaded.exports.parseProgress(JSON.parse(JSON.stringify(reloaded.read())));
+    reloaded.refresh().replaceAll(imported);reloaded.refresh().recordDictation(attempt,results);
+    assert.equal(reloaded.refresh().progress.dictation.length,1);assert.equal(reloaded.refresh().progress.wrongbook[word.id].misses,1);
+    reloaded.refresh().recordDictation({...attempt,attemptId:'dictation-attempt-two'},results);
+    assert.equal(reloaded.refresh().progress.dictation.length,2);assert.equal(reloaded.refresh().progress.wrongbook[word.id].misses,2);
+    assert.equal(reloaded.refresh().progress.wrongbook[word.id].word.rank,0);
+    assert.equal(reloaded.refresh().progress.wrongbook[word.id].word.frequencyKnown,false);
+    assert.equal(reloaded.refresh().progress.wrongbook[word.id].word.frequencyBand,'unknown','A nominal compatibility enum must not become a fabricated frequency label');
+  });
+  await test('legacy dictation without attempt IDs still records distinct real completions',async()=>{
+    const {api,refresh}=await mount({version:1,learned:[],starred:[],words:{}});
+    const attempt={band:'all',total:1,correct:0},results=[{word:contextual,correct:false,answer:'exchang'}];
+    api.recordDictation(attempt,results);refresh().recordDictation(attempt,results);
+    assert.equal(refresh().progress.dictation.length,2);assert.equal(refresh().progress.wrongbook.exchange.misses,2);
+  });
   await test('exam completion stores grades and mistakes once across reload and backup import',async()=>{
     const {api,refresh,read,exports}=await mount({version:1,learned:[],starred:[]});
     const records=[{paperId:'paper-one',title:'模拟阅读',type:'reading',origin:'original',score:5,maxScore:10}];

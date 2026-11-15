@@ -13,6 +13,7 @@ import {GET as dictation} from '../app/api/dictation/route';
 import {GET as knowledge} from '../app/api/knowledge/route';
 import {POST as grade} from '../app/api/grade/route';
 import {assembleExamRequest,gradeExamRequest} from './exam-server';
+import {primaryWordsRequest,primaryBankRequest,primaryGradeRequest} from './primary-server';
 const challengeSchema=z.object({prompt:z.string().min(1).max(3000),context:z.string().max(6000).optional(),correctAnswer:z.string().min(1).max(2500),studentAnswer:z.string().trim().min(1).max(2500),explanation:z.string().max(2500).optional()});
 const wordQuerySchema=z.object({
   band:z.enum(['all','high','medium','low','unknown']).optional(),q:z.string().max(100).optional(),
@@ -27,6 +28,8 @@ export async function handlePublicRequest(req:Request):Promise<Response> {
   try {
     const url=new URL(req.url),path=url.pathname;
     if(req.method==='GET') {
+      if(path==='/api/primary/words')return primaryWordsRequest(req);
+      if(path==='/api/primary/bank')return primaryBankRequest(req);
       if(path==='/api/status') {
         const ai=Boolean(runtime().AI_API_KEY&&runtime().PAPER_SECRET);
         return json({ai,health:ai?'unknown':'degraded',model:'Gemini / Claude 备用',loginRequired:false,aiMessage:ai?'AI 已配置，提交后会显示实际处理状态。':'AI 服务正在配置，词库、听写和内置练习仍可使用。',quota:{daily:30,shared:200},vocabulary:words.length,papers:papers.length,questions:papers.reduce((n,p)=>n+p.questions.length,0),frequencyNote});
@@ -49,6 +52,7 @@ export async function handlePublicRequest(req:Request):Promise<Response> {
       requireSameOrigin(req);
       if(path==='/api/words/search')return json(searchWords(wordQuerySchema.parse(await bodyOf(req,100*1024))));
       requirePublicUser(req);
+      if(path==='/api/primary/grade')return await primaryGradeRequest(req);
       if(path==='/api/exams/assemble')return await assembleExamRequest(req);
       if(path==='/api/exams/grade')return await gradeExamRequest(req);
       if(path==='/api/grade')return grade(req);
