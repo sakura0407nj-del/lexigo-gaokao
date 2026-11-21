@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LexiGo" parent="Theme.LexiGo.Base">
+        <item name="android:navigationBarColor">@color/lexigo_white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

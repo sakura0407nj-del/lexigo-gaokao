@@ -65,6 +65,59 @@ jobs:
           cp README.md "$artifact_dir/BUILD-AND-SIGN.md"
           cd "$artifact_dir"
           sha256sum lexigo-1.0.0-unsigned.apk tools/apksigner.jar > SHA256SUMS.txt
+
+      - name: Inspect and validate the final APK
+        run: |
+          sdk_root="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          aapt="$sdk_root/build-tools/35.0.0/aapt"
+          artifact_dir="$GITHUB_WORKSPACE/android-artifacts"
+          receipt_dir="$artifact_dir/receipts"
+          apk="$artifact_dir/lexigo-1.0.0-unsigned.apk"
+          mkdir -p "$receipt_dir"
+          "$aapt" dump badging "$apk" > "$receipt_dir/badging.txt"
+          "$aapt" dump permissions "$apk" > "$receipt_dir/permissions.txt"
+          "$aapt" dump xmltree "$apk" AndroidManifest.xml > "$receipt_dir/manifest-tree.txt"
+          unzip -l "$apk" > "$receipt_dir/archive-files.txt"
+          python3 - "$receipt_dir" <<'PY'
+          import json
+          import re
+          import sys
+          from pathlib import Path
+
+          receipt = Path(sys.argv[1])
+          badging = (receipt / 'badging.txt').read_text(encoding='utf-8')
+          permissions = (receipt / 'permissions.txt').read_text(encoding='utf-8')
+          manifest = (receipt / 'manifest-tree.txt').read_text(encoding='utf-8')
+
+          def field(pattern):
+              match = re.search(pattern, badging, re.MULTILINE)
+              return match.group(1) if match else None
+
+          package = field(r"^package: name='([^']+)'")
+          minimum = field(r"^sdkVersion:'([^']+)'\s*$")
+          target = field(r"^targetSdkVersion:'([^']+)'\s*$")
+          permission_lines = [line for line in permissions.splitlines() if line.startswith('uses-') and 'permission' in line.split(':', 1)[0]]
+          requested = re.findall(r"^uses-(?:implied-)?permission[^:]*:\s+name='([^']+)'", permissions, re.MULTILINE)
+          debug_flag = bool(re.search(r'^application-debuggable(?:\s|$)', badging, re.MULTILINE))
+          debug_values = re.findall(r'^\s*A:\s+android:debuggable(?:\([^)]*\))?=(.*)$', manifest, re.MULTILINE)
+
+          def explicit_false(value):
+              match = re.search(r'\(type 0x12\)(0x[0-9a-fA-F]+)\b', value)
+              return match is not None and int(match.group(1), 16) == 0
+
+          checks = {
+              'package_name': package == 'app.lexigo.learning',
+              'minimum_sdk_26': minimum == '26',
+              'target_sdk_35': target == '35',
+              'only_internet_permission': len(requested) == len(permission_lines) and set(requested) == {'android.permission.INTERNET'},
+              'release_not_debuggable': not debug_flag and all(explicit_false(value) for value in debug_values),
+          }
+          result = {'passed': all(checks.values()), 'checks': checks, 'package': package, 'minSdk': minimum, 'targetSdk': target, 'requestedPermissions': sorted(set(requested)), 'debuggableBadgingFlag': debug_flag, 'debuggableManifestValues': debug_values}
+          (receipt / 'validation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(result, ensure_ascii=False, indent=2))
+          if not result['passed']:
+              raise SystemExit('APK contract failed; inspect the uploaded receipt reports.')
+          PY
           printf '%s\n' '### Android APK is ready for local signing' 'Release lint, the unit-test task and release assembly completed.' 'The APK is already zipaligned; it is unsigned and cannot be installed yet.' 'The artifact includes the official Android Build Tools 35.0.0 apksigner.jar for signing with a local JDK.' 'No release signing key or password is stored in this workflow.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload unsigned APK and signing tool
@@ -84,5 +137,6 @@ jobs:
           path: |
             android/app/build/reports/
             android/app/build/test-results/
+            android-artifacts/receipts/
           if-no-files-found: warn
           retention-days: 14

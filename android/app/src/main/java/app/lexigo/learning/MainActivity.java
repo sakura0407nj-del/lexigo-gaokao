@@ -90,6 +90,8 @@ public final class MainActivity extends Activity {
     private TextToSpeech tts;
     private boolean ttsInitialized, ttsInitFinished, destroyed, background, pageFailed, visitedSettings;
     private boolean bridgeSupported;
+    private int speechGeneration;
+    private android.window.OnBackInvokedCallback backCallback;
     private String ttsError = "英语语音正在准备，请稍后再试。";
     private long pageEpoch;
     private Reply speechReply;
@@ -121,6 +123,10 @@ public final class MainActivity extends Activity {
         getWindow().setNavigationBarColor(CREAM);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         buildLayout();
+        if (Build.VERSION.SDK_INT >= 33) {
+            backCallback = this::navigateBack;
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT, backCallback);
+        }
         initializeSpeech();
         createWebView();
         boolean restored = false;
@@ -241,6 +247,7 @@ public final class MainActivity extends Activity {
             @Override public void onReceivedSslError(WebView v, SslErrorHandler handler, SslError error) {
                 handler.cancel(); showError("安全连接验证失败，已停止加载。请检查设备日期和网络后重试。");
             }
+            @android.annotation.TargetApi(27)
             @Override public void onSafeBrowsingHit(WebView v, WebResourceRequest r, int type, SafeBrowsingResponse response) {
                 response.backToSafety(true); if (r.isForMainFrame()) showError("系统检测到不安全页面，已阻止访问。");
             }
@@ -354,10 +361,11 @@ public final class MainActivity extends Activity {
     }
 
     private void initializeSpeech() {
+        final int generation = ++speechGeneration;
         ttsInitialized = false; ttsInitFinished = false; ttsError = "英语语音正在准备，请稍后再试。";
         try {
             tts = new TextToSpeech(getApplicationContext(), status -> main.post(() -> {
-                if (destroyed) return;
+                if (destroyed || generation != speechGeneration) return;
                 ttsInitFinished = true; ttsInitialized = status == TextToSpeech.SUCCESS;
                 ttsError = ttsInitialized ? "" : "系统朗读服务未能启动，请在系统语音设置中检查英语语音。";
                 if (ttsInitialized) {
@@ -374,7 +382,7 @@ public final class MainActivity extends Activity {
             }));
         } catch (RuntimeException e) { ttsInitFinished = true; ttsError = "此设备暂时没有可用的系统朗读服务。"; flushSpeechStatus(); }
         main.postDelayed(() -> {
-            if (!destroyed && !ttsInitFinished) { ttsInitFinished = true; ttsError = "系统语音初始化超时，请检查语音设置后再试。"; flushSpeechStatus(); }
+            if (!destroyed && generation == speechGeneration && !ttsInitFinished) { ttsInitFinished = true; ttsError = "系统语音初始化超时，请检查语音设置后再试。"; flushSpeechStatus(); }
         }, 12000);
     }
     private List<Voice> englishVoices() {
@@ -400,7 +408,12 @@ public final class MainActivity extends Activity {
         } catch (RuntimeException | JSONException ignored) {}
         return status;
     }
-    private void flushSpeechStatus() { List<Reply> copy = new ArrayList<>(waitingStatus); waitingStatus.clear(); JSONObject status = speechStatus(); for (Reply r : copy) reply(r, status, null); }
+    private void flushSpeechStatus() {
+        List<Reply> copy = new ArrayList<>(waitingStatus); waitingStatus.clear();
+        JSONObject status = speechStatus(); for (Reply r : copy) reply(r, status, null);
+        // Initialization/voice-settings completion only: status requests must not emit recursively.
+        if (!destroyed && web != null && trusted(web.getUrl())) web.evaluateJavascript("window.dispatchEvent(new Event('lexigo:tts-ready'))", null);
+    }
     private void speak(Reply request, JSONObject payload) {
         if (background) { reply(request, null, "请回到学习页面后再朗读。"); return; }
         if (!ttsInitialized || tts == null) { reply(request, null, ttsError); return; }
@@ -447,8 +460,7 @@ public final class MainActivity extends Activity {
     }
 
     private boolean showFiles(WebView view, ValueCallback<Uri[]> callback, WebChromeClient.FileChooserParams params) {
-        finishChooser(null);
-        if (!trusted(view.getUrl()) || params.getMode() == WebChromeClient.FileChooserParams.MODE_SAVE || save != null) { callback.onReceiveValue(null); return true; }
+        if (background || chooser != null || !trusted(view.getUrl()) || params.getMode() == WebChromeClient.FileChooserParams.MODE_SAVE || save != null) { callback.onReceiveValue(null); return true; }
         chooser = callback; chooserTypes = acceptedTypes(params.getAcceptTypes());
         if (chooserTypes.isEmpty()) { toast("支持选择 JPG、PNG、WebP 图片或 JSON 学习备份。"); finishChooser(null); return true; }
         chooserLimit = params.getMode() == WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE ? 3 : 1;
@@ -458,7 +470,7 @@ public final class MainActivity extends Activity {
         catch (ActivityNotFoundException e) { toast("设备没有可用的文件选择器。"); finishChooser(null); }
         return true;
     }
-    private static Set<String> acceptedTypes(String[] supplied) {
+    static Set<String> acceptedTypes(String[] supplied) {
         Set<String> result = new LinkedHashSet<>(); boolean any = supplied == null || supplied.length == 0;
         if (supplied != null) for (String group : supplied) {
             if (group == null || group.trim().isEmpty() || group.trim().equals("*/*")) { any = true; continue; }
@@ -497,8 +509,16 @@ public final class MainActivity extends Activity {
             mime = mime == null ? "" : mime.split(";", 2)[0].toLowerCase(Locale.ROOT);
             if ((mime.isEmpty() || mime.equals("application/octet-stream")) && name != null && name.toLowerCase(Locale.ROOT).endsWith(".json")) mime = "application/json";
             if (!allowed.contains(mime)) return false;
-            // Verify the transient picker grant. The web UI applies format/decoded-image checks before upload.
-            try (InputStream in = getContentResolver().openInputStream(uri)) { return in != null && in.read() >= 0; }
+            // Providers can omit or misreport SIZE. Check the actual bounded stream off the UI thread.
+            try (InputStream in = getContentResolver().openInputStream(uri)) {
+                if (in == null) return false;
+                byte[] buffer = new byte[32768]; long total = 0; int read;
+                while ((read = in.read(buffer)) != -1) {
+                    if (Thread.currentThread().isInterrupted()) return false;
+                    total += read; if (total > MAX_EXPORT_BYTES) return false;
+                }
+                return total > 0;
+            }
         } catch (Exception e) { return false; }
     }
     private void finishChooser(Uri[] uris) {
@@ -530,8 +550,20 @@ public final class MainActivity extends Activity {
             if (clip != null) { if (clip.getItemCount() > chooserLimit) { toast("一次最多选择 " + chooserLimit + " 个文件。"); finishChooser(null); return; } for (int i = 0; i < clip.getItemCount(); i++) picked.add(clip.getItemAt(i).getUri()); }
             else if (data.getData() != null) picked.add(data.getData());
             if (picked.isEmpty() || picked.size() > chooserLimit) { finishChooser(null); return; }
-            for (Uri uri : picked) if (!validPickedFile(uri, chooserTypes)) { toast("所选文件不可读取、格式不支持或超过 20 MB。请选择 JPG、PNG、WebP 图片或 JSON 备份。"); finishChooser(null); return; }
-            finishChooser(picked.toArray(new Uri[0]));
+            final ValueCallback<Uri[]> expected = chooser;
+            final Set<String> allowed = new HashSet<>(chooserTypes);
+            final long epoch = pageEpoch;
+            toast("正在读取所选文件…");
+            files.execute(() -> {
+                boolean valid = true;
+                for (Uri uri : picked) if (!validPickedFile(uri, allowed)) { valid = false; break; }
+                final boolean accepted = valid;
+                main.post(() -> {
+                    if (destroyed || chooser != expected || pageEpoch != epoch) return;
+                    if (!accepted) toast("所选文件不可读取、格式不支持或超过 20 MB。请选择 JPG、PNG、WebP 图片或 JSON 备份。");
+                    finishChooser(accepted ? picked.toArray(new Uri[0]) : null);
+                });
+            });
         } else if (code == SAVE_TEXT) {
             SaveOperation operation = save;
             if (operation == null) return;
@@ -583,6 +615,7 @@ public final class MainActivity extends Activity {
         CookieManager.getInstance().flush(); super.onPause();
     }
     @Override protected void onDestroy() {
+        if (Build.VERSION.SDK_INT >= 33 && backCallback != null) getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback(backCallback);
         cancelPageRequests(); destroyed = true; main.removeCallbacksAndMessages(null); files.shutdownNow();
         if (tts != null) { tts.shutdown(); tts = null; }
         if (web != null) { content.removeView(web); web.stopLoading(); web.destroy(); web = null; }

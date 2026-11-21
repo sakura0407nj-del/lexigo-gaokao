@@ -83,7 +83,9 @@ function subscribe(listener: () => void) {
     const onVisible = () => { if (!document.hidden) { attempts = 0; window.clearTimeout(retry); void refresh(); } };
     void refresh();
     document.addEventListener("visibilitychange", onVisible);
-    return () => { active = false; window.clearTimeout(retry); document.removeEventListener("visibilitychange", onVisible); };
+    window.addEventListener("focus", onVisible);
+    window.addEventListener("lexigo:tts-ready", onVisible);
+    return () => { active = false; window.clearTimeout(retry); document.removeEventListener("visibilitychange", onVisible); window.removeEventListener("focus", onVisible); window.removeEventListener("lexigo:tts-ready", onVisible); };
   }
   const synth = window.speechSynthesis;
   const refresh = () => {
