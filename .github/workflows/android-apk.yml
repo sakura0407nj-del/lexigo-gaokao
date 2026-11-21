@@ -115,7 +115,9 @@ jobs:
               'release_version': version == expected_version and version_code == expected_code,
               'minimum_sdk_26': minimum == '26',
               'target_sdk_35': target == '35',
-              'only_internet_permission': len(requested) == len(permission_lines) and set(requested) == {'android.permission.INTERNET'},
+              'only_expected_permissions': len(requested) == len(permission_lines) and set(requested) == {
+                  'android.permission.INTERNET', 'android.permission.REQUEST_INSTALL_PACKAGES'
+              },
               'release_not_debuggable': not debug_flag and all(explicit_false(value) for value in debug_values),
           }
           result = {'passed': all(checks.values()), 'checks': checks, 'package': package, 'version': version, 'versionCode': version_code, 'minSdk': minimum, 'targetSdk': target, 'requestedPermissions': sorted(set(requested)), 'debuggableBadgingFlag': debug_flag, 'debuggableManifestValues': debug_values}

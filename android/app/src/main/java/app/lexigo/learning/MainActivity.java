@@ -101,6 +101,7 @@ public final class MainActivity extends Activity {
     private Set<String> chooserTypes = Collections.emptySet();
     private int chooserLimit = 1;
     private SaveOperation save;
+    private AppUpdate appUpdate;
 
     private static final class Reply {
         final String id;
@@ -119,6 +120,7 @@ public final class MainActivity extends Activity {
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
+        appUpdate = new AppUpdate(this);
         getWindow().setStatusBarColor(CREAM);
         getWindow().setNavigationBarColor(CREAM);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
@@ -304,13 +306,15 @@ public final class MainActivity extends Activity {
     private void showMenu(View anchor) {
         PopupMenu menu = new PopupMenu(this, anchor);
         menu.getMenu().add(0, 1, 1, "重新加载页面"); menu.getMenu().add(0, 2, 2, "用系统浏览器打开");
-        menu.getMenu().add(0, 3, 3, "分享学习链接"); menu.getMenu().add(0, 4, 4, "系统英语语音设置"); menu.getMenu().add(0, 5, 5, "关于与数据说明");
+        menu.getMenu().add(0, 3, 3, "分享学习链接"); menu.getMenu().add(0, 4, 4, "系统英语语音设置");
+        menu.getMenu().add(0, 6, 5, "检查更新"); menu.getMenu().add(0, 5, 6, "关于与数据说明");
         menu.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
                 case 1: new AlertDialog.Builder(this).setTitle("重新加载？").setMessage("正在处理的任务或尚未保存的输入可能中断。确定重新加载当前页面吗？").setPositiveButton("重新加载", (d,w) -> { stopSpeech("朗读已停止。"); if (web == null) loadHomeOrRetry(); else web.reload(); }).setNegativeButton("取消", null).show(); break;
                 case 2: openExternal(Uri.parse(currentUrl())); break;
                 case 3: Intent share = new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_SUBJECT, "拾词 LexiGo · 英语学习").putExtra(Intent.EXTRA_TEXT, "拾词 LexiGo：小学与高中英语学习\n" + currentUrl()); try { startActivity(Intent.createChooser(share, "分享学习链接")); } catch (ActivityNotFoundException e) { toast("没有可用的分享应用。"); } break;
                 case 4: openSpeechSettings(); break;
+                case 6: appUpdate.check(); break;
                 case 5: new AlertDialog.Builder(this).setTitle("拾词 LexiGo 安卓版").setMessage("小学三至六年级与高中英语学习。\n\n此版本需要联网，AI 功能由网站服务器提供。学习记录保存在本机应用中，与系统浏览器独立；卸载或清除应用数据会删除记录，请先在页面导出备份。\n\n朗读使用设备安装的英语语音。导入仅访问你通过系统选择器选中的文件，导出会让你选择保存位置。").setPositiveButton("知道了", null).show(); break;
                 default: return false;
             }
@@ -543,7 +547,9 @@ public final class MainActivity extends Activity {
     }
     @Override protected void onActivityResult(int code, int result, Intent data) {
         super.onActivityResult(code, result, data);
-        if (code == PICK_FILES) {
+        if (code == AppUpdate.ALLOW_INSTALL) {
+            appUpdate.settingsReturned();
+        } else if (code == PICK_FILES) {
             if (chooser == null) return;
             if (result != RESULT_OK || data == null) { finishChooser(null); return; }
             Set<Uri> picked = new LinkedHashSet<>(); ClipData clip = data.getClipData();
@@ -615,6 +621,7 @@ public final class MainActivity extends Activity {
         CookieManager.getInstance().flush(); super.onPause();
     }
     @Override protected void onDestroy() {
+        appUpdate.close();
         if (Build.VERSION.SDK_INT >= 33 && backCallback != null) getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback(backCallback);
         cancelPageRequests(); destroyed = true; main.removeCallbacksAndMessages(null); files.shutdownNow();
         if (tts != null) { tts.shutdown(); tts = null; }

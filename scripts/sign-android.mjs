@@ -39,8 +39,15 @@ else{
  const bytes=fs.readFileSync(output);
  const gradle=fs.readFileSync(new URL('../android/app/build.gradle',import.meta.url),'utf8');
  const version=gradle.match(/^\s*versionName '([0-9.]+)'/m)?.[1];
- if(!version)throw new Error('Android versionName is missing');
- const report={package:'app.lexigo.learning',version,minAndroid:'8.0',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),certificateSha256,verified:true,verification};
+ const versionCode=Number(gradle.match(/^\s*versionCode ([0-9]+)/m)?.[1]);
+ const minSdk=Number(gradle.match(/^\s*minSdk ([0-9]+)/m)?.[1]);
+ if(!version||!Number.isSafeInteger(versionCode)||!Number.isSafeInteger(minSdk))throw new Error('Android release metadata is missing');
+ const sha256=crypto.createHash('sha256').update(bytes).digest('hex');
+ const report={package:'app.lexigo.learning',version,versionCode,minSdk,bytes:bytes.length,sha256,certificateSha256,verified:true,verification};
  fs.writeFileSync(`${output}.verification.json`,JSON.stringify(report,null,2)+'\n');
+ if(path.basename(output)===`lexigo-${version}.apk`){
+  const manifest={schema:1,packageName:report.package,versionName:version,versionCode,minSdk,bytes:bytes.length,sha256};
+  fs.writeFileSync(path.join(path.dirname(path.resolve(output)),'android-update.json'),JSON.stringify(manifest,null,2)+'\n');
+ }
  console.log(JSON.stringify({...report,verification:undefined}));
 }

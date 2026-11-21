@@ -2,7 +2,7 @@
 
 The application ID is `app.lexigo.learning`. Android 8.0 (API 26) or newer is required. The app opens the hosted HTTPS learning site in Android System WebView and requires an internet connection. Android System WebView and an English text-to-speech voice should be available on the device.
 
-The manifest grants only `INTERNET`, disables cleartext traffic and app backup, and declares text-to-speech service discovery. Provider API keys and signing credentials do not belong in this app, its assets, or the repository.
+The manifest requests `INTERNET` and `REQUEST_INSTALL_PACKAGES`. The toolbar's **检查更新** action downloads an APK to private cache, validates its SHA-256, package, version and signer, and gives the Android installer a temporary read grant. Android asks for confirmation and may require permission to install from LexiGo the first time. Cleartext traffic and app backup are disabled. Provider keys and signing credentials belong outside the APK and repository.
 
 ## Build from source
 
@@ -28,6 +28,8 @@ java -jar tools/apksigner.jar verify --verbose --print-certs lexigo.apk
 ```
 
 Distribute only the verified signed APK. Do not modify or re-align an APK after signing it. A directly built local APK should be checked/aligned with SDK `zipalign` before signing; the workflow artifact has already completed this step.
+
+For releases with in-app update support, use `node scripts/sign-android.mjs <aligned-apk> <apksigner.jar> <out>/lexigo-<version>.apk` from the repository root. This emits `android-update.json` alongside the signed APK. Check the version and Android API level against the CI receipt, then attach both files to the public GitHub release tagged `android-v<version>`. Mark that release as Latest after both assets upload. Keep the version code increasing and reuse the release certificate.
 
 ## Pinned toolchain and verification
 
