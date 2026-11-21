@@ -1,6 +1,6 @@
 # 拾词 LexiGo Android
 
-Android application ID: `app.lexigo.learning`; version `1.0.0` (code `1`). Android 8.0/API 26 or newer is required. This app opens the hosted HTTPS learning site in Android System WebView; an internet connection is required. Android System WebView and an English text-to-speech voice should be available on the device.
+The application ID is `app.lexigo.learning`. Android 8.0 (API 26) or newer is required. The app opens the hosted HTTPS learning site in Android System WebView and requires an internet connection. Android System WebView and an English text-to-speech voice should be available on the device.
 
 The manifest grants only `INTERNET`, disables cleartext traffic and app backup, and declares text-to-speech service discovery. Provider API keys and signing credentials do not belong in this app, its assets, or the repository.
 
@@ -23,8 +23,8 @@ Keep the release keystore and its backup outside this repository. Reuse the same
 From the extracted artifact directory, sign using your private keystore path; `apksigner` prompts for its password:
 
 ```sh
-java -jar tools/apksigner.jar sign --ks /private/path/lexigo-release.jks --ks-key-alias lexigo --out lexigo-1.0.0.apk lexigo-1.0.0-unsigned.apk
-java -jar tools/apksigner.jar verify --verbose --print-certs lexigo-1.0.0.apk
+java -jar tools/apksigner.jar sign --ks /private/path/lexigo-release.jks --ks-key-alias lexigo --out lexigo.apk lexigo-android-unsigned.apk
+java -jar tools/apksigner.jar verify --verbose --print-certs lexigo.apk
 ```
 
 Distribute only the verified signed APK. Do not modify or re-align an APK after signing it. A directly built local APK should be checked/aligned with SDK `zipalign` before signing; the workflow artifact has already completed this step.

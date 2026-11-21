@@ -55,8 +55,8 @@ jobs:
           build_tools="$sdk_root/build-tools/35.0.0"
           artifact_dir="$GITHUB_WORKSPACE/android-artifacts"
           mkdir -p "$artifact_dir/tools"
-          "$build_tools/zipalign" -f -P 16 4 app/build/outputs/apk/release/app-release-unsigned.apk "$artifact_dir/lexigo-1.0.0-unsigned.apk"
-          "$build_tools/zipalign" -c -P 16 4 "$artifact_dir/lexigo-1.0.0-unsigned.apk"
+          "$build_tools/zipalign" -f -P 16 4 app/build/outputs/apk/release/app-release-unsigned.apk "$artifact_dir/lexigo-android-unsigned.apk"
+          "$build_tools/zipalign" -c -P 16 4 "$artifact_dir/lexigo-android-unsigned.apk"
           cp "$build_tools/lib/apksigner.jar" "$artifact_dir/tools/apksigner.jar"
           cp "$build_tools/source.properties" "$artifact_dir/tools/build-tools-source.properties"
           if [ -f "$build_tools/NOTICE.txt" ]; then
@@ -64,7 +64,7 @@ jobs:
           fi
           cp README.md "$artifact_dir/BUILD-AND-SIGN.md"
           cd "$artifact_dir"
-          sha256sum lexigo-1.0.0-unsigned.apk tools/apksigner.jar > SHA256SUMS.txt
+          sha256sum lexigo-android-unsigned.apk tools/apksigner.jar > SHA256SUMS.txt
 
       - name: Inspect and validate the final APK
         run: |
@@ -72,7 +72,7 @@ jobs:
           aapt="$sdk_root/build-tools/35.0.0/aapt"
           artifact_dir="$GITHUB_WORKSPACE/android-artifacts"
           receipt_dir="$artifact_dir/receipts"
-          apk="$artifact_dir/lexigo-1.0.0-unsigned.apk"
+          apk="$artifact_dir/lexigo-android-unsigned.apk"
           mkdir -p "$receipt_dir"
           "$aapt" dump badging "$apk" > "$receipt_dir/badging.txt"
           "$aapt" dump permissions "$apk" > "$receipt_dir/permissions.txt"
@@ -88,12 +88,17 @@ jobs:
           badging = (receipt / 'badging.txt').read_text(encoding='utf-8')
           permissions = (receipt / 'permissions.txt').read_text(encoding='utf-8')
           manifest = (receipt / 'manifest-tree.txt').read_text(encoding='utf-8')
+          build_config = Path('app/build.gradle').read_text(encoding='utf-8')
 
           def field(pattern):
               match = re.search(pattern, badging, re.MULTILINE)
               return match.group(1) if match else None
 
           package = field(r"^package: name='([^']+)'")
+          version = field(r"^package: .*?versionName='([^']+)'")
+          version_code = field(r"^package: .*?versionCode='([0-9]+)'")
+          expected_version = re.search(r"^\s*versionName '([0-9.]+)'", build_config, re.MULTILINE).group(1)
+          expected_code = re.search(r"^\s*versionCode ([0-9]+)", build_config, re.MULTILINE).group(1)
           minimum = field(r"^sdkVersion:'([^']+)'\s*$")
           target = field(r"^targetSdkVersion:'([^']+)'\s*$")
           permission_lines = [line for line in permissions.splitlines() if line.startswith('uses-') and 'permission' in line.split(':', 1)[0]]
@@ -107,12 +112,13 @@ jobs:
 
           checks = {
               'package_name': package == 'app.lexigo.learning',
+              'release_version': version == expected_version and version_code == expected_code,
               'minimum_sdk_26': minimum == '26',
               'target_sdk_35': target == '35',
               'only_internet_permission': len(requested) == len(permission_lines) and set(requested) == {'android.permission.INTERNET'},
               'release_not_debuggable': not debug_flag and all(explicit_false(value) for value in debug_values),
           }
-          result = {'passed': all(checks.values()), 'checks': checks, 'package': package, 'minSdk': minimum, 'targetSdk': target, 'requestedPermissions': sorted(set(requested)), 'debuggableBadgingFlag': debug_flag, 'debuggableManifestValues': debug_values}
+          result = {'passed': all(checks.values()), 'checks': checks, 'package': package, 'version': version, 'versionCode': version_code, 'minSdk': minimum, 'targetSdk': target, 'requestedPermissions': sorted(set(requested)), 'debuggableBadgingFlag': debug_flag, 'debuggableManifestValues': debug_values}
           (receipt / 'validation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           print(json.dumps(result, ensure_ascii=False, indent=2))
           if not result['passed']:

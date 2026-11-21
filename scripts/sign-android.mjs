@@ -34,8 +34,13 @@ else{
  execFileSync(bin('java'),['-jar',path.resolve(jar),'sign','--ks',keystore,'--ks-key-alias',config.alias,'--ks-pass','env:LEXIGO_KEY_PASSWORD','--key-pass','env:LEXIGO_KEY_PASSWORD','--min-sdk-version','26','--v1-signing-enabled','false','--v2-signing-enabled','true','--v3-signing-enabled','true','--v4-signing-enabled','false','--out',path.resolve(output),path.resolve(unsigned)],{env,stdio:'pipe'});
  const verification=execFileSync(bin('java'),['-jar',path.resolve(jar),'verify','--verbose','--print-certs',path.resolve(output)],{encoding:'utf8',stdio:'pipe'});
  if(!verification.includes('Verified using v2 scheme (APK Signature Scheme v2): true')||!verification.includes('Number of signers: 1'))throw new Error('APK signature verification did not confirm the expected signer');
+ const signerFingerprint=verification.match(/^Signer #1 certificate SHA-256 digest: ([a-f0-9]{64})$/im)?.[1]?.toLowerCase();
+ if(signerFingerprint!==certificateSha256.replaceAll(':','').toLowerCase())throw new Error('APK certificate does not match the local signing identity');
  const bytes=fs.readFileSync(output);
- const report={package:'app.lexigo.learning',version:'1.0.0',minAndroid:'8.0',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),certificateSha256,verified:true,verification};
+ const gradle=fs.readFileSync(new URL('../android/app/build.gradle',import.meta.url),'utf8');
+ const version=gradle.match(/^\s*versionName '([0-9.]+)'/m)?.[1];
+ if(!version)throw new Error('Android versionName is missing');
+ const report={package:'app.lexigo.learning',version,minAndroid:'8.0',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),certificateSha256,verified:true,verification};
  fs.writeFileSync(`${output}.verification.json`,JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({...report,verification:undefined}));
 }
