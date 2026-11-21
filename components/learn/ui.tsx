@@ -2,6 +2,7 @@
 
 import { AlertCircle, Loader2 } from "lucide-react";
 import type { ReactNode } from "react";
+import { androidRequest, hasAndroidBridge } from "./android-bridge";
 
 export function cx(...names: Array<string | false | null | undefined>) {
   return names.filter(Boolean).join(" ");
@@ -53,6 +54,13 @@ export function Empty({ title, children }: { title: string; children?: ReactNode
 }
 
 export function downloadText(filename: string, content: string, type = "text/plain;charset=utf-8") {
+  if (hasAndroidBridge()) {
+    void androidRequest("saveText", { filename, content, mime: type.split(";")[0] }, 600000).catch((error: unknown) => {
+      const message = error instanceof Error ? error.message : "文件未保存，请重试";
+      if (!/取消|cancel/i.test(message)) window.alert(message);
+    });
+    return;
+  }
   const blob = new Blob([content], { type });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

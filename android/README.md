@@ -1,0 +1,39 @@
+# 拾词 LexiGo Android
+
+Android application ID: `app.lexigo.learning`; version `1.0.0` (code `1`). Android 8.0/API 26 or newer is required. This app opens the hosted HTTPS learning site in Android System WebView; an internet connection is required. Android System WebView and an English text-to-speech voice should be available on the device.
+
+The manifest grants only `INTERNET`, disables cleartext traffic and app backup, and declares text-to-speech service discovery. Provider API keys and signing credentials do not belong in this app, its assets, or the repository.
+
+## Build from source
+
+Install JDK 17 and Android SDK Platform 35 / Build Tools 35.0.0. Set `ANDROID_HOME`, or create a local, ignored `local.properties` file containing your SDK path. From this directory:
+
+```sh
+./gradlew --no-daemon :app:lintRelease :app:testReleaseUnitTest :app:assembleRelease
+```
+
+On Windows use `gradlew.bat`. The output is `app/build/outputs/apk/release/app-release-unsigned.apk`. The unit-test task executes available JVM tests; when none are present Gradle reports `NO-SOURCE`.
+
+The manual GitHub Actions workflow **Android APK** runs the same tasks, aligns the APK and uploads `lexigo-android-unsigned` plus lint/test reports. It never signs a release. The APK artifact also contains the official, platform-independent `tools/apksigner.jar`, its Build Tools version information and SHA-256 checksums. APKs in that artifact are already zipaligned, so local signing needs only JDK 17 and your existing release keystore, including on Windows.
+
+## Local release signing
+
+Keep the release keystore and its backup outside this repository. Reuse the same key for future app updates, and increase `versionCode`. Do not send key passwords in command arguments, commit keys or upload them to CI.
+
+From the extracted artifact directory, sign using your private keystore path; `apksigner` prompts for its password:
+
+```sh
+java -jar tools/apksigner.jar sign --ks /private/path/lexigo-release.jks --ks-key-alias lexigo --out lexigo-1.0.0.apk lexigo-1.0.0-unsigned.apk
+java -jar tools/apksigner.jar verify --verbose --print-certs lexigo-1.0.0.apk
+```
+
+Distribute only the verified signed APK. Do not modify or re-align an APK after signing it. A directly built local APK should be checked/aligned with SDK `zipalign` before signing; the workflow artifact has already completed this step.
+
+## Pinned toolchain and verification
+
+AGP `8.9.2`, Gradle `8.11.1`, JDK `17`, compile/target SDK `35`, Build Tools `35.0.0`, and AndroidX WebKit `1.12.1` are explicitly configured. The wrapper scripts and JAR come from the official Gradle `v8.11.1` tag. Both the distribution and wrapper checksums were checked against [Gradle's official checksums](https://gradle.org/release-checksums/):
+
+- Gradle binary ZIP SHA-256: `f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6`
+- Wrapper JAR SHA-256: `2db75c40782f5e8ba1fc278a5574bab070adccb2d21ca5a6e5ed840888448046`
+
+References: [AGP 8.9 compatibility](https://developer.android.com/build/releases/agp-8-9-0-release-notes), [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html), [APK signing](https://developer.android.com/tools/apksigner).

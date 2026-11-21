@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { androidRequest, androidVoices, hasAndroidBridge, type NativeSpeechStatus } from "./android-bridge";
 
 export type Accent = "en-US" | "en-GB";
 
@@ -35,12 +36,14 @@ let snapshot: VoiceSnapshot | null = null;
 let timedOut = false;
 let speakToken = 0;
 let gapTimer: number | undefined;
+let nativeSnapshot: VoiceSnapshot = { supported: true, ready: false, voices: [] };
 
 function isSupported() {
-  return typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+  return hasAndroidBridge() || (typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined");
 }
 
 function compute(): VoiceSnapshot {
+  if (hasAndroidBridge()) return nativeSnapshot;
   if (!isSupported()) return { supported: false, ready: true, voices: [] };
   const voices = window.speechSynthesis.getVoices();
   return { supported: true, ready: voices.length > 0 || timedOut, voices };
@@ -57,6 +60,31 @@ function getServerSnapshot() {
 
 function subscribe(listener: () => void) {
   if (!isSupported()) return () => {};
+  if (hasAndroidBridge()) {
+    let active = true;
+    let retry: number | undefined;
+    let attempts = 0;
+    const refresh = async () => {
+      try {
+        const status = await androidRequest<NativeSpeechStatus>("ttsStatus");
+        if (!active) return;
+        nativeSnapshot = { supported: true, ready: status.ready === true, voices: androidVoices(status) };
+        snapshot = nativeSnapshot;
+        listener();
+        if (!status.ready && ++attempts < 15) retry = window.setTimeout(refresh, 750);
+        else if (!status.ready) { nativeSnapshot = { supported: true, ready: true, voices: [] }; snapshot = nativeSnapshot; listener(); }
+      } catch {
+        if (!active) return;
+        nativeSnapshot = { supported: true, ready: true, voices: [] };
+        snapshot = nativeSnapshot;
+        listener();
+      }
+    };
+    const onVisible = () => { if (!document.hidden) { attempts = 0; window.clearTimeout(retry); void refresh(); } };
+    void refresh();
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { active = false; window.clearTimeout(retry); document.removeEventListener("visibilitychange", onVisible); };
+  }
   const synth = window.speechSynthesis;
   const refresh = () => {
     snapshot = compute();
@@ -93,7 +121,8 @@ export function useSpeech(): SpeechState {
   const stop = useCallback(() => {
     speakToken += 1;
     window.clearTimeout(gapTimer);
-    if (isSupported()) window.speechSynthesis.cancel();
+    if (hasAndroidBridge()) void androidRequest("stopSpeech").catch(() => {});
+    else if (isSupported()) window.speechSynthesis.cancel();
   }, []);
 
   useEffect(() => stop, [stop]);
@@ -103,6 +132,21 @@ export function useSpeech(): SpeechState {
       if (!supported) return false;
       const voice = pickVoice(voices, options?.accent ?? "en-US");
       if (!voice) return false;
+      if (hasAndroidBridge()) {
+        const token = ++speakToken;
+        window.clearTimeout(gapTimer);
+        const total = Math.max(1, Math.min(5, Math.round(options?.repeat ?? 1)));
+        const sayNative = async (round: number) => {
+          try {
+            await androidRequest("speak", { text, lang: voice.lang, voice: voice.name, rate: options?.rate ?? 1 }, 600000);
+            if (token !== speakToken) return;
+            if (round + 1 < total) gapTimer = window.setTimeout(() => void sayNative(round + 1), options?.gapMs ?? 1000);
+            else options?.onEnd?.();
+          } catch { if (token === speakToken) options?.onError?.(); }
+        };
+        void sayNative(0);
+        return true;
+      }
       const synth = window.speechSynthesis;
       speakToken += 1;
       const token = speakToken;
@@ -140,6 +184,7 @@ export function useSpeech(): SpeechState {
   const hasAccent = useCallback((accent: Accent) => englishVoices(voices).some((voice) => normLang(voice.lang) === accent.toLowerCase()), [voices]);
 
   const prime = useCallback(() => {
+    if (hasAndroidBridge()) return;
     if (!isSupported()) return;
     try {
       const synth = window.speechSynthesis;

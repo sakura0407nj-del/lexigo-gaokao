@@ -4,6 +4,16 @@
 
 在线学习：[拾词 LexiGo · beta](https://beta--lexigo-gaokao-66876.netlify.app)。
 
+## 安卓 App
+
+提供独立安装的 Android APK，最低 Android 8.0；[安卓安装包与说明](https://github.com/sakura0407nj-del/lexigo-gaokao/releases/tag/android-v1.0.0)。APK 可以直接安装，ZIP 用于转发和存档，解压后安装里面的 APK。
+
+App 打开同一个 HTTPS 学习网站，网页内容更新通常无需重装。小学三至六年级、高中版、听写、题库、AI 功能与小游戏均使用现有网站。它是联网版，不是完整离线版；网站及 AI 服务仍受原有可用性和额度限制。安卓端使用系统英语 TTS 发音，通过系统文件选择器导入照片/备份、保存学习报告，不申请相机、麦克风或广泛存储权限。
+
+App 与手机浏览器的本地记录独立。原浏览器的学习记录可以先在“记录备份”导出 JSON，再到 App 内同学段、同年级导入。更换设备或卸载 App 前请备份；游戏积分与未完成现场不包含在学习记录备份内。未来 APK 更新应直接覆盖安装，沿用同一签名，不要先卸载。
+
+源码及构建流程见 [android/README.md](android/README.md)。GitHub Actions 只构建未签名包；发布签名在维护者本地完成，私钥不上传仓库、工作流或安装包。
+
 ## 学习内容
 
 ### 高中版

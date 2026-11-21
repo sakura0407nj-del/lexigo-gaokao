@@ -24,7 +24,7 @@ export function RecordsView({ bank, bankError, onReloadBank }: { bank: BankRespo
 
   function exportJson() {
     downloadText(`lexigo-记录-${todayKey()}.json`, JSON.stringify(progress, null, 2), "application/json");
-    setMessage("已导出学习记录。");
+    setMessage("已发起导出，请完成文件保存。");
   }
 
   async function importJson(event: ChangeEvent<HTMLInputElement>) {
