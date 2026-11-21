@@ -1,6 +1,6 @@
 'use client';
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
-import {ArrowRight,BookOpen,BookX,ChevronDown,FilePenLine,Gamepad2,HardDrive,Headphones,PencilLine,RotateCw,Sun} from 'lucide-react';
+import {ArrowRight,BookOpen,BookX,ChevronDown,FilePenLine,Gamepad2,HardDrive,Headphones,PencilLine,RotateCw,Sparkles,Sun} from 'lucide-react';
 import './primary.css';
 import type {PrimaryGrade,PrimaryWord,PrimaryWordsResponse} from '@/lib/primary-types';
 import {getPrimaryGrade} from '@/lib/learning-stage';
@@ -15,20 +15,21 @@ import {CorrectionView} from '../learn/correction-view';
 import GameHub from '../learn/game-hub';
 import {MistakesView} from '../learn/mistakes-view';
 import {getSkillFocus} from '@/lib/primary-skills';
+import PrimaryStudio,{StudyWeek} from './primary-studio';
 
-type Tab='today'|'words'|'dictation'|'practice'|'mistakes'|'games'|'correction'|'records';
+type Tab='today'|'words'|'dictation'|'practice'|'mistakes'|'games'|'correction'|'records'|'studio';
 const GRADES:PrimaryGrade[]=[3,4,5,6];
 const GRADE_LABEL:Record<PrimaryGrade,string>={3:'三年级',4:'四年级',5:'五年级',6:'六年级'};
 const GRADE_KEY='lexigo.primary.grade.v1';
-const HASH:Record<Tab,string>={today:'today',words:'vocab',dictation:'dictation',practice:'practice',mistakes:'mistakes',games:'game',correction:'writing',records:'records'};
+const HASH:Record<Tab,string>={today:'today',words:'vocab',dictation:'dictation',practice:'practice',mistakes:'mistakes',games:'game',correction:'writing',records:'records',studio:'studio'};
 const NAV:{id:Tab;label:string;Icon:typeof Sun}[]=[
   {id:'today',label:'今天',Icon:Sun},{id:'words',label:'单词',Icon:BookOpen},{id:'dictation',label:'听写',Icon:Headphones},
-  {id:'practice',label:'小练习',Icon:PencilLine},{id:'mistakes',label:'错题本',Icon:BookX},{id:'games',label:'游戏',Icon:Gamepad2},{id:'correction',label:'写作与批改',Icon:FilePenLine},{id:'records',label:'记录备份',Icon:HardDrive}];
+  {id:'practice',label:'小练习',Icon:PencilLine},{id:'studio',label:'练习室',Icon:Sparkles},{id:'mistakes',label:'错题本',Icon:BookX},{id:'games',label:'游戏',Icon:Gamepad2},{id:'correction',label:'写作与批改',Icon:FilePenLine},{id:'records',label:'记录备份',Icon:HardDrive}];
 const MAIN_IDS:Tab[]=['today','words','dictation','practice'];
 const NAV_MAIN=NAV.filter(n=>MAIN_IDS.indexOf(n.id)>=0);
 const NAV_MORE=NAV.filter(n=>MAIN_IDS.indexOf(n.id)<0);
 const MORE:{id:Tab;title:string;desc:string;Icon:typeof Sun}[]=[
-  {id:'practice',title:'小练习',desc:'读小短文，练句子',Icon:PencilLine},
+  {id:'studio',title:'英语练习室',desc:'听音、配对和分级故事',Icon:Sparkles},
   {id:'mistakes',title:'错题本',desc:'把做错的再练一遍',Icon:BookX},
   {id:'games',title:'英语游戏',desc:'用小游戏复习单词',Icon:Gamepad2},
   {id:'correction',title:'写作与批改',desc:'写一段话或批改题目',Icon:FilePenLine}];
@@ -43,7 +44,7 @@ function parseHash(h:string):Tab{
   if(v==='vocab'||v==='words')return 'words';
   if(v==='game'||v.startsWith('game-'))return 'games';
   if(v==='writing'||v==='essay'||v==='questions')return 'correction';
-  return (['today','dictation','practice','mistakes','records'] as string[]).includes(v)?v as Tab:'today';
+  return (['today','dictation','practice','mistakes','records','studio'] as string[]).includes(v)?v as Tab:'today';
 }
 function toIds(v:unknown):string[]{
   if(Array.isArray(v))return v.map(x=>typeof x==='string'?x:(x as {id?:string}|null)?.id??'').filter(Boolean);
@@ -172,6 +173,7 @@ export function PrimaryApp(){
         </div>
       </section>
 
+      <StudyWeek grade={grade} onOpen={()=>go('studio')}/>
       {loading&&<p className='primary-note primary-status' role='status'>正在加载{GRADE_LABEL[grade]}单词…</p>}
       {error&&<div className='primary-error' role='alert'><p>单词暂时没有加载出来：{error}</p>
         <button type='button' className='primary-button' onClick={retry}><RotateCw size={16} aria-hidden/>再试一次</button></div>}
@@ -246,6 +248,7 @@ export function PrimaryApp(){
           {tab==='words'&&<PrimaryWords {...wordProps}/>}
           {tab==='dictation'&&<PrimaryDictation {...wordProps}/>}
           {tab==='practice'&&<PrimaryPractice grade={grade} initialFocusType={focusType}/>}
+          {tab==='studio'&&<PrimaryStudio {...wordProps}/>}
           {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav} primary onTargetPractice={reviewType?()=>{go('practice');setFocusType(reviewType);}:undefined}/>}
           {tab==='games'&&<GameHub speech={speech} primaryGrade={grade}/>}
           {tab==='correction'&&<><div className='primary-tabs primary-segment' role='group' aria-label='写作与批改方式'><button type='button' className={correctionKind==='essay'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='essay'} onClick={()=>setCorrectionKind('essay')}>写作小老师</button><button type='button' className={correctionKind==='questions'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='questions'} onClick={()=>setCorrectionKind('questions')}>题目批改</button></div><CorrectionView key={correctionKind} kind={correctionKind} primaryGrade={grade}/></>}

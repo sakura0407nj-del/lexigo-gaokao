@@ -30,7 +30,7 @@ export function useBookScope(grade:PrimaryGrade,books:PrimaryBook[]=[],words:Pri
   }
   return {books,book,unit,items,label,choose};
 }
-export function BookSelector({scope}:{scope:ReturnType<typeof useBookScope>}){
+export function BookSelector({scope,compact=false}:{scope:ReturnType<typeof useBookScope>;compact?:boolean}){
   if(!scope.books.length)return null;
   const {book,unit,choose}=scope;
   const official=book?.sources.find(s=>s.kind==='official-directory');
@@ -43,10 +43,10 @@ export function BookSelector({scope}:{scope:ReturnType<typeof useBookScope>}){
       <option value="">全册已核对词目</option>
       {book.units.map(u=><option key={u.id} value={u.id}>{u.title}（{u.wordIds.length} 词）</option>)}
     </select></label>}
-    {book&&<div className="primary-book-source"><span>当前范围收录 {scope.items.length} 个词。请对照课本的单元名选版本。</span>
+    {book&&!compact&&<div className="primary-book-source"><span>当前范围收录 {scope.items.length} 个词。请对照课本的单元名选版本。</span>
       {official&&<a href={official.url} target="_blank" rel="noreferrer">查看人教社目录</a>}
       {(unit?.note||book.note)&&<details><summary>词目与版本说明</summary><p>{unit?.note||book.note}</p></details>}
     </div>}
-    <a className="primary-catalog-download" href="/api/primary/directory.csv" download="LexiGo-PEP-primary-directory.csv">下载各册学习目录（CSV）</a>
+    {!compact&&<a className="primary-catalog-download" href="/api/primary/directory.csv" download="LexiGo-PEP-primary-directory.csv">下载各册学习目录（CSV）</a>}
   </div>;
 }
