@@ -67,9 +67,17 @@
 .study-match-column { display: grid; align-content: start; gap: 8px; }
 .study-match-column .study-choice { text-align: center; }
 .study-match-column .study-choice[data-result=correct] { text-decoration: line-through; }
+.study-match-review { padding: 12px; margin: 16px 0; border: 1px solid #d8d1be; border-radius: 12px; }
+.study-match-review legend { padding: 0 5px; font-weight: 700; }
+.study-match-review label { display: flex; flex-wrap: wrap; align-items: center; min-height: 44px; }
+.study-match-review label > * { margin-right: 8px; }
+.study-match-review button { margin-top: 10px; }
 .study-story-lines li { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: start; gap: 8px; }
 .study-story-lines li[data-playing=true] { background: #fff2b9; }
 .study-story-lines p { margin: 0 0 6px; }
+.study-gloss-word { display: inline-block; padding: 1px 3px; border: 0; border-bottom: 2px dotted #55856b; border-radius: 3px; background: #eef5e9; color: #174933; font: inherit; cursor: pointer; }
+.study-gloss-word[aria-expanded=true] { background: #f9e79c; border-color: #886b16; }
+.study-word-note { margin: 10px 0; padding: 12px; border: 1px solid #d5dfd4; border-radius: 10px; background: #f3f7ec; }
 .study-filter { display: grid; gap: 5px; margin-bottom: 10px; max-width: 25rem; font-weight: 600; }
 .study-filter select { width: 100%; font-size: 16px; }
 .study-week-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin: -4px; }
@@ -77,10 +85,18 @@
 .study-week-header h3, .study-week-header p { margin: 0; }
 .study-week-header h3 svg { display: inline-block; vertical-align: -.16em; }
 .study-week-header p { color: #4c6255; font-size: .88rem; }
+.study-resume-flash { margin-bottom: 8px; }
+.study-resume-options summary { min-height: 40px; padding-top: 8px; color: #456251; cursor: pointer; }
 .study-calendar { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 6px; list-style: none; margin: 14px 0 0; padding: 0; }
-.study-calendar li { text-align: center; border: 1px solid #ded8c5; border-radius: 8px; padding: 4px 2px; color: #4c6255; }
+.study-calendar li { text-align: center; border: 1px solid #ded8c5; border-radius: 8px; color: #4c6255; }
 .study-calendar li[data-done=true] { background: #23563f; color: #fffdf7; }
-.study-calendar li[aria-current=date] { border: 2px solid #996b18; padding: 3px 1px; }
+.study-calendar li[aria-current=date] { border: 2px solid #996b18; }
+.study-calendar button { display: block; width: 100%; min-height: 42px; background: transparent; color: inherit; border: 0; font: inherit; }
+.study-calendar button[aria-pressed=true] { box-shadow: inset 0 -4px 0 #f0d87f; }
+.study-calendar button:not(:disabled) { cursor: pointer; }
+.study-day-detail { margin-top: 12px; padding: 12px; border-radius: 10px; background: #f1f5eb; }
+.study-day-detail h4, .study-day-detail p { margin: 0 0 8px; }
+.study-day-detail ul { padding-left: 20px; margin: 0 0 10px; }
 @media (max-width: 520px) {
   .study-activity-grid, .study-story-grid { gap: 8px; }
   .study-activity-grid button { min-height: 88px; padding: 9px; }

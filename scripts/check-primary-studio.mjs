@@ -6,12 +6,12 @@ import {build} from 'esbuild';
 mkdirSync('work/checks',{recursive:true});
 await build({
   stdin:{
-    contents:"export * from './components/primary/study-activities'; export * from './components/primary/study-stories'; export {primaryGradeCatalog} from './lib/primary-catalog';",
+    contents:"export * from './components/primary/study-activities'; export * from './components/primary/study-stories'; export * from './components/primary/spelling-aid'; export * from './components/primary/spelling-diff'; export {primaryGradeCatalog} from './lib/primary-catalog';",
     resolveDir:process.cwd()
   },
   bundle:true,platform:'node',format:'cjs',outfile:'work/checks/primary-studio.cjs'
 });
-const {buildSkillQuestions,buildMatch,dailyRandom,stories,primaryGradeCatalog,meaningLabel}=
+const {buildSkillQuestions,buildMatch,dailyRandom,stories,storyGlossary,primaryGradeCatalog,meaningLabel,spellingDiff,spellingGroups}=
   createRequire(import.meta.url)('../work/checks/primary-studio.cjs');
 
 for(const grade of [3,4,5,6]){
@@ -49,10 +49,21 @@ for(const grade of [3,4,5,6]){
   for(const story of stories[grade]){
     assert.ok(story.lines.every(([en,zh])=>en.trim()&&/[\u3400-\u9fff]/.test(zh)));
     assert.equal(story.questions.length,3);
+    for(const [term,[id,meaning]] of Object.entries(storyGlossary[story.id])){
+      assert.ok(items.some(word=>word.id===id&&word.word.toLowerCase()===term),id);
+      assert.ok(story.lines.some(([en])=>en.toLowerCase().split(/\W+/).includes(term)),term);
+      assert.ok(/[\u3400-\u9fff]/.test(meaning));
+    }
     for(const q of story.questions){
       assert.ok(q.options[q.correct]&&story.lines[q.line],story.id);
       assert.equal(new Set(q.options).size,q.options.length);
     }
   }
 }
+assert.deepEqual(spellingGroups('computer'),[3,2,3]);
+assert.deepEqual(spellingGroups('calculator'),[10]);
+assert.deepEqual(spellingDiff('compter','computer').filter(c=>c.kind!=='match'),[{typed:'',expected:'u',kind:'missing'}]);
+assert.deepEqual(spellingDiff('recieve','receive').filter(c=>c.kind!=='match').map(c=>c.kind),['swap','swap']);
+assert.deepEqual(spellingDiff('appple','apple').filter(c=>c.kind!=='match'),[{typed:'p',expected:'',kind:'extra'}]);
+assert.deepEqual(spellingDiff('cit','cat').filter(c=>c.kind!=='match'),[{typed:'i',expected:'a',kind:'replace'}]);
 console.log('Primary studio: stable daily questions, 46 unit boards and listening pools, 8 bilingual stories with 24 answered questions.');

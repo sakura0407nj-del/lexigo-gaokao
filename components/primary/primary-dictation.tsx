@@ -7,12 +7,16 @@ import {captureWrongbookSnapshot,useProgress,type DictationAttempt,type Wrongboo
 import {normalizeAnswer} from '@/lib/learning-core';
 import {downloadText} from '../learn/ui';
 import {BookSelector,useBookScope} from './book-scope';
+import {spellingDiff} from './spelling-diff';
+import {spellingGroups} from './spelling-aid';
 
 type Result={word:PrimaryWord;answer:string;correct:boolean;skipped:boolean};
 type Cfg={rate:number;repeat:number;hint:boolean;mode?:'listen'|'meaning';scopeLabel?:string};
-interface Run extends Cfg{v:1;id:string;grade:PrimaryGrade;items:PrimaryWord[];index:number;results:Result[];input:string;startedAt:number;savedAt:number;recorded:boolean;source?:'wrongbook';wrongbookSnapshot?:WrongbookSnapshot}
+type RetrySummary={total:number;correct:number};
+interface Run extends Cfg{v:1;id:string;grade:PrimaryGrade;items:PrimaryWord[];index:number;results:Result[];input:string;rewrite?:string;startedAt:number;savedAt:number;recorded:boolean;source?:'wrongbook';wrongbookSnapshot?:WrongbookSnapshot;retryOf?:RetrySummary}
 const TTL=14*864e5;
 const keyOf=(g:PrimaryGrade)=>`lexigo.primary.dictation.${g}.v1`;
+const aidKey='lexigo.primary.dictation.spelling-aid.v1';
 const isStr=(x:unknown):x is string=>typeof x==='string';
 const fin=(n:unknown)=>typeof n==='number'&&Number.isFinite(n);
 function okWord(w:unknown,g:PrimaryGrade):w is PrimaryWord{
@@ -29,10 +33,13 @@ export function parsePrimaryDictationDraft(raw:string|null,g:PrimaryGrade,now=Da
   if(!Array.isArray(r.results)||r.results.length>r.items.length||!r.results.every((x,i)=>!!x&&okWord(x.word,g)&&x.word.id===r.items[i].id&&x.word.word===r.items[i].word&&isStr(x.answer)&&x.answer.length<=200&&typeof x.correct==='boolean'&&typeof x.skipped==='boolean'&&(!x.skipped||(!x.correct&&!x.answer))))return null;
   if(!Number.isInteger(r.index)||r.index<0||r.index>r.items.length||(r.results.length!==r.index&&r.results.length!==r.index+1))return null;
   if(!isStr(r.input)||r.input.length>200||![.7,.85,1].includes(r.rate)||![1,2].includes(r.repeat)||typeof r.hint!=='boolean'||typeof r.recorded!=='boolean')return null;
+  if(r.rewrite!==undefined&&(!isStr(r.rewrite)||r.rewrite.length>200||r.results.length!==r.index+1||r.results[r.index].skipped))return null;
   if(!fin(r.startedAt)||!fin(r.savedAt)||r.startedAt<0||r.savedAt<r.startedAt||r.savedAt>now+300000||now-r.savedAt>TTL||r.recorded&&r.index!==r.items.length)return null;
   if(r.source!==undefined&&r.source!=='wrongbook')return null;
   if(r.mode!==undefined&&r.mode!=='listen'&&r.mode!=='meaning')return null;
   if(r.scopeLabel!==undefined&&(!isStr(r.scopeLabel)||r.scopeLabel.length>200))return null;
+  if(r.retryOf!==undefined&&(!r.retryOf||r.source!=='wrongbook'||!Number.isSafeInteger(r.retryOf.total)||r.retryOf.total>20||
+    !Number.isSafeInteger(r.retryOf.correct)||r.retryOf.correct<0||r.retryOf.total-r.retryOf.correct!==r.items.length))return null;
   if(r.wrongbookSnapshot!==undefined){
     const entries=r.wrongbookSnapshot;
     if(r.source!=='wrongbook'||!entries||typeof entries!=='object'||Array.isArray(entries)||Object.keys(entries).length>r.items.length)return null;
@@ -47,6 +54,19 @@ function attemptOf(r:Run):Omit<DictationAttempt,'at'>{
   const label=r.mode==='meaning'?'看中文拼词':'听写';
   return {attemptId:r.id,band:'primary-grade-'+r.grade,total:r.results.length,correct:r.results.filter(x=>x.correct).length,scope:(r.scopeLabel??r.grade+'年级')+' · '+(r.source==='wrongbook'?'错词专项 · ':'')+label,planned:r.items.length,...(r.source==='wrongbook'?{source:'wrongbook' as const}:{})};
 }
+export function unfinishedPrimaryDictation(grade:PrimaryGrade){
+  try{
+    const run=parsePrimaryDictationDraft(localStorage.getItem(keyOf(grade)),grade);
+    if(run&&run.index<run.items.length)return {index:run.index+1,total:run.items.length};
+  }catch{return;}
+}
+function rewriteNeeded(run:Run){
+  const result=run.results[run.index];
+  return run.rewrite!==undefined&&result&&!result.correct&&!result.skipped;
+}
+function canAdvance(run:Run){
+  return !rewriteNeeded(run)||normalizeAnswer(run.rewrite??'')===normalizeAnswer(run.items[run.index].word);
+}
 function shuffle<T>(a:T[]):T[]{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 function wrongIdSet(wb:unknown):Set<string>{
   const s=new Set<string>();
@@ -60,12 +80,16 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
   const scope=useBookScope(grade,books,words);
   const [run,setRun]=useState<Run|null>(null);
   const runRef=useRef<Run|null>(null);
+  const differenceRef=useRef<HTMLDivElement>(null);
   const speechRef=useRef(speech);
   const [played,setPlayed]=useState(false);
   const [msg,setMsg]=useState('');
   const [saveErr,setSaveErr]=useState('');
   const [audioError,setAudioError]=useState('');
   const [hinted,setHinted]=useState('');
+  const [spellingAid,setSpellingAid]=useState(()=>{
+    try{return localStorage.getItem(aidKey)==='on';}catch{return false;}
+  });
   const [count,setCount]=useState(10);
   const [topic,setTopic]=useState('all');
   const [order,setOrder]=useState<'random'|'list'>('random');
@@ -79,6 +103,14 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
     return()=>speechRef.current.stop();
   },[grade]);
   useEffect(()=>{if(!hydrated||!run||run.index!==run.items.length||run.results.length!==run.items.length)return;recordDictation(attemptOf(run),run.results,run.wrongbookSnapshot);},[hydrated,run,recordDictation]);
+  const showingDifference=Boolean(run&&rewriteNeeded(run));
+  useEffect(()=>{
+    if(!showingDifference)return;
+    const scroll=differenceRef.current, mark=scroll?.querySelector('mark');
+    if(!scroll||!mark)return;
+    const area=scroll.getBoundingClientRect(),first=mark.getBoundingClientRect();
+    if(first.right>area.right)scroll.scrollLeft+=first.left-area.left-area.width/3;
+  },[showingDifference,run?.id,run?.index]);
   const gradeWords=scope.items;
   const topics=useMemo(()=>[...new Set(gradeWords.map(w=>w.topic).filter(Boolean))].sort(),[gradeWords]);
   const wrongIds=useMemo(()=>wrongIdSet((progress as {wrongbook?:unknown}|undefined)?.wrongbook),[progress]);
@@ -95,11 +127,11 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
     runRef.current=next;setRun(next);
   };
   const say=(w:PrimaryWord,slow=false)=>{const r=runRef.current;if(!r||!canSpeak)return;setAudioError('');speech.prime();const ok=speech.speak(w.word,{rate:slow ? .65 : r.rate,repeat:slow?1:r.repeat,onError:()=>setAudioError('这次朗读没有成功，请再点一次“听一遍”，并检查设备音量。')});setPlayed(ok);if(!ok)setAudioError('朗读暂时未能开始，请再次点按朗读按钮。');};
-  const begin=(items:PrimaryWord[],c:Cfg,source?:'wrongbook')=>{
+  const begin=(items:PrimaryWord[],c:Cfg,source?:'wrongbook',retryOf?:RetrySummary)=>{
     if((c.mode!=='meaning'&&!canSpeak)||!items.length)return;
     speech.stop();if(c.mode!=='meaning')speech.prime();
     const now=Date.now();
-    commit({v:1,id:now.toString(36)+Math.random().toString(36).slice(2,8),grade,items,index:0,results:[],input:'',rate:c.rate,repeat:c.repeat,hint:c.hint,mode:c.mode??'listen',scopeLabel:c.scopeLabel??scope.label,startedAt:now,savedAt:now,recorded:false,...(source?{source,wrongbookSnapshot:captureWrongbookSnapshot(progress.wrongbook,items.map(w=>w.id))}:{})});
+    commit({v:1,id:now.toString(36)+Math.random().toString(36).slice(2,8),grade,items,index:0,results:[],input:'',rate:c.rate,repeat:c.repeat,hint:c.hint,mode:c.mode??'listen',scopeLabel:c.scopeLabel??scope.label,startedAt:now,savedAt:now,recorded:false,retryOf,...(source?{source,wrongbookSnapshot:captureWrongbookSnapshot(progress.wrongbook,items.map(w=>w.id))}:{})});
     setMsg('');setAudioError('');if(c.mode!=='meaning')say(items[0]);
   };
   const start=()=>begin((order==='random'?shuffle(pool):pool).slice(0,actual),{...cfg,mode},wrongOnly?'wrongbook':undefined);
@@ -110,19 +142,20 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
     if(!skip&&!ans){setMsg('请先输入单词，或点击“跳过”。');return}
     const n=normalizeAnswer(ans);
     const correct=!skip&&[w.word,...(w.accepted??[])].some(a=>normalizeAnswer(a)===n);
-    setMsg('');commit({...r,results:[...r.results,{word:w,answer:skip?'':ans,correct,skipped:skip}]});
+    setMsg('');commit({...r,rewrite:!skip&&!correct?'':undefined,results:[...r.results,{word:w,answer:skip?'':ans,correct,skipped:skip}]});
+    if(!skip&&!correct&&r.mode!=='meaning')say(w);
   };
   const finish=(r:Run)=>{
-    commit({...r,index:r.items.length,input:'',recorded:true});
+    commit({...r,index:r.items.length,input:'',rewrite:undefined,recorded:true});
     recordDictation(attemptOf(r),r.results,r.wrongbookSnapshot);
   };
   const next=()=>{
     const r=runRef.current;
-    if(!r||r.index>=r.items.length||r.results.length<=r.index)return;
+    if(!r||r.index>=r.items.length||r.results.length<=r.index||!canAdvance(r))return;
     speech.stop();
     const i=r.index+1;
     if(i>=r.items.length){finish(r);return}
-    commit({...r,index:i,input:''});setPlayed(false);setMsg('');if(r.mode!=='meaning')say(r.items[i]);
+    commit({...r,index:i,input:'',rewrite:undefined});setPlayed(false);setMsg('');if(r.mode!=='meaning')say(r.items[i]);
   };
   const reset=()=>{
     const r=runRef.current;
@@ -168,16 +201,25 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
     return <section className='primary-dictation primary-panel'>
       <h2>{run.mode==='meaning'?'拼词完成':'听写完成'}</h2>{errs}
       <p className='primary-dictation-progress'>本次答对 {ok}/{run.results.length} 个单词</p>
+      {run.retryOf&&<p className="primary-retry-compare">上一轮答对 {run.retryOf.correct}/{run.retryOf.total} 词。这轮重练的 {run.items.length} 词中，{ok} 词已答对，{wrong.length} 词还需练习。</p>}
+      {!wrong.length&&<p className="primary-note">本轮全对。</p>}
       {run.source==='wrongbook'&&run.wrongbookSnapshot&&<p className='primary-note'>本次专项只清理答对且未再次写错的词；答错、跳过或后来新增的错误会保留。</p>}
       <ol className='primary-results'>{run.results.map((x,i)=><li key={i}>{x.correct?'✓':'✗'} <b>{x.word.word}</b> {x.word.translation} · 你的答案：{x.skipped?'（跳过）':x.answer}</li>)}</ol>
       <div className='primary-actions'>
-        {wrong.length>0&&<button className='primary-button primary-button-primary' onClick={()=>begin(shuffle(wrong),{rate:run.rate,repeat:run.repeat,hint:run.hint,mode:canSpeak?run.mode:'meaning',scopeLabel:run.scopeLabel},'wrongbook')}><RotateCcw size={18}/>只练错词（{wrong.length}）</button>}
+        {wrong.length>0&&<button className='primary-button primary-button-primary' onClick={()=>begin(shuffle(wrong),{rate:run.rate,repeat:run.repeat,hint:run.hint,mode:canSpeak?run.mode:'meaning',scopeLabel:run.scopeLabel},'wrongbook',{total:run.results.length,correct:ok})}><RotateCcw size={18}/>只练错词（{wrong.length}）</button>}
         <button className='primary-button' onClick={()=>download(run)}><Download size={18}/>下载结果</button>
         <button className='primary-button' onClick={reset}>重新设置</button>
       </div>
     </section>;
   }
   const w=run.items[run.index];const res=run.results[run.index];
+  const groups=spellingAid?spellingGroups(w.word):[];
+  const correcting=rewriteNeeded(run);
+  const difference=correcting?spellingDiff(res.answer,w.word):null;
+  const paint=(row:'typed'|'expected')=>difference?.map((column,i)=>{
+    const letter=column[row]||'·';
+    return column.kind==='match'?<span key={i}>{letter}</span>:<mark key={i} data-change={column.kind}>{letter}</mark>;
+  });
   return <section className='primary-dictation primary-panel'>
     <p className='primary-dictation-progress'>第 {run.index+1}/{run.items.length} 题 · 已答对 {ok}</p>{errs}
     {run.mode!=='meaning'&&!canSpeak&&!res&&<div>{noVoice}<button type="button" className="primary-button" onClick={()=>{speech.stop();commit({...run,mode:'meaning'});}}>改用中文提示继续</button></div>}
@@ -193,8 +235,16 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
       <button className='primary-audio-button' disabled={!canSpeak} onClick={()=>say(w,true)}><Turtle size={20}/>慢速</button>
     </div>
     {run.hint&&<p className='primary-note'>中文提示：{w.translation}</p>}</>}
-    {!res?<div className='primary-answer-box'>
-      <input className='primary-input' style={{fontSize:16}} value={run.input} maxLength={200} autoComplete='off' autoCapitalize='none' autoCorrect='off' spellCheck={false} aria-label={run.mode==='meaning'?'根据中文输入英文':'输入听到的英文单词'} onChange={e=>{const r=runRef.current;if(r){setMsg('');commit({...r,input:e.target.value.slice(0,200)})}}} onKeyDown={e=>{if(e.key==='Enter'&&!e.nativeEvent.isComposing){e.preventDefault();check(false)}}}/>
+    {!res?<div className={spellingAid?'primary-answer-box primary-answer-aided':'primary-answer-box'}>
+      <label className="primary-check primary-spelling-aid"><input type="checkbox" checked={spellingAid} onChange={e=>{
+        const enabled=e.target.checked;setSpellingAid(enabled);
+        try{localStorage.setItem(aidKey,enabled?'on':'off');}catch{/* The toggle still works for this session. */}
+      }}/>大字与拼写提示</label>
+      {groups.length>0&&<div className="primary-spelling-groups" aria-label={`拼写提示，${groups.join('、')} 个字母`}>
+        {groups.map((length,i)=><span key={i} aria-hidden="true">{'_ '.repeat(length).trim()}</span>)}
+      </div>}
+      {groups.length>0&&<p className="primary-note">共 {groups.reduce((sum,length)=>sum+length,0)} 个字母</p>}
+      <input className='primary-input' value={run.input} maxLength={200} autoComplete='off' autoCapitalize='none' autoCorrect='off' spellCheck={false} aria-label={run.mode==='meaning'?'根据中文输入英文':'输入听到的英文单词'} onChange={e=>{const r=runRef.current;if(r){setMsg('');commit({...r,input:e.target.value.slice(0,200)})}}} onKeyDown={e=>{if(e.key==='Enter'&&!e.nativeEvent.isComposing){e.preventDefault();check(false)}}}/>
       {msg&&<p className='primary-error' role='alert'>{msg}</p>}
       <div className='primary-actions'>
         <button className='primary-button primary-button-primary' onClick={()=>check(false)}><Check size={18}/>检查</button>
@@ -202,13 +252,31 @@ export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry
       </div>
     </div>:<div className='primary-feedback' role='status'>
       <p><b>{res.correct?'✓ 正确':res.skipped?'已跳过':'✗ 不对'}</b></p>
-      <p>你的答案：{res.skipped?'（跳过）':res.answer}</p>
-      <p>正确拼写：<b>{w.word}</b> {w.phonetic} {w.translation}</p>
+      {difference?<div className="primary-spelling-difference">
+        <div className="primary-spelling-labels" aria-hidden="true"><span>你的答案</span><span>正确拼写</span></div>
+        <div className="primary-spelling-scroll" ref={differenceRef} tabIndex={0} aria-label={`你的答案 ${res.answer}，正确拼写 ${w.word}`}>
+          <div lang="en" aria-hidden="true" className="primary-spelling-row primary-spelling-mine">{paint('typed')}</div>
+          <div lang="en" aria-hidden="true" className="primary-spelling-row primary-spelling-answer">{paint('expected')}</div>
+        </div>
+      </div>:<>
+        <p>你的答案：{res.skipped?'（跳过）':res.answer}</p>
+        <p>正确拼写：<b lang="en">{w.word}</b></p>
+      </>}
+      {difference&&<p className="primary-note">{[
+        ['missing','少写字母'],['extra','多写字母'],['replace','字母写错'],['swap','相邻字母顺序颠倒']
+      ].filter(([kind])=>difference.some(column=>column.kind===kind)).map(([,label])=>label).join(' · ')}</p>}
+      <p>{w.phonetic} {w.translation}</p>
       {w.example&&<p>{w.example}</p>}
       {w.exampleZh&&<p>{w.exampleZh}</p>}
+      {correcting&&<label className="primary-rewrite">照着正确单词再写一遍
+        <input className="primary-input" value={run.rewrite??''} lang="en" autoComplete="off" spellCheck={false}
+          autoCapitalize="none" autoCorrect="off" maxLength={200}
+          onChange={e=>{const r=runRef.current;if(r)commit({...r,rewrite:e.target.value});}}
+          onKeyDown={e=>{if(e.key==='Enter'&&!e.nativeEvent.isComposing){e.preventDefault();next();}}}/>
+      </label>}
       <div className='primary-actions'>
         <button className='primary-audio-button' disabled={!canSpeak} onClick={()=>say(w)}><Volume2 size={18}/>再听正确读音</button>
-        <button className='primary-button primary-button-primary' onClick={next}>{run.index+1>=run.items.length?'完成并查看结果':'下一个'}<ArrowRight size={18}/></button>
+        <button className='primary-button primary-button-primary' disabled={!canAdvance(run)} onClick={next}>{run.index+1>=run.items.length?'完成并查看结果':'下一个'}<ArrowRight size={18}/></button>
       </div>
     </div>}
     <div className='primary-actions'><button className='primary-button' onClick={reset}>重新设置</button></div>

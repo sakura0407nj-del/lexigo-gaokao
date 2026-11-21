@@ -8,6 +8,17 @@ export interface StudyStory {
   questions:readonly {prompt:string;options:readonly string[];correct:number;line:number}[];
 }
 
+export const storyGlossary:Record<string,Record<string,readonly [wordId:string,meaning:string]>>={
+  lunch:{red:['px-red','红色的'],box:['px-box','盒子，这里指饭盒'],chair:['p3-chair','椅子']},
+  snail:{small:['p3-small','小的'],house:['p3-house','房子，这里指蜗牛的壳'],mum:['px-mum','妈妈']},
+  library:{library:['p4-library','图书馆'],moon:['px-moon','月球'],afternoon:['px-afternoon','下午']},
+  picnic:{family:['p4-family','家人'],floor:['px-floor','地板'],music:['px-music','音乐']},
+  repair:{straight:['px-straight','直直地'],test:['px-test','测试'],move:['px-move','挪动']},
+  garden:{under:['px-under','在……下面'],almost:['px-almost','差不多，几乎'],only:['px-only','仅仅，只']},
+  poster:{crossing:['px-crossing','过街处'],compare:['px-compare','比较'],longer:['px-longer','更长的']},
+  radio:{team:['p6-team','小组'],space:['px-space','空间，场地'],report:['px-report','报道']}
+};
+
 export const stories:Record<PrimaryGrade,readonly StudyStory[]>={
   3:[
     {

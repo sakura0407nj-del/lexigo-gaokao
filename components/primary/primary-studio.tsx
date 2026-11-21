@@ -4,6 +4,8 @@ import type {PrimaryBook,PrimaryGrade,PrimaryWord} from '@/lib/primary-types';
 import {todayKey,useProgress} from '../learn/progress';
 import {isDue} from '../learn/review';
 import type {SpeechState} from '../learn/use-speech';
+import {PrimaryFlashcards,readPrimaryFlashDraft,type PrimaryFlashDraft} from './primary-flashcards';
+import {unfinishedPrimaryDictation} from './primary-dictation';
 import {BookSelector,useBookScope} from './book-scope';
 import {buildMatch,buildSkillQuestions,dailyRandom} from './study-activities';
 import {skillQuestions,storyQuestions,StudyRound,toMistakes,type Answer,type Question} from './study-round';
@@ -28,8 +30,10 @@ const runKey=()=>Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,
 const studyPrefix=(grade:PrimaryGrade)=>`primary-g${grade}-studio-`;
 const dailyId=(grade:PrimaryGrade,day=todayKey())=>studyPrefix(grade)+'daily-'+day;
 
-export function StudyWeek({grade,onOpen}:{grade:PrimaryGrade;onOpen:()=>void}){
+export function StudyWeek({grade,words,speech,onOpen}:{grade:PrimaryGrade;words:PrimaryWord[];speech:SpeechState;onOpen:()=>void}){
   const {progress,hydrated}=useProgress();
+  const [selected,setSelected]=useState<string>();
+  const [deck,setDeck]=useState<PrimaryWord[]>();
   const now=new Date(),today=todayKey(now),start=new Date(now);
   start.setDate(start.getDate()-(start.getDay()+6)%7);
   const days=Array.from({length:7},(_,i)=>{
@@ -39,6 +43,14 @@ export function StudyWeek({grade,onOpen}:{grade:PrimaryGrade;onOpen:()=>void}){
   });
   const count=days.filter(day=>day.studied).length;
   const completed=hydrated&&progress.practice.some(p=>p.paperId===dailyId(grade,today));
+  const isSelectedDay=(at:string)=>Number.isFinite(Date.parse(at))&&todayKey(new Date(at))===selected;
+  const log=selected?progress.log[selected]:undefined;
+  const namedActivities=selected?Array.from(new Set(progress.practice.filter(p=>isSelectedDay(p.at)).map(p=>p.title))):[];
+  if(selected&&progress.dictation.some(p=>isSelectedDay(p.at)))namedActivities.push('听写与拼词');
+  if(selected&&progress.corrections.some(p=>isSelectedDay(p.at)))namedActivities.push('写作与批改');
+  const unresolved=selected?words.filter(w=>progress.review[w.id]?.known===false&&isSelectedDay(progress.review[w.id].lastReviewed)):[];
+  if(deck)return <PrimaryFlashcards grade={grade} words={deck} title={selected+' · 当日待巩固词'} speech={speech}
+    onExit={()=>{speech.stop();setDeck(undefined);}}/>;
   return <section className="primary-panel study-week" aria-labelledby="study-week-title">
     <div className="study-week-header">
       <div><h3 id="study-week-title" className="primary-section-title"><CalendarDays size={19} aria-hidden/> 本周学习</h3>
@@ -47,21 +59,29 @@ export function StudyWeek({grade,onOpen}:{grade:PrimaryGrade;onOpen:()=>void}){
     </div>
     <ul className="study-calendar" aria-label="本周每天的学习记录">
       {days.map(day=><li key={day.key} aria-current={day.key===today?'date':undefined} data-done={day.studied}>
-        <span aria-hidden>{day.label}</span><span className="primary-sr-only">星期{day.label}{day.studied?'有学习记录':'暂无学习记录'}</span>
+        <button type="button" aria-label={`星期${day.label}${day.studied?'有学习记录':'暂无学习记录'}`} aria-pressed={selected===day.key}
+          disabled={!day.studied} onClick={()=>setSelected(selected===day.key?undefined:day.key)}>{day.label}</button>
       </li>)}
     </ul>
+    {selected&&<div className="study-day-detail">
+      <h4>{selected} 学习记录</h4>
+      <p>新记住 {log?.newWords??0} 词 · 复习 {log?.reviews??0} 次 · 标记还不熟 {log?.again??0} 次</p>
+      {namedActivities.length>0&&<ul>{namedActivities.map(name=><li key={name}>{name}</li>)}</ul>}
+      {unresolved.length>0&&<button type="button" className="primary-button" onClick={()=>setDeck(unresolved.slice(0,10))}>复习当日待巩固词（{Math.min(10,unresolved.length)}/{unresolved.length}）</button>}
+    </div>}
   </section>;
 }
 
-export default function PrimaryStudio({grade,words,books,speech,loading,error,onRetry}:{
+export default function PrimaryStudio({grade,words,books,speech,loading,error,onRetry,onOpenDictation,onOpenWords}:{
   grade:PrimaryGrade;words:PrimaryWord[];books?:PrimaryBook[];speech:SpeechState;
-  loading:boolean;error:string;onRetry:()=>void;
+  loading:boolean;error:string;onRetry:()=>void;onOpenDictation?:()=>void;onOpenWords:()=>void;
 }){
   const {progress,recordExam,storageAvailable}=useProgress();
   const scope=useBookScope(grade,books,words);
   const [activity,setActivity]=useState<Activity>('daily');
   const [filter,setFilter]=useState<WordFilter>('all');
   const [run,setRun]=useState<Run|null>(null);
+  const [flash,setFlash]=useState<{draft:PrimaryFlashDraft;restart:boolean}>();
   const [message,setMessage]=useState('');
   const audio=speech.supported&&speech.hasEnglish;
   const scoped=scope.items.filter(word=>filter==='all'||(filter==='starred'?progress.starred.includes(word.id):filter==='wrong'?!!progress.wrongbook[word.id]:!!progress.review[word.id]&&isDue(progress.review[word.id])));
@@ -89,10 +109,12 @@ export default function PrimaryStudio({grade,words,books,speech,loading,error,on
     }],toMistakes(grade,active.title,answers));
   }
   const exit=()=>setRun(null);
+  if(flash)return <PrimaryFlashcards grade={grade} title={flash.draft.title} words={flash.draft.words}
+    speech={speech} initial={flash.restart?undefined:flash.draft.snapshot} onExit={()=>{speech.stop();setFlash(undefined);}}/>;
   if(run?.kind==='match')return <StudyMatch key={run.key} {...run.board} onReplay={startMatch} onExit={exit} onComplete={score=>{
     recordExam(prefix+run.key,[{paperId:prefix+'match',title:'中英配对',type:'cloze',origin:'original',score,maxScore:run.board.pairs.length}],[]);
   }}/>;
-  if(run?.kind==='story')return <StoryLesson story={run.story} speech={speech} onExit={exit} onStart={hideTranscript=>{
+  if(run?.kind==='story')return <StoryLesson story={run.story} words={words} speech={speech} onExit={exit} onStart={hideTranscript=>{
     setRun({kind:'quiz',key:runKey(),id:prefix+'story-'+run.story.id,title:run.story.title,questions:storyQuestions(run.story),story:run.story,hideTranscript});
   }}/>;
   if(run?.kind==='quiz')return <StudyRound key={run.key} title={run.title} questions={run.questions} speech={speech}
@@ -103,11 +125,31 @@ export default function PrimaryStudio({grade,words,books,speech,loading,error,on
       {run.story!.lines.map(([english])=><p key={english} lang="en">{english}</p>)}
     </details>:undefined}/>;
 
+  const savedFlash=readPrimaryFlashDraft(grade,words);
+  const savedDictation=unfinishedPrimaryDictation(grade);
   return <section className="study-room" aria-labelledby="study-room-heading">
     <header className="study-room-header">
       <h2 id="study-room-heading">英语练习室</h2>
       <p>选一种练习，完成后可在学习记录里查看成绩。</p>
     </header>
+    {(savedFlash||savedDictation)&&<div className="primary-panel study-resume">
+      <h3>继续上次练习</h3>
+      {savedFlash&&<div className="study-resume-flash">
+        <button type="button" className="primary-button primary-button-primary" onClick={()=>setFlash({draft:savedFlash,restart:false})}>
+          继续闪卡 · 第 {savedFlash.snapshot.outcomes.length+1-Number(savedFlash.snapshot.paused)}/{savedFlash.words.length} 张
+        </button>
+        <details className="study-resume-options">
+          <summary>闪卡其他操作</summary>
+          <div className="study-actions">
+            <button type="button" className="primary-button" onClick={()=>setFlash({draft:savedFlash,restart:true})}>从头练这组</button>
+            <button type="button" className="primary-button" onClick={onOpenWords}>另选一组词</button>
+          </div>
+        </details>
+      </div>}
+      {savedDictation&&onOpenDictation&&<button type="button" className="primary-button" onClick={onOpenDictation}>
+        继续听写或拼词 · 第 {savedDictation.index}/{savedDictation.total} 题
+      </button>}
+    </div>}
     <div className="study-activity-grid" role="group" aria-label="选择练习">
       {ACTIVITY.map(({id,label,description,icon:Icon})=><button type="button" key={id} aria-pressed={activity===id} onClick={()=>{setActivity(id);setMessage('');}}>
         <span className="study-activity-layout"><Icon size={22} aria-hidden/><span><strong>{label}</strong><span>{description}</span></span></span>

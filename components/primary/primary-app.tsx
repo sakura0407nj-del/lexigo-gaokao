@@ -79,6 +79,8 @@ export function PrimaryApp(){
   const [moreOpen,setMoreOpen]=useState(false);
   const speechRef=useRef(speech);
   const mainRef=useRef<HTMLElement>(null);
+  const activeTab=useRef<Tab>('today');
+  const wordScroll=useRef(0);
   useEffect(()=>{speechRef.current=speech;});
 
   useEffect(()=>{
@@ -106,7 +108,9 @@ export function PrimaryApp(){
     if(navTick===0)return;
     const m=mainRef.current;
     if(m)m.focus({preventScroll:true});
-  },[navTick]);
+    if(tab==='words')window.scrollTo({top:wordScroll.current});
+  },[navTick,tab]);
+  useEffect(()=>{activeTab.current=tab;},[tab]);
 
   const items=useMemo<PrimaryWord[]>(()=>data?.items??[],[data]);
   const stats=useMemo(()=>{
@@ -115,6 +119,7 @@ export function PrimaryApp(){
   },[items,progress,isLearned]);
 
   const go=useCallback((t:Tab)=>{
+    if(activeTab.current==='words')wordScroll.current=window.scrollY;
     setFocusType(undefined);
     setMoreOpen(false);
     speechRef.current.stop();
@@ -173,7 +178,7 @@ export function PrimaryApp(){
         </div>
       </section>
 
-      <StudyWeek grade={grade} onOpen={()=>go('studio')}/>
+      <StudyWeek grade={grade} words={items} speech={speech} onOpen={()=>go('studio')}/>
       {loading&&<p className='primary-note primary-status' role='status'>正在加载{GRADE_LABEL[grade]}单词…</p>}
       {error&&<div className='primary-error' role='alert'><p>单词暂时没有加载出来：{error}</p>
         <button type='button' className='primary-button' onClick={retry}><RotateCw size={16} aria-hidden/>再试一次</button></div>}
@@ -248,7 +253,7 @@ export function PrimaryApp(){
           {tab==='words'&&<PrimaryWords {...wordProps}/>}
           {tab==='dictation'&&<PrimaryDictation {...wordProps}/>}
           {tab==='practice'&&<PrimaryPractice grade={grade} initialFocusType={focusType}/>}
-          {tab==='studio'&&<PrimaryStudio {...wordProps}/>}
+          {tab==='studio'&&<PrimaryStudio {...wordProps} onOpenWords={()=>go('words')}/>}
           {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav} primary onTargetPractice={reviewType?()=>{go('practice');setFocusType(reviewType);}:undefined}/>}
           {tab==='games'&&<GameHub speech={speech} primaryGrade={grade}/>}
           {tab==='correction'&&<><div className='primary-tabs primary-segment' role='group' aria-label='写作与批改方式'><button type='button' className={correctionKind==='essay'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='essay'} onClick={()=>setCorrectionKind('essay')}>写作小老师</button><button type='button' className={correctionKind==='questions'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='questions'} onClick={()=>setCorrectionKind('questions')}>题目批改</button></div><CorrectionView key={correctionKind} kind={correctionKind} primaryGrade={grade}/></>}

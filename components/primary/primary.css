@@ -204,7 +204,7 @@
 .primary-audio-button svg{flex:none;margin-right:9px}
 .primary-audio-button:disabled{opacity:.5;cursor:not-allowed}
 .primary-answer-box{padding:22px 0}
-.primary-answer-box>.primary-input{min-height:56px;font-size:20px!important;letter-spacing:.025em}
+.primary-answer-box>.primary-input{min-height:56px;font-size:20px;letter-spacing:.025em}
 .primary-feedback{margin:22px 0;padding:22px;border:1px solid #cbd9bf;border-radius:17px;background:#f0f5e6;line-height:1.85;overflow-wrap:break-word;word-break:break-word}
 .primary-feedback p{margin:8px 0}
 .primary-feedback b{color:#24583e}

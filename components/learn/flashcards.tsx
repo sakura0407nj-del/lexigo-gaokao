@@ -16,15 +16,26 @@ interface Outcome {
   id: string;
   known: boolean;
 }
+export interface FlashcardSnapshot {
+  ids:string[];
+  outcomes:Outcome[];
+  flipped:boolean;
+  paused:boolean;
+  round:number;
+}
 
-export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]; title: string; speech: SpeechState; onExit: () => void }) {
+export function Flashcards({ words, title, speech, onExit, onOpenUnfamiliar, primary=false, initial, onSnapshot }: {
+  words: RichWord[]; title: string; speech: SpeechState; onExit: () => void; onOpenUnfamiliar?: () => void;
+  primary?:boolean; initial?:FlashcardSnapshot; onSnapshot?:(snapshot:FlashcardSnapshot|null)=>void;
+}) {
   const { reviewWord, toggleLearned, isLearned } = useProgress();
   const [deck, setDeck] = useState(() => words.slice(0, 50));
-  const [round, setRound] = useState(1);
-  const [index, setIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
+  const [round, setRound] = useState(initial?.round??1);
+  const [index, setIndex] = useState(initial?initial.outcomes.length-Number(initial.paused):0);
+  const [flipped, setFlipped] = useState(initial?.flipped??false);
   const [autoSpeak, setAutoSpeak] = useState(false);
-  const [outcomes, setOutcomes] = useState<Outcome[]>([]);
+  const [pauseAfterMiss, setPauseAfterMiss] = useState(initial?.paused??false);
+  const [outcomes, setOutcomes] = useState<Outcome[]>(initial?.outcomes??[]);
   const cardRef = useRef<HTMLDivElement>(null);
   const canSpeak = speech.supported && speech.hasEnglish;
   const current = deck[index];
@@ -42,13 +53,22 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
   useEffect(() => {
     cardRef.current?.focus({ preventScroll: true });
   }, [index]);
+  useEffect(()=>{
+    onSnapshot?.(finished?null:{ids:deck.map(word=>word.id),outcomes,flipped,paused:pauseAfterMiss,round});
+  },[deck,finished,outcomes,flipped,pauseAfterMiss,round,onSnapshot]);
 
   function answer(isKnown: boolean) {
-    if (!current || !flipped) return;
+    if (!current || !flipped || pauseAfterMiss) return;
     reviewWord(current, isKnown);
     setOutcomes((list) => [...list, { id: current.id, known: isKnown }]);
+    if(primary&&!isKnown)setPauseAfterMiss(true);
+    else advance();
+  }
+
+  function advance() {
+    setPauseAfterMiss(false);
     setFlipped(false);
-    setIndex((value) => value + 1);
+    setIndex(value=>value+1);
   }
 
   function restart(next: RichWord[]) {
@@ -61,7 +81,7 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
   }
 
   function onKey(event: KeyboardEvent) {
-    if (finished) return;
+    if (finished || pauseAfterMiss) return;
     if (event.key === " " || event.key === "Enter") {
       event.preventDefault();
       if (!flipped) setFlipped(true);
@@ -136,9 +156,13 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
         <div className="flex flex-wrap gap-2">
           {again.length ? (
             <button type="button" className="btn btn-ghost" onClick={() => restart(again.map((item) => byId.get(item.id)).filter((word): word is RichWord => Boolean(word)))}>
-              <RotateCcw aria-hidden className="size-4" /> 重练不熟的 {again.length} 个
+              <RotateCcw aria-hidden className="size-4" /> {primary?`只练本轮不熟的词（${again.length}）`:`重练不熟的 ${again.length} 个`}
             </button>
           ) : null}
+          {again.length > 0 && onOpenUnfamiliar && (
+            <button type="button" className="btn btn-ghost" onClick={onOpenUnfamiliar}>查看待巩固词</button>
+          )}
+          {primary&&again.length===0&&<p className="hint">本轮每张卡都标记为已记住。</p>}
           <button type="button" className="btn btn-primary" onClick={onExit}>
             返回词库
           </button>
@@ -151,7 +175,7 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
     <div className="flash-wrap space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="min-w-0">
-          <p className="eyebrow">Flashcards</p>
+          <p className="eyebrow">{primary ? "词义自测" : "Flashcards"}</p>
           <p className="sub-title m-0 truncate">{title}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -202,7 +226,7 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
             {unit && <p className="hint">{unit.bookTitle} · {unit.unitTitle}</p>}
           </div>
         ) : (
-          <p className="flash-hint">先在心里回想意思，再点击卡片查看</p>
+          <p className={primary?"flash-hint primary-meaning-cover":"flash-hint"}>{primary?"释义已盖住。先想想，再点开核对。":"先在心里回想意思，再点击卡片查看"}</p>
         )}
       </div>
       <div className="flash-actions">
@@ -218,10 +242,12 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
         >
           <Volume2 aria-hidden className="size-5" />
         </button>
-        {flipped ? (
+        {pauseAfterMiss ? (
+          <button type="button" className="btn btn-primary flash-btn" onClick={advance}>下一张</button>
+        ) : flipped ? (
           <>
             <button type="button" className="btn btn-ghost flash-btn" onClick={() => answer(false)}>
-              <X aria-hidden className="size-4" /> 还不熟
+            <X aria-hidden className="size-4" /> {primary?"还不熟 · 加入待巩固":"还不熟"}
             </button>
             <button type="button" className="btn btn-primary flash-btn" onClick={() => answer(true)}>
               <Check aria-hidden className="size-4" /> 已记住
@@ -233,7 +259,7 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
           </button>
         )}
       </div>
-      <p className="hint">键盘：空格翻面，1 / ← 还不熟，2 / → 已记住。“已记住”会安排下次复习并计入已掌握；“还不熟”明天再复习。</p>
+      <p className="hint">{pauseAfterMiss?"已加入待巩固。可以多看一会儿，再到下一张。":"键盘：空格翻面，1 / ← 还不熟，2 / → 已记住。“已记住”会安排下次复习并计入已掌握；“还不熟”明天再复习。"}</p>
     </div>
   );
 }

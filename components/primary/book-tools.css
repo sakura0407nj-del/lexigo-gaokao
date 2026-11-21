@@ -14,6 +14,23 @@
 .primary-mode-pick legend { font-weight: 650; }
 .primary-mode-pick button { margin: 5px 8px 0 0; }
 .primary-spell-prompt { font-size: 1.3rem; font-weight: 650; margin: .75rem 0; }
+.primary-spelling-mine mark { color: #852d26; background: #ffe1dc; text-decoration: underline; }
+.primary-spelling-answer mark { color: #164931; background: #cdecd4; text-decoration: underline; }
+.primary-spelling-difference { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 6px; margin: 8px 0; }
+.primary-spelling-labels, .primary-spelling-scroll { display: grid; grid-template-rows: repeat(2,2rem); align-items: center; }
+.primary-spelling-labels { font-size: .85rem; }
+.primary-spelling-scroll { overflow-x: auto; }
+.primary-spelling-row { display: grid; grid-auto-flow: column; grid-auto-columns: 1.35em; justify-content: start; font: 650 1.05rem ui-monospace,Consolas,monospace; text-align: center; }
+.primary-spelling-row > * { line-height: 1.65; }
+.primary-rewrite { display: grid; gap: 6px; max-width: 26rem; margin-top: 10px; font-weight: 650; }
+.primary-rewrite input { width: 100%; font-size: 16px; }
+.primary-meaning-cover { border: 1px dashed #9ab29f; border-radius: 12px; padding: 12px; background: #f3f7ed; cursor: pointer; }
+.primary-retry-compare { padding: 10px 12px; border-left: 3px solid #39795a; background: #eef5e8; }
+.primary-answer-box.primary-answer-aided > .primary-input { font-size: 1.5rem; min-height: 62px; letter-spacing: .045em; }
+.primary-spelling-aid { display: flex; align-items: center; min-height: 44px; width: fit-content; }
+.primary-spelling-groups { display: flex; flex-wrap: wrap; margin: 0 -6px 9px; color: #194d39; font-size: 1.3rem; }
+.primary-spelling-groups span { margin: 2px 6px; overflow-wrap: anywhere; }
+.primary-tags .primary-miss-tag { background: #fae9dc; color: #813e25; }
 @media(max-width:460px) { .primary-book-select { grid-template-columns: 1fr; padding: 12px; } }
 
 .primary-scope-progress{display:flex;flex-wrap:wrap;align-items:center;margin:12px 0;font-size:.85rem}.primary-scope-progress progress{margin-left:10px;max-width:12rem;height:.65rem;accent-color:#27745a}.primary-catalog-download{align-self:center;line-height:44px;text-decoration:underline;text-underline-offset:3px}
