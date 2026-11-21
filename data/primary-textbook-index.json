@@ -1,0 +1,1452 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-21",
+  "editions": [
+    {
+      "id": "pep-2024",
+      "title": "PEP 2024 起修订系列（各册逐步更替）"
+    },
+    {
+      "id": "pep-legacy",
+      "title": "PEP 修订前系列（旧版目录）"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pep-new-intro",
+      "title": "人教社：2024 年 PEP 新教材简介",
+      "url": "https://www.pep.com.cn/xw/zt/hd/12/xjcjs/xx/202409/t20240920_1995564.html",
+      "kind": "official-edition"
+    },
+    {
+      "id": "pep-3-upper",
+      "title": "人教社 PEP 三年级上册公开配套目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/3s/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "pep-3-lower",
+      "title": "人教社 PEP 三年级下册公开配套目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/3x/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "pep3-preview-83",
+      "title": "三上修订版公开页预览：印刷页83（仅核对有限词目）",
+      "url": "https://fliphtml5.com/smmnc/jblr/2024%E9%83%A8%E7%BC%96%E7%89%88_%EF%BC%88%E4%BA%BA%E6%95%99%E7%89%88%EF%BC%89%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E8%8B%B1%E8%AF%AD%EF%BC%88PEP%EF%BC%89%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C/91/",
+      "kind": "secondary-page-preview"
+    },
+    {
+      "id": "pep3-preview-84",
+      "title": "三上修订版公开页预览：印刷页84（仅核对有限词目）",
+      "url": "https://fliphtml5.com/smmnc/jblr/2024%E9%83%A8%E7%BC%96%E7%89%88_%EF%BC%88%E4%BA%BA%E6%95%99%E7%89%88%EF%BC%89%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E8%8B%B1%E8%AF%AD%EF%BC%88PEP%EF%BC%89%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C/92/",
+      "kind": "secondary-page-preview"
+    },
+    {
+      "id": "pep3-preview-85",
+      "title": "三上修订版公开页预览：印刷页85（仅核对有限词目）",
+      "url": "https://fliphtml5.com/smmnc/jblr/2024%E9%83%A8%E7%BC%96%E7%89%88_%EF%BC%88%E4%BA%BA%E6%95%99%E7%89%88%EF%BC%89%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E8%8B%B1%E8%AF%AD%EF%BC%88PEP%EF%BC%89%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C/93/",
+      "kind": "secondary-page-preview"
+    },
+    {
+      "id": "julebu-3b-u1",
+      "title": "三下Unit1公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-1/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "julebu-3b-u2",
+      "title": "三下Unit2公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-2/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "julebu-3b-u3",
+      "title": "三下Unit3公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-3/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "julebu-3b-u4",
+      "title": "三下Unit4公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-4/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "julebu-3b-u5",
+      "title": "三下Unit5公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-5/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "julebu-3b-u6",
+      "title": "三下Unit6公开词目核对页",
+      "url": "https://julebu.co/learn/textbook/pep/3b/unit-6/",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-legacy-6-lower",
+      "title": "人教社六年级下册旧版配套目录",
+      "url": "https://www.pep.com.cn/zslth/yyptypzj/xypep/6x/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "scnu-legacy-6-u2",
+      "title": "华南师大公开教研资料：旧版六下Unit2教材分析",
+      "url": "https://statics.scnu.edu.cn/pics/gdtefl/2017/0517/1494959395118733.pdf",
+      "kind": "secondary-teaching-analysis"
+    },
+    {
+      "id": "pep-4-upper",
+      "title": "人教社PEP4年级上册当前公开目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/4s/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "flyabc-4a-u1",
+      "title": "4年级上册Unit1公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u1",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4a-u2",
+      "title": "4年级上册Unit2公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u2",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4a-u3",
+      "title": "4年级上册Unit3公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u3",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4a-u4",
+      "title": "4年级上册Unit4公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u4",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4a-u5",
+      "title": "4年级上册Unit5公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u5",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4a-u6",
+      "title": "4年级上册Unit6公开词目核对页",
+      "url": "https://flyabc.fun/words/4a-u6",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-4-lower",
+      "title": "人教社PEP4年级下册当前公开目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/4x/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "flyabc-4b-u1",
+      "title": "4年级下册Unit1公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u1",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4b-u2",
+      "title": "4年级下册Unit2公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u2",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4b-u3",
+      "title": "4年级下册Unit3公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u3",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4b-u4",
+      "title": "4年级下册Unit4公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u4",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4b-u5",
+      "title": "4年级下册Unit5公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u5",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-4b-u6",
+      "title": "4年级下册Unit6公开词目核对页",
+      "url": "https://flyabc.fun/words/4b-u6",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-5-upper",
+      "title": "人教社PEP5年级上册当前公开目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/5s/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "flyabc-5a-u1",
+      "title": "5年级上册Unit1公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u1",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5a-u2",
+      "title": "5年级上册Unit2公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u2",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5a-u3",
+      "title": "5年级上册Unit3公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u3",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5a-u4",
+      "title": "5年级上册Unit4公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u4",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5a-u5",
+      "title": "5年级上册Unit5公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u5",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5a-u6",
+      "title": "5年级上册Unit6公开词目核对页",
+      "url": "https://flyabc.fun/words/5a-u6",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-5-lower",
+      "title": "人教社PEP5年级下册当前公开目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/5x/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "flyabc-5b-u1",
+      "title": "5年级下册Unit1公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u1",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5b-u2",
+      "title": "5年级下册Unit2公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u2",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5b-u3",
+      "title": "5年级下册Unit3公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u3",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5b-u4",
+      "title": "5年级下册Unit4公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u4",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5b-u5",
+      "title": "5年级下册Unit5公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u5",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-5b-u6",
+      "title": "5年级下册Unit6公开词目核对页",
+      "url": "https://flyabc.fun/words/5b-u6",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-6-upper",
+      "title": "人教社PEP6年级上册当前公开目录",
+      "url": "https://www.pep.com.cn/zslth/yyptzy/xypep/6s/",
+      "kind": "official-directory"
+    },
+    {
+      "id": "flyabc-6a-u1",
+      "title": "6年级上册Unit1公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u1",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-6a-u2",
+      "title": "6年级上册Unit2公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u2",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-6a-u3",
+      "title": "6年级上册Unit3公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u3",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-6a-u4",
+      "title": "6年级上册Unit4公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u4",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-6a-u5",
+      "title": "6年级上册Unit5公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u5",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "flyabc-6a-u6",
+      "title": "6年级上册Unit6公开词目核对页",
+      "url": "https://flyabc.fun/words/6a-u6",
+      "kind": "secondary-word-index"
+    },
+    {
+      "id": "pep-legacy-six-down-pages",
+      "title": "六下旧版公开教材页核对记录（版权页及印刷页54–56）",
+      "url": "https://raw.githubusercontent.com/TapXWorld/ChinaTextbook/e2b3f62213c77bb8c33c5be355f97625ea1b8b61/%E5%B0%8F%E5%AD%A6/%E8%8B%B1%E8%AF%AD/%E4%BA%BA%E6%95%99%E7%89%88%EF%BC%88PEP%EF%BC%89%EF%BC%88%E4%B8%89%E5%B9%B4%E7%BA%A7%E8%B5%B7%E7%82%B9%EF%BC%89%EF%BC%88%E4%B8%BB%E7%BC%96%EF%BC%9A%E5%90%B4%E6%AC%A3%EF%BC%89/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E8%8B%B1%E8%AF%AD%EF%BC%88%E4%B8%89%E5%B9%B4%E7%BA%A7%E8%B5%B7%E7%82%B9%EF%BC%89%E5%85%AD%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf",
+      "kind": "textbook-mirror-reviewed",
+      "note": "第三方镜像，仅用于核对有限事实；未视为官方授权分发，PDF不在应用中发布。",
+      "sourceCommit": "e2b3f62213c77bb8c33c5be355f97625ea1b8b61"
+    }
+  ],
+  "note": "这里是部分已核词目的学习索引，不是完整教材词表或官方授权资源。册次和单元标题以所列人教社公开资源为参照，词目归属另列核对来源。新版逐步更替，网页与不同印次可能不同，请核对手中教材；原创扩展词的建议年级不代表教材收录年级。",
+  "books": [
+    {
+      "id": "pep2024-g3-upper",
+      "title": "三年级上册 · 2024起修订系列",
+      "grade": 3,
+      "term": "upper",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-3-upper",
+        "pep3-preview-83",
+        "pep3-preview-84",
+        "pep3-preview-85"
+      ],
+      "note": "官方目录与公开词汇页有限词目交叉核对；仅提供精选练习索引，未声明整册完整。部分社区网页将Unit3改题为Our animal friends，本索引采用当前官方目录Amazing animals。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Making friends",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-83"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已逐项核对公开词汇页印刷页83；释义和例句为独立学习内容。",
+          "wordIds": [
+            "px-arm",
+            "p3-ear",
+            "p3-eye",
+            "p3-hand",
+            "p4-mouth",
+            "px-name",
+            "px-nice",
+            "px-smile"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Different families",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-83"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已核印刷页83的部分亲属词；未覆盖全部词目。",
+          "wordIds": [
+            "p3-brother",
+            "px-dad",
+            "p3-father",
+            "px-grandma",
+            "px-grandpa",
+            "p3-mother",
+            "px-mum",
+            "p3-sister"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Amazing animals",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-83",
+            "pep3-preview-84"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已核印刷页83–84的部分动物词；题名采用官方目录。",
+          "wordIds": [
+            "p3-bird",
+            "p3-cat",
+            "p3-dog",
+            "p3-fish",
+            "px-fox",
+            "px-giraffe",
+            "px-lion",
+            "p3-rabbit"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Plants around us",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-84"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已核印刷页84的部分词目。",
+          "wordIds": [
+            "px-air",
+            "p3-apple",
+            "p3-banana",
+            "px-farm",
+            "px-flower",
+            "px-grass",
+            "p3-sun",
+            "px-tree"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 The colourful world",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-84"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已核印刷页84的部分颜色词；此处示例采用形容词用法。",
+          "wordIds": [
+            "px-black",
+            "px-blue",
+            "px-brown",
+            "px-pink",
+            "px-purple",
+            "px-red",
+            "px-white",
+            "px-yellow"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Useful numbers",
+          "sourceIds": [
+            "pep-3-upper",
+            "pep3-preview-85"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "已核印刷页85的部分数字词；未声称单元只含这些数字。",
+          "wordIds": [
+            "px-eight",
+            "px-four",
+            "px-nine",
+            "px-one",
+            "px-seven",
+            "px-six",
+            "px-three",
+            "px-two"
+          ],
+          "verifiedCount": 8
+        }
+      ],
+      "verifiedCount": 48
+    },
+    {
+      "id": "pep2024-g3-lower",
+      "title": "三年级下册 · 2024起修订系列",
+      "grade": 3,
+      "term": "lower",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-3-lower",
+        "julebu-3b-u1",
+        "julebu-3b-u2",
+        "julebu-3b-u3",
+        "julebu-3b-u4",
+        "julebu-3b-u5",
+        "julebu-3b-u6"
+      ],
+      "note": "官方单元目录与公开逐词索引交叉核对，仅收少量确见词目。教材正文页尚未逐页复核，未标官方全词表已核；不同印次的单元题名有差异。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Meeting new people",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u1"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "公开词目页逐项可见；官方目录确认本单元题名。",
+          "wordIds": [
+            "px-boy",
+            "px-girl",
+            "px-man",
+            "p3-student",
+            "p3-teacher",
+            "px-woman"
+          ],
+          "verifiedCount": 6
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Expressing yourself",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u2"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "仅核这些词目归属；不复用第三方释义。",
+          "wordIds": [
+            "px-body",
+            "px-card",
+            "px-gift",
+            "p4-leg",
+            "px-long",
+            "px-picture",
+            "px-short",
+            "px-tail"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Learning better",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u3"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "仅核部分学习用品与工具词。",
+          "wordIds": [
+            "px-bag",
+            "p3-book",
+            "px-computer",
+            "px-eraser",
+            "px-paper",
+            "p3-pen",
+            "p4-pencil",
+            "px-ruler"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Healthy food",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u4"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "仅核部分食物与餐具词；不把全部单元词表重新分发。",
+          "wordIds": [
+            "p3-bread",
+            "p5-breakfast",
+            "px-egg",
+            "p4-juice",
+            "px-meat",
+            "p3-milk",
+            "px-plate",
+            "px-soup"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 Old toys",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u5"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "采用官方当前题名；部分资料题名为Old things。",
+          "wordIds": [
+            "px-ball",
+            "px-boat",
+            "px-box",
+            "px-cap",
+            "px-car",
+            "px-doll",
+            "px-map",
+            "px-shelf"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Numbers in life",
+          "sourceIds": [
+            "pep-3-lower",
+            "julebu-3b-u6"
+          ],
+          "verification": "secondary-crosschecked",
+          "note": "仅核部分数字词；未声称单元词表完整。",
+          "wordIds": [
+            "px-eleven",
+            "px-fifteen",
+            "px-fourteen",
+            "px-thirteen",
+            "px-twelve",
+            "px-twenty"
+          ],
+          "verifiedCount": 6
+        }
+      ],
+      "verifiedCount": 44
+    },
+    {
+      "id": "pep2024-g4-upper",
+      "title": "4年级上册 · 2024起修订系列",
+      "grade": 4,
+      "term": "upper",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-4-upper",
+        "flyabc-4a-u1",
+        "flyabc-4a-u2",
+        "flyabc-4a-u3",
+        "flyabc-4a-u4",
+        "flyabc-4a-u5",
+        "flyabc-4a-u6"
+      ],
+      "note": "官方当前公开目录与第三方逐词页有限交叉核对。具体印次待官方书页复核；只有列出的词已核，未复制原释义、例句、音频或成套词表。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Helping at home",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u1"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-busy",
+            "p4-clean",
+            "p4-cook",
+            "px-doctor",
+            "px-farmer",
+            "px-nurse",
+            "p3-room",
+            "p4-tired"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 My friends",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u2"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-chinese",
+            "px-game",
+            "p4-hair",
+            "p4-kind",
+            "p3-play",
+            "px-quiet",
+            "p3-read",
+            "p6-strong"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Places we live in",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u3"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-afternoon",
+            "p5-hospital",
+            "p4-library",
+            "p3-park",
+            "px-playground",
+            "p4-shop",
+            "p3-there",
+            "p4-walk"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Helping in the community",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u4"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：cook。",
+          "wordIds": [
+            "px-cleaner",
+            "px-driver",
+            "px-firefighter",
+            "px-important",
+            "p3-now",
+            "px-old",
+            "px-police-officer",
+            "px-why"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 The weather and us",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u5"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-cloudy",
+            "p3-cold",
+            "p3-hot",
+            "px-rainy",
+            "p5-snowy",
+            "px-sunny",
+            "px-weather",
+            "px-windy"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Changing for the seasons",
+          "sourceIds": [
+            "pep-4-upper",
+            "flyabc-4a-u6"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "p3-coat",
+            "p4-dress",
+            "p5-season",
+            "p3-shirt",
+            "px-sock",
+            "p5-sweater",
+            "p3-wear",
+            "p6-winter"
+          ],
+          "verifiedCount": 8
+        }
+      ],
+      "verifiedCount": 48
+    },
+    {
+      "id": "pep2024-g4-lower",
+      "title": "4年级下册 · 2024起修订系列",
+      "grade": 4,
+      "term": "lower",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-4-lower",
+        "flyabc-4b-u1",
+        "flyabc-4b-u2",
+        "flyabc-4b-u3",
+        "flyabc-4b-u4",
+        "flyabc-4b-u5",
+        "flyabc-4b-u6"
+      ],
+      "note": "官方当前公开目录与第三方逐词页有限交叉核对。具体印次待官方书页复核；只有列出的词已核，未复制原释义、例句、音频或成套词表。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Class rules",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u1"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-blackboard",
+            "px-class",
+            "p4-classroom",
+            "p4-desk",
+            "px-late",
+            "px-light",
+            "px-rule",
+            "px-sorry"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Family rules",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u2"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-helpful",
+            "p5-homework",
+            "p3-run",
+            "p6-safe",
+            "p3-sleep",
+            "px-wash",
+            "p4-watch",
+            "px-word"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Time for school",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u3"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-art",
+            "px-clock",
+            "px-dinner",
+            "px-kid",
+            "px-lunch",
+            "px-maths",
+            "px-minute",
+            "px-over"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Going shopping",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u4"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：take。",
+          "wordIds": [
+            "px-cheap",
+            "px-clothes",
+            "px-expensive",
+            "p4-jacket",
+            "px-shorts",
+            "p4-skirt",
+            "p4-trousers"
+          ],
+          "verifiedCount": 7
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 Farms and us",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u5"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-bee",
+            "p4-chicken",
+            "p4-cow",
+            "p4-horse",
+            "px-mouse",
+            "px-pig",
+            "p4-sheep",
+            "p5-tomato"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 From farm to table",
+          "sourceIds": [
+            "pep-4-lower",
+            "flyabc-4b-u6"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：milk。",
+          "wordIds": [
+            "px-bowl",
+            "px-delicious",
+            "p5-feed",
+            "px-fork",
+            "px-spoon",
+            "px-supermarket",
+            "px-waste"
+          ],
+          "verifiedCount": 7
+        }
+      ],
+      "verifiedCount": 46
+    },
+    {
+      "id": "pep2024-g5-upper",
+      "title": "5年级上册 · 2024起修订系列",
+      "grade": 5,
+      "term": "upper",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-5-upper",
+        "flyabc-5a-u1",
+        "flyabc-5a-u2",
+        "flyabc-5a-u3",
+        "flyabc-5a-u4",
+        "flyabc-5a-u5",
+        "flyabc-5a-u6"
+      ],
+      "note": "官方当前公开目录与第三方逐词页有限交叉核对。具体印次待官方书页复核；只有列出的词已核，未复制原释义、例句、音频或成套词表。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Different friends",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u1"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "p5-clever",
+            "px-easy",
+            "px-hard-working",
+            "p4-jump",
+            "px-piano",
+            "p5-science",
+            "p6-team",
+            "px-young"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 My feelings",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u2"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-afraid",
+            "px-agree",
+            "p5-angry",
+            "p5-excited",
+            "p6-finish",
+            "p6-project",
+            "p3-sad",
+            "p6-worried"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Work and play",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u3"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-friday",
+            "px-monday",
+            "px-start",
+            "p5-subject",
+            "px-thursday",
+            "px-tuesday",
+            "p4-usually",
+            "px-wednesday"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Healthy habits",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u4"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-brush",
+            "px-check",
+            "px-enough",
+            "p5-exercise",
+            "px-habit",
+            "p3-house",
+            "px-phone",
+            "p5-rest"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 Food we eat",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u5"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-beef",
+            "px-different",
+            "px-hamburger",
+            "p4-hungry",
+            "px-ice-cream",
+            "px-interesting",
+            "px-lake",
+            "px-tea"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Nature and us",
+          "sourceIds": [
+            "pep-5-upper",
+            "flyabc-5a-u6"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：heavy。",
+          "wordIds": [
+            "px-dangerous",
+            "p6-forest",
+            "px-hotel",
+            "p6-mountain",
+            "p6-river",
+            "px-trip",
+            "p4-wind"
+          ],
+          "verifiedCount": 7
+        }
+      ],
+      "verifiedCount": 47
+    },
+    {
+      "id": "pep2024-g5-lower",
+      "title": "5年级下册 · 2024起修订系列",
+      "grade": 5,
+      "term": "lower",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-5-lower",
+        "flyabc-5b-u1",
+        "flyabc-5b-u2",
+        "flyabc-5b-u3",
+        "flyabc-5b-u4",
+        "flyabc-5b-u5",
+        "flyabc-5b-u6"
+      ],
+      "note": "官方当前公开目录与第三方逐词页有限交叉核对。具体印次待官方书页复核；只有列出的词已核，未复制原释义、例句、音频或成套词表。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Following the rules",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u1"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-borrow",
+            "p5-inside",
+            "px-must",
+            "p4-open",
+            "px-return",
+            "px-sir",
+            "px-wait",
+            "p4-write"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Our community",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u2"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：next。",
+          "wordIds": [
+            "px-behind",
+            "px-between",
+            "px-cinema",
+            "p6-city",
+            "p6-far",
+            "p6-station",
+            "px-street"
+          ],
+          "verifiedCount": 7
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Life in different seasons",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u3"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-april",
+            "px-february",
+            "px-holiday",
+            "px-january",
+            "px-june",
+            "px-march",
+            "px-may",
+            "px-skate"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 My hometown",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u4"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-beach",
+            "px-desert",
+            "px-hometown",
+            "px-island",
+            "p6-kangaroo",
+            "p4-ride",
+            "px-special",
+            "p5-travel"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 Travelling around",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u5"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-bike",
+            "p6-carry",
+            "p3-early",
+            "p6-environment",
+            "px-foot",
+            "px-hurt",
+            "px-plane",
+            "px-ship"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Making a travel plan",
+          "sourceIds": [
+            "pep-5-lower",
+            "flyabc-5b-u6"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：last。",
+          "wordIds": [
+            "px-building",
+            "px-hill",
+            "p6-history",
+            "px-information",
+            "p6-join",
+            "px-local",
+            "p6-plan"
+          ],
+          "verifiedCount": 7
+        }
+      ],
+      "verifiedCount": 46
+    },
+    {
+      "id": "pep2024-g6-upper",
+      "title": "6年级上册 · 2024起修订系列",
+      "grade": 6,
+      "term": "upper",
+      "editionId": "pep-2024",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-new-intro",
+        "pep-6-upper",
+        "flyabc-6a-u1",
+        "flyabc-6a-u2",
+        "flyabc-6a-u3",
+        "flyabc-6a-u4",
+        "flyabc-6a-u5",
+        "flyabc-6a-u6"
+      ],
+      "note": "官方当前公开目录与第三方逐词页有限交叉核对。具体印次待官方书页复核；只有列出的词已核，未复制原释义、例句、音频或成套词表。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 Amazing places",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u1"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：take。",
+          "wordIds": [
+            "p6-airport",
+            "px-climb",
+            "p3-eat",
+            "px-restaurant",
+            "px-see",
+            "px-send",
+            "p5-village"
+          ],
+          "verifiedCount": 7
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Getting together",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u2"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：dress、read。",
+          "wordIds": [
+            "px-make",
+            "p3-run",
+            "p3-sing",
+            "p3-wear",
+            "px-writer",
+            "p5-yesterday"
+          ],
+          "verifiedCount": 6
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Healthy life",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u3"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：cold、may。",
+          "wordIds": [
+            "px-cry",
+            "px-discuss",
+            "px-email",
+            "px-fever",
+            "p3-head",
+            "p5-soon"
+          ],
+          "verifiedCount": 6
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Managing money well",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u4"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "px-drink",
+            "px-goods",
+            "px-haircut",
+            "px-microscope",
+            "px-money",
+            "px-pocket-money",
+            "px-schoolbag",
+            "px-service"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u5",
+          "title": "Unit 5 Exploring space",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u5"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。",
+          "wordIds": [
+            "p4-cloud",
+            "px-earth",
+            "px-month",
+            "px-moon",
+            "px-ocean",
+            "px-planet",
+            "px-space",
+            "px-star"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u6",
+          "title": "Unit 6 Energy, nature and us",
+          "sourceIds": [
+            "pep-6-upper",
+            "flyabc-6a-u6"
+          ],
+          "verification": "secondary-reviewed",
+          "note": "官方目录已核本单元题名；词目为独立第三方页面实际可见的有限选择，尚未逐页复核官方词汇附录，不代表完整词表。已排除当前词卡义项或读音与本单元可能不符的同形词：light、cool、run。",
+          "wordIds": [
+            "px-bottle",
+            "px-change",
+            "px-electricity",
+            "px-energy",
+            "px-power",
+            "px-resource",
+            "px-reuse",
+            "px-useful"
+          ],
+          "verifiedCount": 8
+        }
+      ],
+      "verifiedCount": 43
+    },
+    {
+      "id": "pep-legacy-g6-lower",
+      "title": "六年级下册 · 修订前旧版",
+      "grade": 6,
+      "term": "lower",
+      "editionId": "pep-legacy",
+      "status": "verified-partial",
+      "sourceIds": [
+        "pep-legacy-6-lower",
+        "pep-legacy-six-down-pages"
+      ],
+      "note": "公开教材页已核：2014年10月第1版、2017年11月第4次印刷，ISBN9787107290718。目录及词汇附录印刷页54–56核对有限词目；仍为部分索引，新版六下未纳入。",
+      "units": [
+        {
+          "id": "u1",
+          "title": "Unit 1 How tall are you?",
+          "sourceIds": [
+            "pep-legacy-6-lower",
+            "pep-legacy-six-down-pages"
+          ],
+          "verification": "textbook-mirror-reviewed",
+          "bookPages": [
+            54
+          ],
+          "note": "已核镜像教材印刷页54的有限词目；不发布原书、原释义或原例句。此处使用比较级学习卡，不替换成原级。",
+          "wordIds": [
+            "px-bigger",
+            "px-heavier",
+            "px-longer",
+            "px-older",
+            "px-shorter",
+            "px-taller",
+            "px-thinner",
+            "px-younger"
+          ],
+          "verifiedCount": 8
+        },
+        {
+          "id": "u2",
+          "title": "Unit 2 Last weekend",
+          "sourceIds": [
+            "pep-legacy-6-lower",
+            "pep-legacy-six-down-pages"
+          ],
+          "verification": "textbook-mirror-reviewed",
+          "bookPages": [
+            54,
+            55
+          ],
+          "note": "已核镜像教材印刷页54、55的有限词目；不发布原书、原释义或原例句。保留过去式目标，未混用read的现在式读音。",
+          "wordIds": [
+            "px-cleaned",
+            "px-saw",
+            "px-slept",
+            "px-stayed",
+            "px-washed",
+            "px-watched"
+          ],
+          "verifiedCount": 6
+        },
+        {
+          "id": "u3",
+          "title": "Unit 3 Where did you go?",
+          "sourceIds": [
+            "pep-legacy-6-lower",
+            "pep-legacy-six-down-pages"
+          ],
+          "verification": "textbook-mirror-reviewed",
+          "bookPages": [
+            55
+          ],
+          "note": "已核镜像教材印刷页55的有限词目；不发布原书、原释义或原例句。未挂入义项或时态语境不符的fish、took、hurt现有卡。",
+          "wordIds": [
+            "px-ate",
+            "px-beach",
+            "px-bought",
+            "px-camp",
+            "px-gift",
+            "px-rode",
+            "px-went"
+          ],
+          "verifiedCount": 7
+        },
+        {
+          "id": "u4",
+          "title": "Unit 4 Then and now",
+          "sourceIds": [
+            "pep-legacy-6-lower",
+            "pep-legacy-six-down-pages"
+          ],
+          "verification": "textbook-mirror-reviewed",
+          "bookPages": [
+            55,
+            56
+          ],
+          "note": "已核镜像教材印刷页55、56的有限词目；不发布原书、原释义或原例句。cycling为运动名词；未把trip绊倒挂到旅行词卡。",
+          "wordIds": [
+            "px-ago",
+            "px-badminton",
+            "px-cycling",
+            "px-dining-hall",
+            "px-easy",
+            "px-grass",
+            "px-gym",
+            "px-star"
+          ],
+          "verifiedCount": 8
+        }
+      ],
+      "verifiedCount": 29
+    }
+  ]
+}

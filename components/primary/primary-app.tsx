@@ -1,6 +1,6 @@
 'use client';
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
-import {BookOpen,BookX,FilePenLine,Gamepad2,HardDrive,Headphones,PencilLine,RotateCw,Sun} from 'lucide-react';
+import {ArrowRight,BookOpen,BookX,ChevronDown,FilePenLine,Gamepad2,HardDrive,Headphones,PencilLine,RotateCw,Sun} from 'lucide-react';
 import './primary.css';
 import type {PrimaryGrade,PrimaryWord,PrimaryWordsResponse} from '@/lib/primary-types';
 import {getPrimaryGrade} from '@/lib/learning-stage';
@@ -24,9 +24,19 @@ const HASH:Record<Tab,string>={today:'today',words:'vocab',dictation:'dictation'
 const NAV:{id:Tab;label:string;Icon:typeof Sun}[]=[
   {id:'today',label:'今天',Icon:Sun},{id:'words',label:'单词',Icon:BookOpen},{id:'dictation',label:'听写',Icon:Headphones},
   {id:'practice',label:'小练习',Icon:PencilLine},{id:'mistakes',label:'错题本',Icon:BookX},{id:'games',label:'游戏',Icon:Gamepad2},{id:'correction',label:'写作与批改',Icon:FilePenLine},{id:'records',label:'记录备份',Icon:HardDrive}];
-const LAUNCH:{id:Tab;title:string;desc:string;Icon:typeof Sun}[]=[
-  {id:'words',title:'认识新单词',desc:'听发音，读例句',Icon:BookOpen},{id:'dictation',title:'听一听，写一写',desc:'听读音，拼出单词',Icon:Headphones},
-  {id:'practice',title:'读短文，练句子',desc:'小短文和句子练习',Icon:PencilLine},{id:'games',title:'去英语游乐场',desc:'用小游戏复习单词',Icon:Gamepad2}];
+const MAIN_IDS:Tab[]=['today','words','dictation','practice'];
+const NAV_MAIN=NAV.filter(n=>MAIN_IDS.indexOf(n.id)>=0);
+const NAV_MORE=NAV.filter(n=>MAIN_IDS.indexOf(n.id)<0);
+const MORE:{id:Tab;title:string;desc:string;Icon:typeof Sun}[]=[
+  {id:'practice',title:'小练习',desc:'读小短文，练句子',Icon:PencilLine},
+  {id:'mistakes',title:'错题本',desc:'把做错的再练一遍',Icon:BookX},
+  {id:'games',title:'英语游戏',desc:'用小游戏复习单词',Icon:Gamepad2},
+  {id:'correction',title:'写作与批改',desc:'写一段话或批改题目',Icon:FilePenLine}];
+const PATH:{id:Tab;title:string;desc:string}[]=[
+  {id:'words',title:'学单词',desc:'选好学习范围，听发音、读例句'},
+  {id:'dictation',title:'听写',desc:'听音拼词，或看中文拼词'},
+  {id:'practice',title:'小练习',desc:'读一篇短文，做几道题'},
+  {id:'mistakes',title:'错题本',desc:'回头看看做错的地方'}];
 
 function parseHash(h:string):Tab{
   const v=h.replace(/^#/,'');
@@ -38,6 +48,17 @@ function parseHash(h:string):Tab{
 function toIds(v:unknown):string[]{
   if(Array.isArray(v))return v.map(x=>typeof x==='string'?x:(x as {id?:string}|null)?.id??'').filter(Boolean);
   return v&&typeof v==='object'?Object.keys(v):[];
+}
+
+function BrandMark(){
+  return (
+    <svg className='primary-brand-mark' viewBox='0 0 40 40' width='40' height='40' aria-hidden='true' focusable='false'>
+      <rect x='1' y='1' width='38' height='38' rx='11' fill='#2f5d46'/>
+      <path d='M9 13c4-1.6 7.6-1.2 11 1.2V30c-3.4-2.2-7-2.6-11-1.2z' fill='#fbf6e8'/>
+      <path d='M31 13c-4-1.6-7.6-1.2-11 1.2V30c3.4-2.2 7-2.6 11-1.2z' fill='#f4e58c'/>
+      <circle cx='29' cy='9.5' r='3' fill='#f4e58c'/>
+    </svg>
+  );
 }
 
 export function PrimaryApp(){
@@ -53,7 +74,10 @@ export function PrimaryApp(){
   const [error,setError]=useState('');
   const [reload,setReload]=useState(0);
   const [saveNote,setSaveNote]=useState('');
+  const [navTick,setNavTick]=useState(0);
+  const [moreOpen,setMoreOpen]=useState(false);
   const speechRef=useRef(speech);
+  const mainRef=useRef<HTMLElement>(null);
   useEffect(()=>{speechRef.current=speech;});
 
   useEffect(()=>{
@@ -77,6 +101,12 @@ export function PrimaryApp(){
     return()=>c.abort();
   },[grade,ready,reload]);
 
+  useEffect(()=>{
+    if(navTick===0)return;
+    const m=mainRef.current;
+    if(m)m.focus({preventScroll:true});
+  },[navTick]);
+
   const items=useMemo<PrimaryWord[]>(()=>data?.items??[],[data]);
   const stats=useMemo(()=>{
     const wrong=new Set(toIds(progress?.wrongbook));
@@ -85,11 +115,13 @@ export function PrimaryApp(){
 
   const go=useCallback((t:Tab)=>{
     setFocusType(undefined);
+    setMoreOpen(false);
     speechRef.current.stop();
     window.scrollTo({top:0});
     history.replaceState(null,'',`#${HASH[t]}`);
     if(t==='games')window.dispatchEvent(new HashChangeEvent('hashchange'));
     setTab(t);
+    setNavTick(n=>n+1);
   },[]);
   const pickGrade=useCallback((g:PrimaryGrade)=>{
     if(g===grade)return;
@@ -100,72 +132,130 @@ export function PrimaryApp(){
     window.location.assign(url.href);
   },[grade]);
   const retry=useCallback(()=>setReload(n=>n+1),[]);
+  const skipToMain=useCallback(()=>{const m=mainRef.current;if(m)m.focus();},[]);
   const onMistakeNav=useCallback((t:string)=>go(t==='dictation'?'dictation':t==='vocab'?'words':'practice'),[go]);
   const reviewType=(['reading','grammar'] as const).find(type=>getSkillFocus(progress.mistakes,type).length>0);
-  const wordProps={grade,words:items,speech,loading,error,onRetry:retry};
+  const wordProps={grade,words:items,speech,loading,error,onRetry:retry,books:data?.books,onOpenDictation:()=>go('dictation')};
   const num=(n:number)=>hydrated?n:'…';
+  const pct=hydrated&&stats.total>0?Math.round(stats.learned/stats.total*100):0;
+  const currentLabel=(NAV.find(n=>n.id===tab)||NAV[0]).label;
+
+  const navButton=({id,label,Icon}:{id:Tab;label:string;Icon:typeof Sun})=>(
+    <li key={id} className='primary-nav-item'>
+      <button type='button' aria-current={tab===id?'page':undefined} className={tab===id?'primary-nav-link primary-nav-link-active':'primary-nav-link'} onClick={()=>go(id)}>
+        <Icon size={18} aria-hidden/><span className='primary-nav-text'>{label}</span>
+      </button>
+    </li>
+  );
 
   const today=(
-    <>
-      <section className='primary-hero'>
-        <h2>{GRADE_LABEL[grade]}，今天也来练一练</h2>
-        <p>每次花几分钟，听一听、读一读、写一写。</p>
+    <div className='primary-today'>
+      <section className='primary-hero' aria-labelledby='primary-today-title'>
+        <p className='primary-eyebrow'>{GRADE_LABEL[grade]} · 今日学习桌</p>
+        <h2 id='primary-today-title' className='primary-hero-title'>先学单词，再来听写</h2>
+        <p className='primary-hero-text'>每次几分钟：听发音、读例句，再把单词写出来。</p>
+        <div className='primary-hero-actions'>
+          <button type='button' className='primary-action primary-action-main' onClick={()=>go('words')}>
+            <span className='primary-action-layout'>
+            <span className='primary-action-icon'><BookOpen size={26} aria-hidden/></span>
+            <span className='primary-action-text'><strong>学单词</strong><span>选词书、主题或单元</span></span>
+            <ArrowRight className='primary-action-arrow' size={20} aria-hidden/>
+            </span>
+          </button>
+          <button type='button' className='primary-action primary-action-second' onClick={()=>go('dictation')}>
+            <span className='primary-action-layout'>
+            <span className='primary-action-icon'><Headphones size={26} aria-hidden/></span>
+            <span className='primary-action-text'><strong>去听写</strong><span>听音或看中文拼词</span></span>
+            <ArrowRight className='primary-action-arrow' size={20} aria-hidden/>
+            </span>
+          </button>
+        </div>
       </section>
-      {loading&&<p className='primary-note'>正在加载{GRADE_LABEL[grade]}单词…</p>}
+
+      {loading&&<p className='primary-note primary-status' role='status'>正在加载{GRADE_LABEL[grade]}单词…</p>}
       {error&&<div className='primary-error' role='alert'><p>单词暂时没有加载出来：{error}</p>
         <button type='button' className='primary-button' onClick={retry}><RotateCw size={16} aria-hidden/>再试一次</button></div>}
-      {data&&<ul className='primary-stats'>
-        <li><strong>{stats.total}</strong>当前收录词汇</li>
-        <li><strong>{num(stats.learned)}</strong>我记住的单词</li>
-        <li><strong>{num(stats.review)}</strong>待复习错词</li>
-      </ul>}
-      <div className='primary-launch-grid'>
-        {LAUNCH.map(({id,title,desc,Icon})=>(
-          <button key={id} type='button' className='primary-launch-card' onClick={()=>go(id)}>
-            <Icon size={24} aria-hidden/><strong>{title}</strong><span>{desc}</span>
-          </button>))}
+
+      {data&&<section className='primary-progress' aria-labelledby='primary-progress-title'>
+        <div className='primary-progress-head'>
+          <h3 id='primary-progress-title' className='primary-section-title'>我的进度</h3>
+          <p className='primary-progress-caption'>{stats.total===0?'这个年级暂时没有收录单词。':hydrated?`已记住 ${stats.learned} / ${stats.total} 个单词`:'正在读取本机学习记录…'}</p>
+        </div>
+        {stats.total>0&&<div className='primary-progress-bar' aria-hidden='true'><span className='primary-progress-fill' style={{width:`${pct}%`}}/></div>}
+        <ul className='primary-stats'>
+          <li className='primary-stat'><strong>{stats.total}</strong><span>当前收录词汇</span></li>
+          <li className='primary-stat'><strong>{num(stats.learned)}</strong><span>我记住的单词</span></li>
+          <li className='primary-stat primary-stat-review'><strong>{num(stats.review)}</strong><span>待复习错词</span></li>
+        </ul>
+      </section>}
+
+      <div className='primary-today-grid'>
+        <section className='primary-path' aria-labelledby='primary-path-title'>
+          <h3 id='primary-path-title' className='primary-section-title'>建议顺序</h3>
+          <ol className='primary-path-list'>
+            {PATH.map(({id,title,desc},i)=>(
+              <li key={id} className='primary-path-step'>
+                <button type='button' className='primary-path-link' onClick={()=>go(id)}>
+                  <span className='primary-path-layout'>
+                  <span className='primary-path-num' aria-hidden='true'>{i+1}</span>
+                  <span className='primary-path-text'><strong>{title}</strong><span>{desc}</span></span>
+                  </span>
+                </button>
+              </li>))}
+          </ol>
+        </section>
+        <section className='primary-more' aria-labelledby='primary-more-title'>
+          <h3 id='primary-more-title' className='primary-section-title'>更多练习</h3>
+          <div className='primary-more-grid'>
+            {MORE.map(({id,title,desc,Icon})=>(
+              <button key={id} type='button' className='primary-more-card' onClick={()=>go(id)}>
+                <Icon size={20} aria-hidden/><strong>{title}</strong><span>{desc}</span>
+              </button>))}
+          </div>
+        </section>
       </div>
-      <section className='primary-howto'>
-        <h3>推荐顺序</h3>
-        <ol>
-          <li>先听后读：在「单词」里听发音、读例句</li>
-          <li>听写：把听到的单词写出来</li>
-          <li>短练习：读一篇小短文，完成几道题</li>
-        </ol>
-      </section>
-      {data?.note&&<p className='primary-note'>{data.note}</p>}
-      <p className='primary-note'>本机学习记录：保存在当前浏览器中，不会自动同步到其他设备。</p>
-    </>
+    </div>
   );
 
   return (
     <div className='primary-app'>
+      <button type='button' className='primary-skip' onClick={skipToMain}>跳到学习内容</button>
       <header className='primary-header'>
-        <span className='primary-badge'>小学通用版</span>
-        <h1>每天一点，英语更近一点</h1>
-        <p className='primary-note'>按年级选择单词、听写和小练习，一点点积累英语本领。</p>
-        <div className='primary-grade-picker' role='group' aria-label='选择年级'>
-          {GRADES.map(g=>(
-            <button key={g} type='button' aria-pressed={grade===g} className={grade===g?'primary-button primary-button-primary':'primary-button'} onClick={()=>pickGrade(g)}>{GRADE_LABEL[g]}</button>))}
+        <div className='primary-brand'>
+          <BrandMark/>
+          <h1 className='primary-title'><span className='primary-title-name'>拾词 LexiGo</span><span className='primary-title-sub'>小学英语 · {GRADE_LABEL[grade]}</span></h1>
         </div>
-        {saveNote&&<p className='primary-error' role='status'>{saveNote}</p>}
+        <div className='primary-grade' role='group' aria-label='选择年级，切换后会重新载入该年级的学习记录'>
+          <span className='primary-grade-label' aria-hidden='true'>年级</span>
+          {GRADES.map(g=>(
+            <button key={g} type='button' aria-pressed={grade===g} className={grade===g?'primary-grade-btn primary-grade-btn-active':'primary-grade-btn'} onClick={()=>pickGrade(g)}>{GRADE_LABEL[g]}</button>))}
+        </div>
+        {saveNote&&<p className='primary-error primary-save-note' role='status'>{saveNote}</p>}
       </header>
-      <nav className='primary-nav' aria-label='小学学习导航'>
-        {NAV.map(({id,label,Icon})=>(
-          <button key={id} type='button' aria-current={tab===id?'page':undefined} className={tab===id?'primary-button primary-button-primary':'primary-button'} onClick={()=>go(id)}>
-            <Icon size={18} aria-hidden/>{label}
-          </button>))}
-      </nav>
-      <main key={grade} className='primary-route'>
-        {tab==='today'&&today}
-        {tab==='words'&&<PrimaryWords {...wordProps}/>}
-        {tab==='dictation'&&<PrimaryDictation {...wordProps}/>}
-        {tab==='practice'&&<PrimaryPractice grade={grade} initialFocusType={focusType}/>}
-        {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav} primary onTargetPractice={reviewType?()=>{go('practice');setFocusType(reviewType);}:undefined}/>}
-        {tab==='games'&&<GameHub speech={speech} primaryGrade={grade}/>}
-        {tab==='correction'&&<><div className='primary-tabs' role='group' aria-label='写作与批改方式'><button type='button' className='primary-button' aria-pressed={correctionKind==='essay'} onClick={()=>setCorrectionKind('essay')}>写作小老师</button><button type='button' className='primary-button' aria-pressed={correctionKind==='questions'} onClick={()=>setCorrectionKind('questions')}>题目批改</button></div><CorrectionView key={correctionKind} kind={correctionKind} primaryGrade={grade}/></>}
-        {tab==='records'&&<PrimaryRecords grade={grade}/>}
-      </main>
+      <div className='primary-shell'>
+        <nav className='primary-nav' aria-label='小学学习导航'>
+          <ul className='primary-nav-main'>{NAV_MAIN.map(navButton)}</ul>
+          <p className='primary-nav-heading'>更多</p>
+          <button type='button' className='primary-nav-toggle' aria-expanded={moreOpen} aria-controls='primary-more-navigation' onClick={()=>setMoreOpen(value=>!value)}>
+            <span>更多功能{MAIN_IDS.indexOf(tab)<0?` · ${currentLabel}`:''}</span><ChevronDown size={17} aria-hidden/>
+          </button>
+          <ul id='primary-more-navigation' className={moreOpen?'primary-nav-more primary-nav-more-open':'primary-nav-more'}>{NAV_MORE.map(navButton)}</ul>
+        </nav>
+        <main key={grade} ref={mainRef} id='primary-main' tabIndex={-1} aria-label={currentLabel} className={`primary-route primary-route-${tab}`}>
+          {tab==='today'&&today}
+          {tab==='words'&&<PrimaryWords {...wordProps}/>}
+          {tab==='dictation'&&<PrimaryDictation {...wordProps}/>}
+          {tab==='practice'&&<PrimaryPractice grade={grade} initialFocusType={focusType}/>}
+          {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav} primary onTargetPractice={reviewType?()=>{go('practice');setFocusType(reviewType);}:undefined}/>}
+          {tab==='games'&&<GameHub speech={speech} primaryGrade={grade}/>}
+          {tab==='correction'&&<><div className='primary-tabs primary-segment' role='group' aria-label='写作与批改方式'><button type='button' className={correctionKind==='essay'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='essay'} onClick={()=>setCorrectionKind('essay')}>写作小老师</button><button type='button' className={correctionKind==='questions'?'primary-button primary-segment-btn primary-segment-btn-active':'primary-button primary-segment-btn'} aria-pressed={correctionKind==='questions'} onClick={()=>setCorrectionKind('questions')}>题目批改</button></div><CorrectionView key={correctionKind} kind={correctionKind} primaryGrade={grade}/></>}
+          {tab==='records'&&<PrimaryRecords grade={grade}/>}
+        </main>
+      </div>
+      <footer className='primary-footer'>
+        {data?.note&&<p className='primary-note'>{data.note}</p>}
+        <p className='primary-note'>本机学习记录：保存在当前浏览器中，不会自动同步到其他设备。</p>
+      </footer>
     </div>
   );
 }

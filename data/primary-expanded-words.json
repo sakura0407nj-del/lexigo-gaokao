@@ -1,0 +1,5731 @@
+[
+  {
+    "id": "px-name",
+    "word": "name",
+    "translation": "n. 名字",
+    "example": "Write your name on this card.",
+    "exampleZh": "把你的名字写在这张卡片上。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-nice",
+    "word": "nice",
+    "translation": "adj. 友好的；令人愉快的",
+    "example": "Our new teacher is very nice.",
+    "exampleZh": "我们的新老师很友好。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-arm",
+    "word": "arm",
+    "translation": "n. 手臂",
+    "example": "There is a little bird on his arm.",
+    "exampleZh": "他的手臂上有一只小鸟。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-smile",
+    "word": "smile",
+    "translation": "v. 微笑",
+    "example": "I smile when I see my little sister.",
+    "exampleZh": "看见小妹妹时，我会微笑。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-say",
+    "word": "say",
+    "translation": "v. 说",
+    "example": "Please say the word again.",
+    "exampleZh": "请再说一遍这个词。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-toy",
+    "word": "toy",
+    "translation": "n. 玩具",
+    "example": "This toy is a small red car.",
+    "exampleZh": "这个玩具是一辆红色的小汽车。",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-mum",
+    "word": "mum",
+    "translation": "n. 妈妈（口语）",
+    "example": "My mum reads with me at night.",
+    "exampleZh": "晚上妈妈和我一起读书。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ],
+    "accepted": [
+      "mum",
+      "mom"
+    ]
+  },
+  {
+    "id": "px-dad",
+    "word": "dad",
+    "translation": "n. 爸爸（口语）",
+    "example": "My dad makes a paper boat.",
+    "exampleZh": "爸爸做了一只纸船。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-grandma",
+    "word": "grandma",
+    "translation": "n. 奶奶；外婆（口语）",
+    "example": "Grandma grows flowers by the door.",
+    "exampleZh": "奶奶在门边种花。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-grandpa",
+    "word": "grandpa",
+    "translation": "n. 爷爷；外公（口语）",
+    "example": "Grandpa walks to the park with us.",
+    "exampleZh": "爷爷和我们步行去公园。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-grandmother",
+    "word": "grandmother",
+    "translation": "n. 祖母；外祖母",
+    "example": "My grandmother has a white cat.",
+    "exampleZh": "我的外祖母有一只白猫。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-grandfather",
+    "word": "grandfather",
+    "translation": "n. 祖父；外祖父",
+    "example": "My grandfather can draw birds.",
+    "exampleZh": "我的祖父会画鸟。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pet",
+    "word": "pet",
+    "translation": "n. 宠物",
+    "example": "Our pet likes sleeping in this box.",
+    "exampleZh": "我们的宠物喜欢睡在这个盒子里。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fox",
+    "word": "fox",
+    "translation": "n. 狐狸",
+    "example": "The fox has a long tail.",
+    "exampleZh": "这只狐狸有一条长尾巴。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-lion",
+    "word": "lion",
+    "translation": "n. 狮子",
+    "example": "We see a lion in the picture.",
+    "exampleZh": "我们在图中看到一头狮子。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-giraffe",
+    "word": "giraffe",
+    "translation": "n. 长颈鹿",
+    "example": "The giraffe can reach the high leaves.",
+    "exampleZh": "这只长颈鹿能够够到高处的树叶。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-animal",
+    "word": "animal",
+    "translation": "n. 动物",
+    "example": "Which animal has a very long nose?",
+    "exampleZh": "哪种动物有很长的鼻子？",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-tall",
+    "word": "tall",
+    "translation": "adj. 高的",
+    "example": "That tall tree is near our school.",
+    "exampleZh": "那棵高树在我们学校附近。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-fast",
+    "word": "fast",
+    "translation": "adj. 快的",
+    "example": "The fast train takes us to the city.",
+    "exampleZh": "快速列车带我们去城里。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-farm",
+    "word": "farm",
+    "translation": "n. 农场",
+    "example": "There are many sheep on this farm.",
+    "exampleZh": "这个农场有许多羊。",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-air",
+    "word": "air",
+    "translation": "n. 空气",
+    "example": "Fresh air comes through the window.",
+    "exampleZh": "新鲜空气从窗户吹进来。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-water",
+    "word": "water",
+    "translation": "n. 水",
+    "example": "There is some water in my bottle.",
+    "exampleZh": "我的瓶子里有一些水。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-flower",
+    "word": "flower",
+    "translation": "n. 花",
+    "example": "A yellow flower grows by the wall.",
+    "exampleZh": "墙边长着一朵黄花。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-grass",
+    "word": "grass",
+    "translation": "n. 草；草地",
+    "example": "The rabbit sits on the soft grass.",
+    "exampleZh": "兔子坐在柔软的草地上。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-plant",
+    "word": "plant",
+    "translation": "n. 植物",
+    "example": "This small plant needs light and water.",
+    "exampleZh": "这株小植物需要光和水。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-new",
+    "word": "new",
+    "translation": "adj. 新的",
+    "example": "I put my new books in the bag.",
+    "exampleZh": "我把新书放进书包里。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-tree",
+    "word": "tree",
+    "translation": "n. 树",
+    "example": "A bird is singing in that tree.",
+    "exampleZh": "一只鸟在那棵树上唱歌。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-colour",
+    "word": "colour",
+    "translation": "n. 颜色",
+    "example": "What colour is your schoolbag?",
+    "exampleZh": "你的书包是什么颜色的？",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ],
+    "accepted": [
+      "colour",
+      "color"
+    ]
+  },
+  {
+    "id": "px-red",
+    "word": "red",
+    "translation": "adj. 红色的",
+    "example": "A red bus stops near the school.",
+    "exampleZh": "一辆红色公交车在学校附近停下。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-blue",
+    "word": "blue",
+    "translation": "adj. 蓝色的",
+    "example": "She wears a blue coat today.",
+    "exampleZh": "她今天穿一件蓝色外套。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-purple",
+    "word": "purple",
+    "translation": "adj. 紫色的",
+    "example": "The purple flower is very small.",
+    "exampleZh": "那朵紫色的花很小。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-brown",
+    "word": "brown",
+    "translation": "adj. 棕色的",
+    "example": "My brown shoes are under the bed.",
+    "exampleZh": "我的棕色鞋子在床下面。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-bear",
+    "word": "bear",
+    "translation": "n. 熊",
+    "example": "The bear in the story loves honey.",
+    "exampleZh": "故事里的熊喜欢蜂蜜。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-yellow",
+    "word": "yellow",
+    "translation": "adj. 黄色的",
+    "example": "I draw a yellow star on the paper.",
+    "exampleZh": "我在纸上画了一颗黄色的星星。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-sea",
+    "word": "sea",
+    "translation": "n. 海",
+    "example": "We can see the sea from this hill.",
+    "exampleZh": "从这座小山上我们能看到大海。",
+    "grade": 3,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pink",
+    "word": "pink",
+    "translation": "adj. 粉色的",
+    "example": "Her pink bag has two pockets.",
+    "exampleZh": "她的粉色包有两个口袋。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-white",
+    "word": "white",
+    "translation": "adj. 白色的",
+    "example": "The white rabbit is eating a carrot.",
+    "exampleZh": "那只白兔正在吃胡萝卜。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-black",
+    "word": "black",
+    "translation": "adj. 黑色的",
+    "example": "There is a black dog by the gate.",
+    "exampleZh": "门边有一只黑狗。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-old",
+    "word": "old",
+    "translation": "adj. 年老的；旧的",
+    "example": "We turn an old box into a toy house.",
+    "exampleZh": "我们把一个旧盒子做成玩具房子。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-year",
+    "word": "year",
+    "translation": "n. 年",
+    "example": "We plant a tree every year.",
+    "exampleZh": "我们每年种一棵树。",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-one",
+    "word": "one",
+    "translation": "num. 一",
+    "example": "I have one apple in my bag.",
+    "exampleZh": "我的包里有一个苹果。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-two",
+    "word": "two",
+    "translation": "num. 二",
+    "example": "There are two birds on the wall.",
+    "exampleZh": "墙上有两只鸟。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-three",
+    "word": "three",
+    "translation": "num. 三",
+    "example": "Put three pencils on the desk.",
+    "exampleZh": "把三支铅笔放在课桌上。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-four",
+    "word": "four",
+    "translation": "num. 四",
+    "example": "The little table has four legs.",
+    "exampleZh": "这张小桌子有四条腿。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-five",
+    "word": "five",
+    "translation": "num. 五",
+    "example": "We draw five flowers on the card.",
+    "exampleZh": "我们在卡片上画了五朵花。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-six",
+    "word": "six",
+    "translation": "num. 六",
+    "example": "There are six eggs in the box.",
+    "exampleZh": "盒子里有六个鸡蛋。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-seven",
+    "word": "seven",
+    "translation": "num. 七",
+    "example": "A week has seven days.",
+    "exampleZh": "一周有七天。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-eight",
+    "word": "eight",
+    "translation": "num. 八",
+    "example": "The cake is for eight children.",
+    "exampleZh": "这个蛋糕是给八个孩子的。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-nine",
+    "word": "nine",
+    "translation": "num. 九",
+    "example": "I count nine ducks on the pond.",
+    "exampleZh": "我数到池塘里有九只鸭子。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-ten",
+    "word": "ten",
+    "translation": "num. 十",
+    "example": "We need ten cups for the party.",
+    "exampleZh": "聚会需要十个杯子。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-cake",
+    "word": "cake",
+    "translation": "n. 蛋糕",
+    "example": "The cake has strawberries on top.",
+    "exampleZh": "蛋糕上面有草莓。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cut",
+    "word": "cut",
+    "translation": "v. 切；剪",
+    "example": "Please cut the paper into small squares.",
+    "exampleZh": "请把纸剪成小正方形。",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-boy",
+    "word": "boy",
+    "translation": "n. 男孩",
+    "example": "The boy with the kite is my cousin.",
+    "exampleZh": "拿着风筝的男孩是我的表弟。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-girl",
+    "word": "girl",
+    "translation": "n. 女孩",
+    "example": "A girl is reading under the tree.",
+    "exampleZh": "一个女孩正在树下读书。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-man",
+    "word": "man",
+    "translation": "n. 成年男子",
+    "example": "The man at the gate is our teacher.",
+    "exampleZh": "门口的男子是我们的老师。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-woman",
+    "word": "woman",
+    "translation": "n. 成年女子",
+    "example": "The woman in the shop is very kind.",
+    "exampleZh": "商店里的那位女士很和善。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-long",
+    "word": "long",
+    "translation": "adj. 长的",
+    "example": "This long ruler is for the teacher.",
+    "exampleZh": "这把长尺子是老师用的。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-body",
+    "word": "body",
+    "translation": "n. 身体",
+    "example": "Swimming helps keep my body strong.",
+    "exampleZh": "游泳有助于使我的身体强壮。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-short",
+    "word": "short",
+    "translation": "adj. 短的；矮的",
+    "example": "The short pencil is still useful.",
+    "exampleZh": "这支短铅笔仍然能用。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-fat",
+    "word": "fat",
+    "translation": "adj. 肥胖的",
+    "example": "The fat cat sleeps on a soft chair.",
+    "exampleZh": "这只胖猫睡在软椅子上。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-thin",
+    "word": "thin",
+    "translation": "adj. 薄的；瘦的",
+    "example": "This thin book fits in my pocket.",
+    "exampleZh": "这本薄书可以放进我的口袋。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-slow",
+    "word": "slow",
+    "translation": "adj. 缓慢的",
+    "example": "The slow turtle is near the water.",
+    "exampleZh": "那只行动缓慢的乌龟在水边。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-love",
+    "word": "love",
+    "translation": "v. 爱；喜爱",
+    "example": "I love listening to my grandma's stories.",
+    "exampleZh": "我喜欢听奶奶讲故事。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-tail",
+    "word": "tail",
+    "translation": "n. 尾巴",
+    "example": "The dog's tail moves from side to side.",
+    "exampleZh": "狗的尾巴左右摇动。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-gift",
+    "word": "gift",
+    "translation": "n. 礼物",
+    "example": "I make a small gift for my friend.",
+    "exampleZh": "我给朋友做了一份小礼物。",
+    "grade": 3,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-picture",
+    "word": "picture",
+    "translation": "n. 图画；照片",
+    "example": "This picture shows our school garden.",
+    "exampleZh": "这幅图展示了我们学校的花园。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-card",
+    "word": "card",
+    "translation": "n. 卡片；贺卡",
+    "example": "We send a card to our teacher.",
+    "exampleZh": "我们给老师送了一张贺卡。",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-talk",
+    "word": "talk",
+    "translation": "v. 交谈；说话",
+    "example": "We talk about our favourite animals.",
+    "exampleZh": "我们谈论自己最喜欢的动物。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-song",
+    "word": "song",
+    "translation": "n. 歌曲",
+    "example": "I learn a new song with my friends.",
+    "exampleZh": "我和朋友们学了一首新歌。",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-eraser",
+    "word": "eraser",
+    "translation": "n. 橡皮",
+    "example": "May I use your eraser for a minute?",
+    "exampleZh": "我可以用一下你的橡皮吗？",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-find",
+    "word": "find",
+    "translation": "v. 找到",
+    "example": "Can you find the missing pencil?",
+    "exampleZh": "你能找到那支不见了的铅笔吗？",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-ruler",
+    "word": "ruler",
+    "translation": "n. 尺子",
+    "example": "Use a ruler to draw a straight line.",
+    "exampleZh": "用尺子画一条直线。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bag",
+    "word": "bag",
+    "translation": "n. 包；袋子",
+    "example": "My bag is beside the chair.",
+    "exampleZh": "我的包在椅子旁边。",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-paper",
+    "word": "paper",
+    "translation": "n. 纸",
+    "example": "We use both sides of the paper.",
+    "exampleZh": "我们使用纸的两面。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-see",
+    "word": "see",
+    "translation": "v. 看见",
+    "example": "I can see a rainbow over the trees.",
+    "exampleZh": "我能看见树木上方的一道彩虹。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-smell",
+    "word": "smell",
+    "translation": "v. 闻；闻到",
+    "example": "I can smell the flowers in the garden.",
+    "exampleZh": "我能闻到花园里的花香。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-hear",
+    "word": "hear",
+    "translation": "v. 听见",
+    "example": "Can you hear the birds outside?",
+    "exampleZh": "你能听见外面的鸟叫声吗？",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-touch",
+    "word": "touch",
+    "translation": "v. 触摸",
+    "example": "Please do not touch the hot cup.",
+    "exampleZh": "请不要摸那个烫杯子。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-nose",
+    "word": "nose",
+    "translation": "n. 鼻子",
+    "example": "The puppy has a little black nose.",
+    "exampleZh": "这只小狗有一个小小的黑鼻子。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-tongue",
+    "word": "tongue",
+    "translation": "n. 舌头",
+    "example": "Your tongue helps you taste food.",
+    "exampleZh": "舌头帮助你品尝食物。",
+    "grade": 3,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-class",
+    "word": "class",
+    "translation": "n. 班级；课",
+    "example": "Our class visits the museum today.",
+    "exampleZh": "我们班今天参观博物馆。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-computer",
+    "word": "computer",
+    "translation": "n. 电脑",
+    "example": "We use a computer to draw pictures.",
+    "exampleZh": "我们用电脑画画。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-egg",
+    "word": "egg",
+    "translation": "n. 蛋；鸡蛋",
+    "example": "There is an egg in my lunch box.",
+    "exampleZh": "我的午餐盒里有一个鸡蛋。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-noodles",
+    "word": "noodles",
+    "translation": "n. 面条（常用复数）",
+    "example": "These noodles have vegetables in them.",
+    "exampleZh": "这些面条里有蔬菜。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-meat",
+    "word": "meat",
+    "translation": "n. 肉",
+    "example": "This soup has a little meat in it.",
+    "exampleZh": "这碗汤里有一点肉。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-plate",
+    "word": "plate",
+    "translation": "n. 盘子",
+    "example": "Please put your plate on the table.",
+    "exampleZh": "请把盘子放到桌子上。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-soup",
+    "word": "soup",
+    "translation": "n. 汤",
+    "example": "The vegetable soup smells good.",
+    "exampleZh": "这道蔬菜汤闻起来很香。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fruit",
+    "word": "fruit",
+    "translation": "n. 水果",
+    "example": "We take some fruit for our picnic.",
+    "exampleZh": "我们带一些水果去野餐。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-colourful",
+    "word": "colourful",
+    "translation": "adj. 色彩丰富的",
+    "example": "The children make colourful paper birds.",
+    "exampleZh": "孩子们做了色彩丰富的纸鸟。",
+    "grade": 3,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "accepted": [
+      "colourful",
+      "colorful"
+    ]
+  },
+  {
+    "id": "px-candy",
+    "word": "candy",
+    "translation": "n. 糖果",
+    "example": "There is one piece of candy in the box.",
+    "exampleZh": "盒子里有一颗糖。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-yummy",
+    "word": "yummy",
+    "translation": "adj. 好吃的（口语）",
+    "example": "This apple pie is yummy.",
+    "exampleZh": "这个苹果派很好吃。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-boat",
+    "word": "boat",
+    "translation": "n. 小船",
+    "example": "The little boat moves across the lake.",
+    "exampleZh": "小船驶过湖面。",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-keep",
+    "word": "keep",
+    "translation": "v. 保留；保持",
+    "example": "Please keep your old books for others.",
+    "exampleZh": "请留下旧书供别人使用。",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-ball",
+    "word": "ball",
+    "translation": "n. 球",
+    "example": "The ball rolls under the table.",
+    "exampleZh": "球滚到了桌子下面。",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-doll",
+    "word": "doll",
+    "translation": "n. 玩偶；娃娃",
+    "example": "My doll wears a tiny green dress.",
+    "exampleZh": "我的玩偶穿着小小的绿色裙子。",
+    "grade": 3,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-car",
+    "word": "car",
+    "translation": "n. 小汽车",
+    "example": "Our car is near the big tree.",
+    "exampleZh": "我们的汽车在大树附近。",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-shelf",
+    "word": "shelf",
+    "translation": "n. 架子",
+    "example": "The books are on the top shelf.",
+    "exampleZh": "书在最上面的架子上。",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-box",
+    "word": "box",
+    "translation": "n. 盒子",
+    "example": "We keep our toys in this box.",
+    "exampleZh": "我们把玩具收在这个盒子里。",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cap",
+    "word": "cap",
+    "translation": "n. 鸭舌帽；便帽",
+    "example": "His cap has a red star on it.",
+    "exampleZh": "他的帽子上有一颗红星。",
+    "grade": 3,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-map",
+    "word": "map",
+    "translation": "n. 地图",
+    "example": "This map shows the way to the park.",
+    "exampleZh": "这张地图标出了去公园的路。",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-put",
+    "word": "put",
+    "translation": "v. 放；安置",
+    "example": "Please put your shoes by the door.",
+    "exampleZh": "请把鞋子放在门边。",
+    "grade": 3,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-eleven",
+    "word": "eleven",
+    "translation": "num. 十一",
+    "example": "There are eleven players on our team.",
+    "exampleZh": "我们队有十一名队员。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-twelve",
+    "word": "twelve",
+    "translation": "num. 十二",
+    "example": "A year has twelve months.",
+    "exampleZh": "一年有十二个月。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-thirteen",
+    "word": "thirteen",
+    "translation": "num. 十三",
+    "example": "We have thirteen chairs in this room.",
+    "exampleZh": "这个房间里有十三把椅子。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-fourteen",
+    "word": "fourteen",
+    "translation": "num. 十四",
+    "example": "I draw fourteen stars on the paper.",
+    "exampleZh": "我在纸上画了十四颗星星。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-fifteen",
+    "word": "fifteen",
+    "translation": "num. 十五",
+    "example": "The bus arrives in fifteen minutes.",
+    "exampleZh": "公交车十五分钟后到。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-sixteen",
+    "word": "sixteen",
+    "translation": "num. 十六",
+    "example": "There are sixteen cards in the box.",
+    "exampleZh": "盒子里有十六张卡片。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-seventeen",
+    "word": "seventeen",
+    "translation": "num. 十七",
+    "example": "I count seventeen flowers in the picture.",
+    "exampleZh": "我数到图里有十七朵花。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-eighteen",
+    "word": "eighteen",
+    "translation": "num. 十八",
+    "example": "Our class needs eighteen new books.",
+    "exampleZh": "我们班需要十八本新书。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-nineteen",
+    "word": "nineteen",
+    "translation": "num. 十九",
+    "example": "We collect nineteen empty bottles.",
+    "exampleZh": "我们收集了十九个空瓶子。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-twenty",
+    "word": "twenty",
+    "translation": "num. 二十",
+    "example": "There are twenty pages in this book.",
+    "exampleZh": "这本书有二十页。",
+    "grade": 3,
+    "topic": "学校学习",
+    "pos": [
+      "number"
+    ]
+  },
+  {
+    "id": "px-pay",
+    "word": "pay",
+    "translation": "v. 付钱",
+    "example": "We pay for the bread at the shop.",
+    "exampleZh": "我们在店里付钱买面包。",
+    "grade": 3,
+    "topic": "时间日常",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-back",
+    "word": "back",
+    "translation": "adv. 回到原处",
+    "example": "Please come back before dinner.",
+    "exampleZh": "请在晚饭前回来。",
+    "grade": 3,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-spoon",
+    "word": "spoon",
+    "translation": "n. 勺子",
+    "example": "Use a spoon to eat the soup.",
+    "exampleZh": "用勺子喝汤。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fork",
+    "word": "fork",
+    "translation": "n. 叉子",
+    "example": "There is a fork beside your plate.",
+    "exampleZh": "你的盘子旁边有一把叉子。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cup",
+    "word": "cup",
+    "translation": "n. 杯子",
+    "example": "This cup is full of warm milk.",
+    "exampleZh": "这个杯子里装满了温牛奶。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bowl",
+    "word": "bowl",
+    "translation": "n. 碗",
+    "example": "My bowl has a blue fish on it.",
+    "exampleZh": "我的碗上画着一条蓝色的鱼。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pig",
+    "word": "pig",
+    "translation": "n. 猪",
+    "example": "The pink pig is eating on the farm.",
+    "exampleZh": "这只粉色的猪正在农场里吃东西。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-ant",
+    "word": "ant",
+    "translation": "n. 蚂蚁",
+    "example": "An ant carries food across the path.",
+    "exampleZh": "一只蚂蚁搬着食物穿过小路。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-frog",
+    "word": "frog",
+    "translation": "n. 青蛙",
+    "example": "A green frog jumps into the pond.",
+    "exampleZh": "一只绿青蛙跳进池塘。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-mouse",
+    "word": "mouse",
+    "translation": "n. 老鼠",
+    "example": "A little mouse hides behind the box.",
+    "exampleZh": "一只小老鼠躲在盒子后面。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bee",
+    "word": "bee",
+    "translation": "n. 蜜蜂",
+    "example": "A bee flies from flower to flower.",
+    "exampleZh": "一只蜜蜂在花间飞来飞去。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-butterfly",
+    "word": "butterfly",
+    "translation": "n. 蝴蝶",
+    "example": "A butterfly rests on the leaf.",
+    "exampleZh": "一只蝴蝶停在叶子上。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-goat",
+    "word": "goat",
+    "translation": "n. 山羊",
+    "example": "The goat is eating green leaves.",
+    "exampleZh": "山羊正在吃绿叶。",
+    "grade": 3,
+    "topic": "动物世界",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pear",
+    "word": "pear",
+    "translation": "n. 梨",
+    "example": "Would you like a pear after lunch?",
+    "exampleZh": "午饭后你想吃一个梨吗？",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-peach",
+    "word": "peach",
+    "translation": "n. 桃子",
+    "example": "This peach is soft and sweet.",
+    "exampleZh": "这个桃子又软又甜。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-strawberry",
+    "word": "strawberry",
+    "translation": "n. 草莓",
+    "example": "There is a strawberry on my cake.",
+    "exampleZh": "我的蛋糕上有一颗草莓。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-watermelon",
+    "word": "watermelon",
+    "translation": "n. 西瓜",
+    "example": "We share a watermelon on a hot day.",
+    "exampleZh": "天气热时我们分着吃一个西瓜。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-lemon",
+    "word": "lemon",
+    "translation": "n. 柠檬",
+    "example": "Dad puts a slice of lemon in the water.",
+    "exampleZh": "爸爸在水里放了一片柠檬。",
+    "grade": 3,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-playground",
+    "word": "playground",
+    "translation": "n. 操场",
+    "example": "We run around the playground after class.",
+    "exampleZh": "下课后我们绕着操场跑步。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-blackboard",
+    "word": "blackboard",
+    "translation": "n. 黑板",
+    "example": "The teacher writes a question on the blackboard.",
+    "exampleZh": "老师在黑板上写了一个问题。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-schoolbag",
+    "word": "schoolbag",
+    "translation": "n. 书包",
+    "example": "My schoolbag is heavy with books.",
+    "exampleZh": "我的书包装着书，很重。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-notebook",
+    "word": "notebook",
+    "translation": "n. 笔记本",
+    "example": "I write new words in my notebook.",
+    "exampleZh": "我在笔记本里写下生词。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-crayon",
+    "word": "crayon",
+    "translation": "n. 蜡笔",
+    "example": "Use a green crayon to draw the grass.",
+    "exampleZh": "用绿色蜡笔画草。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pupil",
+    "word": "pupil",
+    "translation": "n. 小学生",
+    "example": "Every pupil has a turn to read aloud.",
+    "exampleZh": "每个学生轮流朗读。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-chinese",
+    "word": "Chinese",
+    "translation": "n. 汉语；语文",
+    "example": "We have Chinese before maths today.",
+    "exampleZh": "今天我们先上语文，再上数学。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-english",
+    "word": "English",
+    "translation": "n. 英语",
+    "example": "I read a short story in English.",
+    "exampleZh": "我读了一篇英语小故事。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-maths",
+    "word": "maths",
+    "translation": "n. 数学",
+    "example": "We use shapes in our maths lesson.",
+    "exampleZh": "我们在数学课上学习图形。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "accepted": [
+      "maths",
+      "math"
+    ]
+  },
+  {
+    "id": "px-music",
+    "word": "music",
+    "translation": "n. 音乐",
+    "example": "Soft music helps me relax.",
+    "exampleZh": "轻柔的音乐帮助我放松。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-art",
+    "word": "art",
+    "translation": "n. 美术；艺术",
+    "example": "We make paper animals in art class.",
+    "exampleZh": "我们在美术课上做纸动物。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-spell",
+    "word": "spell",
+    "translation": "v. 拼写",
+    "example": "Can you spell your friend's name?",
+    "exampleZh": "你能拼出你朋友的名字吗？",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-count",
+    "word": "count",
+    "translation": "v. 数数",
+    "example": "We count the red buttons together.",
+    "exampleZh": "我们一起数红纽扣。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-ask",
+    "word": "ask",
+    "translation": "v. 问；请求",
+    "example": "Please ask your teacher if you need help.",
+    "exampleZh": "需要帮助时请问老师。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-close",
+    "word": "close",
+    "translation": "v. 关；合上",
+    "example": "Please close the window before you leave.",
+    "exampleZh": "离开前请关窗。",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-floor",
+    "word": "floor",
+    "translation": "n. 地板；楼层",
+    "example": "The cat sleeps on the kitchen floor.",
+    "exampleZh": "猫睡在厨房的地板上。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-wall",
+    "word": "wall",
+    "translation": "n. 墙",
+    "example": "Our pictures are on the classroom wall.",
+    "exampleZh": "我们的画挂在教室墙上。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-light",
+    "word": "light",
+    "translation": "n. 灯",
+    "example": "Please turn off the light before bed.",
+    "exampleZh": "睡觉前请关灯。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fan",
+    "word": "fan",
+    "translation": "n. 风扇",
+    "example": "The fan keeps the room cool.",
+    "exampleZh": "风扇使房间保持凉爽。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fridge",
+    "word": "fridge",
+    "translation": "n. 冰箱",
+    "example": "The milk is in the fridge.",
+    "exampleZh": "牛奶在冰箱里。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-phone",
+    "word": "phone",
+    "translation": "n. 电话；手机",
+    "example": "I use the phone to call Grandma.",
+    "exampleZh": "我用电话给奶奶打电话。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-clock",
+    "word": "clock",
+    "translation": "n. 钟",
+    "example": "The clock on the wall says eight.",
+    "exampleZh": "墙上的钟显示八点。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-key",
+    "word": "key",
+    "translation": "n. 钥匙",
+    "example": "The key to our door is in my pocket.",
+    "exampleZh": "我们家门的钥匙在我口袋里。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-mirror",
+    "word": "mirror",
+    "translation": "n. 镜子",
+    "example": "I look in the mirror before school.",
+    "exampleZh": "上学前我照照镜子。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-towel",
+    "word": "towel",
+    "translation": "n. 毛巾",
+    "example": "Use a clean towel to dry your hands.",
+    "exampleZh": "用干净的毛巾擦干手。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-brush",
+    "word": "brush",
+    "translation": "v. 刷",
+    "example": "I brush my teeth after breakfast.",
+    "exampleZh": "早饭后我刷牙。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-wash",
+    "word": "wash",
+    "translation": "v. 洗",
+    "example": "Please wash your hands before lunch.",
+    "exampleZh": "午饭前请洗手。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-bottle",
+    "word": "bottle",
+    "translation": "n. 瓶子",
+    "example": "I fill my bottle with drinking water.",
+    "exampleZh": "我给瓶子装上饮用水。",
+    "grade": 4,
+    "topic": "家居生活",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-beef",
+    "word": "beef",
+    "translation": "n. 牛肉",
+    "example": "We have beef and vegetables for dinner.",
+    "exampleZh": "晚饭我们吃牛肉和蔬菜。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-carrot",
+    "word": "carrot",
+    "translation": "n. 胡萝卜",
+    "example": "I cut a carrot for the soup.",
+    "exampleZh": "我切了一根胡萝卜做汤。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-onion",
+    "word": "onion",
+    "translation": "n. 洋葱",
+    "example": "This onion is bigger than that one.",
+    "exampleZh": "这个洋葱比那个大。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cucumber",
+    "word": "cucumber",
+    "translation": "n. 黄瓜",
+    "example": "The cucumber in the salad is fresh.",
+    "exampleZh": "沙拉里的黄瓜很新鲜。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bean",
+    "word": "bean",
+    "translation": "n. 豆；豆子",
+    "example": "A bean grows into a little plant.",
+    "exampleZh": "一颗豆子长成了一株小植物。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-tea",
+    "word": "tea",
+    "translation": "n. 茶",
+    "example": "Grandpa drinks tea after his walk.",
+    "exampleZh": "爷爷散步后喝茶。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-chocolate",
+    "word": "chocolate",
+    "translation": "n. 巧克力",
+    "example": "There is some chocolate in the cake.",
+    "exampleZh": "蛋糕里有一些巧克力。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-sandwich",
+    "word": "sandwich",
+    "translation": "n. 三明治",
+    "example": "My sandwich has an egg and some tomato.",
+    "exampleZh": "我的三明治里有鸡蛋和一些番茄。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hamburger",
+    "word": "hamburger",
+    "translation": "n. 汉堡包",
+    "example": "We share a hamburger and some fruit.",
+    "exampleZh": "我们分着吃一个汉堡和一些水果。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-ice-cream",
+    "word": "ice cream",
+    "translation": "n. 冰激凌",
+    "example": "The ice cream melts in the warm sun.",
+    "exampleZh": "冰激凌在暖暖的阳光下融化了。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-lunch",
+    "word": "lunch",
+    "translation": "n. 午饭",
+    "example": "I bring my lunch in a small box.",
+    "exampleZh": "我用一个小盒子带午饭。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-dinner",
+    "word": "dinner",
+    "translation": "n. 晚饭；正餐",
+    "example": "We talk about our day at dinner.",
+    "exampleZh": "吃晚饭时我们聊聊这一天。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-delicious",
+    "word": "delicious",
+    "translation": "adj. 美味的",
+    "example": "The soup you made is delicious.",
+    "exampleZh": "你做的汤很美味。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-sweet",
+    "word": "sweet",
+    "translation": "adj. 甜的",
+    "example": "These grapes are small but sweet.",
+    "exampleZh": "这些葡萄虽然小，却很甜。",
+    "grade": 4,
+    "topic": "食物饮品",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-fresh",
+    "word": "fresh",
+    "translation": "adj. 新鲜的",
+    "example": "We buy fresh vegetables at the market.",
+    "exampleZh": "我们在市场买新鲜蔬菜。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-sock",
+    "word": "sock",
+    "translation": "n. 短袜",
+    "example": "I find one sock behind the bed.",
+    "exampleZh": "我在床后找到一只短袜。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-shorts",
+    "word": "shorts",
+    "translation": "n. 短裤",
+    "example": "I wear shorts when I play basketball.",
+    "exampleZh": "打篮球时我穿短裤。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-boot",
+    "word": "boot",
+    "translation": "n. 靴子",
+    "example": "There is mud on my left boot.",
+    "exampleZh": "我的左脚靴子上有泥。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-sunglasses",
+    "word": "sunglasses",
+    "translation": "n. 太阳镜",
+    "example": "Her sunglasses are in a small case.",
+    "exampleZh": "她的太阳镜在一个小盒子里。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-t-shirt",
+    "word": "T-shirt",
+    "translation": "n. T恤衫",
+    "example": "My T-shirt has a funny cat on it.",
+    "exampleZh": "我的T恤衫上有一只滑稽的猫。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-clothes",
+    "word": "clothes",
+    "translation": "n. 衣服",
+    "example": "We put our clean clothes in the cupboard.",
+    "exampleZh": "我们把干净衣服放进柜子里。",
+    "grade": 4,
+    "topic": "衣物用品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cheap",
+    "word": "cheap",
+    "translation": "adj. 便宜的",
+    "example": "This pencil is cheap but useful.",
+    "exampleZh": "这支铅笔便宜又好用。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-expensive",
+    "word": "expensive",
+    "translation": "adj. 昂贵的",
+    "example": "The big toy is too expensive for me.",
+    "exampleZh": "那个大玩具对我来说太贵了。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-afternoon",
+    "word": "afternoon",
+    "translation": "n. 下午",
+    "example": "We visit the library in the afternoon.",
+    "exampleZh": "我们下午去图书馆。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-evening",
+    "word": "evening",
+    "translation": "n. 傍晚；晚上",
+    "example": "Our family takes a walk in the evening.",
+    "exampleZh": "我们一家傍晚去散步。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-week",
+    "word": "week",
+    "translation": "n. 星期；周",
+    "example": "I borrow two books every week.",
+    "exampleZh": "我每周借两本书。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-weekend",
+    "word": "weekend",
+    "translation": "n. 周末",
+    "example": "We clean our room at the weekend.",
+    "exampleZh": "我们周末打扫房间。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-monday",
+    "word": "Monday",
+    "translation": "n. 星期一",
+    "example": "Our art class is on Monday.",
+    "exampleZh": "我们的美术课在星期一。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-tuesday",
+    "word": "Tuesday",
+    "translation": "n. 星期二",
+    "example": "I play chess with Dad on Tuesday.",
+    "exampleZh": "星期二我和爸爸下棋。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-wednesday",
+    "word": "Wednesday",
+    "translation": "n. 星期三",
+    "example": "The school library opens late on Wednesday.",
+    "exampleZh": "学校图书馆星期三开得晚。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-thursday",
+    "word": "Thursday",
+    "translation": "n. 星期四",
+    "example": "We have a music lesson on Thursday.",
+    "exampleZh": "我们星期四有音乐课。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-friday",
+    "word": "Friday",
+    "translation": "n. 星期五",
+    "example": "I return my library books on Friday.",
+    "exampleZh": "我星期五归还图书馆的书。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-saturday",
+    "word": "Saturday",
+    "translation": "n. 星期六",
+    "example": "We visit our cousins on Saturday.",
+    "exampleZh": "我们星期六去看望表亲。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-sunday",
+    "word": "Sunday",
+    "translation": "n. 星期日",
+    "example": "I help cook lunch on Sunday.",
+    "exampleZh": "我星期日帮忙做午饭。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-minute",
+    "word": "minute",
+    "translation": "n. 分钟",
+    "example": "Please wait for one minute.",
+    "exampleZh": "请等一分钟。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hour",
+    "word": "hour",
+    "translation": "n. 小时",
+    "example": "The train trip takes one hour.",
+    "exampleZh": "这段火车旅程需要一小时。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-late",
+    "word": "late",
+    "translation": "adj. 迟的；晚的",
+    "example": "I am never late for swimming lessons.",
+    "exampleZh": "我上游泳课从不迟到。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-never",
+    "word": "never",
+    "translation": "adv. 从不",
+    "example": "I never leave rubbish in the park.",
+    "exampleZh": "我从不把垃圾丢在公园里。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-again",
+    "word": "again",
+    "translation": "adv. 再一次",
+    "example": "Please read the last sentence again.",
+    "exampleZh": "请再读一遍最后一个句子。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-football",
+    "word": "football",
+    "translation": "n. 足球",
+    "example": "We play football after school.",
+    "exampleZh": "放学后我们踢足球。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-basketball",
+    "word": "basketball",
+    "translation": "n. 篮球",
+    "example": "This basketball is a gift from my aunt.",
+    "exampleZh": "这个篮球是阿姨送的礼物。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-badminton",
+    "word": "badminton",
+    "translation": "n. 羽毛球",
+    "example": "I play badminton with my brother.",
+    "exampleZh": "我和哥哥打羽毛球。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-kite",
+    "word": "kite",
+    "translation": "n. 风筝",
+    "example": "My kite looks like a colourful fish.",
+    "exampleZh": "我的风筝像一条色彩斑斓的鱼。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-game",
+    "word": "game",
+    "translation": "n. 游戏；比赛",
+    "example": "This game needs four players.",
+    "exampleZh": "这个游戏需要四名玩家。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-piano",
+    "word": "piano",
+    "translation": "n. 钢琴",
+    "example": "My sister plays the piano every evening.",
+    "exampleZh": "姐姐每天晚上弹钢琴。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-guitar",
+    "word": "guitar",
+    "translation": "n. 吉他",
+    "example": "He learns to play the guitar at school.",
+    "exampleZh": "他在学校学弹吉他。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-paint",
+    "word": "paint",
+    "translation": "v. 用颜料画",
+    "example": "We paint the sky blue and the grass green.",
+    "exampleZh": "我们把天空画成蓝色，把草画成绿色。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-fly",
+    "word": "fly",
+    "translation": "v. 飞；放飞",
+    "example": "We fly our kites in the open field.",
+    "exampleZh": "我们在空旷的田野里放风筝。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-skate",
+    "word": "skate",
+    "translation": "v. 滑冰",
+    "example": "I learn to skate with a teacher.",
+    "exampleZh": "我跟老师学滑冰。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-climb",
+    "word": "climb",
+    "translation": "v. 爬；攀登",
+    "example": "We climb the small hill behind the village.",
+    "exampleZh": "我们爬村后的小山。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-win",
+    "word": "win",
+    "translation": "v. 赢；获胜",
+    "example": "Our team hopes to win the game.",
+    "exampleZh": "我们队希望赢得比赛。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-throw",
+    "word": "throw",
+    "translation": "v. 扔；投",
+    "example": "Throw the ball gently to your friend.",
+    "exampleZh": "把球轻轻投给你的朋友。",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-catch",
+    "word": "catch",
+    "translation": "v. 接住；抓住",
+    "example": "Can you catch the ball with both hands?",
+    "exampleZh": "你能用双手接住球吗？",
+    "grade": 4,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-bus",
+    "word": "bus",
+    "translation": "n. 公交车",
+    "example": "We take the bus to the museum.",
+    "exampleZh": "我们乘公交车去博物馆。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bike",
+    "word": "bike",
+    "translation": "n. 自行车",
+    "example": "I wear a helmet when I ride my bike.",
+    "exampleZh": "骑自行车时我戴头盔。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-train",
+    "word": "train",
+    "translation": "n. 火车",
+    "example": "The train crosses a long bridge.",
+    "exampleZh": "火车驶过一座长桥。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-plane",
+    "word": "plane",
+    "translation": "n. 飞机",
+    "example": "A plane flies high above the clouds.",
+    "exampleZh": "一架飞机在云层上方高高地飞行。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-taxi",
+    "word": "taxi",
+    "translation": "n. 出租车",
+    "example": "We take a taxi to the station.",
+    "exampleZh": "我们坐出租车去车站。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-street",
+    "word": "street",
+    "translation": "n. 街道",
+    "example": "There are tall trees along this street.",
+    "exampleZh": "这条街道两旁有高高的树。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-road",
+    "word": "road",
+    "translation": "n. 道路",
+    "example": "Please look both ways before crossing the road.",
+    "exampleZh": "过马路前请向两边看。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cinema",
+    "word": "cinema",
+    "translation": "n. 电影院",
+    "example": "We watch a funny film at the cinema.",
+    "exampleZh": "我们在电影院看了一部有趣的电影。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-supermarket",
+    "word": "supermarket",
+    "translation": "n. 超市",
+    "example": "The supermarket sells fruit and bread.",
+    "exampleZh": "这家超市卖水果和面包。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-restaurant",
+    "word": "restaurant",
+    "translation": "n. 餐馆",
+    "example": "This restaurant serves delicious noodles.",
+    "exampleZh": "这家餐馆供应美味的面条。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bookshop",
+    "word": "bookshop",
+    "translation": "n. 书店",
+    "example": "I buy a storybook at the bookshop.",
+    "exampleZh": "我在书店买了一本故事书。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-post-office",
+    "word": "post office",
+    "translation": "n. 邮局",
+    "example": "The post office is next to the bank.",
+    "exampleZh": "邮局在银行旁边。",
+    "grade": 4,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-sunny",
+    "word": "sunny",
+    "translation": "adj. 晴朗的",
+    "example": "It is sunny, so we eat lunch outside.",
+    "exampleZh": "天气晴朗，所以我们在外面吃午饭。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-rainy",
+    "word": "rainy",
+    "translation": "adj. 下雨的",
+    "example": "I take my umbrella on rainy days.",
+    "exampleZh": "下雨天我带伞。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-windy",
+    "word": "windy",
+    "translation": "adj. 有风的",
+    "example": "A windy day is good for flying kites.",
+    "exampleZh": "有风的日子适合放风筝。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-cloudy",
+    "word": "cloudy",
+    "translation": "adj. 多云的",
+    "example": "It is cloudy, but it is not raining.",
+    "exampleZh": "天气多云，不过没有下雨。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-weather",
+    "word": "weather",
+    "translation": "n. 天气",
+    "example": "We check the weather before our trip.",
+    "exampleZh": "出行前我们查看天气。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-snow",
+    "word": "snow",
+    "translation": "n. 雪",
+    "example": "There is white snow on the mountain.",
+    "exampleZh": "山上有白雪。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-moon",
+    "word": "moon",
+    "translation": "n. 月亮",
+    "example": "The moon looks bright tonight.",
+    "exampleZh": "今晚月亮很明亮。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-star",
+    "word": "star",
+    "translation": "n. 星星",
+    "example": "I can see a bright star by the moon.",
+    "exampleZh": "我能看见月亮旁边一颗明亮的星星。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-rainbow",
+    "word": "rainbow",
+    "translation": "n. 彩虹",
+    "example": "A rainbow appears after the rain.",
+    "exampleZh": "雨后出现了一道彩虹。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-leaf",
+    "word": "leaf",
+    "translation": "n. 叶子",
+    "example": "A yellow leaf falls onto my book.",
+    "exampleZh": "一片黄叶落在我的书上。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-lake",
+    "word": "lake",
+    "translation": "n. 湖",
+    "example": "We walk around the lake before dinner.",
+    "exampleZh": "晚饭前我们绕湖散步。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hill",
+    "word": "hill",
+    "translation": "n. 小山",
+    "example": "The house is on a green hill.",
+    "exampleZh": "房子坐落在一座绿色的小山上。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-beach",
+    "word": "beach",
+    "translation": "n. 海滩",
+    "example": "We collect shells on the beach.",
+    "exampleZh": "我们在海滩上捡贝壳。",
+    "grade": 4,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-nurse",
+    "word": "nurse",
+    "translation": "n. 护士",
+    "example": "The nurse helps the sick child.",
+    "exampleZh": "护士照顾那个生病的孩子。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-doctor",
+    "word": "doctor",
+    "translation": "n. 医生",
+    "example": "The doctor listens carefully to me.",
+    "exampleZh": "医生认真听我说话。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-farmer",
+    "word": "farmer",
+    "translation": "n. 农民",
+    "example": "The farmer grows rice and vegetables.",
+    "exampleZh": "这位农民种水稻和蔬菜。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-driver",
+    "word": "driver",
+    "translation": "n. 司机",
+    "example": "The driver stops the bus safely.",
+    "exampleZh": "司机安全地停下公交车。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-worker",
+    "word": "worker",
+    "translation": "n. 工人；工作者",
+    "example": "The worker is repairing our school gate.",
+    "exampleZh": "工人正在修理我们学校的大门。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-foot",
+    "word": "foot",
+    "translation": "n. 脚",
+    "example": "My left foot is in the water.",
+    "exampleZh": "我的左脚在水里。",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-finger",
+    "word": "finger",
+    "translation": "n. 手指",
+    "example": "There is a little paint on my finger.",
+    "exampleZh": "我的手指上沾了一点颜料。",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-knee",
+    "word": "knee",
+    "translation": "n. 膝盖",
+    "example": "The baby sits on her father's knee.",
+    "exampleZh": "宝宝坐在爸爸膝上。",
+    "grade": 4,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-friendly",
+    "word": "friendly",
+    "translation": "adj. 友善的",
+    "example": "Our new neighbours are friendly.",
+    "exampleZh": "我们的新邻居很友善。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-quiet",
+    "word": "quiet",
+    "translation": "adj. 安静的",
+    "example": "The library is a quiet place to read.",
+    "exampleZh": "图书馆是一个安静的阅读场所。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-shy",
+    "word": "shy",
+    "translation": "adj. 害羞的",
+    "example": "The shy child smiles at her new friend.",
+    "exampleZh": "那个害羞的孩子向新朋友微笑。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-cute",
+    "word": "cute",
+    "translation": "adj. 可爱的",
+    "example": "This cute puppy has very big ears.",
+    "exampleZh": "这只可爱的小狗有很大的耳朵。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-busy",
+    "word": "busy",
+    "translation": "adj. 忙碌的",
+    "example": "Mum is busy making lunch.",
+    "exampleZh": "妈妈正忙着做午饭。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-sorry",
+    "word": "sorry",
+    "translation": "adj. 抱歉的",
+    "example": "I am sorry for breaking your pencil.",
+    "exampleZh": "很抱歉我弄断了你的铅笔。",
+    "grade": 4,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-january",
+    "word": "January",
+    "translation": "n. 一月",
+    "example": "The new calendar starts with January.",
+    "exampleZh": "新日历从一月开始。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-february",
+    "word": "February",
+    "translation": "n. 二月",
+    "example": "My sister's birthday is in February.",
+    "exampleZh": "我妹妹的生日在二月。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-march",
+    "word": "March",
+    "translation": "n. 三月",
+    "example": "We plant young trees in March.",
+    "exampleZh": "我们在三月种小树苗。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-april",
+    "word": "April",
+    "translation": "n. 四月",
+    "example": "Many flowers open in April here.",
+    "exampleZh": "这里许多花在四月开放。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-may",
+    "word": "May",
+    "translation": "n. 五月",
+    "example": "Our school trip is in May this year.",
+    "exampleZh": "我们今年的学校旅行在五月。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-june",
+    "word": "June",
+    "translation": "n. 六月",
+    "example": "We have a sports day in June.",
+    "exampleZh": "我们六月举行运动会。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-july",
+    "word": "July",
+    "translation": "n. 七月",
+    "example": "It is often hot in July in my town.",
+    "exampleZh": "我的小镇七月常常很热。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-august",
+    "word": "August",
+    "translation": "n. 八月",
+    "example": "We visit the seaside in August.",
+    "exampleZh": "我们八月去海边。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-september",
+    "word": "September",
+    "translation": "n. 九月",
+    "example": "I meet my new teacher in September.",
+    "exampleZh": "我九月见到新老师。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-october",
+    "word": "October",
+    "translation": "n. 十月",
+    "example": "The leaves turn yellow in October here.",
+    "exampleZh": "这里的树叶在十月变黄。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-november",
+    "word": "November",
+    "translation": "n. 十一月",
+    "example": "We need warm coats in November.",
+    "exampleZh": "十一月我们需要暖和的外套。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-december",
+    "word": "December",
+    "translation": "n. 十二月",
+    "example": "December is the last month of the year.",
+    "exampleZh": "十二月是一年中的最后一个月。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-month",
+    "word": "month",
+    "translation": "n. 月份",
+    "example": "I finish one long book each month.",
+    "exampleZh": "我每个月读完一本长篇书。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-birthday",
+    "word": "birthday",
+    "translation": "n. 生日",
+    "example": "I make a fruit cake for Dad's birthday.",
+    "exampleZh": "我为爸爸的生日做了一个水果蛋糕。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-holiday",
+    "word": "holiday",
+    "translation": "n. 假期",
+    "example": "We visit a small village during the holiday.",
+    "exampleZh": "假期里我们去一个小村庄。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-festival",
+    "word": "festival",
+    "translation": "n. 节日",
+    "example": "Our town has a flower festival in spring.",
+    "exampleZh": "我们镇春天举办花卉节。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-party",
+    "word": "party",
+    "translation": "n. 聚会",
+    "example": "Each child brings a game to the party.",
+    "exampleZh": "每个孩子都带一个游戏来参加聚会。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-picnic",
+    "word": "picnic",
+    "translation": "n. 野餐",
+    "example": "We have a picnic beside the river.",
+    "exampleZh": "我们在河边野餐。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-trip",
+    "word": "trip",
+    "translation": "n. 旅行；出行",
+    "example": "Our class plans a trip to the farm.",
+    "exampleZh": "我们班计划去农场旅行。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-test",
+    "word": "test",
+    "translation": "n. 测验",
+    "example": "I check my answers before the test ends.",
+    "exampleZh": "测验结束前我检查答案。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-sentence",
+    "word": "sentence",
+    "translation": "n. 句子",
+    "example": "Write a sentence about your favourite animal.",
+    "exampleZh": "写一句关于你最喜欢的动物的话。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-word",
+    "word": "word",
+    "translation": "n. 单词；词",
+    "example": "This new word has six letters.",
+    "exampleZh": "这个新单词有六个字母。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-letter",
+    "word": "letter",
+    "translation": "n. 字母；信",
+    "example": "I write a letter to my cousin every month.",
+    "exampleZh": "我每个月给表弟写一封信。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-page",
+    "word": "page",
+    "translation": "n. 页",
+    "example": "There is a map on the first page.",
+    "exampleZh": "第一页有一张地图。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-story",
+    "word": "story",
+    "translation": "n. 故事",
+    "example": "The story is about a brave little bird.",
+    "exampleZh": "这个故事讲的是一只勇敢的小鸟。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-language",
+    "word": "language",
+    "translation": "n. 语言",
+    "example": "Music can help us learn a new language.",
+    "exampleZh": "音乐可以帮助我们学习一种新语言。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-mistake",
+    "word": "mistake",
+    "translation": "n. 错误",
+    "example": "I learn something from each mistake.",
+    "exampleZh": "我从每次错误中学到一些东西。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-check",
+    "word": "check",
+    "translation": "v. 检查；核对",
+    "example": "Please check your spelling before you finish.",
+    "exampleZh": "完成前请检查拼写。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-understand",
+    "word": "understand",
+    "translation": "v. 理解；明白",
+    "example": "I understand the story after reading it twice.",
+    "exampleZh": "读了两遍之后，我理解了这个故事。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-teach",
+    "word": "teach",
+    "translation": "v. 教",
+    "example": "My uncle can teach me to swim.",
+    "exampleZh": "我叔叔可以教我游泳。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-repeat",
+    "word": "repeat",
+    "translation": "v. 重复",
+    "example": "Please repeat the question a little more slowly.",
+    "exampleZh": "请稍微慢一点重复这个问题。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-study",
+    "word": "study",
+    "translation": "v. 学习；研究",
+    "example": "We study how plants grow in different places.",
+    "exampleZh": "我们学习植物如何在不同地方生长。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-borrow",
+    "word": "borrow",
+    "translation": "v. 借入",
+    "example": "May I borrow a book about space?",
+    "exampleZh": "我可以借一本关于太空的书吗？",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-return",
+    "word": "return",
+    "translation": "v. 归还；返回",
+    "example": "Please return the book next Friday.",
+    "exampleZh": "请下周五归还这本书。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-forget",
+    "word": "forget",
+    "translation": "v. 忘记",
+    "example": "Do not forget to bring your notebook.",
+    "exampleZh": "不要忘了带笔记本。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-build",
+    "word": "build",
+    "translation": "v. 建造",
+    "example": "We build a small house for the birds.",
+    "exampleZh": "我们给鸟儿搭了一间小房子。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-move",
+    "word": "move",
+    "translation": "v. 移动；搬家",
+    "example": "We move the chairs to make more space.",
+    "exampleZh": "我们移动椅子，腾出更多空间。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-bring",
+    "word": "bring",
+    "translation": "v. 带来",
+    "example": "Please bring a bottle of water on the trip.",
+    "exampleZh": "出行时请带一瓶水。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-send",
+    "word": "send",
+    "translation": "v. 寄；发送",
+    "example": "I send a postcard to my grandfather.",
+    "exampleZh": "我给祖父寄了一张明信片。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-use",
+    "word": "use",
+    "translation": "v. 使用",
+    "example": "We use old boxes to store our toys.",
+    "exampleZh": "我们用旧盒子收纳玩具。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-need",
+    "word": "need",
+    "translation": "v. 需要",
+    "example": "These young plants need more water.",
+    "exampleZh": "这些幼苗需要更多水。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-give",
+    "word": "give",
+    "translation": "v. 给",
+    "example": "I give my old picture books to younger children.",
+    "exampleZh": "我把旧图画书送给年幼的孩子。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-make",
+    "word": "make",
+    "translation": "v. 做；制作",
+    "example": "We make bookmarks from clean card.",
+    "exampleZh": "我们用干净的卡纸制作书签。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-take",
+    "word": "take",
+    "translation": "v. 拿；带",
+    "example": "Please take your umbrella with you.",
+    "exampleZh": "请带上你的伞。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-wait",
+    "word": "wait",
+    "translation": "v. 等待",
+    "example": "We wait quietly for the bus.",
+    "exampleZh": "我们安静地等公交车。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-start",
+    "word": "start",
+    "translation": "v. 开始",
+    "example": "We start our reading time after lunch.",
+    "exampleZh": "我们午饭后开始阅读。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-stop",
+    "word": "stop",
+    "translation": "v. 停止",
+    "example": "Please stop talking when the music begins.",
+    "exampleZh": "音乐开始时请停止说话。",
+    "grade": 5,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-enjoy",
+    "word": "enjoy",
+    "translation": "v. 喜欢；享受",
+    "example": "I enjoy making things with my hands.",
+    "exampleZh": "我喜欢动手制作东西。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-try",
+    "word": "try",
+    "translation": "v. 尝试",
+    "example": "I want to try a new sport this term.",
+    "exampleZh": "这学期我想尝试一种新运动。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-hope",
+    "word": "hope",
+    "translation": "v. 希望",
+    "example": "We hope to see dolphins on our trip.",
+    "exampleZh": "我们希望旅行时能看见海豚。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-laugh",
+    "word": "laugh",
+    "translation": "v. 笑",
+    "example": "We laugh at the funny ending of the story.",
+    "exampleZh": "故事的有趣结尾让我们笑了。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-cry",
+    "word": "cry",
+    "translation": "v. 哭",
+    "example": "The baby may cry when she is hungry.",
+    "exampleZh": "宝宝饿的时候可能会哭。",
+    "grade": 5,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-hurt",
+    "word": "hurt",
+    "translation": "v. 使受伤；疼痛",
+    "example": "Do not jump there; you may hurt your foot.",
+    "exampleZh": "不要从那里跳，你可能会伤到脚。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-sick",
+    "word": "sick",
+    "translation": "adj. 生病的",
+    "example": "I stay at home when I am sick.",
+    "exampleZh": "生病时我待在家里。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-well",
+    "word": "well",
+    "translation": "adj. 健康的；身体好的",
+    "example": "Grandma feels well after a good rest.",
+    "exampleZh": "好好休息后，奶奶感觉身体不错。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-medicine",
+    "word": "medicine",
+    "translation": "n. 药",
+    "example": "An adult helps me take my medicine.",
+    "exampleZh": "大人帮助我服药。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fever",
+    "word": "fever",
+    "translation": "n. 发烧",
+    "example": "The child has a fever and needs rest.",
+    "exampleZh": "这个孩子发烧了，需要休息。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-headache",
+    "word": "headache",
+    "translation": "n. 头痛",
+    "example": "I tell an adult when I have a headache.",
+    "exampleZh": "头痛时我会告诉大人。",
+    "grade": 5,
+    "topic": "身体健康",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-afraid",
+    "word": "afraid",
+    "translation": "adj. 害怕的",
+    "example": "The puppy is afraid of the loud noise.",
+    "exampleZh": "小狗害怕巨大的噪声。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-strict",
+    "word": "strict",
+    "translation": "adj. 严格的",
+    "example": "Our teacher is strict but fair.",
+    "exampleZh": "我们的老师严格而公平。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-helpful",
+    "word": "helpful",
+    "translation": "adj. 乐于助人的；有帮助的",
+    "example": "The helpful girl shows us the way.",
+    "exampleZh": "那位乐于助人的女孩为我们指路。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-hard-working",
+    "word": "hard-working",
+    "translation": "adj. 勤奋的",
+    "example": "The hard-working team practises every day.",
+    "exampleZh": "这支勤奋的队伍每天练习。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "accepted": [
+      "hard-working",
+      "hardworking"
+    ]
+  },
+  {
+    "id": "px-young",
+    "word": "young",
+    "translation": "adj. 年轻的；年幼的",
+    "example": "A young bird learns to fly near the tree.",
+    "exampleZh": "一只幼鸟在树旁学飞。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-different",
+    "word": "different",
+    "translation": "adj. 不同的",
+    "example": "We have different ideas for the poster.",
+    "exampleZh": "我们对海报有不同的想法。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-same",
+    "word": "same",
+    "translation": "adj. 相同的",
+    "example": "We choose the same colour for our team.",
+    "exampleZh": "我们为队伍选择了相同的颜色。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-easy",
+    "word": "easy",
+    "translation": "adj. 容易的",
+    "example": "This puzzle is easy for my brother.",
+    "exampleZh": "这道谜题对我哥哥来说很容易。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-difficult",
+    "word": "difficult",
+    "translation": "adj. 困难的",
+    "example": "The first lesson is difficult, so I ask for help.",
+    "exampleZh": "第一课很难，所以我寻求帮助。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-interesting",
+    "word": "interesting",
+    "translation": "adj. 有趣的",
+    "example": "The museum has an interesting room about birds.",
+    "exampleZh": "博物馆有一个有趣的鸟类展厅。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-wonderful",
+    "word": "wonderful",
+    "translation": "adj. 精彩的；美好的",
+    "example": "We have a wonderful day by the lake.",
+    "exampleZh": "我们在湖边度过了美好的一天。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-important",
+    "word": "important",
+    "translation": "adj. 重要的",
+    "example": "Clean water is important for everyone.",
+    "exampleZh": "清洁的水对每个人都很重要。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-favourite",
+    "word": "favourite",
+    "translation": "adj. 最喜爱的",
+    "example": "My favourite fruit is the pear.",
+    "exampleZh": "我最喜欢的水果是梨。",
+    "grade": 5,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ],
+    "accepted": [
+      "favourite",
+      "favorite"
+    ]
+  },
+  {
+    "id": "px-slowly",
+    "word": "slowly",
+    "translation": "adv. 慢慢地",
+    "example": "Please walk slowly on the wet floor.",
+    "exampleZh": "地板湿滑，请慢慢走。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-quietly",
+    "word": "quietly",
+    "translation": "adv. 安静地",
+    "example": "We enter the reading room quietly.",
+    "exampleZh": "我们安静地走进阅览室。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-loudly",
+    "word": "loudly",
+    "translation": "adv. 大声地",
+    "example": "The children cheer loudly for their team.",
+    "exampleZh": "孩子们大声为自己的队伍欢呼。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-happily",
+    "word": "happily",
+    "translation": "adv. 快乐地",
+    "example": "The puppy runs happily across the garden.",
+    "exampleZh": "小狗快乐地跑过花园。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-almost",
+    "word": "almost",
+    "translation": "adv. 几乎",
+    "example": "The bottle is almost full.",
+    "exampleZh": "瓶子几乎满了。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-only",
+    "word": "only",
+    "translation": "adv. 仅仅；只有",
+    "example": "I only need one more pencil.",
+    "exampleZh": "我只再需要一支铅笔。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-really",
+    "word": "really",
+    "translation": "adv. 真正地；很",
+    "example": "I really enjoy our science club.",
+    "exampleZh": "我很喜欢我们的科学社团。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-perhaps",
+    "word": "perhaps",
+    "translation": "adv. 也许",
+    "example": "Perhaps we can visit the farm tomorrow.",
+    "exampleZh": "也许我们明天可以参观农场。",
+    "grade": 5,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-left",
+    "word": "left",
+    "translation": "adv. 向左",
+    "example": "Turn left after the bridge.",
+    "exampleZh": "过桥后向左转。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-right",
+    "word": "right",
+    "translation": "adv. 向右",
+    "example": "Turn right at the next street.",
+    "exampleZh": "在下一条街向右转。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-straight",
+    "word": "straight",
+    "translation": "adv. 径直地；直着",
+    "example": "Go straight until you reach the park.",
+    "exampleZh": "一直走到公园。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-near",
+    "word": "near",
+    "translation": "prep. 在……附近",
+    "example": "There is a playground near our house.",
+    "exampleZh": "我们家附近有一个操场。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-behind",
+    "word": "behind",
+    "translation": "prep. 在……后面",
+    "example": "The ball is behind the big box.",
+    "exampleZh": "球在大盒子后面。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-between",
+    "word": "between",
+    "translation": "prep. 在……之间",
+    "example": "The library is between the bank and the park.",
+    "exampleZh": "图书馆在银行和公园之间。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-beside",
+    "word": "beside",
+    "translation": "prep. 在……旁边",
+    "example": "Please sit beside your friend.",
+    "exampleZh": "请坐在你的朋友旁边。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-under",
+    "word": "under",
+    "translation": "prep. 在……下面",
+    "example": "The cat is under the wooden chair.",
+    "exampleZh": "猫在木椅子下面。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-above",
+    "word": "above",
+    "translation": "prep. 在……上方",
+    "example": "The picture hangs above my desk.",
+    "exampleZh": "那幅画挂在我的书桌上方。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "preposition"
+    ]
+  },
+  {
+    "id": "px-scientist",
+    "word": "scientist",
+    "translation": "n. 科学家",
+    "example": "The scientist studies how birds find their way.",
+    "exampleZh": "这位科学家研究鸟儿怎样辨认方向。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pilot",
+    "word": "pilot",
+    "translation": "n. 飞行员",
+    "example": "The pilot checks the plane before the flight.",
+    "exampleZh": "飞行员在飞行前检查飞机。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-coach",
+    "word": "coach",
+    "translation": "n. 教练",
+    "example": "Our coach helps us practise safely.",
+    "exampleZh": "我们的教练帮助我们安全地训练。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-fisherman",
+    "word": "fisherman",
+    "translation": "n. 渔民",
+    "example": "The fisherman checks the weather before leaving.",
+    "exampleZh": "渔民出发前查看天气。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-police-officer",
+    "word": "police officer",
+    "translation": "n. 警察",
+    "example": "A police officer helps the lost child.",
+    "exampleZh": "一名警察帮助那个迷路的孩子。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-businessman",
+    "word": "businessman",
+    "translation": "n. 商人",
+    "example": "The businessman sells bicycles in his town.",
+    "exampleZh": "这位商人在镇上卖自行车。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-singer",
+    "word": "singer",
+    "translation": "n. 歌手",
+    "example": "The singer teaches children a new song.",
+    "exampleZh": "这位歌手教孩子们唱一首新歌。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-dancer",
+    "word": "dancer",
+    "translation": "n. 舞者",
+    "example": "The dancer practises before the show.",
+    "exampleZh": "这位舞者在演出前练习。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-writer",
+    "word": "writer",
+    "translation": "n. 作家",
+    "example": "The writer visits our school to talk about stories.",
+    "exampleZh": "这位作家到我们学校谈故事。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-artist",
+    "word": "artist",
+    "translation": "n. 艺术家",
+    "example": "The artist makes pictures from fallen leaves.",
+    "exampleZh": "这位艺术家用落叶制作图画。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-engineer",
+    "word": "engineer",
+    "translation": "n. 工程师",
+    "example": "An engineer shows us how the bridge works.",
+    "exampleZh": "一位工程师向我们讲解桥的结构。",
+    "grade": 6,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-factory",
+    "word": "factory",
+    "translation": "n. 工厂",
+    "example": "The factory makes school buses.",
+    "exampleZh": "这家工厂制造校车。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-office",
+    "word": "office",
+    "translation": "n. 办公室",
+    "example": "Please leave the letter at the school office.",
+    "exampleZh": "请把信放在学校办公室。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-university",
+    "word": "university",
+    "translation": "n. 大学",
+    "example": "My sister studies science at a university.",
+    "exampleZh": "姐姐在一所大学学习科学。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-country",
+    "word": "country",
+    "translation": "n. 国家；乡村",
+    "example": "We learn about a different country each week.",
+    "exampleZh": "我们每周了解一个不同的国家。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-town",
+    "word": "town",
+    "translation": "n. 城镇",
+    "example": "A small river runs through our town.",
+    "exampleZh": "一条小河流经我们的小镇。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-bridge",
+    "word": "bridge",
+    "translation": "n. 桥",
+    "example": "This bridge connects the two villages.",
+    "exampleZh": "这座桥连接着两个村庄。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-building",
+    "word": "building",
+    "translation": "n. 建筑物",
+    "example": "The tallest building in our town is a library.",
+    "exampleZh": "我们镇上最高的建筑是一座图书馆。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hotel",
+    "word": "hotel",
+    "translation": "n. 旅馆；酒店",
+    "example": "Our hotel is close to the train station.",
+    "exampleZh": "我们的旅馆离火车站很近。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-subway",
+    "word": "subway",
+    "translation": "n. 地铁",
+    "example": "Taking the subway helps us avoid busy roads.",
+    "exampleZh": "坐地铁帮助我们避开拥挤的道路。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-ship",
+    "word": "ship",
+    "translation": "n. 轮船",
+    "example": "The ship carries food to the island.",
+    "exampleZh": "这艘轮船把食物运到岛上。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-ferry",
+    "word": "ferry",
+    "translation": "n. 渡船",
+    "example": "We take a ferry across the river.",
+    "exampleZh": "我们乘渡船过河。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-traffic",
+    "word": "traffic",
+    "translation": "n. 交通；路上车辆",
+    "example": "There is a lot of traffic near the station.",
+    "exampleZh": "车站附近车辆很多。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-crossing",
+    "word": "crossing",
+    "translation": "n. 十字路口；交叉路口",
+    "example": "Wait at the crossing until the light turns green.",
+    "exampleZh": "在路口等待，直到绿灯亮起。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-helmet",
+    "word": "helmet",
+    "translation": "n. 头盔",
+    "example": "A helmet helps protect your head when cycling.",
+    "exampleZh": "骑车时头盔有助于保护头部。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-journey",
+    "word": "journey",
+    "translation": "n. 旅程",
+    "example": "We draw a map of our journey.",
+    "exampleZh": "我们画出了旅程的路线图。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-island",
+    "word": "island",
+    "translation": "n. 岛屿",
+    "example": "Many seabirds live on this small island.",
+    "exampleZh": "许多海鸟住在这座小岛上。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-ocean",
+    "word": "ocean",
+    "translation": "n. 海洋",
+    "example": "We should keep plastic out of the ocean.",
+    "exampleZh": "我们应当避免塑料进入海洋。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-desert",
+    "word": "desert",
+    "translation": "n. 沙漠",
+    "example": "Some plants can live in the dry desert.",
+    "exampleZh": "有些植物能在干旱的沙漠里生存。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-field",
+    "word": "field",
+    "translation": "n. 田野；田地",
+    "example": "We walk along the edge of the field.",
+    "exampleZh": "我们沿着田地的边缘行走。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-earth",
+    "word": "earth",
+    "translation": "n. 地球；泥土",
+    "example": "We can help keep the earth clean.",
+    "exampleZh": "我们可以帮助保持地球清洁。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-space",
+    "word": "space",
+    "translation": "n. 太空；空间",
+    "example": "I read a book about life in space.",
+    "exampleZh": "我读了一本关于太空生活的书。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-planet",
+    "word": "planet",
+    "translation": "n. 行星",
+    "example": "Earth is a planet that travels around the sun.",
+    "exampleZh": "地球是一颗围绕太阳运行的行星。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-recycle",
+    "word": "recycle",
+    "translation": "v. 回收利用",
+    "example": "We recycle paper and bottles at school.",
+    "exampleZh": "我们在学校回收纸和瓶子。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-save",
+    "word": "save",
+    "translation": "v. 节约；挽救",
+    "example": "Turn off the tap to save water.",
+    "exampleZh": "关上水龙头以节约用水。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-reuse",
+    "word": "reuse",
+    "translation": "v. 再次使用",
+    "example": "We reuse clean jars to store small things.",
+    "exampleZh": "我们再次利用干净的罐子收纳小物件。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-waste",
+    "word": "waste",
+    "translation": "v. 浪费",
+    "example": "Please do not waste the paper in your notebook.",
+    "exampleZh": "请不要浪费笔记本里的纸。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-grow",
+    "word": "grow",
+    "translation": "v. 生长；种植",
+    "example": "We grow beans in small pots by the window.",
+    "exampleZh": "我们在窗边的小盆里种豆子。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-change",
+    "word": "change",
+    "translation": "v. 改变；变化",
+    "example": "The leaves change colour in autumn.",
+    "exampleZh": "树叶在秋天改变颜色。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-happen",
+    "word": "happen",
+    "translation": "v. 发生",
+    "example": "What will happen if the plant gets no light?",
+    "exampleZh": "如果植物得不到光，会发生什么？",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-reason",
+    "word": "reason",
+    "translation": "n. 原因；理由",
+    "example": "Give a reason for your answer.",
+    "exampleZh": "说出你这样回答的理由。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-idea",
+    "word": "idea",
+    "translation": "n. 想法；主意",
+    "example": "Each team member shares an idea.",
+    "exampleZh": "每位队员分享一个想法。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-example",
+    "word": "example",
+    "translation": "n. 例子",
+    "example": "Can you give an example of a healthy habit?",
+    "exampleZh": "你能举一个健康习惯的例子吗？",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-information",
+    "word": "information",
+    "translation": "n. 信息",
+    "example": "We find information about birds in the library.",
+    "exampleZh": "我们在图书馆查找鸟类信息。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-problem",
+    "word": "problem",
+    "translation": "n. 问题；难题",
+    "example": "We work together to solve the problem.",
+    "exampleZh": "我们一起努力解决这个问题。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-result",
+    "word": "result",
+    "translation": "n. 结果",
+    "example": "We record the result of our experiment.",
+    "exampleZh": "我们记录实验的结果。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-rule",
+    "word": "rule",
+    "translation": "n. 规则",
+    "example": "One important rule is to listen to others.",
+    "exampleZh": "一条重要的规则是倾听别人。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-skill",
+    "word": "skill",
+    "translation": "n. 技能",
+    "example": "Cooking is a useful skill to learn.",
+    "exampleZh": "烹饪是一项值得学习的实用技能。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-habit",
+    "word": "habit",
+    "translation": "n. 习惯",
+    "example": "Reading before bed is a good habit.",
+    "exampleZh": "睡前阅读是个好习惯。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-club",
+    "word": "club",
+    "translation": "n. 社团；俱乐部",
+    "example": "Our science club meets every Friday.",
+    "exampleZh": "我们的科学社团每周五活动。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hobby",
+    "word": "hobby",
+    "translation": "n. 业余爱好",
+    "example": "My hobby is collecting pictures of birds.",
+    "exampleZh": "我的爱好是收集鸟类图片。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-message",
+    "word": "message",
+    "translation": "n. 消息；口信",
+    "example": "I leave a message for Dad on the table.",
+    "exampleZh": "我在桌子上给爸爸留了张字条。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-email",
+    "word": "email",
+    "translation": "n. 电子邮件",
+    "example": "I send an email to my pen friend.",
+    "exampleZh": "我给笔友发了一封电子邮件。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ],
+    "accepted": [
+      "email",
+      "e-mail"
+    ]
+  },
+  {
+    "id": "px-website",
+    "word": "website",
+    "translation": "n. 网站",
+    "example": "Our school website shows the new timetable.",
+    "exampleZh": "我们学校的网站展示了新课表。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-report",
+    "word": "report",
+    "translation": "n. 报告",
+    "example": "We write a short report about our school garden.",
+    "exampleZh": "我们写了一份关于学校花园的短报告。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-compare",
+    "word": "compare",
+    "translation": "v. 比较",
+    "example": "We compare the two maps to find changes.",
+    "exampleZh": "我们比较两张地图，寻找变化。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-discuss",
+    "word": "discuss",
+    "translation": "v. 讨论",
+    "example": "We discuss how to use less paper.",
+    "exampleZh": "我们讨论怎样减少用纸。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-solve",
+    "word": "solve",
+    "translation": "v. 解决",
+    "example": "A drawing can help us solve this problem.",
+    "exampleZh": "画图能够帮助我们解决这个问题。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-describe",
+    "word": "describe",
+    "translation": "v. 描述",
+    "example": "Please describe the animal without saying its name.",
+    "exampleZh": "请描述这种动物，不要说出它的名字。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-notice",
+    "word": "notice",
+    "translation": "v. 注意到",
+    "example": "I notice a new leaf on our plant.",
+    "exampleZh": "我注意到我们的植物长出了一片新叶。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-believe",
+    "word": "believe",
+    "translation": "v. 相信",
+    "example": "I believe that practice will help me improve.",
+    "exampleZh": "我相信练习能帮助我进步。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-agree",
+    "word": "agree",
+    "translation": "v. 同意",
+    "example": "We agree to take turns using the ball.",
+    "exampleZh": "我们同意轮流用球。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-follow",
+    "word": "follow",
+    "translation": "v. 遵循；跟随",
+    "example": "Please follow the safety rules in the lab.",
+    "exampleZh": "请遵守实验室的安全规则。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-continue",
+    "word": "continue",
+    "translation": "v. 继续",
+    "example": "We continue reading after a short break.",
+    "exampleZh": "短暂休息后我们继续阅读。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-patient",
+    "word": "patient",
+    "translation": "adj. 有耐心的",
+    "example": "Our patient teacher explains the problem again.",
+    "exampleZh": "我们有耐心的老师再次讲解了这道题。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-fair",
+    "word": "fair",
+    "translation": "adj. 公平的",
+    "example": "Taking turns gives everyone a fair chance.",
+    "exampleZh": "轮流进行让每个人都有公平的机会。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-useful",
+    "word": "useful",
+    "translation": "adj. 有用的",
+    "example": "A small notebook is useful on a trip.",
+    "exampleZh": "旅行时一个小笔记本很有用。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-possible",
+    "word": "possible",
+    "translation": "adj. 可能的",
+    "example": "Is it possible to finish the model today?",
+    "exampleZh": "今天有可能完成这个模型吗？",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-special",
+    "word": "special",
+    "translation": "adj. 特别的",
+    "example": "We make a special card for our teacher.",
+    "exampleZh": "我们为老师制作了一张特别的卡片。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-local",
+    "word": "local",
+    "translation": "adj. 当地的",
+    "example": "We buy fruit from a local farm.",
+    "exampleZh": "我们从当地农场买水果。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-dangerous",
+    "word": "dangerous",
+    "translation": "adj. 危险的",
+    "example": "Running across a busy road is dangerous.",
+    "exampleZh": "跑着穿过繁忙的马路很危险。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-enough",
+    "word": "enough",
+    "translation": "det. 足够的",
+    "example": "We have enough chairs for everyone.",
+    "exampleZh": "我们有足够的椅子供大家坐。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "determiner"
+    ]
+  },
+  {
+    "id": "px-empty",
+    "word": "empty",
+    "translation": "adj. 空的",
+    "example": "We turn empty boxes into useful shelves.",
+    "exampleZh": "我们把空盒子变成实用的架子。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-full",
+    "word": "full",
+    "translation": "adj. 满的",
+    "example": "The basket is full of fresh fruit.",
+    "exampleZh": "篮子里装满了新鲜水果。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-bright",
+    "word": "bright",
+    "translation": "adj. 明亮的",
+    "example": "This bright room is a good place to read.",
+    "exampleZh": "这个明亮的房间很适合读书。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-dark",
+    "word": "dark",
+    "translation": "adj. 黑暗的；深色的",
+    "example": "It is too dark to read outside now.",
+    "exampleZh": "现在外面太暗，不能看书了。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-heavy",
+    "word": "heavy",
+    "translation": "adj. 重的",
+    "example": "We carry the heavy box together.",
+    "exampleZh": "我们一起搬那个重箱子。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-soft",
+    "word": "soft",
+    "translation": "adj. 柔软的",
+    "example": "The cat sleeps on a soft blanket.",
+    "exampleZh": "猫睡在柔软的毯子上。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-hard",
+    "word": "hard",
+    "translation": "adj. 坚硬的",
+    "example": "This hard stone is smooth on one side.",
+    "exampleZh": "这块坚硬的石头一侧很光滑。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-deep",
+    "word": "deep",
+    "translation": "adj. 深的",
+    "example": "This part of the river is deep.",
+    "exampleZh": "河的这一部分很深。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-wide",
+    "word": "wide",
+    "translation": "adj. 宽的",
+    "example": "The wide path is easy to walk along.",
+    "exampleZh": "这条宽路很好走。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-suddenly",
+    "word": "suddenly",
+    "translation": "adv. 突然",
+    "example": "The lights suddenly go out.",
+    "exampleZh": "灯突然灭了。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-especially",
+    "word": "especially",
+    "translation": "adv. 尤其",
+    "example": "I like fruit, especially strawberries.",
+    "exampleZh": "我喜欢水果，尤其喜欢草莓。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-probably",
+    "word": "probably",
+    "translation": "adv. 很可能",
+    "example": "It will probably rain this evening.",
+    "exampleZh": "今天晚上很可能下雨。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-certainly",
+    "word": "certainly",
+    "translation": "adv. 当然；肯定",
+    "example": "This new shelf will certainly help us keep things tidy.",
+    "exampleZh": "这个新架子肯定能帮我们整理物品。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-exactly",
+    "word": "exactly",
+    "translation": "adv. 恰好；准确地",
+    "example": "There are exactly thirty children in our class.",
+    "exampleZh": "我们班恰好有三十名孩子。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-instead",
+    "word": "instead",
+    "translation": "adv. 代替；改为",
+    "example": "It is raining, so we play indoors instead.",
+    "exampleZh": "下雨了，所以我们改在室内玩。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-however",
+    "word": "however",
+    "translation": "adv. 然而",
+    "example": "The task is hard. However, we can help each other.",
+    "exampleZh": "任务很难。然而，我们可以互相帮助。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-still",
+    "word": "still",
+    "translation": "adv. 仍然",
+    "example": "My old bike still works well.",
+    "exampleZh": "我的旧自行车仍然很好用。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-ever",
+    "word": "ever",
+    "translation": "adv. 曾经（常用于疑问句）",
+    "example": "Have you ever visited a science museum?",
+    "exampleZh": "你曾经参观过科学博物馆吗？",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-once",
+    "word": "once",
+    "translation": "adv. 一次；曾经",
+    "example": "Our club meets once a week.",
+    "exampleZh": "我们的社团每周活动一次。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-twice",
+    "word": "twice",
+    "translation": "adv. 两次",
+    "example": "I read the instructions twice before starting.",
+    "exampleZh": "开始前我读了两遍说明。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-daily",
+    "word": "daily",
+    "translation": "adv. 每天",
+    "example": "We check the young plants daily.",
+    "exampleZh": "我们每天查看幼苗。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-yet",
+    "word": "yet",
+    "translation": "adv. 还（常用于否定句和疑问句）",
+    "example": "I have not finished the picture yet.",
+    "exampleZh": "我还没有画完这幅画。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-ago",
+    "word": "ago",
+    "translation": "adv. 以前",
+    "example": "We moved to this town two years ago.",
+    "exampleZh": "我们两年前搬到这个镇上。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-last",
+    "word": "last",
+    "translation": "adj. 最近过去的；最后的",
+    "example": "We visited the farm last Saturday.",
+    "exampleZh": "我们上周六参观了农场。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-next",
+    "word": "next",
+    "translation": "adj. 下一个的",
+    "example": "We will finish the model next week.",
+    "exampleZh": "我们下周会完成这个模型。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-cleaned",
+    "word": "cleaned",
+    "translation": "v. 打扫了（clean的过去式）",
+    "example": "I cleaned my desk before lunch yesterday.",
+    "exampleZh": "昨天午饭前我打扫了书桌。",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-washed",
+    "word": "washed",
+    "translation": "v. 洗了（wash的过去式）",
+    "example": "We washed our muddy shoes after the trip.",
+    "exampleZh": "旅行后我们洗了沾满泥的鞋子。",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-stayed",
+    "word": "stayed",
+    "translation": "v. 停留了；待在（stay的过去式）",
+    "example": "We stayed at home during the storm.",
+    "exampleZh": "暴风雨期间我们待在家里。",
+    "grade": 6,
+    "topic": "家居生活",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-watched",
+    "word": "watched",
+    "translation": "v. 观看了（watch的过去式）",
+    "example": "I watched a film about birds last night.",
+    "exampleZh": "昨晚我看了一部关于鸟类的影片。",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-saw",
+    "word": "saw",
+    "translation": "v. 看见了（see的过去式）",
+    "example": "We saw a rainbow after the rain yesterday.",
+    "exampleZh": "昨天雨后我们看见了一道彩虹。",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-slept",
+    "word": "slept",
+    "translation": "v. 睡了（sleep的过去式）",
+    "example": "The baby slept well last night.",
+    "exampleZh": "宝宝昨晚睡得很好。",
+    "grade": 6,
+    "topic": "身体健康",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-firefighter",
+    "word": "firefighter",
+    "translation": "n. 消防员",
+    "example": "The firefighter teaches us how to leave a building safely.",
+    "exampleZh": "消防员教我们怎样安全地离开建筑物。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-why",
+    "word": "why",
+    "translation": "adv. 为什么",
+    "example": "Why do plants need sunlight?",
+    "exampleZh": "植物为什么需要阳光？",
+    "grade": 4,
+    "topic": "学校学习",
+    "pos": [
+      "adverb"
+    ]
+  },
+  {
+    "id": "px-over",
+    "word": "over",
+    "translation": "adv./adj. 结束；完了",
+    "example": "The game is over, so we put the ball away.",
+    "exampleZh": "比赛结束了，所以我们把球收好。",
+    "grade": 4,
+    "topic": "时间日常",
+    "pos": [
+      "adverb",
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-kid",
+    "word": "kid",
+    "translation": "n. 小孩（口语）",
+    "example": "Every kid in the group gets a turn.",
+    "exampleZh": "组里的每个孩子都有机会轮到。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-must",
+    "word": "must",
+    "translation": "v. 必须（情态动词）",
+    "example": "We must stop at a red traffic light.",
+    "exampleZh": "遇到红灯我们必须停下。",
+    "grade": 5,
+    "topic": "学校学习",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-sir",
+    "word": "sir",
+    "translation": "n. 先生（礼貌称呼）",
+    "example": "Excuse me, sir. Is this your bag?",
+    "exampleZh": "打扰了，先生。这是您的包吗？",
+    "grade": 5,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-hometown",
+    "word": "hometown",
+    "translation": "n. 家乡",
+    "example": "A wide river runs through my hometown.",
+    "exampleZh": "一条宽阔的河流经我的家乡。",
+    "grade": 5,
+    "topic": "地点出行",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-money",
+    "word": "money",
+    "translation": "n. 钱",
+    "example": "I keep my money in a small purse.",
+    "exampleZh": "我把钱放在一个小钱包里。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-pocket-money",
+    "word": "pocket money",
+    "translation": "n. 零花钱",
+    "example": "I save some of my pocket money each week.",
+    "exampleZh": "我每周存下一些零花钱。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-goods",
+    "word": "goods",
+    "translation": "n. 商品；货物（复数）",
+    "example": "The shop sells goods made by local people.",
+    "exampleZh": "这家商店出售当地人制作的商品。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-drink",
+    "word": "drink",
+    "translation": "n. 饮料",
+    "example": "Water is my favourite drink after a game.",
+    "exampleZh": "运动后，水是我最喜欢的饮料。",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-service",
+    "word": "service",
+    "translation": "n. 服务",
+    "example": "This shop offers a bicycle repair service.",
+    "exampleZh": "这家商店提供自行车维修服务。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-haircut",
+    "word": "haircut",
+    "translation": "n. 理发；发型",
+    "example": "I get a haircut before the new term starts.",
+    "exampleZh": "新学期开始前我去理发。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-microscope",
+    "word": "microscope",
+    "translation": "n. 显微镜",
+    "example": "We look at a tiny leaf through a microscope.",
+    "exampleZh": "我们通过显微镜观察一片小叶子。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-power",
+    "word": "power",
+    "translation": "n. 电力；动力",
+    "example": "The school gets some power from sunlight.",
+    "exampleZh": "学校利用阳光获得一部分电力。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-energy",
+    "word": "energy",
+    "translation": "n. 能量；能源",
+    "example": "We need energy to walk, think and play.",
+    "exampleZh": "我们走路、思考和玩耍都需要能量。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-electricity",
+    "word": "electricity",
+    "translation": "n. 电",
+    "example": "We use electricity to run the computers.",
+    "exampleZh": "我们用电使电脑运转。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-resource",
+    "word": "resource",
+    "translation": "n. 资源",
+    "example": "Water is a natural resource we should protect.",
+    "exampleZh": "水是我们应当保护的自然资源。",
+    "grade": 6,
+    "topic": "自然天气",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cleaner",
+    "word": "cleaner",
+    "translation": "n. 清洁工",
+    "example": "The cleaner keeps the school halls tidy.",
+    "exampleZh": "清洁工让学校走廊保持整洁。",
+    "grade": 4,
+    "topic": "家庭人物",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-younger",
+    "word": "younger",
+    "translation": "adj. 更年轻的（young的比较级）",
+    "example": "My younger brother is learning to read.",
+    "exampleZh": "我的弟弟正在学阅读。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-older",
+    "word": "older",
+    "translation": "adj. 年纪更大的（old的比较级）",
+    "example": "My cousin is two years older than me.",
+    "exampleZh": "我的表姐比我大两岁。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-taller",
+    "word": "taller",
+    "translation": "adj. 更高的（tall的比较级）",
+    "example": "This tree is taller than our house.",
+    "exampleZh": "这棵树比我们的房子高。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-shorter",
+    "word": "shorter",
+    "translation": "adj. 更短的；更矮的（short的比较级）",
+    "example": "The blue pencil is shorter than the red one.",
+    "exampleZh": "蓝铅笔比红铅笔短。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-longer",
+    "word": "longer",
+    "translation": "adj. 更长的（long的比较级）",
+    "example": "The new bridge is longer than the old one.",
+    "exampleZh": "新桥比旧桥更长。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-thinner",
+    "word": "thinner",
+    "translation": "adj. 更薄的；更瘦的（thin的比较级）",
+    "example": "This notebook is thinner than my dictionary.",
+    "exampleZh": "这个笔记本比我的词典薄。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-heavier",
+    "word": "heavier",
+    "translation": "adj. 更重的（heavy的比较级）",
+    "example": "The box of books is heavier than the box of clothes.",
+    "exampleZh": "装书的箱子比装衣服的箱子重。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-bigger",
+    "word": "bigger",
+    "translation": "adj. 更大的（big的比较级）",
+    "example": "We need a bigger bag for all these toys.",
+    "exampleZh": "装这些玩具需要一个更大的袋子。",
+    "grade": 6,
+    "topic": "情绪特征",
+    "pos": [
+      "adjective"
+    ]
+  },
+  {
+    "id": "px-went",
+    "word": "went",
+    "translation": "v. 去了（go的过去式）",
+    "example": "We went to the science museum last Sunday.",
+    "exampleZh": "上周日我们去了科学博物馆。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-camp",
+    "word": "camp",
+    "translation": "v. 露营",
+    "example": "We camp beside the lake with our parents.",
+    "exampleZh": "我们和父母一起在湖边露营。",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-rode",
+    "word": "rode",
+    "translation": "v. 骑了；乘坐了（ride的过去式）",
+    "example": "I rode my bike to the park yesterday.",
+    "exampleZh": "我昨天骑自行车去了公园。",
+    "grade": 6,
+    "topic": "地点出行",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-ate",
+    "word": "ate",
+    "translation": "v. 吃了（eat的过去式）",
+    "example": "We ate rice and vegetables for lunch yesterday.",
+    "exampleZh": "昨天午饭我们吃了米饭和蔬菜。",
+    "grade": 6,
+    "topic": "食物饮品",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-bought",
+    "word": "bought",
+    "translation": "v. 买了（buy的过去式）",
+    "example": "Dad bought a new ruler for me last week.",
+    "exampleZh": "爸爸上周给我买了一把新尺子。",
+    "grade": 6,
+    "topic": "时间日常",
+    "pos": [
+      "verb"
+    ]
+  },
+  {
+    "id": "px-dining-hall",
+    "word": "dining hall",
+    "translation": "n. 食堂",
+    "example": "We eat lunch together in the dining hall.",
+    "exampleZh": "我们在食堂一起吃午饭。",
+    "grade": 6,
+    "topic": "学校学习",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-gym",
+    "word": "gym",
+    "translation": "n. 体育馆；健身房",
+    "example": "Our class plays basketball in the gym.",
+    "exampleZh": "我们班在体育馆打篮球。",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  },
+  {
+    "id": "px-cycling",
+    "word": "cycling",
+    "translation": "n. 骑自行车运动",
+    "example": "Cycling is my favourite weekend activity.",
+    "exampleZh": "骑自行车是我最喜欢的周末活动。",
+    "grade": 6,
+    "topic": "活动爱好",
+    "pos": [
+      "noun"
+    ]
+  }
+]

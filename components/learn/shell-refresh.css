@@ -1,0 +1,91 @@
+/* 拾词 LexiGo high-school study shell. Every rule is scoped to .stage-high and to shell/nav selectors only. */
+.stage-high .app{background-color:#f6f1e4}
+.stage-high .app-body{min-width:0}
+.stage-high .shell-head{display:none}
+
+/* ---------- shared nav pieces ---------- */
+.stage-high .nav-icon{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#efe9da;color:#2d6a4f;transition:background-color .15s,color .15s}
+.stage-high .nav-badge{display:inline-block;min-width:24px;height:22px;padding:0 7px;border:1px solid #d4e59a;border-radius:11px;background:#eef6cf;color:#1f4d3a;font-size:12px;font-weight:700;line-height:20px;text-align:center;font-variant-numeric:tabular-nums}
+
+/* ---------- sidebar rail ---------- */
+.stage-high .nav-brand{display:grid;grid-template-columns:44px minmax(0,1fr);grid-column-gap:12px;column-gap:12px;align-items:center;padding:4px 8px 18px;border-bottom:1px solid #e6dcc8}
+.stage-high .nav-brand-text{min-width:0}
+.stage-high .nav-brand .brand-name{font-size:22px;line-height:1.2}
+.stage-high .nav-brand .brand-sub{margin-top:3px;font-size:12.5px;line-height:1.4;color:#5b6a60}
+.stage-high .nav-stage-tag{display:inline-block;margin-left:6px;padding:0 7px;border-radius:6px;background:#1f4d3a;color:#eef6cf;font-size:11px;font-weight:700;line-height:18px;letter-spacing:.04em;vertical-align:1px}
+.stage-high .nav-groups{display:block;margin:4px 0 16px}
+.stage-high .nav-group{margin-top:16px}
+.stage-high .nav-group-title{margin:0 10px 6px;font-size:12px;font-weight:700;letter-spacing:.12em;line-height:1.4;color:#7b8879}
+.stage-high .nav-list{margin:0;padding:0;list-style:none}
+.stage-high .nav-list li+li{margin-top:2px}
+.stage-high .side-link{display:grid;grid-template-columns:32px minmax(0,1fr) auto;grid-column-gap:10px;column-gap:10px;align-items:center;position:relative;min-height:44px;padding:4px 10px 4px 6px;border-radius:12px;color:#44584b;font-size:15px;font-weight:600;line-height:1.35;text-decoration:none;box-shadow:none;transition:background-color .15s,color .15s}
+.stage-high .side-link:hover{background:rgba(31,77,58,.07);color:#1f4d3a}
+.stage-high .side-link:hover .nav-icon{background:#e3ecdc}
+.stage-high .side-link.is-active,.stage-high .side-link.is-active:hover{background:#1f4d3a;color:#fbf7ee;box-shadow:0 8px 18px -14px rgba(31,77,58,.9)}
+.stage-high .side-link.is-active .nav-icon{background:#c9e86a;color:#1f4d3a}
+.stage-high .side-link.is-active .nav-badge{border-color:#c9e86a;background:#c9e86a}
+.stage-high .nav-link-label{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.stage-high .nav-foot{display:block;margin-top:auto;padding:14px 10px 0;border-top:1px solid #e6dcc8;font-size:12.5px;line-height:1.55;color:#6c7a6d}
+.stage-high .nav-foot p+p{margin-top:4px}
+.stage-high .nav-foot-ai{font-weight:600;color:#3e5446}
+.stage-high .nav-ai-dot{display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:#c9a66b;vertical-align:1px}
+.stage-high .nav-ai-dot.is-ok{background:#2d6a4f}
+
+/* ---------- content trail ---------- */
+.stage-high .shell-trail ol{margin:0;padding:0 0 12px;list-style:none;border-bottom:1px solid #e6dcc8;font-size:13px;line-height:1.5;color:#768475}
+.stage-high .shell-trail li{display:inline}
+.stage-high .shell-trail li+li:before{content:'/';margin:0 8px;color:#bdb197}
+.stage-high .shell-trail li[aria-current]{font-weight:700;color:#1f4d3a}
+
+@media (min-width:900px){
+.stage-high .app{min-height:100vh;min-height:100dvh;grid-template-columns:264px minmax(0,1fr)}
+.stage-high .sidebar{display:flex;flex-direction:column;gap:0;position:-webkit-sticky;position:sticky;top:0;height:100vh;height:100dvh;padding:20px 14px 18px;background-color:#f9f5ea;background-image:linear-gradient(180deg,#fbf8ef 0,#f4efe1 100%);border-right:1px solid #e3d9c4;overflow-y:auto;overscroll-behavior:contain}
+.stage-high .shell-head{display:block;max-width:1120px;margin:0 auto;padding:22px 40px 0;padding:22px clamp(20px,4vw,64px) 0}
+.stage-high .main{padding:26px 40px 72px;padding:26px clamp(20px,4vw,64px) 72px}
+}
+
+/* ---------- mobile header and dock ---------- */
+@media (max-width:899px){
+.stage-high .mobile-top{display:grid;grid-template-columns:36px minmax(0,1fr) auto;grid-column-gap:10px;column-gap:10px;align-items:center;position:-webkit-sticky;position:sticky;top:0;z-index:30;min-height:60px;padding:8px 16px;background:rgba(250,246,236,.98);border-bottom:1px solid #e3d9c4;box-shadow:0 6px 18px -16px rgba(29,42,35,.5)}
+.stage-high .main{padding:20px 16px 112px;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+.stage-high .mobile-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-column-gap:2px;column-gap:2px;position:fixed;top:auto;left:0;right:0;bottom:0;z-index:40;padding:6px 6px 6px;padding-bottom:calc(6px + env(safe-area-inset-bottom));background:#fffdf7;border-top:1px solid #e3d9c4;box-shadow:0 -8px 24px -18px rgba(29,42,35,.45)}
+}
+.stage-high .shell-mobile-id{display:block;min-width:0}
+.stage-high .mobile-top .brand-name{display:block;font-size:13px;letter-spacing:.06em;line-height:1.3}
+.stage-high .shell-mobile-page{display:block;overflow:hidden;font-size:17px;font-weight:700;line-height:1.35;color:#1d2a23;white-space:nowrap;text-overflow:ellipsis}
+.stage-high .shell-mobile-stage{padding:2px 9px;border:1px solid #d4e59a;border-radius:999px;background:#eef6cf;color:#1f4d3a;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap}
+.stage-high .mobile-link{display:grid;justify-items:center;align-content:center;grid-row-gap:3px;row-gap:3px;position:relative;min-width:0;min-height:56px;padding:6px 2px 4px;border-radius:12px;background:transparent;color:#5b6a60;font-size:12px;font-weight:600;line-height:1.2}
+.stage-high .mobile-link.is-active{background:transparent;color:#1f4d3a;font-weight:700}
+.stage-high .nav-dock-icon{display:inline-grid;place-items:center;position:relative;width:44px;height:28px;border-radius:14px;transition:background-color .15s,color .15s}
+.stage-high .mobile-link.is-active .nav-dock-icon{background:#1f4d3a;color:#c9e86a}
+.stage-high .nav-dock-label{display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.stage-high .nav-dock-badge{position:absolute;top:-5px;left:28px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#d9661f;color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center;box-shadow:0 0 0 2px #fffdf7}
+.stage-high .nav-dock-dot{position:absolute;top:0;right:6px;width:9px;height:9px;border-radius:50%;background:#d9661f;box-shadow:0 0 0 2px #fffdf7}
+
+/* ---------- more sheet ---------- */
+.stage-high .more-backdrop{display:flex;align-items:flex-end;position:fixed;top:0;right:0;bottom:0;left:0;z-index:45;background:rgba(29,42,35,.42)}
+.stage-high .more-sheet{display:block;width:100%;max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;padding:8px 16px 20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;background:#fffdf7;box-shadow:0 -12px 32px -18px rgba(29,42,35,.6)}
+.stage-high .nav-sheet-handle{width:40px;height:4px;margin:2px auto 10px;border-radius:2px;background:#d6c8ad}
+.stage-high .nav-sheet-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;margin-bottom:4px}
+.stage-high .nav-sheet-title{font-family:var(--font-serif);font-size:19px;font-weight:700;line-height:1.3;color:#1d2a23}
+.stage-high .nav-sheet-group{margin-top:14px}
+.stage-high .nav-sheet-group-title{margin:0 2px 8px;font-size:12px;font-weight:700;letter-spacing:.12em;color:#7b8879}
+.stage-high .nav-sheet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-gap:8px;gap:8px}
+.stage-high .more-item{display:block;position:relative;width:100%;min-height:56px;padding:8px 10px;border:1px solid #e6dcc8;border-radius:14px;background:#fbf7ee;color:#1d2a23;font-size:15px;font-weight:600;line-height:1.3;text-align:left}
+.stage-high .nav-sheet-item-layout{display:grid;grid-template-columns:36px minmax(0,1fr) auto;grid-column-gap:10px;column-gap:10px;align-items:center;width:100%}
+.stage-high .more-item .nav-icon{width:36px;height:36px;border-radius:10px}
+.stage-high .more-item:hover{background:#eff4ea;color:#1f4d3a}
+.stage-high .more-item.is-active,.stage-high .more-item.is-active:hover{border-color:#1f4d3a;background:#1f4d3a;color:#fbf7ee}
+.stage-high .more-item.is-active .nav-icon{background:#c9e86a;color:#1f4d3a}
+.stage-high .nav-sheet-label{min-width:0;word-break:break-word}
+.stage-high .nav-sheet-trail{display:grid;justify-items:end;grid-row-gap:4px;row-gap:4px}
+.stage-high .nav-sheet-current{font-size:11px;font-weight:700;color:#c9e86a}
+
+/* ---------- focus and motion ---------- */
+.stage-high .side-link:focus,.stage-high .mobile-link:focus,.stage-high .more-item:focus,.stage-high .nav-sheet-close:focus{outline:3px solid #173d2e;outline-offset:2px}
+.stage-high .mobile-link:focus{outline-offset:-3px}
+.stage-high .side-link:focus:not(:focus-visible),.stage-high .mobile-link:focus:not(:focus-visible),.stage-high .more-item:focus:not(:focus-visible),.stage-high .nav-sheet-close:focus:not(:focus-visible){outline:none}
+@media (prefers-reduced-motion:reduce){
+.stage-high .more-sheet{animation:none}
+.stage-high .side-link,.stage-high .nav-icon,.stage-high .nav-dock-icon{transition:none}
+}

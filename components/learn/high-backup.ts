@@ -9,7 +9,7 @@ export interface HighBackupPreview {
 }
 const record = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null && !Array.isArray(value);
 const owns = (value: object, key: string) => Object.prototype.hasOwnProperty.call(value, key);
-const primaryId = /(?:^|:)(?:p[3-6]-|(?:ai-)?primary-(?:g[3-6]|grade-[3-6])(?:-|:|$))/i;
+const primaryId = /(?:^|:)(?:p[3-6x]-|(?:ai-)?primary-(?:g[3-6]|grade-[3-6])(?:-|:|$))/i;
 const unsafeKey = (key: string) => key === '__proto__' || key === 'prototype' || key === 'constructor';
 
 function assertHighScope(progress: Record<string, unknown>) {

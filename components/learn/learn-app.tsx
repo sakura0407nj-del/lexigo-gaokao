@@ -1,26 +1,27 @@
-"use client";
+'use client';
 
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { api, errorText, isAbort, type BankResponse } from "./api";
-import { CorrectionView } from "./correction-view";
-import { DictationView } from "./dictation-view";
-import { KnowledgeSection } from "./knowledge-section";
-import { aiStatusInfo, type StatusLike } from "./ai-status";
-import { activeMistakes } from "./mistakes";
-import { dueIds } from "./review";
-import { SectionHeader } from "./ui";
-import { MistakesView } from "./mistakes-view";
-import { MobileNav, Monogram, Sidebar, TABS, type TabId } from "./nav";
-import { PracticeView } from "./practice-view";
-import { ProgressProvider, useProgress } from "./progress";
-import { RecordsView } from "./records-view";
-import { TodayView } from "./today-view";
-import { useSpeech } from "./use-speech";
-import { VocabularyView } from "./vocabulary-view";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { api, errorText, isAbort, type BankResponse } from './api';
+import { CorrectionView } from './correction-view';
+import { DictationView } from './dictation-view';
+import { KnowledgeSection } from './knowledge-section';
+import { aiStatusInfo, type StatusLike } from './ai-status';
+import { activeMistakes } from './mistakes';
+import { dueIds } from './review';
+import { SectionHeader } from './ui';
+import { MistakesView } from './mistakes-view';
+import { MobileNav, Monogram, Sidebar, TABS, tabGroupLabel, type TabId } from './nav';
+import { PracticeView } from './practice-view';
+import { ProgressProvider, useProgress } from './progress';
+import { RecordsView } from './records-view';
+import { TodayView } from './today-view';
+import { useSpeech } from './use-speech';
+import { VocabularyView } from './vocabulary-view';
+import './shell-refresh.css';
 
 const TAB_IDS = new Set<string>(TABS.map((tab) => tab.id));
-const ExamView = lazy(() => import("./exam-view").then(module => ({ default: module.ExamView })));
-const GameHub = lazy(() => import("./game-hub").then(module => ({ default: module.GameHub })));
+const ExamView = lazy(() => import('./exam-view').then(module => ({ default: module.ExamView })));
+const GameHub = lazy(() => import('./game-hub').then(module => ({ default: module.GameHub })));
 
 export function LearnApp() {
   return (
@@ -32,11 +33,11 @@ export function LearnApp() {
 
 function Shell() {
   const { storageAvailable, progress, hydrated } = useProgress();
-  const [tab, setTab] = useState<TabId>("today");
+  const [tab, setTab] = useState<TabId>('today');
   const [status, setStatus] = useState<StatusLike | null>(null);
-  const [statusError, setStatusError] = useState("");
+  const [statusError, setStatusError] = useState('');
   const [bank, setBank] = useState<BankResponse | null>(null);
-  const [bankError, setBankError] = useState("");
+  const [bankError, setBankError] = useState('');
   const [bankRound, setBankRound] = useState(0);
   const speech = useSpeech();
   const { stop } = speech;
@@ -45,12 +46,12 @@ function Shell() {
   useEffect(() => {
     const fromHash = () => {
       const hash = window.location.hash.slice(1);
-      if (hash === "game-fish" || hash === "game-runner") { setTab("game"); window.scrollTo({ top: 0 }); }
+      if (hash === 'game-fish' || hash === 'game-runner') { setTab('game'); window.scrollTo({ top: 0 }); }
       else if (TAB_IDS.has(hash)) { setTab(hash as TabId); window.scrollTo({ top: 0 }); }
     };
     fromHash();
-    window.addEventListener("hashchange", fromHash);
-    return () => window.removeEventListener("hashchange", fromHash);
+    window.addEventListener('hashchange', fromHash);
+    return () => window.removeEventListener('hashchange', fromHash);
   }, []);
 
   useEffect(() => {
@@ -81,15 +82,15 @@ function Shell() {
 
   const select = useCallback((next: TabId) => {
     setTab(next);
-    if (window.location.hash.slice(1) !== next) window.history.replaceState(null, "", `#${next}`);
+    if (window.location.hash.slice(1) !== next) window.history.replaceState(null, '', `#${next}`);
     // Selecting the game navigation always returns to its choice page, even from a deep route.
-    if (next === "game") window.dispatchEvent(new Event("hashchange"));
+    if (next === 'game') window.dispatchEvent(new Event('hashchange'));
     window.scrollTo({ top: 0 });
     mainRef.current?.focus({ preventScroll: true });
   }, []);
 
   const reloadBank = useCallback(() => {
-    setBankError("");
+    setBankError('');
     setBankRound((value) => value + 1);
   }, []);
   const ai = aiStatusInfo(status, statusError);
@@ -97,43 +98,60 @@ function Shell() {
     if (!hydrated) return {};
     return { vocab: dueIds(progress.review).length, mistakes: activeMistakes(progress.mistakes).length };
   }, [hydrated, progress.review, progress.mistakes]);
+  const current = TABS.find((item) => item.id === tab) || TABS[0];
+  const currentGroup = tabGroupLabel(tab);
 
   return (
-    <div className="app">
-      <a href="#main" className="skip-link">
+    <div className='app shell-app'>
+      <a href='#main' className='skip-link'>
         跳到正文
       </a>
-      <Sidebar active={tab} onSelect={select} aiLabel={ai.label} badges={badges} />
-      <div className="app-body">
-        <header className="mobile-top">
-          <Monogram size={32} />
-          <span className="brand-name">拾词 LexiGo</span>
+      <Sidebar active={tab} onSelect={select} aiLabel={ai.label} aiTone={ai.tone} badges={badges} />
+      <div className='app-body shell-body'>
+        <header className='mobile-top shell-mobile-top'>
+          <Monogram size={36} />
+          <p className='shell-mobile-id'>
+            <span className='brand-name'>拾词 LexiGo</span>
+            <span className='shell-mobile-page'>
+              <span className='sr-only'>当前页面：</span>
+              {current.label}
+            </span>
+          </p>
+          <span className='shell-mobile-stage'>高中版</span>
         </header>
-        <main id="main" ref={mainRef} tabIndex={-1} className="main">
-          {!storageAvailable ? <div role="alert" className="card card-pad mb-4">
+        <div className='shell-head'>
+          <nav className='shell-trail' aria-label='当前位置'>
+            <ol>
+              <li>高中版</li>
+              {currentGroup ? <li>{currentGroup}</li> : null}
+              <li aria-current='page'>{current.label}</li>
+            </ol>
+          </nav>
+        </div>
+        <main id='main' ref={mainRef} tabIndex={-1} className='main'>
+          {!storageAvailable ? <div role='alert' className='card card-pad mb-4'>
             <p>浏览器存储已满或不可用，最新学习记录尚未保存。请先导出备份再刷新。</p>
-            <button type="button" className="btn btn-primary" onClick={() => select("records")}>前往导出备份</button>
+            <button type='button' className='btn btn-primary' onClick={() => select('records')}>前往导出备份</button>
           </div> : null}
-          {tab === "today" ? <TodayView status={status} statusError={statusError} speech={speech} onNavigate={select} /> : null}
-          {tab === "vocab" ? <VocabularyView speech={speech} frequencyNote={status?.frequencyNote} /> : null}
-          {tab === "dictation" ? <DictationView speech={speech} /> : null}
-          {tab === "practice" ? <PracticeView bank={bank} bankError={bankError} onReloadBank={reloadBank} aiNotice={ai.notice} /> : null}
-          {tab === "exam" ? <Suspense fallback={<p role="status">正在准备模拟卷工作台…</p>}><ExamView aiNotice={ai.notice} /></Suspense> : null}
-          {tab === "game" ? <Suspense fallback={<p role="status">正在准备英语游乐场…</p>}><GameHub speech={speech} /></Suspense> : null}
-          {tab === "mistakes" ? <MistakesView onNavigate={select} /> : null}
-          {tab === "essay" ? <CorrectionView key="essay" kind="essay" aiNotice={ai.notice} /> : null}
-          {tab === "questions" ? <CorrectionView key="questions" kind="questions" aiNotice={ai.notice} /> : null}
-          {tab === "knowledge" ? (
-            <section className="view">
-              <SectionHeader eyebrow="Knowledge" title="知识卡" description="语法、写作与易错点，一张卡讲清一个点。做错题后可以回到这里复习对应考点。" />
+          {tab === 'today' ? <TodayView status={status} statusError={statusError} speech={speech} onNavigate={select} /> : null}
+          {tab === 'vocab' ? <VocabularyView speech={speech} frequencyNote={status?.frequencyNote} /> : null}
+          {tab === 'dictation' ? <DictationView speech={speech} /> : null}
+          {tab === 'practice' ? <PracticeView bank={bank} bankError={bankError} onReloadBank={reloadBank} aiNotice={ai.notice} /> : null}
+          {tab === 'exam' ? <Suspense fallback={<p role='status'>正在准备模拟卷工作台…</p>}><ExamView aiNotice={ai.notice} /></Suspense> : null}
+          {tab === 'game' ? <Suspense fallback={<p role='status'>正在准备英语游乐场…</p>}><GameHub speech={speech} /></Suspense> : null}
+          {tab === 'mistakes' ? <MistakesView onNavigate={select} /> : null}
+          {tab === 'essay' ? <CorrectionView key='essay' kind='essay' aiNotice={ai.notice} /> : null}
+          {tab === 'questions' ? <CorrectionView key='questions' kind='questions' aiNotice={ai.notice} /> : null}
+          {tab === 'knowledge' ? (
+            <section className='view'>
+              <SectionHeader eyebrow='Knowledge' title='知识卡' description='语法、写作与易错点，一张卡讲清一个点。做错题后可以回到这里复习对应考点。' />
               <KnowledgeSection />
             </section>
           ) : null}
-          {tab === "records" ? <RecordsView bank={bank} bankError={bankError} onReloadBank={reloadBank} /> : null}
+          {tab === 'records' ? <RecordsView bank={bank} bankError={bankError} onReloadBank={reloadBank} /> : null}
         </main>
       </div>
       <MobileNav active={tab} onSelect={select} badges={badges} />
     </div>
   );
 }
-

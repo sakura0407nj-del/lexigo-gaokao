@@ -24,6 +24,11 @@ const envelope=()=>({kind:'lexigo-primary-progress',version:1,grade:3,exportedAt
 function check(name,fn){try{fn();checks.push({name,pass:true});}catch(e){checks.push({name,pass:false,error:e.message});}}
 
 check('unfinished input and stable attempt ID survive an immediate reload',()=>{const r=parse(fresh());assert.equal(r.input,'ca');assert.equal(r.id,'dictation-unique-attempt');assert.equal(r.index,0);assert.equal(r.items.length,2);});
+check('silent spelling and the textbook scope survive a reload alongside legacy listening drafts',()=>{
+ const stored={...fresh(),mode:'meaning',scopeLabel:'四年级上册 · Unit 1'};
+ assert.equal(parse(stored).mode,'meaning');assert.equal(parse(stored).scopeLabel,stored.scopeLabel);
+ assert.ok(parse(fresh()));assert.equal(parse({...stored,mode:'unrecognized'}),null);
+});
 check('checked answer resumes before next rather than creating a duplicate result',()=>{const r=fresh();r.results=[{word,answer:'Cat',correct:true,skipped:false}];const saved=parse(r);assert.equal(saved.index,0);assert.equal(saved.results.length,1);assert.equal(saved.results[0].correct,true);});
 check('cached correctness is recomputed and canonical word metadata restored',()=>{const r=fresh();r.results=[{word:{...word,translation:'old damaged label',accepted:['dog']},answer:'dog',correct:true,skipped:false}];const saved=parse(r);assert.equal(saved.results[0].correct,false);assert.equal(saved.results[0].word.translation,'猫');assert.equal(saved.results[0].word.accepted,undefined);});
 check('accepted spelling variants and case are retained after reload',()=>{const r=fresh();r.index=2;r.recorded=true;r.results=[{word,answer:'  CAT ',correct:false,skipped:false},{word:word2,answer:'Colour',correct:false,skipped:false}];const saved=parse(r);assert.equal(saved.results.every(x=>x.correct),true);assert.equal(saved.id,r.id);});

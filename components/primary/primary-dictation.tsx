@@ -1,14 +1,15 @@
 'use client';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {ArrowRight,Check,Download,RotateCcw,SkipForward,Turtle,Volume2} from 'lucide-react';
-import type {PrimaryGrade,PrimaryWord} from '@/lib/primary-types';
+import type {PrimaryBook,PrimaryGrade,PrimaryWord} from '@/lib/primary-types';
 import type {SpeechState} from '../learn/use-speech';
 import {captureWrongbookSnapshot,useProgress,type DictationAttempt,type WrongbookSnapshot} from '../learn/progress';
 import {normalizeAnswer} from '@/lib/learning-core';
 import {downloadText} from '../learn/ui';
+import {BookSelector,useBookScope} from './book-scope';
 
 type Result={word:PrimaryWord;answer:string;correct:boolean;skipped:boolean};
-type Cfg={rate:number;repeat:number;hint:boolean};
+type Cfg={rate:number;repeat:number;hint:boolean;mode?:'listen'|'meaning';scopeLabel?:string};
 interface Run extends Cfg{v:1;id:string;grade:PrimaryGrade;items:PrimaryWord[];index:number;results:Result[];input:string;startedAt:number;savedAt:number;recorded:boolean;source?:'wrongbook';wrongbookSnapshot?:WrongbookSnapshot}
 const TTL=14*864e5;
 const keyOf=(g:PrimaryGrade)=>`lexigo.primary.dictation.${g}.v1`;
@@ -30,6 +31,8 @@ export function parsePrimaryDictationDraft(raw:string|null,g:PrimaryGrade,now=Da
   if(!isStr(r.input)||r.input.length>200||![.7,.85,1].includes(r.rate)||![1,2].includes(r.repeat)||typeof r.hint!=='boolean'||typeof r.recorded!=='boolean')return null;
   if(!fin(r.startedAt)||!fin(r.savedAt)||r.startedAt<0||r.savedAt<r.startedAt||r.savedAt>now+300000||now-r.savedAt>TTL||r.recorded&&r.index!==r.items.length)return null;
   if(r.source!==undefined&&r.source!=='wrongbook')return null;
+  if(r.mode!==undefined&&r.mode!=='listen'&&r.mode!=='meaning')return null;
+  if(r.scopeLabel!==undefined&&(!isStr(r.scopeLabel)||r.scopeLabel.length>200))return null;
   if(r.wrongbookSnapshot!==undefined){
     const entries=r.wrongbookSnapshot;
     if(r.source!=='wrongbook'||!entries||typeof entries!=='object'||Array.isArray(entries)||Object.keys(entries).length>r.items.length)return null;
@@ -41,7 +44,8 @@ export function parsePrimaryDictationDraft(raw:string|null,g:PrimaryGrade,now=Da
   return {...r,results:r.results.map((x,i)=>{const word=r.items[i];return {...x,word,correct:!x.skipped&&!!x.answer.trim()&&[word.word,...(word.accepted??[])].some(a=>normalizeAnswer(a)===normalizeAnswer(x.answer))};})};
 }
 function attemptOf(r:Run):Omit<DictationAttempt,'at'>{
-  return {attemptId:r.id,band:'primary-grade-'+r.grade,total:r.results.length,correct:r.results.filter(x=>x.correct).length,scope:r.grade+'年级'+(r.source==='wrongbook'?'错词听写专项':'通用听写'),planned:r.items.length,...(r.source==='wrongbook'?{source:'wrongbook' as const}:{})};
+  const label=r.mode==='meaning'?'看中文拼词':'听写';
+  return {attemptId:r.id,band:'primary-grade-'+r.grade,total:r.results.length,correct:r.results.filter(x=>x.correct).length,scope:(r.scopeLabel??r.grade+'年级')+' · '+(r.source==='wrongbook'?'错词专项 · ':'')+label,planned:r.items.length,...(r.source==='wrongbook'?{source:'wrongbook' as const}:{})};
 }
 function shuffle<T>(a:T[]):T[]{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 function wrongIdSet(wb:unknown):Set<string>{
@@ -51,8 +55,9 @@ function wrongIdSet(wb:unknown):Set<string>{
   return s;
 }
 
-export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{grade:PrimaryGrade;words:PrimaryWord[];speech:SpeechState;loading?:boolean;error?:string;onRetry?:()=>void}){
+export function PrimaryDictation({grade,words,books,speech,loading,error,onRetry}:{grade:PrimaryGrade;words:PrimaryWord[];books?:PrimaryBook[];speech:SpeechState;loading?:boolean;error?:string;onRetry?:()=>void}){
   const {progress,recordDictation,hydrated}=useProgress();
+  const scope=useBookScope(grade,books,words);
   const [run,setRun]=useState<Run|null>(null);
   const runRef=useRef<Run|null>(null);
   const speechRef=useRef(speech);
@@ -60,6 +65,7 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
   const [msg,setMsg]=useState('');
   const [saveErr,setSaveErr]=useState('');
   const [audioError,setAudioError]=useState('');
+  const [hinted,setHinted]=useState('');
   const [count,setCount]=useState(10);
   const [topic,setTopic]=useState('all');
   const [order,setOrder]=useState<'random'|'list'>('random');
@@ -73,12 +79,13 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
     return()=>speechRef.current.stop();
   },[grade]);
   useEffect(()=>{if(!hydrated||!run||run.index!==run.items.length||run.results.length!==run.items.length)return;recordDictation(attemptOf(run),run.results,run.wrongbookSnapshot);},[hydrated,run,recordDictation]);
-  const gradeWords=useMemo(()=>words.filter(w=>w.grade===grade),[words,grade]);
+  const gradeWords=scope.items;
   const topics=useMemo(()=>[...new Set(gradeWords.map(w=>w.topic).filter(Boolean))].sort(),[gradeWords]);
   const wrongIds=useMemo(()=>wrongIdSet((progress as {wrongbook?:unknown}|undefined)?.wrongbook),[progress]);
   const topicSel=topics.includes(topic)?topic:'all';
   const pool=gradeWords.filter(w=>(topicSel==='all'||w.topic===topicSel)&&(!wrongOnly||wrongIds.has(w.id)));
   const canSpeak=speech.supported&&speech.hasEnglish;
+  const mode=cfg.mode??(speech.ready&&!canSpeak?'meaning':'listen');
   const actual=Math.min(count,pool.length);
 
   const commit=(r:Run|null)=>{
@@ -89,13 +96,13 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
   };
   const say=(w:PrimaryWord,slow=false)=>{const r=runRef.current;if(!r||!canSpeak)return;setAudioError('');speech.prime();const ok=speech.speak(w.word,{rate:slow ? .65 : r.rate,repeat:slow?1:r.repeat,onError:()=>setAudioError('这次朗读没有成功，请再点一次“听一遍”，并检查设备音量。')});setPlayed(ok);if(!ok)setAudioError('朗读暂时未能开始，请再次点按朗读按钮。');};
   const begin=(items:PrimaryWord[],c:Cfg,source?:'wrongbook')=>{
-    if(!canSpeak||!items.length)return;
-    speech.stop();speech.prime();
+    if((c.mode!=='meaning'&&!canSpeak)||!items.length)return;
+    speech.stop();if(c.mode!=='meaning')speech.prime();
     const now=Date.now();
-    commit({v:1,id:now.toString(36)+Math.random().toString(36).slice(2,8),grade,items,index:0,results:[],input:'',rate:c.rate,repeat:c.repeat,hint:c.hint,startedAt:now,savedAt:now,recorded:false,...(source?{source,wrongbookSnapshot:captureWrongbookSnapshot(progress.wrongbook,items.map(w=>w.id))}:{})});
-    setMsg('');say(items[0]);
+    commit({v:1,id:now.toString(36)+Math.random().toString(36).slice(2,8),grade,items,index:0,results:[],input:'',rate:c.rate,repeat:c.repeat,hint:c.hint,mode:c.mode??'listen',scopeLabel:c.scopeLabel??scope.label,startedAt:now,savedAt:now,recorded:false,...(source?{source,wrongbookSnapshot:captureWrongbookSnapshot(progress.wrongbook,items.map(w=>w.id))}:{})});
+    setMsg('');setAudioError('');if(c.mode!=='meaning')say(items[0]);
   };
-  const start=()=>begin((order==='random'?shuffle(pool):pool).slice(0,actual),cfg,wrongOnly?'wrongbook':undefined);
+  const start=()=>begin((order==='random'?shuffle(pool):pool).slice(0,actual),{...cfg,mode},wrongOnly?'wrongbook':undefined);
   const check=(skip:boolean)=>{
     const r=runRef.current;
     if(!r||r.index>=r.items.length||r.results.length>r.index)return;
@@ -115,7 +122,7 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
     speech.stop();
     const i=r.index+1;
     if(i>=r.items.length){finish(r);return}
-    commit({...r,index:i,input:''});setPlayed(false);setMsg('');say(r.items[i]);
+    commit({...r,index:i,input:''});setPlayed(false);setMsg('');if(r.mode!=='meaning')say(r.items[i]);
   };
   const reset=()=>{
     const r=runRef.current;
@@ -124,44 +131,47 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
   };
   const download=(r:Run)=>{
     const ok=r.results.filter(x=>x.correct).length;
-    const lines=[`LexiGo 小学${grade}年级通用听写`,`得分：${ok}/${r.results.length}`,'',...r.results.map((x,i)=>`${i+1}. ${x.word.word}  ${x.word.translation}  你的答案：${x.skipped?'（跳过）':x.answer}  ${x.correct?'正确':'错误'}`)];
+    const lines=[`拾词 · ${attemptOf(r).scope}`,`得分：${ok}/${r.results.length}`,'',...r.results.map((x,i)=>`${i+1}. ${x.word.word}  ${x.word.translation}  你的答案：${x.skipped?'（跳过）':x.answer}  ${x.correct?'正确':'错误'}`)];
     downloadText(`primary-dictation-grade${grade}.txt`,lines.join('\n'));
   };
 
   if(loading&&!run)return <section className='primary-dictation primary-panel'><p className='primary-note' role='status'>正在加载{grade}年级词汇…</p></section>;
   if(error&&!run)return <section className='primary-dictation primary-panel'><p className='primary-error' role='alert'>{error}</p>{onRetry&&<button className='primary-button' onClick={onRetry}><RotateCcw size={18}/>重试</button>}</section>;
   const errs=<>{saveErr&&<p className='primary-error' role='alert'>{saveErr}</p>}{audioError&&<p className='primary-error' role='alert'>{audioError}</p>}</>;
-  const noVoice=<p className='primary-error'>当前浏览器没有可用的英语语音，无法听写。请换用 Chrome、Edge 或 Safari，或在系统设置中安装英语语音。</p>;
+  const noVoice=<p className='primary-note'>当前设备暂时无法朗读英语。你可以选择「看中文拼词」，也可以在系统设置中添加英语语音。</p>;
 
   if(!run)return <section className='primary-dictation primary-panel'>
     <h2>{grade}年级单词听写</h2>
-    <p className='primary-note'>小学{grade}年级通用练习词汇，不与教材同步，也不代表完整课程。</p>{errs}
+    {errs}<BookSelector scope={scope}/>
+    <fieldset className="primary-mode-pick"><legend>练习方式</legend>
+      <button type="button" className="primary-button" aria-pressed={mode!=='meaning'} onClick={()=>setCfg({...cfg,mode:'listen'})}>听音拼词</button>
+      <button type="button" className="primary-button" aria-pressed={mode==='meaning'} onClick={()=>setCfg({...cfg,mode:'meaning'})}>看中文拼词</button>
+    </fieldset>
     <div className='primary-form-grid'>
       <label>数量<select className='primary-select' value={count} onChange={e=>setCount(Number(e.target.value))}>{[5,10,20].map(n=><option key={n} value={n}>{n} 个</option>)}</select></label>
       <label>主题<select className='primary-select' value={topicSel} onChange={e=>setTopic(e.target.value)}><option value='all'>全部主题</option>{topics.map(t=><option key={t} value={t}>{t}</option>)}</select></label>
       <label>顺序<select className='primary-select' value={order} onChange={e=>setOrder(e.target.value==='list'?'list':'random')}><option value='random'>随机</option><option value='list'>按列表</option></select></label>
-      <label>语速<select className='primary-select' value={cfg.rate} onChange={e=>setCfg({...cfg,rate:Number(e.target.value)})}>{[.7,.85,1].map(n=><option key={n} value={n}>{n}x</option>)}</select></label>
+      {mode!=='meaning'&&<><label>语速<select className='primary-select' value={cfg.rate} onChange={e=>setCfg({...cfg,rate:Number(e.target.value)})}>{[.7,.85,1].map(n=><option key={n} value={n}>{n}x</option>)}</select></label>
       <label>每次读<select className='primary-select' value={cfg.repeat} onChange={e=>setCfg({...cfg,repeat:Number(e.target.value)})}>{[1,2].map(n=><option key={n} value={n}>{n} 遍</option>)}</select></label>
-      <label className='primary-check'><input type='checkbox' checked={cfg.hint} onChange={e=>setCfg({...cfg,hint:e.target.checked})}/>显示中文提示</label>
+      <label className='primary-check'><input type='checkbox' checked={cfg.hint} onChange={e=>setCfg({...cfg,hint:e.target.checked})}/>显示中文提示</label></>}
       <label className='primary-check'><input type='checkbox' checked={wrongOnly} onChange={e=>setWrongOnly(e.target.checked)}/>只练错词本里的词</label>
     </div>
     {wrongOnly&&<p className='primary-note'>错词专项完成后，答对的词会移出错词本；开始专项后又写错的词会继续保留。普通听写不会自动清除错词。</p>}
-    {!canSpeak&&noVoice}
-    {pool.length?<p className='primary-note'>可用 {pool.length} 个，本次实际听写 {actual} 个。</p>:<p className='primary-empty'>{wrongOnly?'错词本里还没有本年级的词。':'当前条件下没有可用单词。'}</p>}
-    <div className='primary-actions'><button className='primary-button primary-button-primary' disabled={!canSpeak||!pool.length} onClick={start}><Volume2 size={18}/>开始听写</button></div>
+    {!canSpeak&&mode!=='meaning'&&noVoice}
+    {pool.length?<p className='primary-note'>可用 {pool.length} 个，本次练习 {actual} 个。</p>:<p className='primary-empty'>{wrongOnly?'错词本里还没有本年级的词。':'当前条件下没有可用单词。'}</p>}
+    <div className='primary-actions'><button className='primary-button primary-button-primary' disabled={(mode!=='meaning'&&!canSpeak)||!pool.length} onClick={start}>{mode==='meaning'?'开始拼词':<><Volume2 size={18}/>开始听写</>}</button></div>
   </section>;
 
   const ok=run.results.filter(x=>x.correct).length;
   if(run.index>=run.items.length){
     const wrong=run.results.filter(x=>!x.correct).map(x=>x.word);
     return <section className='primary-dictation primary-panel'>
-      <h2>听写完成</h2>{errs}
+      <h2>{run.mode==='meaning'?'拼词完成':'听写完成'}</h2>{errs}
       <p className='primary-dictation-progress'>本次答对 {ok}/{run.results.length} 个单词</p>
       {run.source==='wrongbook'&&run.wrongbookSnapshot&&<p className='primary-note'>本次专项只清理答对且未再次写错的词；答错、跳过或后来新增的错误会保留。</p>}
       <ol className='primary-results'>{run.results.map((x,i)=><li key={i}>{x.correct?'✓':'✗'} <b>{x.word.word}</b> {x.word.translation} · 你的答案：{x.skipped?'（跳过）':x.answer}</li>)}</ol>
-      {!canSpeak&&wrong.length>0&&noVoice}
       <div className='primary-actions'>
-        {wrong.length>0&&<button className='primary-button primary-button-primary' disabled={!canSpeak} onClick={()=>begin(shuffle(wrong),{rate:run.rate,repeat:run.repeat,hint:run.hint},'wrongbook')}><RotateCcw size={18}/>只练错词（{wrong.length}）</button>}
+        {wrong.length>0&&<button className='primary-button primary-button-primary' onClick={()=>begin(shuffle(wrong),{rate:run.rate,repeat:run.repeat,hint:run.hint,mode:canSpeak?run.mode:'meaning',scopeLabel:run.scopeLabel},'wrongbook')}><RotateCcw size={18}/>只练错词（{wrong.length}）</button>}
         <button className='primary-button' onClick={()=>download(run)}><Download size={18}/>下载结果</button>
         <button className='primary-button' onClick={reset}>重新设置</button>
       </div>
@@ -170,15 +180,21 @@ export function PrimaryDictation({grade,words,speech,loading,error,onRetry}:{gra
   const w=run.items[run.index];const res=run.results[run.index];
   return <section className='primary-dictation primary-panel'>
     <p className='primary-dictation-progress'>第 {run.index+1}/{run.items.length} 题 · 已答对 {ok}</p>{errs}
-    {!canSpeak&&noVoice}
+    {run.mode!=='meaning'&&!canSpeak&&!res&&<div>{noVoice}<button type="button" className="primary-button" onClick={()=>{speech.stop();commit({...run,mode:'meaning'});}}>改用中文提示继续</button></div>}
+    {run.mode==='meaning'?<div>
+      <p className="primary-spell-prompt">{w.translation}</p>
+      {!res&&<p className="primary-note">{w.word.trim().split(/\s+/).map(part=>part.replace(/[^a-z]/gi,'').length).join(' + ')} 个字母
+        {' · '}{hinted===run.id+w.id?<span>首字母 {w.word.charAt(0)}</span>:<button type="button" className="primary-text-button" onClick={()=>setHinted(run.id+w.id)}>给我首字母提示</button>}
+      </p>}
+    </div>:<>
     {!played&&!res&&<p className='primary-note'>点击听一遍开始</p>}
     <div className='primary-actions'>
       <button className='primary-audio-button' disabled={!canSpeak} onClick={()=>say(w)}><Volume2 size={20}/>听一遍</button>
       <button className='primary-audio-button' disabled={!canSpeak} onClick={()=>say(w,true)}><Turtle size={20}/>慢速</button>
     </div>
-    {run.hint&&<p className='primary-note'>中文提示：{w.translation}</p>}
+    {run.hint&&<p className='primary-note'>中文提示：{w.translation}</p>}</>}
     {!res?<div className='primary-answer-box'>
-      <input className='primary-input' style={{fontSize:16}} value={run.input} maxLength={200} autoComplete='off' autoCapitalize='none' autoCorrect='off' spellCheck={false} aria-label='输入听到的英文单词' onChange={e=>{const r=runRef.current;if(r){setMsg('');commit({...r,input:e.target.value.slice(0,200)})}}} onKeyDown={e=>{if(e.key==='Enter'&&!e.nativeEvent.isComposing){e.preventDefault();check(false)}}}/>
+      <input className='primary-input' style={{fontSize:16}} value={run.input} maxLength={200} autoComplete='off' autoCapitalize='none' autoCorrect='off' spellCheck={false} aria-label={run.mode==='meaning'?'根据中文输入英文':'输入听到的英文单词'} onChange={e=>{const r=runRef.current;if(r){setMsg('');commit({...r,input:e.target.value.slice(0,200)})}}} onKeyDown={e=>{if(e.key==='Enter'&&!e.nativeEvent.isComposing){e.preventDefault();check(false)}}}/>
       {msg&&<p className='primary-error' role='alert'>{msg}</p>}
       <div className='primary-actions'>
         <button className='primary-button primary-button-primary' onClick={()=>check(false)}><Check size={18}/>检查</button>

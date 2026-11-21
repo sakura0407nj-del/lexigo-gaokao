@@ -13,7 +13,7 @@ import {GET as dictation} from '../app/api/dictation/route';
 import {GET as knowledge} from '../app/api/knowledge/route';
 import {POST as grade} from '../app/api/grade/route';
 import {assembleExamRequest,gradeExamRequest} from './exam-server';
-import {primaryWordsRequest,primaryBankRequest,primaryGradeRequest} from './primary-server';
+import {primaryWordsRequest,primaryBankRequest,primaryGradeRequest,primaryExportRequest} from './primary-server';
 const challengeSchema=z.object({prompt:z.string().min(1).max(3000),context:z.string().max(6000).optional(),correctAnswer:z.string().min(1).max(2500),studentAnswer:z.string().trim().min(1).max(2500),explanation:z.string().max(2500).optional()});
 const wordQuerySchema=z.object({
   band:z.enum(['all','high','medium','low','unknown']).optional(),q:z.string().max(100).optional(),
@@ -29,6 +29,7 @@ export async function handlePublicRequest(req:Request):Promise<Response> {
     const url=new URL(req.url),path=url.pathname;
     if(req.method==='GET') {
       if(path==='/api/primary/words')return primaryWordsRequest(req);
+      if(path==='/api/primary/directory.csv'||path==='/api/primary/wordlist.csv')return primaryExportRequest(req);
       if(path==='/api/primary/bank')return primaryBankRequest(req);
       if(path==='/api/status') {
         const ai=Boolean(runtime().AI_API_KEY&&runtime().PAPER_SECRET);

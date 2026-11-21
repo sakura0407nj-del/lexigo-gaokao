@@ -109,7 +109,7 @@ await check('recognisable primary identifiers and grade metadata are rejected ev
   const h = harness(fresh());
   const primaryWord = {...word, id: 'p3-mother', grade: 3};
   const samples = [
-    {...fresh(), learned: ['p3-mother']}, {...fresh(), starred: ['primary-g3-cat']},
+    {...fresh(), learned: ['p3-mother']}, {...fresh(), learned: ['px-classroom']}, {...fresh(), starred: ['primary-g3-cat']},
     {...fresh(), words: {'p3-mother': primaryWord}}, {...fresh(), review: {'p3-mother': rich().review.exchange}},
     {...rich(), dictation: [{...rich().dictation[0], band: 'primary-grade-3'}]},
     {...rich(), practice: [{...rich().practice[0], paperId: 'ai-primary-g4-generated'}]},

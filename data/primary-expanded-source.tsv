@@ -1,0 +1,476 @@
+# Original LexiGo learning examples. Suggested grade, not textbook placement. Fields: grade|topic|word|pos|translation|example|exampleZh
+3|家庭人物|name|noun|名字|Write your name on this card.|把你的名字写在这张卡片上。
+3|情绪特征|nice|adjective|友好的；令人愉快的|Our new teacher is very nice.|我们的新老师很友好。
+3|身体健康|arm|noun|手臂|There is a little bird on his arm.|他的手臂上有一只小鸟。
+3|情绪特征|smile|verb|微笑|I smile when I see my little sister.|看见小妹妹时，我会微笑。
+3|学校学习|say|verb|说|Please say the word again.|请再说一遍这个词。
+3|活动爱好|toy|noun|玩具|This toy is a small red car.|这个玩具是一辆红色的小汽车。
+3|家庭人物|mum|noun|妈妈（口语）|My mum reads with me at night.|晚上妈妈和我一起读书。
+3|家庭人物|dad|noun|爸爸（口语）|My dad makes a paper boat.|爸爸做了一只纸船。
+3|家庭人物|grandma|noun|奶奶；外婆（口语）|Grandma grows flowers by the door.|奶奶在门边种花。
+3|家庭人物|grandpa|noun|爷爷；外公（口语）|Grandpa walks to the park with us.|爷爷和我们步行去公园。
+3|家庭人物|grandmother|noun|祖母；外祖母|My grandmother has a white cat.|我的外祖母有一只白猫。
+3|家庭人物|grandfather|noun|祖父；外祖父|My grandfather can draw birds.|我的祖父会画鸟。
+3|动物世界|pet|noun|宠物|Our pet likes sleeping in this box.|我们的宠物喜欢睡在这个盒子里。
+3|动物世界|fox|noun|狐狸|The fox has a long tail.|这只狐狸有一条长尾巴。
+3|动物世界|lion|noun|狮子|We see a lion in the picture.|我们在图中看到一头狮子。
+3|动物世界|giraffe|noun|长颈鹿|The giraffe can reach the high leaves.|这只长颈鹿能够够到高处的树叶。
+3|动物世界|animal|noun|动物|Which animal has a very long nose?|哪种动物有很长的鼻子？
+3|情绪特征|tall|adjective|高的|That tall tree is near our school.|那棵高树在我们学校附近。
+3|情绪特征|fast|adjective|快的|The fast train takes us to the city.|快速列车带我们去城里。
+3|地点出行|farm|noun|农场|There are many sheep on this farm.|这个农场有许多羊。
+3|自然天气|air|noun|空气|Fresh air comes through the window.|新鲜空气从窗户吹进来。
+3|食物饮品|water|noun|水|There is some water in my bottle.|我的瓶子里有一些水。
+3|自然天气|flower|noun|花|A yellow flower grows by the wall.|墙边长着一朵黄花。
+3|自然天气|grass|noun|草；草地|The rabbit sits on the soft grass.|兔子坐在柔软的草地上。
+3|自然天气|plant|noun|植物|This small plant needs light and water.|这株小植物需要光和水。
+3|情绪特征|new|adjective|新的|I put my new books in the bag.|我把新书放进书包里。
+3|自然天气|tree|noun|树|A bird is singing in that tree.|一只鸟在那棵树上唱歌。
+3|衣物用品|colour|noun|颜色|What colour is your schoolbag?|你的书包是什么颜色的？
+3|情绪特征|red|adjective|红色的|A red bus stops near the school.|一辆红色公交车在学校附近停下。
+3|情绪特征|blue|adjective|蓝色的|She wears a blue coat today.|她今天穿一件蓝色外套。
+3|情绪特征|purple|adjective|紫色的|The purple flower is very small.|那朵紫色的花很小。
+3|情绪特征|brown|adjective|棕色的|My brown shoes are under the bed.|我的棕色鞋子在床下面。
+3|动物世界|bear|noun|熊|The bear in the story loves honey.|故事里的熊喜欢蜂蜜。
+3|情绪特征|yellow|adjective|黄色的|I draw a yellow star on the paper.|我在纸上画了一颗黄色的星星。
+3|自然天气|sea|noun|海|We can see the sea from this hill.|从这座小山上我们能看到大海。
+3|情绪特征|pink|adjective|粉色的|Her pink bag has two pockets.|她的粉色包有两个口袋。
+3|情绪特征|white|adjective|白色的|The white rabbit is eating a carrot.|那只白兔正在吃胡萝卜。
+3|情绪特征|black|adjective|黑色的|There is a black dog by the gate.|门边有一只黑狗。
+3|情绪特征|old|adjective|年老的；旧的|We turn an old box into a toy house.|我们把一个旧盒子做成玩具房子。
+3|时间日常|year|noun|年|We plant a tree every year.|我们每年种一棵树。
+3|学校学习|one|number|一|I have one apple in my bag.|我的包里有一个苹果。
+3|学校学习|two|number|二|There are two birds on the wall.|墙上有两只鸟。
+3|学校学习|three|number|三|Put three pencils on the desk.|把三支铅笔放在课桌上。
+3|学校学习|four|number|四|The little table has four legs.|这张小桌子有四条腿。
+3|学校学习|five|number|五|We draw five flowers on the card.|我们在卡片上画了五朵花。
+3|学校学习|six|number|六|There are six eggs in the box.|盒子里有六个鸡蛋。
+3|学校学习|seven|number|七|A week has seven days.|一周有七天。
+3|学校学习|eight|number|八|The cake is for eight children.|这个蛋糕是给八个孩子的。
+3|学校学习|nine|number|九|I count nine ducks on the pond.|我数到池塘里有九只鸭子。
+3|学校学习|ten|number|十|We need ten cups for the party.|聚会需要十个杯子。
+3|食物饮品|cake|noun|蛋糕|The cake has strawberries on top.|蛋糕上面有草莓。
+3|家居生活|cut|verb|切；剪|Please cut the paper into small squares.|请把纸剪成小正方形。
+3|家庭人物|boy|noun|男孩|The boy with the kite is my cousin.|拿着风筝的男孩是我的表弟。
+3|家庭人物|girl|noun|女孩|A girl is reading under the tree.|一个女孩正在树下读书。
+3|家庭人物|man|noun|成年男子|The man at the gate is our teacher.|门口的男子是我们的老师。
+3|家庭人物|woman|noun|成年女子|The woman in the shop is very kind.|商店里的那位女士很和善。
+3|情绪特征|long|adjective|长的|This long ruler is for the teacher.|这把长尺子是老师用的。
+3|身体健康|body|noun|身体|Swimming helps keep my body strong.|游泳有助于使我的身体强壮。
+3|情绪特征|short|adjective|短的；矮的|The short pencil is still useful.|这支短铅笔仍然能用。
+3|情绪特征|fat|adjective|肥胖的|The fat cat sleeps on a soft chair.|这只胖猫睡在软椅子上。
+3|情绪特征|thin|adjective|薄的；瘦的|This thin book fits in my pocket.|这本薄书可以放进我的口袋。
+3|情绪特征|slow|adjective|缓慢的|The slow turtle is near the water.|那只行动缓慢的乌龟在水边。
+3|情绪特征|love|verb|爱；喜爱|I love listening to my grandma's stories.|我喜欢听奶奶讲故事。
+3|动物世界|tail|noun|尾巴|The dog's tail moves from side to side.|狗的尾巴左右摇动。
+3|家庭人物|gift|noun|礼物|I make a small gift for my friend.|我给朋友做了一份小礼物。
+3|学校学习|picture|noun|图画；照片|This picture shows our school garden.|这幅图展示了我们学校的花园。
+3|衣物用品|card|noun|卡片；贺卡|We send a card to our teacher.|我们给老师送了一张贺卡。
+3|学校学习|talk|verb|交谈；说话|We talk about our favourite animals.|我们谈论自己最喜欢的动物。
+3|活动爱好|song|noun|歌曲|I learn a new song with my friends.|我和朋友们学了一首新歌。
+3|学校学习|eraser|noun|橡皮|May I use your eraser for a minute?|我可以用一下你的橡皮吗？
+3|学校学习|find|verb|找到|Can you find the missing pencil?|你能找到那支不见了的铅笔吗？
+3|学校学习|ruler|noun|尺子|Use a ruler to draw a straight line.|用尺子画一条直线。
+3|衣物用品|bag|noun|包；袋子|My bag is beside the chair.|我的包在椅子旁边。
+3|学校学习|paper|noun|纸|We use both sides of the paper.|我们使用纸的两面。
+3|身体健康|see|verb|看见|I can see a rainbow over the trees.|我能看见树木上方的一道彩虹。
+3|身体健康|smell|verb|闻；闻到|I can smell the flowers in the garden.|我能闻到花园里的花香。
+3|身体健康|hear|verb|听见|Can you hear the birds outside?|你能听见外面的鸟叫声吗？
+3|身体健康|touch|verb|触摸|Please do not touch the hot cup.|请不要摸那个烫杯子。
+3|身体健康|nose|noun|鼻子|The puppy has a little black nose.|这只小狗有一个小小的黑鼻子。
+3|身体健康|tongue|noun|舌头|Your tongue helps you taste food.|舌头帮助你品尝食物。
+3|学校学习|class|noun|班级；课|Our class visits the museum today.|我们班今天参观博物馆。
+3|学校学习|computer|noun|电脑|We use a computer to draw pictures.|我们用电脑画画。
+3|食物饮品|egg|noun|蛋；鸡蛋|There is an egg in my lunch box.|我的午餐盒里有一个鸡蛋。
+3|食物饮品|noodles|noun|面条（常用复数）|These noodles have vegetables in them.|这些面条里有蔬菜。
+3|食物饮品|meat|noun|肉|This soup has a little meat in it.|这碗汤里有一点肉。
+3|食物饮品|plate|noun|盘子|Please put your plate on the table.|请把盘子放到桌子上。
+3|食物饮品|soup|noun|汤|The vegetable soup smells good.|这道蔬菜汤闻起来很香。
+3|食物饮品|fruit|noun|水果|We take some fruit for our picnic.|我们带一些水果去野餐。
+3|情绪特征|colourful|adjective|色彩丰富的|The children make colourful paper birds.|孩子们做了色彩丰富的纸鸟。
+3|食物饮品|candy|noun|糖果|There is one piece of candy in the box.|盒子里有一颗糖。
+3|食物饮品|yummy|adjective|好吃的（口语）|This apple pie is yummy.|这个苹果派很好吃。
+3|地点出行|boat|noun|小船|The little boat moves across the lake.|小船驶过湖面。
+3|家居生活|keep|verb|保留；保持|Please keep your old books for others.|请留下旧书供别人使用。
+3|活动爱好|ball|noun|球|The ball rolls under the table.|球滚到了桌子下面。
+3|活动爱好|doll|noun|玩偶；娃娃|My doll wears a tiny green dress.|我的玩偶穿着小小的绿色裙子。
+3|地点出行|car|noun|小汽车|Our car is near the big tree.|我们的汽车在大树附近。
+3|家居生活|shelf|noun|架子|The books are on the top shelf.|书在最上面的架子上。
+3|家居生活|box|noun|盒子|We keep our toys in this box.|我们把玩具收在这个盒子里。
+3|衣物用品|cap|noun|鸭舌帽；便帽|His cap has a red star on it.|他的帽子上有一颗红星。
+3|地点出行|map|noun|地图|This map shows the way to the park.|这张地图标出了去公园的路。
+3|家居生活|put|verb|放；安置|Please put your shoes by the door.|请把鞋子放在门边。
+3|学校学习|eleven|number|十一|There are eleven players on our team.|我们队有十一名队员。
+3|学校学习|twelve|number|十二|A year has twelve months.|一年有十二个月。
+3|学校学习|thirteen|number|十三|We have thirteen chairs in this room.|这个房间里有十三把椅子。
+3|学校学习|fourteen|number|十四|I draw fourteen stars on the paper.|我在纸上画了十四颗星星。
+3|学校学习|fifteen|number|十五|The bus arrives in fifteen minutes.|公交车十五分钟后到。
+3|学校学习|sixteen|number|十六|There are sixteen cards in the box.|盒子里有十六张卡片。
+3|学校学习|seventeen|number|十七|I count seventeen flowers in the picture.|我数到图里有十七朵花。
+3|学校学习|eighteen|number|十八|Our class needs eighteen new books.|我们班需要十八本新书。
+3|学校学习|nineteen|number|十九|We collect nineteen empty bottles.|我们收集了十九个空瓶子。
+3|学校学习|twenty|number|二十|There are twenty pages in this book.|这本书有二十页。
+3|时间日常|pay|verb|付钱|We pay for the bread at the shop.|我们在店里付钱买面包。
+3|地点出行|back|adverb|回到原处|Please come back before dinner.|请在晚饭前回来。
+3|食物饮品|spoon|noun|勺子|Use a spoon to eat the soup.|用勺子喝汤。
+3|食物饮品|fork|noun|叉子|There is a fork beside your plate.|你的盘子旁边有一把叉子。
+3|食物饮品|cup|noun|杯子|This cup is full of warm milk.|这个杯子里装满了温牛奶。
+3|食物饮品|bowl|noun|碗|My bowl has a blue fish on it.|我的碗上画着一条蓝色的鱼。
+3|动物世界|pig|noun|猪|The pink pig is eating on the farm.|这只粉色的猪正在农场里吃东西。
+3|动物世界|ant|noun|蚂蚁|An ant carries food across the path.|一只蚂蚁搬着食物穿过小路。
+3|动物世界|frog|noun|青蛙|A green frog jumps into the pond.|一只绿青蛙跳进池塘。
+3|动物世界|mouse|noun|老鼠|A little mouse hides behind the box.|一只小老鼠躲在盒子后面。
+3|动物世界|bee|noun|蜜蜂|A bee flies from flower to flower.|一只蜜蜂在花间飞来飞去。
+3|动物世界|butterfly|noun|蝴蝶|A butterfly rests on the leaf.|一只蝴蝶停在叶子上。
+3|动物世界|goat|noun|山羊|The goat is eating green leaves.|山羊正在吃绿叶。
+3|食物饮品|pear|noun|梨|Would you like a pear after lunch?|午饭后你想吃一个梨吗？
+3|食物饮品|peach|noun|桃子|This peach is soft and sweet.|这个桃子又软又甜。
+3|食物饮品|strawberry|noun|草莓|There is a strawberry on my cake.|我的蛋糕上有一颗草莓。
+3|食物饮品|watermelon|noun|西瓜|We share a watermelon on a hot day.|天气热时我们分着吃一个西瓜。
+3|食物饮品|lemon|noun|柠檬|Dad puts a slice of lemon in the water.|爸爸在水里放了一片柠檬。
+4|学校学习|playground|noun|操场|We run around the playground after class.|下课后我们绕着操场跑步。
+4|学校学习|blackboard|noun|黑板|The teacher writes a question on the blackboard.|老师在黑板上写了一个问题。
+4|学校学习|schoolbag|noun|书包|My schoolbag is heavy with books.|我的书包装着书，很重。
+4|学校学习|notebook|noun|笔记本|I write new words in my notebook.|我在笔记本里写下生词。
+4|学校学习|crayon|noun|蜡笔|Use a green crayon to draw the grass.|用绿色蜡笔画草。
+4|学校学习|pupil|noun|小学生|Every pupil has a turn to read aloud.|每个学生轮流朗读。
+4|学校学习|Chinese|noun|汉语；语文|We have Chinese before maths today.|今天我们先上语文，再上数学。
+4|学校学习|English|noun|英语|I read a short story in English.|我读了一篇英语小故事。
+4|学校学习|maths|noun|数学|We use shapes in our maths lesson.|我们在数学课上学习图形。
+4|活动爱好|music|noun|音乐|Soft music helps me relax.|轻柔的音乐帮助我放松。
+4|活动爱好|art|noun|美术；艺术|We make paper animals in art class.|我们在美术课上做纸动物。
+4|学校学习|spell|verb|拼写|Can you spell your friend's name?|你能拼出你朋友的名字吗？
+4|学校学习|count|verb|数数|We count the red buttons together.|我们一起数红纽扣。
+4|学校学习|ask|verb|问；请求|Please ask your teacher if you need help.|需要帮助时请问老师。
+4|学校学习|close|verb|关；合上|Please close the window before you leave.|离开前请关窗。
+4|家居生活|floor|noun|地板；楼层|The cat sleeps on the kitchen floor.|猫睡在厨房的地板上。
+4|家居生活|wall|noun|墙|Our pictures are on the classroom wall.|我们的画挂在教室墙上。
+4|家居生活|light|noun|灯|Please turn off the light before bed.|睡觉前请关灯。
+4|家居生活|fan|noun|风扇|The fan keeps the room cool.|风扇使房间保持凉爽。
+4|家居生活|fridge|noun|冰箱|The milk is in the fridge.|牛奶在冰箱里。
+4|家居生活|phone|noun|电话；手机|I use the phone to call Grandma.|我用电话给奶奶打电话。
+4|家居生活|clock|noun|钟|The clock on the wall says eight.|墙上的钟显示八点。
+4|家居生活|key|noun|钥匙|The key to our door is in my pocket.|我们家门的钥匙在我口袋里。
+4|家居生活|mirror|noun|镜子|I look in the mirror before school.|上学前我照照镜子。
+4|家居生活|towel|noun|毛巾|Use a clean towel to dry your hands.|用干净的毛巾擦干手。
+4|家居生活|brush|verb|刷|I brush my teeth after breakfast.|早饭后我刷牙。
+4|家居生活|wash|verb|洗|Please wash your hands before lunch.|午饭前请洗手。
+4|家居生活|bottle|noun|瓶子|I fill my bottle with drinking water.|我给瓶子装上饮用水。
+4|食物饮品|beef|noun|牛肉|We have beef and vegetables for dinner.|晚饭我们吃牛肉和蔬菜。
+4|食物饮品|carrot|noun|胡萝卜|I cut a carrot for the soup.|我切了一根胡萝卜做汤。
+4|食物饮品|onion|noun|洋葱|This onion is bigger than that one.|这个洋葱比那个大。
+4|食物饮品|cucumber|noun|黄瓜|The cucumber in the salad is fresh.|沙拉里的黄瓜很新鲜。
+4|食物饮品|bean|noun|豆；豆子|A bean grows into a little plant.|一颗豆子长成了一株小植物。
+4|食物饮品|tea|noun|茶|Grandpa drinks tea after his walk.|爷爷散步后喝茶。
+4|食物饮品|chocolate|noun|巧克力|There is some chocolate in the cake.|蛋糕里有一些巧克力。
+4|食物饮品|sandwich|noun|三明治|My sandwich has an egg and some tomato.|我的三明治里有鸡蛋和一些番茄。
+4|食物饮品|hamburger|noun|汉堡包|We share a hamburger and some fruit.|我们分着吃一个汉堡和一些水果。
+4|食物饮品|ice cream|noun|冰激凌|The ice cream melts in the warm sun.|冰激凌在暖暖的阳光下融化了。
+4|食物饮品|lunch|noun|午饭|I bring my lunch in a small box.|我用一个小盒子带午饭。
+4|食物饮品|dinner|noun|晚饭；正餐|We talk about our day at dinner.|吃晚饭时我们聊聊这一天。
+4|食物饮品|delicious|adjective|美味的|The soup you made is delicious.|你做的汤很美味。
+4|食物饮品|sweet|adjective|甜的|These grapes are small but sweet.|这些葡萄虽然小，却很甜。
+4|情绪特征|fresh|adjective|新鲜的|We buy fresh vegetables at the market.|我们在市场买新鲜蔬菜。
+4|衣物用品|sock|noun|短袜|I find one sock behind the bed.|我在床后找到一只短袜。
+4|衣物用品|shorts|noun|短裤|I wear shorts when I play basketball.|打篮球时我穿短裤。
+4|衣物用品|boot|noun|靴子|There is mud on my left boot.|我的左脚靴子上有泥。
+4|衣物用品|sunglasses|noun|太阳镜|Her sunglasses are in a small case.|她的太阳镜在一个小盒子里。
+4|衣物用品|T-shirt|noun|T恤衫|My T-shirt has a funny cat on it.|我的T恤衫上有一只滑稽的猫。
+4|衣物用品|clothes|noun|衣服|We put our clean clothes in the cupboard.|我们把干净衣服放进柜子里。
+4|情绪特征|cheap|adjective|便宜的|This pencil is cheap but useful.|这支铅笔便宜又好用。
+4|情绪特征|expensive|adjective|昂贵的|The big toy is too expensive for me.|那个大玩具对我来说太贵了。
+4|时间日常|afternoon|noun|下午|We visit the library in the afternoon.|我们下午去图书馆。
+4|时间日常|evening|noun|傍晚；晚上|Our family takes a walk in the evening.|我们一家傍晚去散步。
+4|时间日常|week|noun|星期；周|I borrow two books every week.|我每周借两本书。
+4|时间日常|weekend|noun|周末|We clean our room at the weekend.|我们周末打扫房间。
+4|时间日常|Monday|noun|星期一|Our art class is on Monday.|我们的美术课在星期一。
+4|时间日常|Tuesday|noun|星期二|I play chess with Dad on Tuesday.|星期二我和爸爸下棋。
+4|时间日常|Wednesday|noun|星期三|The school library opens late on Wednesday.|学校图书馆星期三开得晚。
+4|时间日常|Thursday|noun|星期四|We have a music lesson on Thursday.|我们星期四有音乐课。
+4|时间日常|Friday|noun|星期五|I return my library books on Friday.|我星期五归还图书馆的书。
+4|时间日常|Saturday|noun|星期六|We visit our cousins on Saturday.|我们星期六去看望表亲。
+4|时间日常|Sunday|noun|星期日|I help cook lunch on Sunday.|我星期日帮忙做午饭。
+4|时间日常|minute|noun|分钟|Please wait for one minute.|请等一分钟。
+4|时间日常|hour|noun|小时|The train trip takes one hour.|这段火车旅程需要一小时。
+4|时间日常|late|adjective|迟的；晚的|I am never late for swimming lessons.|我上游泳课从不迟到。
+4|时间日常|never|adverb|从不|I never leave rubbish in the park.|我从不把垃圾丢在公园里。
+4|时间日常|again|adverb|再一次|Please read the last sentence again.|请再读一遍最后一个句子。
+4|活动爱好|football|noun|足球|We play football after school.|放学后我们踢足球。
+4|活动爱好|basketball|noun|篮球|This basketball is a gift from my aunt.|这个篮球是阿姨送的礼物。
+4|活动爱好|badminton|noun|羽毛球|I play badminton with my brother.|我和哥哥打羽毛球。
+4|活动爱好|kite|noun|风筝|My kite looks like a colourful fish.|我的风筝像一条色彩斑斓的鱼。
+4|活动爱好|game|noun|游戏；比赛|This game needs four players.|这个游戏需要四名玩家。
+4|活动爱好|piano|noun|钢琴|My sister plays the piano every evening.|姐姐每天晚上弹钢琴。
+4|活动爱好|guitar|noun|吉他|He learns to play the guitar at school.|他在学校学弹吉他。
+4|活动爱好|paint|verb|用颜料画|We paint the sky blue and the grass green.|我们把天空画成蓝色，把草画成绿色。
+4|活动爱好|fly|verb|飞；放飞|We fly our kites in the open field.|我们在空旷的田野里放风筝。
+4|活动爱好|skate|verb|滑冰|I learn to skate with a teacher.|我跟老师学滑冰。
+4|活动爱好|climb|verb|爬；攀登|We climb the small hill behind the village.|我们爬村后的小山。
+4|活动爱好|win|verb|赢；获胜|Our team hopes to win the game.|我们队希望赢得比赛。
+4|活动爱好|throw|verb|扔；投|Throw the ball gently to your friend.|把球轻轻投给你的朋友。
+4|活动爱好|catch|verb|接住；抓住|Can you catch the ball with both hands?|你能用双手接住球吗？
+4|地点出行|bus|noun|公交车|We take the bus to the museum.|我们乘公交车去博物馆。
+4|地点出行|bike|noun|自行车|I wear a helmet when I ride my bike.|骑自行车时我戴头盔。
+4|地点出行|train|noun|火车|The train crosses a long bridge.|火车驶过一座长桥。
+4|地点出行|plane|noun|飞机|A plane flies high above the clouds.|一架飞机在云层上方高高地飞行。
+4|地点出行|taxi|noun|出租车|We take a taxi to the station.|我们坐出租车去车站。
+4|地点出行|street|noun|街道|There are tall trees along this street.|这条街道两旁有高高的树。
+4|地点出行|road|noun|道路|Please look both ways before crossing the road.|过马路前请向两边看。
+4|地点出行|cinema|noun|电影院|We watch a funny film at the cinema.|我们在电影院看了一部有趣的电影。
+4|地点出行|supermarket|noun|超市|The supermarket sells fruit and bread.|这家超市卖水果和面包。
+4|地点出行|restaurant|noun|餐馆|This restaurant serves delicious noodles.|这家餐馆供应美味的面条。
+4|地点出行|bookshop|noun|书店|I buy a storybook at the bookshop.|我在书店买了一本故事书。
+4|地点出行|post office|noun|邮局|The post office is next to the bank.|邮局在银行旁边。
+4|自然天气|sunny|adjective|晴朗的|It is sunny, so we eat lunch outside.|天气晴朗，所以我们在外面吃午饭。
+4|自然天气|rainy|adjective|下雨的|I take my umbrella on rainy days.|下雨天我带伞。
+4|自然天气|windy|adjective|有风的|A windy day is good for flying kites.|有风的日子适合放风筝。
+4|自然天气|cloudy|adjective|多云的|It is cloudy, but it is not raining.|天气多云，不过没有下雨。
+4|自然天气|weather|noun|天气|We check the weather before our trip.|出行前我们查看天气。
+4|自然天气|snow|noun|雪|There is white snow on the mountain.|山上有白雪。
+4|自然天气|moon|noun|月亮|The moon looks bright tonight.|今晚月亮很明亮。
+4|自然天气|star|noun|星星|I can see a bright star by the moon.|我能看见月亮旁边一颗明亮的星星。
+4|自然天气|rainbow|noun|彩虹|A rainbow appears after the rain.|雨后出现了一道彩虹。
+4|自然天气|leaf|noun|叶子|A yellow leaf falls onto my book.|一片黄叶落在我的书上。
+4|自然天气|lake|noun|湖|We walk around the lake before dinner.|晚饭前我们绕湖散步。
+4|自然天气|hill|noun|小山|The house is on a green hill.|房子坐落在一座绿色的小山上。
+4|自然天气|beach|noun|海滩|We collect shells on the beach.|我们在海滩上捡贝壳。
+4|家庭人物|nurse|noun|护士|The nurse helps the sick child.|护士照顾那个生病的孩子。
+4|家庭人物|doctor|noun|医生|The doctor listens carefully to me.|医生认真听我说话。
+4|家庭人物|farmer|noun|农民|The farmer grows rice and vegetables.|这位农民种水稻和蔬菜。
+4|家庭人物|driver|noun|司机|The driver stops the bus safely.|司机安全地停下公交车。
+4|家庭人物|worker|noun|工人；工作者|The worker is repairing our school gate.|工人正在修理我们学校的大门。
+4|身体健康|foot|noun|脚|My left foot is in the water.|我的左脚在水里。
+4|身体健康|finger|noun|手指|There is a little paint on my finger.|我的手指上沾了一点颜料。
+4|身体健康|knee|noun|膝盖|The baby sits on her father's knee.|宝宝坐在爸爸膝上。
+4|情绪特征|friendly|adjective|友善的|Our new neighbours are friendly.|我们的新邻居很友善。
+4|情绪特征|quiet|adjective|安静的|The library is a quiet place to read.|图书馆是一个安静的阅读场所。
+4|情绪特征|shy|adjective|害羞的|The shy child smiles at her new friend.|那个害羞的孩子向新朋友微笑。
+4|情绪特征|cute|adjective|可爱的|This cute puppy has very big ears.|这只可爱的小狗有很大的耳朵。
+4|情绪特征|busy|adjective|忙碌的|Mum is busy making lunch.|妈妈正忙着做午饭。
+4|情绪特征|sorry|adjective|抱歉的|I am sorry for breaking your pencil.|很抱歉我弄断了你的铅笔。
+5|时间日常|January|noun|一月|The new calendar starts with January.|新日历从一月开始。
+5|时间日常|February|noun|二月|My sister's birthday is in February.|我妹妹的生日在二月。
+5|时间日常|March|noun|三月|We plant young trees in March.|我们在三月种小树苗。
+5|时间日常|April|noun|四月|Many flowers open in April here.|这里许多花在四月开放。
+5|时间日常|May|noun|五月|Our school trip is in May this year.|我们今年的学校旅行在五月。
+5|时间日常|June|noun|六月|We have a sports day in June.|我们六月举行运动会。
+5|时间日常|July|noun|七月|It is often hot in July in my town.|我的小镇七月常常很热。
+5|时间日常|August|noun|八月|We visit the seaside in August.|我们八月去海边。
+5|时间日常|September|noun|九月|I meet my new teacher in September.|我九月见到新老师。
+5|时间日常|October|noun|十月|The leaves turn yellow in October here.|这里的树叶在十月变黄。
+5|时间日常|November|noun|十一月|We need warm coats in November.|十一月我们需要暖和的外套。
+5|时间日常|December|noun|十二月|December is the last month of the year.|十二月是一年中的最后一个月。
+5|时间日常|month|noun|月份|I finish one long book each month.|我每个月读完一本长篇书。
+5|时间日常|birthday|noun|生日|I make a fruit cake for Dad's birthday.|我为爸爸的生日做了一个水果蛋糕。
+5|时间日常|holiday|noun|假期|We visit a small village during the holiday.|假期里我们去一个小村庄。
+5|时间日常|festival|noun|节日|Our town has a flower festival in spring.|我们镇春天举办花卉节。
+5|活动爱好|party|noun|聚会|Each child brings a game to the party.|每个孩子都带一个游戏来参加聚会。
+5|活动爱好|picnic|noun|野餐|We have a picnic beside the river.|我们在河边野餐。
+5|活动爱好|trip|noun|旅行；出行|Our class plans a trip to the farm.|我们班计划去农场旅行。
+5|学校学习|test|noun|测验|I check my answers before the test ends.|测验结束前我检查答案。
+5|学校学习|sentence|noun|句子|Write a sentence about your favourite animal.|写一句关于你最喜欢的动物的话。
+5|学校学习|word|noun|单词；词|This new word has six letters.|这个新单词有六个字母。
+5|学校学习|letter|noun|字母；信|I write a letter to my cousin every month.|我每个月给表弟写一封信。
+5|学校学习|page|noun|页|There is a map on the first page.|第一页有一张地图。
+5|学校学习|story|noun|故事|The story is about a brave little bird.|这个故事讲的是一只勇敢的小鸟。
+5|学校学习|language|noun|语言|Music can help us learn a new language.|音乐可以帮助我们学习一种新语言。
+5|学校学习|mistake|noun|错误|I learn something from each mistake.|我从每次错误中学到一些东西。
+5|学校学习|check|verb|检查；核对|Please check your spelling before you finish.|完成前请检查拼写。
+5|学校学习|understand|verb|理解；明白|I understand the story after reading it twice.|读了两遍之后，我理解了这个故事。
+5|学校学习|teach|verb|教|My uncle can teach me to swim.|我叔叔可以教我游泳。
+5|学校学习|repeat|verb|重复|Please repeat the question a little more slowly.|请稍微慢一点重复这个问题。
+5|学校学习|study|verb|学习；研究|We study how plants grow in different places.|我们学习植物如何在不同地方生长。
+5|学校学习|borrow|verb|借入|May I borrow a book about space?|我可以借一本关于太空的书吗？
+5|学校学习|return|verb|归还；返回|Please return the book next Friday.|请下周五归还这本书。
+5|学校学习|forget|verb|忘记|Do not forget to bring your notebook.|不要忘了带笔记本。
+5|家居生活|build|verb|建造|We build a small house for the birds.|我们给鸟儿搭了一间小房子。
+5|家居生活|move|verb|移动；搬家|We move the chairs to make more space.|我们移动椅子，腾出更多空间。
+5|家居生活|bring|verb|带来|Please bring a bottle of water on the trip.|出行时请带一瓶水。
+5|家居生活|send|verb|寄；发送|I send a postcard to my grandfather.|我给祖父寄了一张明信片。
+5|家居生活|use|verb|使用|We use old boxes to store our toys.|我们用旧盒子收纳玩具。
+5|家居生活|need|verb|需要|These young plants need more water.|这些幼苗需要更多水。
+5|家居生活|give|verb|给|I give my old picture books to younger children.|我把旧图画书送给年幼的孩子。
+5|家居生活|make|verb|做；制作|We make bookmarks from clean card.|我们用干净的卡纸制作书签。
+5|家居生活|take|verb|拿；带|Please take your umbrella with you.|请带上你的伞。
+5|家居生活|wait|verb|等待|We wait quietly for the bus.|我们安静地等公交车。
+5|家居生活|start|verb|开始|We start our reading time after lunch.|我们午饭后开始阅读。
+5|家居生活|stop|verb|停止|Please stop talking when the music begins.|音乐开始时请停止说话。
+5|活动爱好|enjoy|verb|喜欢；享受|I enjoy making things with my hands.|我喜欢动手制作东西。
+5|活动爱好|try|verb|尝试|I want to try a new sport this term.|这学期我想尝试一种新运动。
+5|活动爱好|hope|verb|希望|We hope to see dolphins on our trip.|我们希望旅行时能看见海豚。
+5|活动爱好|laugh|verb|笑|We laugh at the funny ending of the story.|故事的有趣结尾让我们笑了。
+5|活动爱好|cry|verb|哭|The baby may cry when she is hungry.|宝宝饿的时候可能会哭。
+5|身体健康|hurt|verb|使受伤；疼痛|Do not jump there; you may hurt your foot.|不要从那里跳，你可能会伤到脚。
+5|身体健康|sick|adjective|生病的|I stay at home when I am sick.|生病时我待在家里。
+5|身体健康|well|adjective|健康的；身体好的|Grandma feels well after a good rest.|好好休息后，奶奶感觉身体不错。
+5|身体健康|medicine|noun|药|An adult helps me take my medicine.|大人帮助我服药。
+5|身体健康|fever|noun|发烧|The child has a fever and needs rest.|这个孩子发烧了，需要休息。
+5|身体健康|headache|noun|头痛|I tell an adult when I have a headache.|头痛时我会告诉大人。
+5|情绪特征|afraid|adjective|害怕的|The puppy is afraid of the loud noise.|小狗害怕巨大的噪声。
+5|情绪特征|strict|adjective|严格的|Our teacher is strict but fair.|我们的老师严格而公平。
+5|情绪特征|helpful|adjective|乐于助人的；有帮助的|The helpful girl shows us the way.|那位乐于助人的女孩为我们指路。
+5|情绪特征|hard-working|adjective|勤奋的|The hard-working team practises every day.|这支勤奋的队伍每天练习。
+5|情绪特征|young|adjective|年轻的；年幼的|A young bird learns to fly near the tree.|一只幼鸟在树旁学飞。
+5|情绪特征|different|adjective|不同的|We have different ideas for the poster.|我们对海报有不同的想法。
+5|情绪特征|same|adjective|相同的|We choose the same colour for our team.|我们为队伍选择了相同的颜色。
+5|情绪特征|easy|adjective|容易的|This puzzle is easy for my brother.|这道谜题对我哥哥来说很容易。
+5|情绪特征|difficult|adjective|困难的|The first lesson is difficult, so I ask for help.|第一课很难，所以我寻求帮助。
+5|情绪特征|interesting|adjective|有趣的|The museum has an interesting room about birds.|博物馆有一个有趣的鸟类展厅。
+5|情绪特征|wonderful|adjective|精彩的；美好的|We have a wonderful day by the lake.|我们在湖边度过了美好的一天。
+5|情绪特征|important|adjective|重要的|Clean water is important for everyone.|清洁的水对每个人都很重要。
+5|情绪特征|favourite|adjective|最喜爱的|My favourite fruit is the pear.|我最喜欢的水果是梨。
+5|时间日常|slowly|adverb|慢慢地|Please walk slowly on the wet floor.|地板湿滑，请慢慢走。
+5|时间日常|quietly|adverb|安静地|We enter the reading room quietly.|我们安静地走进阅览室。
+5|时间日常|loudly|adverb|大声地|The children cheer loudly for their team.|孩子们大声为自己的队伍欢呼。
+5|时间日常|happily|adverb|快乐地|The puppy runs happily across the garden.|小狗快乐地跑过花园。
+5|时间日常|almost|adverb|几乎|The bottle is almost full.|瓶子几乎满了。
+5|时间日常|only|adverb|仅仅；只有|I only need one more pencil.|我只再需要一支铅笔。
+5|时间日常|really|adverb|真正地；很|I really enjoy our science club.|我很喜欢我们的科学社团。
+5|时间日常|perhaps|adverb|也许|Perhaps we can visit the farm tomorrow.|也许我们明天可以参观农场。
+5|地点出行|left|adverb|向左|Turn left after the bridge.|过桥后向左转。
+5|地点出行|right|adverb|向右|Turn right at the next street.|在下一条街向右转。
+5|地点出行|straight|adverb|径直地；直着|Go straight until you reach the park.|一直走到公园。
+5|地点出行|near|preposition|在……附近|There is a playground near our house.|我们家附近有一个操场。
+5|地点出行|behind|preposition|在……后面|The ball is behind the big box.|球在大盒子后面。
+5|地点出行|between|preposition|在……之间|The library is between the bank and the park.|图书馆在银行和公园之间。
+5|地点出行|beside|preposition|在……旁边|Please sit beside your friend.|请坐在你的朋友旁边。
+5|地点出行|under|preposition|在……下面|The cat is under the wooden chair.|猫在木椅子下面。
+5|地点出行|above|preposition|在……上方|The picture hangs above my desk.|那幅画挂在我的书桌上方。
+6|家庭人物|scientist|noun|科学家|The scientist studies how birds find their way.|这位科学家研究鸟儿怎样辨认方向。
+6|家庭人物|pilot|noun|飞行员|The pilot checks the plane before the flight.|飞行员在飞行前检查飞机。
+6|家庭人物|coach|noun|教练|Our coach helps us practise safely.|我们的教练帮助我们安全地训练。
+6|家庭人物|fisherman|noun|渔民|The fisherman checks the weather before leaving.|渔民出发前查看天气。
+6|家庭人物|police officer|noun|警察|A police officer helps the lost child.|一名警察帮助那个迷路的孩子。
+6|家庭人物|businessman|noun|商人|The businessman sells bicycles in his town.|这位商人在镇上卖自行车。
+6|家庭人物|singer|noun|歌手|The singer teaches children a new song.|这位歌手教孩子们唱一首新歌。
+6|家庭人物|dancer|noun|舞者|The dancer practises before the show.|这位舞者在演出前练习。
+6|家庭人物|writer|noun|作家|The writer visits our school to talk about stories.|这位作家到我们学校谈故事。
+6|家庭人物|artist|noun|艺术家|The artist makes pictures from fallen leaves.|这位艺术家用落叶制作图画。
+6|家庭人物|engineer|noun|工程师|An engineer shows us how the bridge works.|一位工程师向我们讲解桥的结构。
+6|地点出行|factory|noun|工厂|The factory makes school buses.|这家工厂制造校车。
+6|地点出行|office|noun|办公室|Please leave the letter at the school office.|请把信放在学校办公室。
+6|地点出行|university|noun|大学|My sister studies science at a university.|姐姐在一所大学学习科学。
+6|地点出行|country|noun|国家；乡村|We learn about a different country each week.|我们每周了解一个不同的国家。
+6|地点出行|town|noun|城镇|A small river runs through our town.|一条小河流经我们的小镇。
+6|地点出行|bridge|noun|桥|This bridge connects the two villages.|这座桥连接着两个村庄。
+6|地点出行|building|noun|建筑物|The tallest building in our town is a library.|我们镇上最高的建筑是一座图书馆。
+6|地点出行|hotel|noun|旅馆；酒店|Our hotel is close to the train station.|我们的旅馆离火车站很近。
+6|地点出行|subway|noun|地铁|Taking the subway helps us avoid busy roads.|坐地铁帮助我们避开拥挤的道路。
+6|地点出行|ship|noun|轮船|The ship carries food to the island.|这艘轮船把食物运到岛上。
+6|地点出行|ferry|noun|渡船|We take a ferry across the river.|我们乘渡船过河。
+6|地点出行|traffic|noun|交通；路上车辆|There is a lot of traffic near the station.|车站附近车辆很多。
+6|地点出行|crossing|noun|十字路口；交叉路口|Wait at the crossing until the light turns green.|在路口等待，直到绿灯亮起。
+6|地点出行|helmet|noun|头盔|A helmet helps protect your head when cycling.|骑车时头盔有助于保护头部。
+6|地点出行|journey|noun|旅程|We draw a map of our journey.|我们画出了旅程的路线图。
+6|自然天气|island|noun|岛屿|Many seabirds live on this small island.|许多海鸟住在这座小岛上。
+6|自然天气|ocean|noun|海洋|We should keep plastic out of the ocean.|我们应当避免塑料进入海洋。
+6|自然天气|desert|noun|沙漠|Some plants can live in the dry desert.|有些植物能在干旱的沙漠里生存。
+6|自然天气|field|noun|田野；田地|We walk along the edge of the field.|我们沿着田地的边缘行走。
+6|自然天气|earth|noun|地球；泥土|We can help keep the earth clean.|我们可以帮助保持地球清洁。
+6|自然天气|space|noun|太空；空间|I read a book about life in space.|我读了一本关于太空生活的书。
+6|自然天气|planet|noun|行星|Earth is a planet that travels around the sun.|地球是一颗围绕太阳运行的行星。
+6|自然天气|recycle|verb|回收利用|We recycle paper and bottles at school.|我们在学校回收纸和瓶子。
+6|自然天气|save|verb|节约；挽救|Turn off the tap to save water.|关上水龙头以节约用水。
+6|自然天气|reuse|verb|再次使用|We reuse clean jars to store small things.|我们再次利用干净的罐子收纳小物件。
+6|自然天气|waste|verb|浪费|Please do not waste the paper in your notebook.|请不要浪费笔记本里的纸。
+6|自然天气|grow|verb|生长；种植|We grow beans in small pots by the window.|我们在窗边的小盆里种豆子。
+6|自然天气|change|verb|改变；变化|The leaves change colour in autumn.|树叶在秋天改变颜色。
+6|自然天气|happen|verb|发生|What will happen if the plant gets no light?|如果植物得不到光，会发生什么？
+6|学校学习|reason|noun|原因；理由|Give a reason for your answer.|说出你这样回答的理由。
+6|学校学习|idea|noun|想法；主意|Each team member shares an idea.|每位队员分享一个想法。
+6|学校学习|example|noun|例子|Can you give an example of a healthy habit?|你能举一个健康习惯的例子吗？
+6|学校学习|information|noun|信息|We find information about birds in the library.|我们在图书馆查找鸟类信息。
+6|学校学习|problem|noun|问题；难题|We work together to solve the problem.|我们一起努力解决这个问题。
+6|学校学习|result|noun|结果|We record the result of our experiment.|我们记录实验的结果。
+6|学校学习|rule|noun|规则|One important rule is to listen to others.|一条重要的规则是倾听别人。
+6|学校学习|skill|noun|技能|Cooking is a useful skill to learn.|烹饪是一项值得学习的实用技能。
+6|学校学习|habit|noun|习惯|Reading before bed is a good habit.|睡前阅读是个好习惯。
+6|学校学习|club|noun|社团；俱乐部|Our science club meets every Friday.|我们的科学社团每周五活动。
+6|学校学习|hobby|noun|业余爱好|My hobby is collecting pictures of birds.|我的爱好是收集鸟类图片。
+6|学校学习|message|noun|消息；口信|I leave a message for Dad on the table.|我在桌子上给爸爸留了张字条。
+6|学校学习|email|noun|电子邮件|I send an email to my pen friend.|我给笔友发了一封电子邮件。
+6|学校学习|website|noun|网站|Our school website shows the new timetable.|我们学校的网站展示了新课表。
+6|学校学习|report|noun|报告|We write a short report about our school garden.|我们写了一份关于学校花园的短报告。
+6|学校学习|compare|verb|比较|We compare the two maps to find changes.|我们比较两张地图，寻找变化。
+6|学校学习|discuss|verb|讨论|We discuss how to use less paper.|我们讨论怎样减少用纸。
+6|学校学习|solve|verb|解决|A drawing can help us solve this problem.|画图能够帮助我们解决这个问题。
+6|学校学习|describe|verb|描述|Please describe the animal without saying its name.|请描述这种动物，不要说出它的名字。
+6|学校学习|notice|verb|注意到|I notice a new leaf on our plant.|我注意到我们的植物长出了一片新叶。
+6|学校学习|believe|verb|相信|I believe that practice will help me improve.|我相信练习能帮助我进步。
+6|学校学习|agree|verb|同意|We agree to take turns using the ball.|我们同意轮流用球。
+6|学校学习|follow|verb|遵循；跟随|Please follow the safety rules in the lab.|请遵守实验室的安全规则。
+6|学校学习|continue|verb|继续|We continue reading after a short break.|短暂休息后我们继续阅读。
+6|情绪特征|patient|adjective|有耐心的|Our patient teacher explains the problem again.|我们有耐心的老师再次讲解了这道题。
+6|情绪特征|fair|adjective|公平的|Taking turns gives everyone a fair chance.|轮流进行让每个人都有公平的机会。
+6|情绪特征|useful|adjective|有用的|A small notebook is useful on a trip.|旅行时一个小笔记本很有用。
+6|情绪特征|possible|adjective|可能的|Is it possible to finish the model today?|今天有可能完成这个模型吗？
+6|情绪特征|special|adjective|特别的|We make a special card for our teacher.|我们为老师制作了一张特别的卡片。
+6|情绪特征|local|adjective|当地的|We buy fruit from a local farm.|我们从当地农场买水果。
+6|情绪特征|dangerous|adjective|危险的|Running across a busy road is dangerous.|跑着穿过繁忙的马路很危险。
+6|情绪特征|enough|determiner|足够的|We have enough chairs for everyone.|我们有足够的椅子供大家坐。
+6|情绪特征|empty|adjective|空的|We turn empty boxes into useful shelves.|我们把空盒子变成实用的架子。
+6|情绪特征|full|adjective|满的|The basket is full of fresh fruit.|篮子里装满了新鲜水果。
+6|情绪特征|bright|adjective|明亮的|This bright room is a good place to read.|这个明亮的房间很适合读书。
+6|情绪特征|dark|adjective|黑暗的；深色的|It is too dark to read outside now.|现在外面太暗，不能看书了。
+6|情绪特征|heavy|adjective|重的|We carry the heavy box together.|我们一起搬那个重箱子。
+6|情绪特征|soft|adjective|柔软的|The cat sleeps on a soft blanket.|猫睡在柔软的毯子上。
+6|情绪特征|hard|adjective|坚硬的|This hard stone is smooth on one side.|这块坚硬的石头一侧很光滑。
+6|情绪特征|deep|adjective|深的|This part of the river is deep.|河的这一部分很深。
+6|情绪特征|wide|adjective|宽的|The wide path is easy to walk along.|这条宽路很好走。
+6|时间日常|suddenly|adverb|突然|The lights suddenly go out.|灯突然灭了。
+6|时间日常|especially|adverb|尤其|I like fruit, especially strawberries.|我喜欢水果，尤其喜欢草莓。
+6|时间日常|probably|adverb|很可能|It will probably rain this evening.|今天晚上很可能下雨。
+6|时间日常|certainly|adverb|当然；肯定|This new shelf will certainly help us keep things tidy.|这个新架子肯定能帮我们整理物品。
+6|时间日常|exactly|adverb|恰好；准确地|There are exactly thirty children in our class.|我们班恰好有三十名孩子。
+6|时间日常|instead|adverb|代替；改为|It is raining, so we play indoors instead.|下雨了，所以我们改在室内玩。
+6|时间日常|however|adverb|然而|The task is hard. However, we can help each other.|任务很难。然而，我们可以互相帮助。
+6|时间日常|still|adverb|仍然|My old bike still works well.|我的旧自行车仍然很好用。
+6|时间日常|ever|adverb|曾经（常用于疑问句）|Have you ever visited a science museum?|你曾经参观过科学博物馆吗？
+6|时间日常|once|adverb|一次；曾经|Our club meets once a week.|我们的社团每周活动一次。
+6|时间日常|twice|adverb|两次|I read the instructions twice before starting.|开始前我读了两遍说明。
+6|时间日常|daily|adverb|每天|We check the young plants daily.|我们每天查看幼苗。
+6|时间日常|yet|adverb|还（常用于否定句和疑问句）|I have not finished the picture yet.|我还没有画完这幅画。
+6|时间日常|ago|adverb|以前|We moved to this town two years ago.|我们两年前搬到这个镇上。
+6|时间日常|last|adjective|最近过去的；最后的|We visited the farm last Saturday.|我们上周六参观了农场。
+6|时间日常|next|adjective|下一个的|We will finish the model next week.|我们下周会完成这个模型。
+6|家居生活|cleaned|verb|打扫了（clean的过去式）|I cleaned my desk before lunch yesterday.|昨天午饭前我打扫了书桌。
+6|家居生活|washed|verb|洗了（wash的过去式）|We washed our muddy shoes after the trip.|旅行后我们洗了沾满泥的鞋子。
+6|家居生活|stayed|verb|停留了；待在（stay的过去式）|We stayed at home during the storm.|暴风雨期间我们待在家里。
+6|活动爱好|watched|verb|观看了（watch的过去式）|I watched a film about birds last night.|昨晚我看了一部关于鸟类的影片。
+6|活动爱好|saw|verb|看见了（see的过去式）|We saw a rainbow after the rain yesterday.|昨天雨后我们看见了一道彩虹。
+6|身体健康|slept|verb|睡了（sleep的过去式）|The baby slept well last night.|宝宝昨晚睡得很好。
+4|家庭人物|firefighter|noun|消防员|The firefighter teaches us how to leave a building safely.|消防员教我们怎样安全地离开建筑物。
+4|学校学习|why|adverb|为什么|Why do plants need sunlight?|植物为什么需要阳光？
+4|时间日常|over|adverb,adjective|结束；完了|The game is over, so we put the ball away.|比赛结束了，所以我们把球收好。
+4|家庭人物|kid|noun|小孩（口语）|Every kid in the group gets a turn.|组里的每个孩子都有机会轮到。
+5|学校学习|must|verb|必须（情态动词）|We must stop at a red traffic light.|遇到红灯我们必须停下。
+5|家庭人物|sir|noun|先生（礼貌称呼）|Excuse me, sir. Is this your bag?|打扰了，先生。这是您的包吗？
+5|地点出行|hometown|noun|家乡|A wide river runs through my hometown.|一条宽阔的河流经我的家乡。
+6|时间日常|money|noun|钱|I keep my money in a small purse.|我把钱放在一个小钱包里。
+6|时间日常|pocket money|noun|零花钱|I save some of my pocket money each week.|我每周存下一些零花钱。
+6|时间日常|goods|noun|商品；货物（复数）|The shop sells goods made by local people.|这家商店出售当地人制作的商品。
+6|食物饮品|drink|noun|饮料|Water is my favourite drink after a game.|运动后，水是我最喜欢的饮料。
+6|时间日常|service|noun|服务|This shop offers a bicycle repair service.|这家商店提供自行车维修服务。
+6|时间日常|haircut|noun|理发；发型|I get a haircut before the new term starts.|新学期开始前我去理发。
+6|学校学习|microscope|noun|显微镜|We look at a tiny leaf through a microscope.|我们通过显微镜观察一片小叶子。
+6|自然天气|power|noun|电力；动力|The school gets some power from sunlight.|学校利用阳光获得一部分电力。
+6|自然天气|energy|noun|能量；能源|We need energy to walk, think and play.|我们走路、思考和玩耍都需要能量。
+6|自然天气|electricity|noun|电|We use electricity to run the computers.|我们用电使电脑运转。
+6|自然天气|resource|noun|资源|Water is a natural resource we should protect.|水是我们应当保护的自然资源。
+4|家庭人物|cleaner|noun|清洁工|The cleaner keeps the school halls tidy.|清洁工让学校走廊保持整洁。
+6|情绪特征|younger|adjective|更年轻的（young的比较级）|My younger brother is learning to read.|我的弟弟正在学阅读。
+6|情绪特征|older|adjective|年纪更大的（old的比较级）|My cousin is two years older than me.|我的表姐比我大两岁。
+6|情绪特征|taller|adjective|更高的（tall的比较级）|This tree is taller than our house.|这棵树比我们的房子高。
+6|情绪特征|shorter|adjective|更短的；更矮的（short的比较级）|The blue pencil is shorter than the red one.|蓝铅笔比红铅笔短。
+6|情绪特征|longer|adjective|更长的（long的比较级）|The new bridge is longer than the old one.|新桥比旧桥更长。
+6|情绪特征|thinner|adjective|更薄的；更瘦的（thin的比较级）|This notebook is thinner than my dictionary.|这个笔记本比我的词典薄。
+6|情绪特征|heavier|adjective|更重的（heavy的比较级）|The box of books is heavier than the box of clothes.|装书的箱子比装衣服的箱子重。
+6|情绪特征|bigger|adjective|更大的（big的比较级）|We need a bigger bag for all these toys.|装这些玩具需要一个更大的袋子。
+6|地点出行|went|verb|去了（go的过去式）|We went to the science museum last Sunday.|上周日我们去了科学博物馆。
+6|活动爱好|camp|verb|露营|We camp beside the lake with our parents.|我们和父母一起在湖边露营。
+6|地点出行|rode|verb|骑了；乘坐了（ride的过去式）|I rode my bike to the park yesterday.|我昨天骑自行车去了公园。
+6|食物饮品|ate|verb|吃了（eat的过去式）|We ate rice and vegetables for lunch yesterday.|昨天午饭我们吃了米饭和蔬菜。
+6|时间日常|bought|verb|买了（buy的过去式）|Dad bought a new ruler for me last week.|爸爸上周给我买了一把新尺子。
+6|学校学习|dining hall|noun|食堂|We eat lunch together in the dining hall.|我们在食堂一起吃午饭。
+6|活动爱好|gym|noun|体育馆；健身房|Our class plays basketball in the gym.|我们班在体育馆打篮球。
+6|活动爱好|cycling|noun|骑自行车运动|Cycling is my favourite weekend activity.|骑自行车是我最喜欢的周末活动。

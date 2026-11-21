@@ -188,7 +188,7 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
               {formatPhonetic(current.phonetic)}
             </p>
           ) : null}
-          <span className={cx("band-tag", `band-${frequencyBand(current)}`)}>{BAND_LABEL[frequencyBand(current)]}</span>
+          {!("grade" in current)&&<span className={cx("band-tag", `band-${frequencyBand(current)}`)}>{BAND_LABEL[frequencyBand(current)]}</span>}
         </div>
         {flipped ? (
           <div className="flash-back">

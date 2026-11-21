@@ -1,17 +1,22 @@
 import {z} from 'zod';
-import wordData from '../data/primary-words.json';
+import {primaryGradeCatalog,primaryDirectoryCsv,primaryWordlistCsv} from './primary-catalog';
 import paperData from '../data/primary-papers.json';
 import {gradePaper,hideAnswers} from './learning-core';
 import {ApiError,bodyOf,json,openPaper,userOf} from './learning-server';
-import type {PrimaryGrade,PrimaryWord,PrimaryPaper} from './primary-types';
+import type {PrimaryGrade,PrimaryPaper} from './primary-types';
 
-export const primaryWords:PrimaryWord[]=(wordData as unknown as PrimaryWord[]).map(word=>({...word,phonetic:word.phonetic||'',frequency:'high',frequencyKnown:false,frequencyBand:'unknown',rank:0,inGaokao:false}));
 export const primaryPapers=paperData as unknown as PrimaryPaper[];
 const gradeSchema=z.coerce.number().int().refine(value=>[3,4,5,6].includes(value),'请选择三至六年级');
 function gradeFrom(req:Request){return gradeSchema.parse(new URL(req.url).searchParams.get('grade')||3) as PrimaryGrade;}
 export function primaryWordsRequest(req:Request){
- const grade=gradeFrom(req),items=primaryWords.filter(word=>word.grade===grade);
- return json({grade,items,total:items.length,topics:[...new Set(items.map(word=>word.topic))],note:'通用小学英语主题词汇，按练习难度编排；不是教材词表或完整课标清单。'});
+ return json(primaryGradeCatalog(gradeFrom(req)));
+}
+export function primaryExportRequest(req:Request){
+ const url=new URL(req.url),glossary=url.pathname==='/api/primary/wordlist.csv';
+ const grade=url.searchParams.has('grade')?gradeFrom(req):undefined;
+ const content=glossary?primaryWordlistCsv(grade):primaryDirectoryCsv(grade);
+ const filename=glossary?'LexiGo-primary-vocabulary.csv':'LexiGo-PEP-primary-directory.csv';
+ return new Response(content,{headers:{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="${filename}"`,'Cache-Control':'public, max-age=300'}});
 }
 export function primaryBankRequest(req:Request){
  const grade=gradeFrom(req),items=primaryPapers.filter(paper=>paper.grade===grade).map(paper=>({...hideAnswers(paper),grade}));
