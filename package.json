@@ -10,7 +10,7 @@
     "dev": "vite --config vite.public.config.ts",
     "build": "vite build --config vite.public.config.ts",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/check-learning.mjs && node scripts/check-mistakes.mjs && node scripts/check-vocabulary.mjs && node scripts/check-review.mjs && node scripts/check-practice-draft.mjs && node scripts/check-ai-transport.mjs && node scripts/check-ai-resume.mjs && node scripts/check-job-idempotency.mjs && node scripts/check-exams.mjs && node scripts/check-game.mjs && node scripts/check-exam-ui.mjs && node scripts/check-game-ui.mjs && node scripts/check-fish.mjs && node scripts/check-fish-ui.mjs && node scripts/check-learning-stage.mjs && node scripts/check-primary-data.mjs && node scripts/check-primary-server.mjs && node scripts/check-primary-ui.mjs && node scripts/check-android-bridge.mjs"
+    "test": "node scripts/check-learning.mjs && node scripts/check-mistakes.mjs && node scripts/check-vocabulary.mjs && node scripts/check-review.mjs && node scripts/check-practice-draft.mjs && node scripts/check-ai-transport.mjs && node scripts/check-ai-resume.mjs && node scripts/check-job-idempotency.mjs && node scripts/check-exams.mjs && node scripts/check-game.mjs && node scripts/check-exam-ui.mjs && node scripts/check-game-ui.mjs && node scripts/check-fish.mjs && node scripts/check-fish-ui.mjs && node scripts/check-learning-stage.mjs && node scripts/check-primary-data.mjs && node scripts/check-primary-server.mjs && node scripts/check-primary-ui.mjs && node scripts/check-android-bridge.mjs && node scripts/check-high-backup.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

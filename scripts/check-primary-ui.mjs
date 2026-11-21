@@ -4,12 +4,13 @@ import {createRequire} from 'node:module';
 import {mkdirSync} from 'node:fs';
 
 mkdirSync('work/checks',{recursive:true});
-await build({entryPoints:['components/primary/primary-dictation.tsx','components/primary/primary-practice.tsx','components/primary/primary-records.tsx'],bundle:true,platform:'node',format:'cjs',outdir:'work/checks/primary-ui',outbase:'.',external:['react','react-dom','lucide-react'],outExtension:{'.js':'.cjs'},logLevel:'silent'});
+await build({entryPoints:['components/primary/primary-dictation.tsx','components/primary/primary-practice.tsx','components/primary/primary-records.tsx','components/primary/review-skills.ts'],bundle:true,platform:'node',format:'cjs',outdir:'work/checks/primary-ui',outbase:'.',external:['react','react-dom','lucide-react'],outExtension:{'.js':'.cjs'},logLevel:'silent'});
 globalThis.window={location:{href:'https://example.test/?stage=primary&grade=3'}};
 const require=createRequire(import.meta.url);
 const {parsePrimaryDictationDraft:dictation}=require('../work/checks/primary-ui/components/primary/primary-dictation.cjs');
 const {parsePrimaryPending:pending}=require('../work/checks/primary-ui/components/primary/primary-practice.cjs');
 const {validatePrimaryBackup:backup}=require('../work/checks/primary-ui/components/primary/primary-records.cjs');
+const {getSkillFocus}=require('../work/checks/primary-ui/components/primary/review-skills.cjs');
 const now=Date.now(),day=86400000,checks=[];
 const word={id:'primary-g3-cat',word:'cat',phonetic:'/kæt/',translation:'猫',frequency:'high',rank:1,grade:3,topic:'动物',example:'I have a cat.',exampleZh:'我有一只猫。',pos:['n.']};
 const word2={...word,id:'primary-g3-color',word:'color',accepted:['colour'],translation:'颜色'};
@@ -33,6 +34,16 @@ check('dictation has finite chronological timestamps and a 14-day retention limi
 check('invalid JSON and huge draft payloads fail without throwing',()=>{for(const raw of [null,'','{bad','null','[]','x'.repeat(250001)])assert.equal(dictation(raw,3,now),null);});
 
 check('pre-acknowledgement AI request keeps exact input and same request ID',()=>{const t=task();const restored=readTask(t);assert.equal(restored.requestId,t.requestId);assert.deepEqual(restored.input,t.input);assert.equal(restored.jobId,undefined);});
+check('targeted tasks freeze only active curriculum labels for this exercise type',()=>{
+ const mistake=(knowledge,misses,masteredAt)=>({knowledge,misses,masteredAt,lastWrong:'2026-11-10',prompt:'private question',yourAnswer:'private answer'});
+ const found=getSkillFocus({a:mistake('地点信息定位',2),b:mistake('细节理解',1),c:mistake('主旨大意',1),d:mistake('过去时',8),e:mistake('推理',10,'2026-11-11')},'reading');
+ assert.deepEqual(found.map(x=>x.knowledge),['定位短文细节','归纳主旨']);
+ assert.doesNotMatch(JSON.stringify(found),/private/);
+ const t=task();t.input.weaknesses=found;assert.deepEqual(readTask(t).input,t.input);
+ for(const invalid of [[...found,...found],['未知'],[{...found[0],yourAnswer:'private answer'}],[{...found[0],knowledge:'一般过去时'}],[{...found[0],prompt:'private question'}]]){
+   assert.equal(readTask({...t,input:{...t.input,weaknesses:invalid}}),null);
+ }
+});
 check('acknowledged AI job remains resumable without creating a new request',()=>{const t={...task(),jobId:'job_abc:123'};assert.equal(readTask(t).jobId,t.jobId);delete t.requestId;assert.equal(readTask(t).jobId,t.jobId);});
 check('pending requests cannot cross grade/stage or silently change exercise type',()=>{const t=task();assert.equal(readTask(t,4),null);for(const patch of [{stage:'high'},{grade:4},{type:'cloze'},{level:'挑战'}])assert.equal(readTask({...t,input:{...t.input,...patch}}),null);});
 check('pending IDs, topics and timestamps are validated before resume',()=>{const t=task();for(const patch of [{requestId:'invalid'},{requestId:undefined,jobId:undefined},{jobId:'../wrong/path'},{savedAt:null},{savedAt:now+day},{savedAt:now-15*day}])assert.equal(readTask({...t,...patch}),null);assert.equal(readTask({...t,input:{...t.input,topic:' '}}),null);assert.equal(readTask({...t,input:{...t.input,topic:'x'.repeat(41)}}),null);});

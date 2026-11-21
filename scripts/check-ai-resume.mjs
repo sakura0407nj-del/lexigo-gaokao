@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {build} from 'esbuild';
 import {createRequire} from 'node:module';
-const require=createRequire(import.meta.url),ts=require('typescript');
-const source=ts.transpileModule(readFileSync('components/learn/api.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const require=createRequire(import.meta.url);
+const compiled=await build({entryPoints:['components/learn/api.ts'],bundle:true,platform:'node',format:'cjs',write:false});
+const source=compiled.outputFiles[0].text;
 function load(){const module={exports:{}};new Function('exports','module','require',source)(module.exports,module,require);return module.exports;}
 const savedFetch=globalThis.fetch,savedTimeout=globalThis.setTimeout;
 const jobId='2026-11-15_00000000-0000-4000-8000-000000000001';

@@ -10,6 +10,12 @@ directory = "netlify/functions"
 node_bundler = "esbuild"
 
 [[redirects]]
+from = "/assets/*"
+to = "/index.html"
+status = 404
+force = false
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
@@ -23,3 +29,13 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 X-Frame-Options = "SAMEORIGIN"
 Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+
+[[headers]]
+for = "/"
+[headers.values]
+Cache-Control = "no-cache, max-age=0, must-revalidate"
+
+[[headers]]
+for = "/index.html"
+[headers.values]
+Cache-Control = "no-cache, max-age=0, must-revalidate"

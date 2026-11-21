@@ -15,4 +15,4 @@ export default defineConfig({plugins:[
     return ()=>{server.middlewares.use((_req,res,next)=>{res.removeHeader('Content-Security-Policy');next();});};
   }},
   react(),netlify({edgeFunctions:{enabled:false},database:{enabled:false},geolocation:{enabled:false},images:{enabled:false},headers:{enabled:false}})
-],resolve:{alias:{'@':fileURLToPath(new URL('.',import.meta.url))}},build:{outDir:'dist-public',sourcemap:false},server:{host:'127.0.0.1',port:5178,strictPort:true}});
+],resolve:{alias:{'@':fileURLToPath(new URL('.',import.meta.url))}},build:{target:'chrome74',cssTarget:'chrome74',outDir:'dist-public',sourcemap:false},server:{host:'127.0.0.1',port:5178,strictPort:true}});

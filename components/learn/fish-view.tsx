@@ -1,5 +1,6 @@
 "use client";
 
+import {newRequestId} from './request-id';
 import {useCallback,useEffect,useRef,useState,type KeyboardEvent as ReactKeyboardEvent} from 'react';
 import {ArrowDown,ArrowLeft,ArrowRight,ArrowUp,Download,Fish,Pause,Play,RotateCcw,Trophy} from 'lucide-react';
 import {advanceFishRun,createFishRun,fishResult,POS_LABEL,TARGET_INTERVAL} from '@/lib/fish-engine';
@@ -44,7 +45,7 @@ export function FishView({primaryGrade}:{primaryGrade?:PrimaryGrade}={}){
     const fresh=unhandledFishEvents(run,handled.current);
     if(!fresh.length)return false;
     handled.current=Math.max(handled.current,...fresh.map(e=>e.id));
-    setFeedback(fresh.at(-1)||null);
+    setFeedback(fresh[fresh.length-1]||null);
     const wrong=fishEventMistakes(fresh);if(wrong.length)addMistakes(wrong);
     return true;
   },[addMistakes]);
@@ -77,7 +78,7 @@ export function FishView({primaryGrade}:{primaryGrade?:PrimaryGrade}={}){
 
   const begin=()=>{
     handled.current=0;setFeedback(null);setNotice('');input.current={};keys.current.clear();
-    let run:FishRun;try{run=createFishRun({duration,...(primaryGrade?{primaryGrade}:{})},crypto.randomUUID());}catch(error){setNotice(error instanceof Error?error.message:'当前年级鱼词库尚未准备好，请稍后再试。');return;}publish({version:1,run,phase:'play',handledEvent:0,updatedAt:new Date().toISOString()});
+    let run:FishRun;try{run=createFishRun({duration,...(primaryGrade?{primaryGrade}:{})},newRequestId());}catch(error){setNotice(error instanceof Error?error.message:'当前年级鱼词库尚未准备好，请稍后再试。');return;}publish({version:1,run,phase:'play',handledEvent:0,updatedAt:new Date().toISOString()});
     pausedRef.current=false;setPaused(false);markStudyDay();
     window.setTimeout(()=>arena.current?.querySelector<HTMLCanvasElement>('canvas')?.focus({preventScroll:true}),0);
   };

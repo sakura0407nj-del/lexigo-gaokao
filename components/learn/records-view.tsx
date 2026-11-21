@@ -3,7 +3,8 @@
 import { Download, HardDrive, Trash2, Upload } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { ORIGIN_LABEL, TYPE_LABEL, type BankResponse } from "./api";
-import { parseProgress, streakDays, todayKey, useProgress } from "./progress";
+import { streakDays, todayKey, useProgress } from "./progress";
+import { backupCounts, createHighBackup, MAX_BACKUP_BYTES, parseHighBackup, type HighBackupPreview } from "./high-backup";
 import { SourcesSection } from "./sources-section";
 import { Empty, ErrorNote, Loading, SectionHeader, downloadText, formatDate } from "./ui";
 
@@ -12,8 +13,15 @@ export function RecordsView({ bank, bankError, onReloadBank }: { bank: BankRespo
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [pending, setPending] = useState<(HighBackupPreview & {filename: string; generation: number}) | null>(null);
+  const [reading, setReading] = useState(false);
+  const readGeneration = useRef(0);
+  const previewRef = useRef<HTMLHeadingElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => () => { readGeneration.current++; }, []);
+  useEffect(() => { if (pending) previewRef.current?.focus(); }, [pending]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -23,26 +31,58 @@ export function RecordsView({ bank, bankError, onReloadBank }: { bank: BankRespo
   }, [confirmOpen]);
 
   function exportJson() {
-    downloadText(`lexigo-记录-${todayKey()}.json`, JSON.stringify(progress, null, 2), "application/json");
+    downloadText(`lexigo-高中记录-${todayKey()}.json`, JSON.stringify(createHighBackup(progress), null, 2), "application/json");
     setMessage("已发起导出，请完成文件保存。");
+  }
+
+  function cancelImport() {
+    readGeneration.current++;
+    setPending(null);
+    setReading(false);
+  }
+
+  function chooseImport() {
+    cancelImport();
+    setError("");
+    setMessage("");
+    fileRef.current?.click();
   }
 
   async function importJson(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     event.target.value = "";
     if (!file) return;
+    const generation = ++readGeneration.current;
+    setPending(null);
+    setReading(true);
     setMessage("");
     setError("");
-    if (file.size > 20 * 1024 * 1024) {
-      setError("文件太大，学习记录文件应小于 20MB。");
-      return;
-    }
     try {
-      const parsed = parseProgress(JSON.parse(await file.text()));
-      replaceAll(parsed);
-      setMessage(`导入成功：已掌握 ${parsed.learned.length} 词，收藏 ${parsed.starred.length} 词，错词 ${Object.keys(parsed.wrongbook).length} 个，错题 ${Object.keys(parsed.mistakes).length} 道。`);
+      if (file.size > MAX_BACKUP_BYTES) throw new Error("文件太大，学习记录文件应小于 20MB");
+      const text = await file.text();
+      if (generation !== readGeneration.current) return;
+      if (text.length > MAX_BACKUP_BYTES) throw new Error("文件内容过大");
+      const parsed = parseHighBackup(JSON.parse(text));
+      setPending({...parsed, filename: file.name.slice(0, 200), generation});
     } catch (err) {
-      setError(`导入失败：${err instanceof SyntaxError ? "文件不是有效的 JSON" : err instanceof Error ? err.message : "格式不正确"}。当前记录未改变。`);
+      if (generation === readGeneration.current) setError(`无法预览：${err instanceof SyntaxError ? "文件不是有效的 JSON" : err instanceof Error ? err.message : "格式不正确"}。当前记录未改变。`);
+    } finally {
+      if (generation === readGeneration.current) setReading(false);
+    }
+  }
+
+  function applyImport() {
+    if (!pending || reading || pending.generation !== readGeneration.current) return;
+    try {
+      if (!replaceAll(pending.progress)) {
+        setError("保存失败：浏览器存储已满或不可用，原有记录未改动。请先导出当前记录，再释放空间后重试。");
+        return;
+      }
+      cancelImport();
+      setError("");
+      setMessage("已保存并恢复高中学习记录。小学记录未改动。");
+    } catch {
+      setError("恢复失败，原有记录未改动。请保留备份文件后重试。");
     }
   }
 
@@ -119,19 +159,30 @@ export function RecordsView({ bank, bankError, onReloadBank }: { bank: BankRespo
             <h2 className="sub-title flex items-center gap-2">
               <HardDrive aria-hidden className="size-5" /> 备份与恢复
             </h2>
-            <p className="section-desc">导出为 JSON 文件；导入时会校验格式，并用文件内容替换本机当前记录。</p>
+            <p className="section-desc">导出带有高中标识的 JSON 备份。导入先预览并确认，再替换本机高中记录；也可读取旧版高中备份。备份不包含未完成草稿、游戏现场与单独保存的积分历史。</p>
             <div className="flex flex-wrap gap-3">
               <button type="button" className="btn btn-primary" onClick={exportJson}>
                 <Download aria-hidden className="size-4" /> 导出 JSON
               </button>
-              <button type="button" className="btn btn-ghost" onClick={() => fileRef.current?.click()}>
-                <Upload aria-hidden className="size-4" /> 导入 JSON
+              <button type="button" className="btn btn-ghost" onClick={chooseImport}>
+                <Upload aria-hidden className="size-4" /> {reading || pending ? "重新选择备份" : "导入 JSON"}
               </button>
-              <button type="button" className="btn btn-danger" onClick={() => setConfirmOpen(true)}>
+              <button type="button" className="btn btn-danger" onClick={() => { cancelImport(); setConfirmOpen(true); }}>
                 <Trash2 aria-hidden className="size-4" /> 清空记录
               </button>
               <input ref={fileRef} type="file" accept=".json,application/json" hidden onChange={importJson} />
             </div>
+            {reading ? <div aria-live="polite"><p>正在读取备份；当前记录尚未改变。</p><button type="button" className="btn btn-ghost mt-3" onClick={cancelImport}>取消读取</button></div> : null}
+            {pending ? <section aria-labelledby="backup-preview-title" className="space-y-3 border-t border-[var(--border)] pt-4">
+              <h3 id="backup-preview-title" ref={previewRef} tabIndex={-1} className="sub-title">导入预览 · 当前记录尚未改变</h3>
+              <p className="section-desc break-all">{pending.filename}{pending.exportedAt ? ` · 导出于 ${formatDate(pending.exportedAt)}` : ""}</p>
+              <p className="note">{pending.source === "high" ? "已识别：高中学习记录备份。" : "旧版备份未标注学段；未发现小学标识。请确认此文件来自高中模式，再决定是否替换。"}</p>
+              <div className="overflow-x-auto"><table className="w-full text-left text-sm"><caption className="sr-only">当前高中记录与备份记录数量对比</caption><thead><tr><th scope="col" className="py-2">记录类型</th><th scope="col">当前</th><th scope="col">备份</th></tr></thead><tbody>
+                {backupCounts(progress).map(([label, count], index) => <tr key={label}><th scope="row" className="py-2 font-normal">{label}</th><td>{count}</td><td>{backupCounts(pending.progress)[index][1]}</td></tr>)}
+              </tbody></table></div>
+              <p className="section-desc">确认后将替换上表全部高中记录，不会与现有记录合并。若需要保留当前内容，请先导出当前记录。</p>
+              <div className="flex flex-wrap gap-3"><button type="button" className="btn btn-primary" onClick={applyImport}>确认替换高中记录</button><button type="button" className="btn btn-ghost" onClick={cancelImport}>取消导入</button></div>
+            </section> : null}
             {message ? <p className="note note-success" role="status">{message}</p> : null}
             {error ? <ErrorNote message={error} /> : null}
           </div>

@@ -14,6 +14,7 @@ import {PrimaryRecords} from './primary-records';
 import {CorrectionView} from '../learn/correction-view';
 import GameHub from '../learn/game-hub';
 import {MistakesView} from '../learn/mistakes-view';
+import {getSkillFocus} from './review-skills';
 
 type Tab='today'|'words'|'dictation'|'practice'|'mistakes'|'games'|'correction'|'records';
 const GRADES:PrimaryGrade[]=[3,4,5,6];
@@ -46,6 +47,7 @@ export function PrimaryApp(){
   const [correctionKind,setCorrectionKind]=useState<'essay'|'questions'>(()=>typeof window!=='undefined'&&window.location.hash==='#questions'?'questions':'essay');
   const [ready,setReady]=useState(false);
   const [tab,setTab]=useState<Tab>('today');
+  const [focusType,setFocusType]=useState<'reading'|'grammar'>();
   const [data,setData]=useState<PrimaryWordsResponse|null>(null);
   const [loading,setLoading]=useState(false);
   const [error,setError]=useState('');
@@ -82,6 +84,7 @@ export function PrimaryApp(){
   },[items,progress,isLearned]);
 
   const go=useCallback((t:Tab)=>{
+    setFocusType(undefined);
     speechRef.current.stop();
     window.scrollTo({top:0});
     history.replaceState(null,'',`#${HASH[t]}`);
@@ -98,6 +101,7 @@ export function PrimaryApp(){
   },[grade]);
   const retry=useCallback(()=>setReload(n=>n+1),[]);
   const onMistakeNav=useCallback((t:string)=>go(t==='dictation'?'dictation':t==='vocab'?'words':'practice'),[go]);
+  const reviewType=(['reading','grammar'] as const).find(type=>getSkillFocus(progress.mistakes,type).length>0);
   const wordProps={grade,words:items,speech,loading,error,onRetry:retry};
   const num=(n:number)=>hydrated?n:'…';
 
@@ -156,8 +160,8 @@ export function PrimaryApp(){
         {tab==='today'&&today}
         {tab==='words'&&<PrimaryWords {...wordProps}/>}
         {tab==='dictation'&&<PrimaryDictation {...wordProps}/>}
-        {tab==='practice'&&<PrimaryPractice grade={grade}/>}
-        {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav}/>}
+        {tab==='practice'&&<PrimaryPractice grade={grade} initialFocusType={focusType}/>}
+        {tab==='mistakes'&&<MistakesView onNavigate={onMistakeNav} primary onTargetPractice={reviewType?()=>{go('practice');setFocusType(reviewType);}:undefined}/>}
         {tab==='games'&&<GameHub speech={speech} primaryGrade={grade}/>}
         {tab==='correction'&&<><div className='primary-tabs' role='group' aria-label='写作与批改方式'><button type='button' className='primary-button' aria-pressed={correctionKind==='essay'} onClick={()=>setCorrectionKind('essay')}>写作小老师</button><button type='button' className='primary-button' aria-pressed={correctionKind==='questions'} onClick={()=>setCorrectionKind('questions')}>题目批改</button></div><CorrectionView key={correctionKind} kind={correctionKind} primaryGrade={grade}/></>}
         {tab==='records'&&<PrimaryRecords grade={grade}/>}

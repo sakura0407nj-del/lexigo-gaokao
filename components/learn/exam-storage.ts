@@ -1,3 +1,4 @@
+import {newRequestId} from './request-id';
 import { z } from 'zod';
 import type { CustomExam, ExamConfig, ExamReport } from '@/lib/exam-types';
 import type { ExerciseType } from '@/lib/learning-types';
@@ -37,4 +38,4 @@ export function parseExamDraft(value:unknown,now=Date.now()):ExamDraft|null{
 export function readExamDraft():ExamDraft|null{try{const raw=window.localStorage.getItem(EXAM_STORAGE_KEY);if(!raw||raw.length>2_000_000)return null;return parseExamDraft(JSON.parse(raw));}catch{return null}}
 export function saveExamDraft(draft:ExamDraft):boolean{try{const clean=parseExamDraft({...draft,updatedAt:new Date().toISOString()});if(!clean)return false;const raw=JSON.stringify(clean);if(raw.length>2_000_000)return false;window.localStorage.setItem(EXAM_STORAGE_KEY,raw);return true}catch{return false}}
 export function clearExamDraft(){try{window.localStorage.removeItem(EXAM_STORAGE_KEY)}catch{}}
-export function createExamDraft(config:ExamConfig,timed:boolean,now=Date.now()):ExamDraft{return {version:1,phase:'building',exam:{id:`exam-${crypto.randomUUID()}`,title:config.source==='ai'?'AI 原创专项模拟卷':'我的专项模拟卷',createdAt:new Date(now).toISOString(),config,sections:[],notes:[]},answers:{},timed,clock:{elapsed:0,anchor:null},active:0,updatedAt:new Date(now).toISOString()};}
+export function createExamDraft(config:ExamConfig,timed:boolean,now=Date.now()):ExamDraft{return {version:1,phase:'building',exam:{id:`exam-${newRequestId()}`,title:config.source==='ai'?'AI 原创专项模拟卷':'我的专项模拟卷',createdAt:new Date(now).toISOString(),config,sections:[],notes:[]},answers:{},timed,clock:{elapsed:0,anchor:null},active:0,updatedAt:new Date(now).toISOString()};}

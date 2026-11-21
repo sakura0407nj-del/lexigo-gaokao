@@ -87,7 +87,10 @@ export function PrimaryRecords({grade}: {grade: PrimaryGrade}) {
   const confirmRestore = () => {
     if (!pending) return;
     try {
-      replaceAll(pending.progress);
+      if (!replaceAll(pending.progress)) {
+        setError('保存失败：浏览器存储已满或不可用，原有记录未改动。请先导出当前记录，再释放空间后重试。');
+        return;
+      }
       setPending(null);
       setNotice('已恢复本年级记录；其他年级和高中记录未改动');
     } catch {

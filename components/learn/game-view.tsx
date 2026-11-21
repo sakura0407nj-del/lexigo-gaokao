@@ -1,4 +1,5 @@
 "use client";
+import {newRequestId} from './request-id';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {ArrowLeft, ArrowRight, Pause, Play, RotateCcw, Volume2, Trophy, Users, Zap} from 'lucide-react';
 import {applyAnswer, buildGameQuestions, createGameState, gameResult} from '@/lib/game-engine';
@@ -26,7 +27,7 @@ function restore(primaryGrade?: PrimaryGrade): Run | null {
     let state = createGameState(r.questions.length); const answers: GameAnswer[] = [];
     for (const [index, prior] of r.answers.entries()) {if (!prior || prior.questionId !== r.questions[index].id || ![null, 0, 1].includes(prior.selectedIndex) || state.finished) return null; const result = applyAnswer(state, r.questions[index], prior.selectedIndex); state = result.state; answers.push(result.answer);}
     if ((r.phase === 'result' && !state.finished) || (state.finished && !r.feedback)) return null;
-    return {...r, id: typeof r.id === 'string' ? r.id : crypto.randomUUID(), state, answers, feedback: r.feedback ? answers.at(-1) || null : null, scope: typeof r.scope === 'string' ? r.scope.slice(0, 1000) : '已保存关卡', paused: r.phase === 'play', remaining: Number.isFinite(r.remaining) ? Math.max(0, Math.min(12, r.remaining)) : 12};
+    return {...r, id: typeof r.id === 'string' ? r.id : newRequestId(), state, answers, feedback: r.feedback ? answers[answers.length-1] || null : null, scope: typeof r.scope === 'string' ? r.scope.slice(0, 1000) : '已保存关卡', paused: r.phase === 'play', remaining: Number.isFinite(r.remaining) ? Math.max(0, Math.min(12, r.remaining)) : 12};
   } catch {return null;}
 }
 function replayQuestions(answers: readonly GameAnswer[]): GameQuestion[] {
@@ -89,16 +90,16 @@ export function GameView({speech, primaryGrade}: {speech: SpeechState; primaryGr
         }
         if (!buildGameQuestions(words, bank, {kind: 'word', length, seed: Date.now()}).length) throw new Error('所选范围中没有足够可区分的词语；请扩大范围或切换句子模式。');
       }
-      const questions = buildGameQuestions(words, primaryGrade ? [] : bank, {kind: primaryGrade ? 'word' : kind, length, difficulty, seed: crypto.randomUUID()});
+      const questions = buildGameQuestions(words, primaryGrade ? [] : bank, {kind: primaryGrade ? 'word' : kind, length, difficulty, seed: newRequestId()});
       if (!questions.length) throw new Error('当前设置没有可用题目，请更换题型或难度。');
       if (!active.current) return;
       if (questions.length < length) setNote(`当前范围仅有 ${questions.length} 道可用题，本局按实际题数进行，未混入其他来源的词语。`);
       if (!primaryGrade && kind === 'mix') scope += '；句子/短语来自通用高中题库，不按教材单元编排';
-      locked.current = false; update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, timed, paused: false, scope, ...(primaryGrade ? {primaryGrade} : {})});
+      locked.current = false; update({id: newRequestId(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, timed, paused: false, scope, ...(primaryGrade ? {primaryGrade} : {})});
     } catch (e) {if (active.current) setError(e instanceof Error ? e.message : errorText(e));} finally {if (active.current) setBusy(false);}
   };
   const next = () => {const r = current.current; if (!r?.feedback || r.phase !== 'play') return; locked.current = false; if (r.state.finished) {update({...r, phase: 'result'}); const highest = Math.max(best, r.state.peakCrowd); setBest(highest); try {const raw = localStorage.getItem(historyKey); const parsed: unknown = raw && raw.length < 40000 ? JSON.parse(raw) : []; const history = Array.isArray(parsed) ? parsed.filter(item => item && typeof item.id === 'string' && item.id !== r.id).slice(-29) : []; localStorage.setItem(historyKey, JSON.stringify([...history, {id: r.id, at: new Date().toISOString(), ...gameResult(r.state)}])); localStorage.setItem(bestKey, String(highest));} catch {setNote('本局总结未能写入本地历史；当前结果仍可查看。');} return;} update({...r, index: r.index + 1, feedback: null, remaining: 12});};
-  const replayWrong = () => {if (!run) return; const questions = replayQuestions(run.answers); if (!questions.length) return; locked.current = false; setSaved(false); update({id: crypto.randomUUID(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, paused: false, timed: false, scope: '上一局答错/未答题重练；选项已重新排列，左右正确门数量均衡', ...(primaryGrade ? {primaryGrade} : {})});};
+  const replayWrong = () => {if (!run) return; const questions = replayQuestions(run.answers); if (!questions.length) return; locked.current = false; setSaved(false); update({id: newRequestId(), questions, state: createGameState(questions.length), answers: [], index: 0, feedback: null, phase: 'play', remaining: 12, paused: false, timed: false, scope: '上一局答错/未答题重练；选项已重新排列，左右正确门数量均衡', ...(primaryGrade ? {primaryGrade} : {})});};
   const question = run?.questions[run.index], result = run ? gameResult(run.state) : null;
   return <section className="english-game">
     <header className="game-heading"><div><p>LEXIGO · SKY RUN</p><h1>让知识，带队向前</h1><span>选对英语之门，壮大你的学习小队。{best > 0 ? ` 本机最高队伍 ${best} 人。` : ''}</span></div><span className="game-free">无需 AI · 不消耗额度</span></header>

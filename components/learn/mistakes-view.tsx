@@ -19,7 +19,7 @@ const LIST_PAGE = 20;
 function reviewHint(entry: MistakeEntry, now: number) {
   const days = Math.floor((now - Date.parse(entry.lastWrong)) / 86400000);
   if (!Number.isFinite(days)) return "";
-  if (entry.misses >= 3) return "多次出错，建议先看解析和相关知识卡，再挑战。";
+  if (entry.misses >= 3) return "这道题已经错过几次。先读解析，想想当时漏掉了哪条线索，再挑战一次。";
   if (days >= 7) return `已 ${days} 天未复习，建议今天挑战一次。`;
   if (days >= 1) return "隔天复习效果更好，可以现在挑战。";
   return "刚出错，建议明天再挑战一次检验是否记住。";
@@ -42,7 +42,7 @@ function sourceLabel(entry: MistakeEntry) {
   return entry.kind === "exercise" && entry.type ? TYPE_LABEL[entry.type] : KIND_LABEL[entry.kind];
 }
 
-export function MistakesView({ onNavigate }: { onNavigate: (tab: TabId) => void }) {
+export function MistakesView({ onNavigate, primary = false, onTargetPractice }: { onNavigate: (tab: TabId) => void; primary?: boolean; onTargetPractice?: () => void }) {
   const { progress, hydrated, masterMistake, restoreMistake } = useProgress();
   const [shelf, setShelf] = useState<Shelf>("active");
   const [kind, setKind] = useState<KindFilter>("all");
@@ -242,9 +242,8 @@ export function MistakesView({ onNavigate }: { onNavigate: (tab: TabId) => void 
               {staleCount ? `${staleCount} 道已超过 3 天没复习；` : ""}
               每次挑战 5–10 道，答错的会留在待复习。
             </p>
-            <button type="button" className="btn btn-ghost btn-sm" onClick={() => onNavigate("knowledge")}>
-              查看知识卡
-            </button>
+            {primary ? onTargetPractice && <button type="button" className="btn btn-ghost btn-sm" onClick={onTargetPractice}>按错题去命题</button> :
+              <button type="button" className="btn btn-ghost btn-sm" onClick={() => onNavigate("knowledge")}>查看知识卡</button>}
           </div>
         </aside>
       ) : null}
@@ -267,7 +266,7 @@ export function MistakesView({ onNavigate }: { onNavigate: (tab: TabId) => void 
       </div>
       {kind === "exercise" ? (
         <div className="band-row" role="radiogroup" aria-label="题型筛选">
-          {(["all", ...TYPES] as TypeFilter[]).map((value) => (
+          {(["all", ...(primary ? ["reading","grammar"] : TYPES)] as TypeFilter[]).map((value) => (
             <button key={value} type="button" role="radio" aria-checked={type === value} className={cx("band-chip", type === value && "is-active")} onClick={() => setType(value)}>
               {value === "all" ? "全部题型" : TYPE_LABEL[value]}
               <span className="band-count">{shelfItems.filter((entry) => entry.kind === "exercise" && (value === "all" || entry.type === value)).length}</span>

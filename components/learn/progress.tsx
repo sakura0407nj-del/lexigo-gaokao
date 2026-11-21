@@ -261,7 +261,7 @@ interface ProgressApi {
   addMistakes: (drafts: MistakeDraft[]) => number;
   masterMistake: (id: string) => void;
   restoreMistake: (id: string) => void;
-  replaceAll: (next: Progress) => void;
+  replaceAll: (next: Progress) => boolean;
   clearAll: () => void;
 }
 
@@ -474,7 +474,21 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const replaceAll = useCallback((next: Progress) => setProgress(() => migrated(next)), []);
+  const replaceAll = useCallback((next: Progress): boolean => {
+    const current = getSnapshot();
+    const progress = migrated(next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    } catch {
+      // Restore is transactional: failed persistence must not replace usable in-memory records.
+      snapshot = { ...current, storageAvailable: false };
+      emit();
+      return false;
+    }
+    snapshot = { progress, storageAvailable: true };
+    emit();
+    return true;
+  }, []);
   const clearAll = useCallback(() => setProgress(() => emptyProgress()), []);
 
   const value = useMemo<ProgressApi>(() => {

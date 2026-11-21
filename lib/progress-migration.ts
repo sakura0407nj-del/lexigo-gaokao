@@ -15,7 +15,7 @@ export interface MigratableProgress {
 /** Resolve legacy scoped IDs without depending on, or shipping, the full word list. */
 export function canonicalWordId(id:string,aliases:WordAliases):string {
   const seen=new Set<string>();let next=id;
-  while(Object.hasOwn(aliases,next)){
+  while(Object.prototype.hasOwnProperty.call(aliases,next)){
     if(seen.has(next))return id;
     seen.add(next);
     const target=aliases[next];

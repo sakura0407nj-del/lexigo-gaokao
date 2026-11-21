@@ -1,5 +1,5 @@
 "use client";
-import {Component,lazy,Suspense,useEffect,type ReactNode} from 'react';
+import {Component,lazy,Suspense,useEffect,useLayoutEffect,type ReactNode} from 'react';
 import {GraduationCap,Sprout} from 'lucide-react';
 import {LearnApp} from './learn-app';
 import {ProgressProvider} from './progress';
@@ -14,6 +14,11 @@ class LearningBoundary extends Component<{children:ReactNode},{failed:boolean}>{
 
 export function StageApp(){
  const stage=getLearningStage(),grade=getPrimaryGrade();
+ useLayoutEffect(()=>{
+   const panel=document.getElementById('startup');
+   if(panel)panel.hidden=true;
+   window.dispatchEvent(new Event('lexigo-ready'));
+ },[]);
  useEffect(()=>{document.title=stage==='primary'?`拾词 LexiGo · 小学${grade}年级英语`:'拾词 LexiGo · 高考英语学习室';},[stage,grade]);
  let rememberedGrade=3;try{const n=Number(localStorage.getItem('lexigo.primary.grade.v1'));if([3,4,5,6].includes(n))rememberedGrade=n;}catch{}
  return <div className={`stage-shell stage-${stage}`}><header className="learning-stage-bar"><span><GraduationCap size={18}/>选择学习阶段</span><nav aria-label="学习阶段"><a className={stage==='primary'?'selected':''} href={`?stage=primary&grade=${stage==='primary'?grade:rememberedGrade}#today`} aria-current={stage==='primary'?'page':undefined}><Sprout size={16}/>小学版 <small>3—6年级</small></a><a className={stage==='high'?'selected':''} href="?stage=high#today" aria-current={stage==='high'?'page':undefined}><GraduationCap size={16}/>高中版</a></nav><small>各学段、年级的记录独立保存</small></header><LearningBoundary>{stage==='primary'?<ProgressProvider><Suspense fallback={<p role="status" className="primary-stage-loading">正在准备小学英语学习室…</p>}><PrimaryApp/></Suspense></ProgressProvider>:<LearnApp/>}</LearningBoundary></div>;

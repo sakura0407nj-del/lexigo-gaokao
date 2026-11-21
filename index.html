@@ -1,2 +1,33 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#1f4d3a"/><meta name="description" content="拾词 LexiGo：高中英语与小学三至六年级通用学习。小学含240个精选词、16套原创练习共72题；支持听写、AI命题批改、错题复习及每10秒换词的词性海洋游戏，各年级记录独立保存。手机电脑均可用，无需登录ChatGPT。"/><link rel="icon" href="/favicon.svg"/><title>拾词 LexiGo · 小学与高中英语学习室</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#1f4d3a"/>
+  <meta name="description" content="拾词 LexiGo 小学与高中英语学习室。按年级听写、做练习和复习错题。"/>
+  <link rel="icon" href="/favicon.svg"/>
+  <title>拾词 LexiGo · 小学与高中英语学习室</title>
+  <style>
+    #startup{box-sizing:border-box;max-width:32rem;margin:10vh auto;padding:24px;color:#244d38;font:16px/1.6 system-ui,sans-serif}
+    #startup h1{font-size:1.5rem;margin:0 0 12px}
+    #startup p{margin:8px 0 16px}
+    #startup a{display:inline-block;padding:10px 18px;border-radius:8px;background:#244d38;color:white;text-decoration:none}
+    #startup details{margin:16px 0;color:#435748}
+  </style>
+  <script defer src="/startup.js"></script>
+</head>
+<body>
+  <section id="startup" aria-labelledby="startup-title">
+    <h1 id="startup-title">正在打开英语学习室…</h1>
+    <p id="startup-message" role="status">首次打开时，手机需要下载学习页面。</p>
+    <a id="startup-retry" href="">重新加载</a>
+    <details id="startup-help"><summary>手机上一直打不开？</summary>
+      <p>在拾词安卓应用里，点右上角「⋮」，选择「用系统浏览器打开」。使用较旧手机时，也可以在应用商店更新 Android System WebView 或 Chrome 后再试。</p>
+      <small id="startup-version"></small>
+    </details>
+    <noscript>请在浏览器设置中允许 JavaScript，然后重新加载。</noscript>
+  </section>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

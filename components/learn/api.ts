@@ -1,3 +1,4 @@
+import {newRequestId} from './request-id';
 import type { Correction, ExerciseType, Grade, Paper, Word } from "@/lib/learning-types";
 import type { Weakness } from "./mistakes";
 
@@ -262,7 +263,7 @@ async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknow
     }
     delete payload.images;
   }
-  const requestId=resume?.resumeRequestId||crypto.randomUUID();
+  const requestId=resume?.resumeRequestId||newRequestId();
   if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId))throw new ApiError('保存的提交编号无效，请重新生成这一部分。',400,true);
   const submission={kind,payload,uploadIds,requestId};
   resume?.onSubmitting?.(requestId);

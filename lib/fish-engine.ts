@@ -158,7 +158,7 @@ export function parseFishRun(raw:unknown,expected?:FishPrimaryGrade|'high'):Fish
   const elapsed=raw.elapsed as number,duration=raw.duration as 60|120|180,target=knownWord(raw.target,wordsById);
   const targetIndex=Math.min(Math.floor((elapsed+EPS)/TARGET_INTERVAL),duration/TARGET_INTERVAL-1);
   if(!target||raw.finished!==(elapsed===duration)||raw.targetIndex!==targetIndex||raw.nextChangeAt!==(targetIndex+1)*TARGET_INTERVAL||!number(raw.graceUntil,targetIndex*10+1-EPS,targetIndex*10+1+EPS)||!integer(raw.combo,0,raw.bestCombo as number))return null;
-  if(!Array.isArray(raw.targetHistory)||raw.targetHistory.length!==targetIndex+1||raw.targetHistory.some(id=>typeof id!=='string'||!wordsById.has(id))||new Set(raw.targetHistory).size!==raw.targetHistory.length||raw.targetHistory.at(-1)!==target.id)return null;
+  if(!Array.isArray(raw.targetHistory)||raw.targetHistory.length!==targetIndex+1||raw.targetHistory.some(id=>typeof id!=='string'||!wordsById.has(id))||new Set(raw.targetHistory).size!==raw.targetHistory.length||raw.targetHistory[raw.targetHistory.length-1]!==target.id)return null;
   if(!record(raw.player)||!validPoint(raw.player)||raw.player.radius!==radiusFor(raw.correct as number)||![1,-1].includes(raw.player.facing as number)||!number(raw.player.invulnerableUntil,0,elapsed+0.8+EPS))return null;
   const player=raw.player as unknown as FishRun['player'];
   if(player.x<player.radius||player.x>WORLD_WIDTH-player.radius||player.y<player.radius||player.y>WORLD_HEIGHT-player.radius)return null;

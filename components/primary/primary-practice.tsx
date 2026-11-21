@@ -6,10 +6,12 @@ import type {Grade,Paper} from '@/lib/learning-types';
 import {api,getJson,postJson,ensureSession,errorText,isAbort,ApiError} from '../learn/api';
 import {PaperPlayer} from '../learn/paper-player';
 import {readDraft,writeDraft} from '../learn/practice-draft';
+import {useProgress} from '../learn/progress';
+import {getSkillFocus,isSavedFocus,type SkillFocus} from './review-skills';
 
 type AiType='reading'|'grammar';
 type GradeBody=Parameters<NonNullable<ComponentProps<typeof PaperPlayer>['gradePaper']>>[0];
-interface AiInput{stage:'primary';grade:PrimaryGrade;type:AiType;level:'基础';topic:string}
+interface AiInput{stage:'primary';grade:PrimaryGrade;type:AiType;level:'基础';topic:string;weaknesses?:SkillFocus[]}
 interface Pending{version:1;input:AiInput;jobId?:string;requestId?:string;savedAt:number}
 interface Open{paper:Paper;answers?:Record<string,string>;elapsed?:number;restored?:boolean}
 interface DraftInfo{paper:PrimaryPaper;answers:Record<string,string>;elapsed:number}
@@ -27,7 +29,8 @@ export function parsePrimaryPending(raw:string|null,g:PrimaryGrade,now=Date.now(
     const p=JSON.parse(raw) as {version?:unknown;input?:Partial<AiInput>;jobId?:unknown;requestId?:unknown;savedAt?:unknown}|null;
     const i=p?.input;
     if(!p||p.version!==1||!i||i.stage!=='primary'||i.grade!==g||(i.type!=='reading'&&i.type!=='grammar')||i.level!=='基础'||typeof i.topic!=='string'||!i.topic.trim()||i.topic.length>40||!okId(p.jobId)||(p.requestId!==undefined&&(typeof p.requestId!=='string'||!REQUEST_ID.test(p.requestId)))||(!p.jobId&&!p.requestId)||typeof p.savedAt!=='number'||!Number.isFinite(p.savedAt)||p.savedAt<0||p.savedAt>now+6e4||now-p.savedAt>=TTL)return null;
-    return {version:1,input:{stage:'primary',grade:g,type:i.type,level:'基础',topic:i.topic},jobId:p.jobId as string|undefined,requestId:p.requestId as string|undefined,savedAt:p.savedAt};
+    if(i.weaknesses!==undefined&&!isSavedFocus(i.weaknesses,i.type))return null;
+    return {version:1,input:{stage:'primary',grade:g,type:i.type,level:'基础',topic:i.topic,...(i.weaknesses?{weaknesses:i.weaknesses}:{})},jobId:p.jobId as string|undefined,requestId:p.requestId as string|undefined,savedAt:p.savedAt};
   }catch{return null;}
 }
 function loadPending(g:PrimaryGrade):Pending|null{
@@ -46,8 +49,10 @@ function readPrimaryDraft(g:PrimaryGrade):DraftInfo|null{
   }catch{return null;}
 }
 
-export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:string}){
-  const [tab,setTab]=useState<'bank'|'ai'>('bank');
+export function PrimaryPractice({grade,aiNotice,initialFocusType}:{grade:PrimaryGrade;aiNotice?:string;initialFocusType?:AiType}){
+  const {progress}=useProgress();
+  const [targetMistakes,setTargetMistakes]=useState(!!initialFocusType);
+  const [tab,setTab]=useState<'bank'|'ai'>(initialFocusType?'ai':'bank');
   const [bank,setBank]=useState<PrimaryBankResponse|null>(null);
   const [bankErr,setBankErr]=useState('');
   const [reload,setReload]=useState(0);
@@ -55,7 +60,9 @@ export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:s
   const [open,setOpen]=useState<Open|null>(null);
   const [draft,setDraft]=useState<DraftInfo|null>(null);
   const [pending,setPending]=useState<Pending|null>(null);
-  const [type,setType]=useState<AiType>('reading');
+  const [type,setType]=useState<AiType>(initialFocusType??'reading');
+  const suggestions=getSkillFocus(progress.mistakes,type);
+  const shownFocus=pending ? (pending.input.weaknesses??[]) : suggestions;
   const [topic,setTopic]=useState('日常生活');
   const [busy,setBusy]=useState(false);
   const [aiErr,setAiErr]=useState('');
@@ -67,7 +74,7 @@ export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:s
   useEffect(()=>{
     setDraft(readPrimaryDraft(grade));
     const p=loadPending(grade);setPending(p);
-    if(p){setType(p.input.type);setTopic(p.input.topic);}
+    if(p){setType(p.input.type);setTopic(p.input.topic);setTab('ai');setTargetMistakes(!!p.input.weaknesses?.length);}
   },[grade]);
   useEffect(()=>{
     const c=new AbortController();
@@ -88,7 +95,7 @@ export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:s
 
   const run=async(resume?:Pending)=>{
     if(busyRef.current)return;
-    const input:AiInput=resume?resume.input:{stage:'primary',grade,type,level:'基础',topic:topic.trim()};
+    const input:AiInput=resume?resume.input:{stage:'primary',grade,type,level:'基础',topic:topic.trim(),...(targetMistakes&&suggestions.length?{weaknesses:suggestions}:{})};
     if(!input.topic||input.topic.length>40){setAiErr('请输入1到40个字的主题');return;}
     busyRef.current=true;setBusy(true);setAiErr('');setInfo('');
     const c=new AbortController();ctrlRef.current=c;
@@ -120,7 +127,7 @@ export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:s
   const abandon=()=>{
     if(busyRef.current)return;
     if(pending&&!window.confirm('放弃这个待取回的任务？服务器可能仍在处理，已消耗的AI任务不会退回。'))return;
-    savePending(null);setPending(null);setType('reading');setTopic('日常生活');setAiErr('');setInfo('');
+    savePending(null);setPending(null);setType('reading');setTopic('日常生活');setTargetMistakes(false);setAiErr('');setInfo('');
   };
   const onBack=()=>{setOpen(null);setDraft(readPrimaryDraft(grade));};
   const openBankPaper=(paper:PrimaryPaper)=>{
@@ -193,6 +200,8 @@ export function PrimaryPractice({grade,aiNotice}:{grade:PrimaryGrade;aiNotice?:s
               <input className='primary-input' value={topic} maxLength={40} disabled={locked} aria-label='AI练习主题' onChange={e=>setTopic(e.target.value)}/>
             </label>
           </div>
+          <label className='primary-button' style={tap}><input type='checkbox' disabled={locked||!shownFocus.length} checked={targetMistakes&&shownFocus.length>0} onChange={e=>setTargetMistakes(e.target.checked)}/>按我的错题出新题</label>
+          <p className='primary-note' aria-live='polite'>{shownFocus.length ? `复习方向为${shownFocus.map(item=>item.knowledge).join('、')}。${pending?'原任务已保存这些方向。':'出题时只从错题本发送勾选的知识点。'}` : pending?'原任务按普通练习出题。':'当前年级还没有适合这一题型的错题知识点。'}</p>
           {pending&&<p className='primary-note' role='status'>有一个待取回的任务（{TYPE_LABEL[pending.input.type]} · {pending.input.topic}），保存于 {new Date(pending.savedAt).toLocaleString()}。可能正在生成，也可能已完成。</p>}
           <div className='primary-actions'>
             {busy?(
