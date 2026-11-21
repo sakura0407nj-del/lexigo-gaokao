@@ -3,6 +3,7 @@
 import { ArrowRight, BookOpen, CheckCircle2, Download, Headphones, ListChecks, Play, RotateCcw, SkipForward, Square, Trash2, Volume2, XCircle } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import type { Word } from "@/lib/learning-types";
+import { dictationSpeechText } from "@/lib/dictation-text";
 import { api, BAND_LABEL, errorText, isAbort, type Band, type DictationOrder, type Textbook, type TextbooksResponse } from "./api";
 import { todayKey, useProgress, type DictationAttempt } from "./progress";
 import { Empty, ErrorNote, Loading, SectionHeader, cx, downloadText, formatDate } from "./ui";
@@ -52,13 +53,6 @@ export function isAccepted(answer: string, word: Word) {
   const given = normalizeAnswer(answer);
   if (!given) return false;
   return [word.word, ...(word.accepted ?? [])].some((target) => normalizeAnswer(target) === given);
-}
-
-function speakable(text: string) {
-  return text
-    .replace(/\bsb\.?(?=\s|$|')/gi, "somebody")
-    .replace(/\bsth\.?(?=\s|$|')/gi, "something")
-    .replace(/[/()（）…]+/g, " ");
 }
 
 function shuffle<T>(list: T[]) {
@@ -155,7 +149,7 @@ export function DictationView({ speech }: { speech: SpeechState }) {
 
   function say(word: Word | undefined, times: number) {
     if (!word) return;
-    const ok = speech.speak(speakable(word.word), {
+    const ok = speech.speak(dictationSpeechText(word.word), {
       accent,
       rate,
       repeat: times,

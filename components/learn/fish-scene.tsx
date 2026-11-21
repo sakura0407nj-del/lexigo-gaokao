@@ -1,5 +1,6 @@
 "use client";
 
+import {roundedRect} from './canvas-path';
 import {useEffect, useRef} from 'react';
 import type {PointerEvent as ReactPointerEvent} from 'react';
 import type {FishPoint, FishRun} from '@/lib/fish-types';
@@ -107,7 +108,7 @@ function label(ctx: CanvasRenderingContext2D, word: string, point: FishPoint, ra
   used.push({x, y, width, height});
   ctx.strokeStyle = player ? '#c5ffe862' : '#d9f9ff36'; ctx.lineWidth = .7 / scale; ctx.beginPath(); ctx.moveTo(point.x, point.y - radius * .6); ctx.lineTo(clamp(point.x, x + 7, x + width - 7), y > point.y ? y : y + height); ctx.stroke();
   ctx.fillStyle = player ? '#d7ffed' : '#062b46dc'; ctx.strokeStyle = player ? '#caffde' : '#b9e5f05c'; ctx.lineWidth = 1 / scale;
-  ctx.beginPath(); ctx.roundRect(x, y, width, height, 6 / scale); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); roundedRect(ctx, x, y, width, height, 6 / scale); ctx.fill(); ctx.stroke();
   ctx.fillStyle = player ? '#145547' : '#f1fcff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(word, x + width / 2, y + height / 2 + .5 / scale, width - padding); ctx.textBaseline = 'alphabetic';
 }
 

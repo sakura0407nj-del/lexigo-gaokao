@@ -4,13 +4,14 @@ import {createRequire} from 'node:module';
 import {mkdirSync} from 'node:fs';
 
 mkdirSync('work/checks',{recursive:true});
-await build({entryPoints:['components/primary/primary-dictation.tsx','components/primary/primary-practice.tsx','components/primary/primary-records.tsx','components/primary/review-skills.ts'],bundle:true,platform:'node',format:'cjs',outdir:'work/checks/primary-ui',outbase:'.',external:['react','react-dom','lucide-react'],outExtension:{'.js':'.cjs'},logLevel:'silent'});
+await build({entryPoints:['components/primary/primary-dictation.tsx','components/primary/primary-practice.tsx','components/primary/primary-records.tsx','lib/primary-skills.ts','components/learn/practice-draft.ts'],bundle:true,platform:'node',format:'cjs',outdir:'work/checks/primary-ui',outbase:'.',external:['react','react-dom','lucide-react'],outExtension:{'.js':'.cjs'},logLevel:'silent'});
 globalThis.window={location:{href:'https://example.test/?stage=primary&grade=3'}};
 const require=createRequire(import.meta.url);
 const {parsePrimaryDictationDraft:dictation}=require('../work/checks/primary-ui/components/primary/primary-dictation.cjs');
 const {parsePrimaryPending:pending}=require('../work/checks/primary-ui/components/primary/primary-practice.cjs');
+const {draftToReplace}=require('../work/checks/primary-ui/components/learn/practice-draft.cjs');
 const {validatePrimaryBackup:backup}=require('../work/checks/primary-ui/components/primary/primary-records.cjs');
-const {getSkillFocus}=require('../work/checks/primary-ui/components/primary/review-skills.cjs');
+const {getSkillFocus}=require('../work/checks/primary-ui/lib/primary-skills.cjs');
 const now=Date.now(),day=86400000,checks=[];
 const word={id:'primary-g3-cat',word:'cat',phonetic:'/kæt/',translation:'猫',frequency:'high',rank:1,grade:3,topic:'动物',example:'I have a cat.',exampleZh:'我有一只猫。',pos:['n.']};
 const word2={...word,id:'primary-g3-color',word:'color',accepted:['colour'],translation:'颜色'};
@@ -34,6 +35,14 @@ check('dictation has finite chronological timestamps and a 14-day retention limi
 check('invalid JSON and huge draft payloads fail without throwing',()=>{for(const raw of [null,'','{bad','null','[]','x'.repeat(250001)])assert.equal(dictation(raw,3,now),null);});
 
 check('pre-acknowledgement AI request keeps exact input and same request ID',()=>{const t=task();const restored=readTask(t);assert.equal(restored.requestId,t.requestId);assert.deepEqual(restored.input,t.input);assert.equal(restored.jobId,undefined);});
+check('changing papers protects answered, timed and generated drafts and recognizes cross-tab edits',()=>{
+ const empty={paper:{id:'one',origin:'original'},answers:{},elapsed:0};
+ assert.equal(draftToReplace(empty,'two'),'');
+ const answered={...empty,answers:{'1':'A'}};
+ assert.equal(draftToReplace(answered,'one'),'');
+ assert.ok(draftToReplace(answered,'two'));assert.notEqual(draftToReplace(answered),draftToReplace({...answered,answers:{'1':'B'}}));
+ assert.ok(draftToReplace({...empty,elapsed:5}));assert.ok(draftToReplace({...empty,paper:{...empty.paper,origin:'ai'}}));
+});
 check('targeted tasks freeze only active curriculum labels for this exercise type',()=>{
  const mistake=(knowledge,misses,masteredAt)=>({knowledge,misses,masteredAt,lastWrong:'2026-11-10',prompt:'private question',yourAnswer:'private answer'});
  const found=getSkillFocus({a:mistake('地点信息定位',2),b:mistake('细节理解',1),c:mistake('主旨大意',1),d:mistake('过去时',8),e:mistake('推理',10,'2026-11-11')},'reading');

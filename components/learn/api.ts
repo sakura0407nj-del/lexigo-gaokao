@@ -1,4 +1,5 @@
 import {newRequestId} from './request-id';
+import type {TaskReceipt} from './task-receipt';
 import type { Correction, ExerciseType, Grade, Paper, Word } from "@/lib/learning-types";
 import type { Weakness } from "./mistakes";
 
@@ -159,6 +160,9 @@ export class ApiError extends Error {
     this.jobTerminal = jobTerminal;
   }
 }
+export function throwIfAborted(signal?: AbortSignal) {
+  if (signal?.aborted) throw signal.reason || new DOMException('Aborted', 'AbortError');
+}
 
 function friendlyStatus(status: number): string {
   if (status === 400 || status === 422) return "提交的内容不符合要求，请检查后再试。";
@@ -245,7 +249,7 @@ export interface ResumeJobOptions {
   onSubmitted?: (jobId: string) => void;
 }
 async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknown,signal?:AbortSignal,resume?:ResumeJobOptions):Promise<T> {
-  await ensureSession(); signal?.throwIfAborted();
+  await ensureSession(); throwIfAborted(signal);
   if(resume?.resumeJobId) {
     if(!/^\d{4}-\d{2}-\d{2}_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(resume.resumeJobId))throw new ApiError('保存的任务编号无效，请重新生成这一部分。',400,true);
     return pollLearningJob<T>(resume.resumeJobId,signal);
@@ -254,7 +258,7 @@ async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknow
   const uploadIds:string[]=[];
   if(Array.isArray(payload.images)) {
     for(const url of payload.images as string[]) {
-      signal?.throwIfAborted();
+      throwIfAborted(signal);
       const match=/^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/=]+)$/.exec(url);
       if(!match)throw new ApiError('图片格式无效，请选择 JPG、PNG 或 WebP。',400);
       const bytes=Uint8Array.from(atob(match[2]),c=>c.charCodeAt(0));
@@ -285,12 +289,28 @@ async function learningJob<T>(kind:'generate'|'correct'|'challenge',input:unknow
   resume?.onSubmitted?.(job.jobId);
   return pollLearningJob<T>(job.jobId,signal);
 }
-async function pollLearningJob<T>(jobId:string,signal?:AbortSignal):Promise<T> {
+export async function retrieveLearningJob<T>(receipt:TaskReceipt,signal?:AbortSignal,onSubmitted?:(jobId:string)=>void):Promise<T> {
+  await ensureSession();throwIfAborted(signal);
+  const scope=new URLSearchParams({kind:receipt.kind,stage:receipt.stage,...(receipt.grade?{grade:String(receipt.grade)}:{})});
+  let jobId=receipt.jobId;
+  if(!jobId){
+    const found=await getJson<{jobId:string}>(`/api/ai/jobs/lookup?${scope}&requestId=${encodeURIComponent(receipt.requestId)}`,signal);
+    jobId=found.jobId;onSubmitted?.(jobId);
+  }
+  try{return await pollLearningJob<T>(jobId,signal,scope);}
+  catch(error){
+    // Older server errors assume the original form is still mounted. Recovery
+    // deliberately saves no form contents and must not promise otherwise.
+    if(error instanceof ApiError)error.message=error.message.replace(/[；。]\s*(?:(?:你的|原始)?输入)(?:仍会|仍|已)?保留(?:在(?:当前)?页面)?[。]?/g,'。');
+    throw error;
+  }
+}
+async function pollLearningJob<T>(jobId:string,signal?:AbortSignal,scope?:URLSearchParams):Promise<T> {
   const deadline=Date.now()+200000;
   while(Date.now()<deadline) {
     await delay(1800,signal);
     let view:{status:string;result?:{status:number;body:unknown};error?:string};
-    try {view=await getJson(`/api/ai/jobs/${encodeURIComponent(jobId)}`,signal);}
+    try {view=await getJson(`/api/ai/jobs/${encodeURIComponent(jobId)}${scope?`?${scope}`:''}`,signal);}
     catch(error){
       // Poll throttling does not cancel an accepted background task. Back off
       // without creating another paid task or clearing the student's input.
@@ -335,7 +355,7 @@ export const api = {
   paper: (id: string, signal?: AbortSignal) => getJson<Paper>(`/api/paper?${new URLSearchParams({ id }).toString()}`, signal),
   grade: async (body: GradeRequest, signal?: AbortSignal) => {await ensureSession();return postJson<Grade>("/api/grade", body, signal);},
   generate: (body: GenerateRequest, signal?: AbortSignal, resume?:ResumeJobOptions) => learningJob<Paper>('generate',body,signal,resume),
-  correct: (body: CorrectRequest, signal?: AbortSignal) => learningJob<Correction>('correct',body,signal),
+  correct: (body: CorrectRequest, signal?: AbortSignal, resume?:ResumeJobOptions) => learningJob<Correction>('correct',body,signal,resume),
   challenge: async (body: ChallengeRequest, signal?: AbortSignal):Promise<ChallengeResponse> => {
     await ensureSession();
     const fast=await postJson<ChallengeResponse|{needsAI:true}>('/api/challenge-fast',body,signal);

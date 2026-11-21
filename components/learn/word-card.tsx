@@ -7,6 +7,7 @@ import { dueLabel } from "./review";
 import { cx } from "./ui";
 import type { SpeechState } from "./use-speech";
 import { posLabel, type RichWord } from "./vocab-api";
+import {wordExample} from './word-example';
 
 export function formatPhonetic(phonetic: string) {
   return phonetic.startsWith("/") || phonetic.startsWith("[") ? phonetic : `/${phonetic}/`;
@@ -24,7 +25,8 @@ export function WordCard({ word, speech, compact = false, topicLabels }: { word:
   const textbooks = word.textbooks ?? [];
   const pos = word.pos ?? [];
   const topics = word.topics ?? [];
-  const hasDetail = !compact && (textbooks.length > 0 || pos.length > 0 || topics.length > 0 || typeof word.inGaokao === "boolean" || Boolean(word.example));
+  const example=wordExample(word);
+  const hasDetail = !compact && (textbooks.length > 0 || pos.length > 0 || topics.length > 0 || typeof word.inGaokao === "boolean" || Boolean(example));
 
   return (
     <article className={cx("word-card", learned && "is-learned", compact && "is-compact")}>
@@ -119,12 +121,12 @@ export function WordCard({ word, speech, compact = false, topicLabels }: { word:
                 <dd>{topics.map((id) => topicLabels?.[id] ?? id).join("、")}</dd>
               </div>
             ) : null}
-            {word.example ? (
+            {example ? (
               <div>
                 <dt>例句</dt>
                 <dd>
-                  <span lang="en">{word.example}</span>
-                  {word.exampleZh ? <span className="block text-[var(--ink-soft)]">{word.exampleZh}</span> : null}
+                  <span lang="en">{example.english}</span>
+                  {example.note ? <span className="block text-[var(--ink-soft)]">{example.note}</span> : null}
                 </dd>
               </div>
             ) : null}

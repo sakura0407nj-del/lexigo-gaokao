@@ -1,4 +1,4 @@
-import type {MistakeEntry} from '../learn/mistakes';
+import type {MistakeEntry} from '../components/learn/mistakes';
 
 // Only these curriculum labels leave the device. The original question, essay
 // and child's response may contain personal details and stay in the notebook.

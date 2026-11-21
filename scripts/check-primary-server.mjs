@@ -26,6 +26,9 @@ try{
  assert.equal((await post('/api/primary/grade',{paperId:papers[0].id,answers:{},score:999})).status,400);checks++;
  const payload={stage:'primary',grade:3,type:'reading',level:'基础',topic:'pets'};
  assert.equal(parseJobSubmission({kind:'generate',payload}).payload.grade,3);
+ const targeted={...payload,weaknesses:[{knowledge:'定位短文细节',prompt:'用新语境练习这个知识点'}]};
+ assert.deepEqual(parseJobSubmission({kind:'generate',payload:targeted}).payload.weaknesses,targeted.weaknesses);
+ assert.throws(()=>parseJobSubmission({kind:'generate',payload:{...targeted,weaknesses:[{...targeted.weaknesses[0],yourAnswer:'private answer'}]}}));
  for(const invalid of [{...payload,grade:2},{...payload,grade:undefined},{...payload,type:'seven'},{...payload,stage:'high'}])assert.throws(()=>parseJobSubmission({kind:'generate',payload:invalid}));
  assert.throws(()=>parseJobSubmission({kind:'correct',payload:{stage:'primary',grade:3,kind:'essay',text:'I like dogs.',maxScore:25}}));checks++;
  const generated=papers.find(p=>p.grade===3&&p.type==='reading');let prompt='';

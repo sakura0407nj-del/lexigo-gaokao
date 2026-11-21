@@ -1,9 +1,11 @@
 "use client";
 
+import {readTextFile} from './read-text-file';
 import { AlertTriangle, Check, Copy, Download, FileText, ImagePlus, Lightbulb, ScanText, Send, StopCircle, X } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import type { Correction } from "@/lib/learning-types";
-import { api, errorText, isAbort } from "./api";
+import { api, ApiError, errorText, isAbort, retrieveLearningJob } from "./api";
+import {useTaskReceipt} from './use-task-receipt';
 import { correctionMistakes } from "./mistakes";
 import { useProgress } from "./progress";
 import { ErrorNote, Loading, SectionHeader, copyText, countEnglishWords, cx, downloadText } from "./ui";
@@ -99,7 +101,8 @@ function correctionToText(result: Correction) {
 }
 
 export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; aiNotice?: string; primaryGrade?:3|4|5|6 }) {
-  const { recordCorrection, addMistakes } = useProgress();
+  const { recordCorrection } = useProgress();
+  const task=useTaskReceipt(kind,primaryGrade);
   const [collected, setCollected] = useState(0);
   const [maxScore, setMaxScore] = useState<15 | 25>(15);
   const [prompt, setPrompt] = useState("");
@@ -111,8 +114,10 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
   const [seconds, setSeconds] = useState(0);
   const [error, setError] = useState("");
   const [result, setResult] = useState<Correction | null>(null);
+  const [recoveredResult,setRecoveredResult]=useState(false);
   const [copied, setCopied] = useState(false);
   const controllerRef = useRef<AbortController | null>(null);
+  const busyRef=useRef(false);
   const imageInput = useRef<HTMLInputElement>(null);
   const textInput = useRef<HTMLInputElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
@@ -184,7 +189,7 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
       return;
     }
     try {
-      const content = (await file.text()).replace(/^\uFEFF/, "");
+      const content = (await readTextFile(file)).replace(/^\uFEFF/, "");
       if (content.includes("\uFFFD")) setFileNote("文件里有无法识别的字符，可能不是 UTF-8 编码，请检查内容。");
       setText(content.slice(0, MAX_TEXT));
       if (content.length > MAX_TEXT) setFileNote(`内容超过 ${MAX_TEXT} 字符，已截断。`);
@@ -193,8 +198,10 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
     }
   }
 
-  async function submit() {
-    if (empty || tooLong || submitting) return;
+  async function submit(recover=false) {
+    const receipt=task.ref.current;
+    if(busyRef.current||(!recover&&(empty||tooLong||processing||receipt))||(recover&&!receipt))return;
+    busyRef.current=true;
     controllerRef.current?.abort();
     const controller = new AbortController();
     controllerRef.current = controller;
@@ -202,7 +209,7 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
     setSeconds(0);
     setError("");
     try {
-      const data = await api.correct(
+      const data = recover&&receipt?await retrieveLearningJob<Correction>(receipt,controller.signal,id=>task.submitted(receipt,id)):await api.correct(
         {
           kind,
           ...(primaryGrade?{stage:'primary' as const,grade:primaryGrade}:{}),
@@ -212,14 +219,21 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
           ...(shots.length ? { images: shots.map((shot) => shot.dataUrl) } : {}),
         },
         controller.signal,
+        task.submissionOptions(),
       );
+      if(controller.signal.aborted)return;
       setResult(data);
-      setCollected(addMistakes(correctionMistakes(kind, data, { text, prompt })));
-      recordCorrection({ kind, score: data.score, maxScore: data.maxScore, summary: data.summary });
+      setRecoveredResult(recover);
+      const mistakes=correctionMistakes(kind,data,recover?{text:'',prompt:''}:{text,prompt});
+      const saved=recordCorrection({attemptId:task.ref.current?.requestId,kind,score:data.score,maxScore:data.maxScore,summary:data.summary},mistakes);
+      setCollected(saved?mistakes.length:0);
+      if(saved)task.clear();else setError('批改结果已取回，但浏览器保存失败，成绩和错题尚未写入。请先下载结果；任务回执仍保留，可稍后再次取回并保存。');
       window.setTimeout(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
     } catch (err) {
-      setError(isAbort(err) ? "已停止等待批改结果（服务器端可能仍在处理）。输入内容和图片仍保留，可重新提交。" : `${errorText(err)} 输入内容和图片仍保留，可点击“开始批改”重试。`);
+      if(err instanceof ApiError&&err.jobTerminal)task.clear();
+      setError(isAbort(err) ? "已停止等待，服务器端可能仍在处理。请使用“取回上次批改”查询已提交任务，避免重复提交。" : errorText(err));
     } finally {
+      busyRef.current=false;
       setSubmitting(false);
     }
   }
@@ -256,6 +270,8 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
           </button>
         }
       />
+      {!task.storageAvailable&&<p className="note note-warn">无法保存本标签页的任务回执。当前页面仍可取回，刷新后可能无法找回；作文、图片和答案不会因取回功能而额外保存。</p>}
+      {task.receipt&&<div className="draft-banner" role="status"><div><p className="font-semibold">有一份{isEssay?'作文':'题目'}批改可取回</p><p className="hint">本标签页仅保存任务编号一天，取回不会重新批改或扣额度。取回结果与当前输入框内容无关。</p></div><div className="flex flex-wrap gap-2"><button type="button" className="btn btn-primary btn-sm" disabled={submitting||processing} onClick={()=>submit(true)}>取回上次批改</button><button type="button" className="btn btn-ghost btn-sm" disabled={submitting} onClick={()=>{if(!busyRef.current&&window.confirm('放弃这份批改回执？服务器任务不会被取消；重新提交会创建新任务。')){task.clear();setError('');}}}>放弃回执</button></div></div>}
 
       <div className="card card-pad space-y-5">
         <fieldset className="field">
@@ -341,7 +357,7 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
 
         <div className="submit-row">
           <div className="flex flex-wrap items-center gap-3">
-            <button type="button" className="btn btn-primary" onClick={submit} disabled={empty || tooLong || submitting || processing}>
+            <button type="button" className="btn btn-primary" onClick={()=>submit()} disabled={empty || tooLong || submitting || processing || !!task.receipt}>
               {submitting ? <Loading label={`AI 批改中… ${seconds}s`} /> : (<><Send aria-hidden className="size-4" /> 开始批改</>)}
             </button>
             {submitting ? (
@@ -357,6 +373,7 @@ export function CorrectionView({ kind, aiNotice, primaryGrade }: { kind: Kind; a
 
       {result ? (
         <div ref={resultRef} className="scroll-mt-6 space-y-5">
+          {recoveredResult&&<p className="note note-info">这是之前提交任务的批改结果。当前编辑区没有被替换；收集错题仅使用结果里的原文和错误，不会混入当前草稿。</p>}
           <div className="card card-pad result-head">
             <div className="score-block">
               <p className="eyebrow">AI 评分（仅供参考）</p>

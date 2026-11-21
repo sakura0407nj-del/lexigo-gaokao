@@ -3,10 +3,11 @@
 import { BookOpenText, FileCheck2, Search, SlidersHorizontal, Sparkles, StopCircle, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ExerciseType, Paper } from "@/lib/learning-types";
-import { api, errorText, isAbort, ORIGIN_LABEL, TYPE_LABEL, type BankResponse, type Level, type Origin } from "./api";
+import { api, ApiError, errorText, isAbort, retrieveLearningJob, ORIGIN_LABEL, TYPE_LABEL, type BankResponse, type Level, type Origin } from "./api";
+import {useTaskReceipt} from './use-task-receipt';
 import { activeMistakes, pickWeaknesses, toWeakness } from "./mistakes";
 import { PaperPlayer } from "./paper-player";
-import { answeredCount, clearDraft, readDraft, type PracticeDraft } from "./practice-draft";
+import { allowReplacement, answeredCount, clearDraft, draftToReplace, readDraft, writeDraft, type PracticeDraft } from "./practice-draft";
 import { useProgress } from "./progress";
 import { Empty, ErrorNote, Loading, SectionHeader, cx, formatDate } from "./ui";
 
@@ -29,6 +30,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
   const [filter, setFilter] = useState<Filter>("all");
   const [originFilter, setOriginFilter] = useState<OriginFilter>("all");
   const [paper, setPaper] = useState<Paper | null>(null);
+  const [waitingPaper,setWaitingPaper]=useState<Paper|null>(null);
   const [resume, setResume] = useState<PracticeDraft | null>(null);
   const [draftState, setDraft] = useState<PracticeDraft | null | undefined>(undefined);
   const [search, setSearch] = useState("");
@@ -52,6 +54,8 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
   const activeCount = useMemo(() => activeMistakes(progress.mistakes).length, [progress.mistakes]);
   const picked = useMemo(() => (targeted ? pickWeaknesses(progress.mistakes, genType) : []), [targeted, progress.mistakes, genType]);
   const controllerRef = useRef<AbortController | null>(null);
+  const busyRef=useRef(false);
+  const task=useTaskReceipt('generate');
   const topRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => () => controllerRef.current?.abort(), []);
@@ -104,6 +108,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
   }
 
   function resumeDraft() {
+    if(busyRef.current)return;
     const current = readDraft();
     if (!current) {
       setDraft(null);
@@ -114,12 +119,16 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
   }
 
   function discardDraft() {
-    clearDraft();
+    if(busyRef.current)return;
+    const current=readDraft();
+    if(current && !window.confirm(`丢弃「${current.paper.title}」的草稿和已填写的答案？`))return;
+    clearDraft(current?.paper.id);
     setDraft(null);
   }
   const originsPresent = (["past", "original"] as Origin[]).filter((origin) => bank?.papers.some((item) => item.origin === origin));
 
   async function openPaper(id: string) {
+    if(busyRef.current)return;
     controllerRef.current?.abort();
     const controller = new AbortController();
     controllerRef.current = controller;
@@ -135,6 +144,9 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
     }
     try {
       const result = await api.paper(id, controller.signal);
+      if(controller.signal.aborted)return;
+      const current=readDraft();
+      if(!allowReplacement(current,draftToReplace(current,id)))return;
       setResume(null);
       setPaper(result);
       window.setTimeout(() => topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
@@ -145,9 +157,13 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
     }
   }
 
-  async function generate() {
+  async function generate(recover=false) {
     const cleanTopic = topic.trim();
-    if (!cleanTopic || cleanTopic.length > 40 || generating) return;
+    const receipt=task.ref.current;
+    if(busyRef.current||(!recover&&(!cleanTopic||cleanTopic.length>40||receipt))||(recover&&!receipt))return;
+    const prior=readDraft(),approved=draftToReplace(prior);
+    if(!recover&&!allowReplacement(prior,approved))return;
+    busyRef.current=true;
     controllerRef.current?.abort();
     const controller = new AbortController();
     controllerRef.current = controller;
@@ -155,14 +171,23 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
     setGenSeconds(0);
     setGenError("");
     try {
-      const result = await api.generate({ type: genType, level: genLevel, topic: cleanTopic, ...(targeted && picked.length ? { weaknesses: picked.map(toWeakness) } : {}) }, controller.signal);
-      setResume(null);
+      const result = recover&&receipt
+        ? await retrieveLearningJob<Paper>(receipt,controller.signal,id=>task.submitted(receipt,id))
+        : await api.generate({ type: genType, level: genLevel, topic: cleanTopic, ...(targeted && picked.length ? { weaknesses: picked.map(toWeakness) } : {}) }, controller.signal,task.submissionOptions());
+      if(controller.signal.aborted)return;
+      const current=readDraft(),replacement=draftToReplace(current,result.id);
+      if((recover||replacement!==approved)&&!allowReplacement(current,replacement)){setWaitingPaper(result);return;}
+      const same=current?.paper.id===result.id?current:null;
+      if(same||writeDraft(result,{},0))task.clear();
+      setResume(same);
       setPaper(result);
       window.setTimeout(() => topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
     } catch (err) {
+      if(err instanceof ApiError&&err.jobTerminal)task.clear();
       if (!isAbort(err)) setGenError(errorText(err));
-      else setGenError("已停止等待结果。服务器端可能仍在处理，主题与设置已保留，可重新生成。");
+      else setGenError("已停止等待。已提交的任务可通过“取回上次命题”继续查询，不会重复生成。");
     } finally {
+      busyRef.current=false;
       setGenerating(false);
     }
   }
@@ -175,6 +200,9 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
     <section className="view">
       <div ref={topRef} className="scroll-mt-6" />
       <SectionHeader eyebrow="Practice" title="练习与命题" description="做历年真题或原创模拟，提交后由服务器判分并给出逐题解析；也可以按主题和难度让 AI 命一套新题。" action={<a href="#exam" className="btn btn-primary"><FileCheck2 aria-hidden className="size-4" />定制模拟卷</a>} />
+      {!task.storageAvailable&&<p className="note note-warn">浏览器无法保存任务回执。当前页面仍可取回，刷新或关闭标签页后可能无法找回；未保存命题主题和作答内容。</p>}
+      {task.receipt&&<div className="draft-banner" role="status"><div><p className="font-semibold">有一份命题任务可取回</p><p className="hint">只保存本标签页的任务编号，保留一天；查询不会重复命题或扣额度。离开页面不会取消服务器任务。</p></div><div className="flex flex-wrap gap-2"><button type="button" className="btn btn-primary btn-sm" disabled={generating} onClick={()=>generate(true)}>取回上次命题</button><button type="button" className="btn btn-ghost btn-sm" disabled={generating} onClick={()=>{if(!busyRef.current&&window.confirm('放弃这份任务回执？服务器任务不会被取消；以后重新提交会创建新任务。')){task.clear();setWaitingPaper(null);setGenError('');}}}>放弃回执</button></div></div>}
+      {task.receipt&&genError&&mode==='bank'&&<ErrorNote message={genError}/>}
 
       {paper ? (
         <PaperPlayer
@@ -187,6 +215,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
         />
       ) : (
         <>
+          {waitingPaper && <div className="draft-banner" role="status"><span>新练习「{waitingPaper.title}」已生成，可打开或稍后凭回执取回。</span><button type="button" className="btn btn-primary btn-sm" disabled={generating} onClick={()=>{if(busyRef.current)return;const current=readDraft();if(allowReplacement(current,draftToReplace(current,waitingPaper.id))){const same=current?.paper.id===waitingPaper.id?current:null;if(same||writeDraft(waitingPaper,{},0))task.clear();setResume(same);setPaper(waitingPaper);setWaitingPaper(null);}}}>打开新练习</button></div>}
           <div className="segmented" role="tablist" aria-label="练习方式">
             <button type="button" role="tab" aria-selected={mode === "bank"} className={cx("seg", mode === "bank" && "is-active")} onClick={() => setMode("bank")}>
               <BookOpenText aria-hidden className="size-4" /> 题库
@@ -309,7 +338,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
                       {papers.slice(0, shown).map((item) => {
                         const best = bestScores.get(item.id);
                         return (
-                          <button key={item.id} type="button" className="paper-card" onClick={() => openPaper(item.id)} disabled={Boolean(loadingId)}>
+                          <button key={item.id} type="button" className="paper-card" onClick={() => openPaper(item.id)} disabled={Boolean(loadingId)||generating}>
                             <span className="flex flex-wrap gap-2">
                               <span className="tag tag-green">{TYPE_LABEL[item.type]}</span>
                               <span className="tag">{item.level}</span>
@@ -403,7 +432,7 @@ export function PracticeView({ bank, bankError, onReloadBank, aiNotice }: { bank
               </div>
               {genError ? <ErrorNote message={genError} /> : null}
               <div className="flex flex-wrap items-center gap-3">
-                <button type="button" className="btn btn-primary" onClick={generate} disabled={generating || !topic.trim()}>
+                <button type="button" className="btn btn-primary" onClick={()=>generate()} disabled={generating || !!task.receipt || !topic.trim()}>
                   {generating ? <Loading label={`正在命题… ${genSeconds}s`} /> : (<><Sparkles aria-hidden className="size-4" /> 生成一套练习</>)}
                 </button>
                 {generating ? (

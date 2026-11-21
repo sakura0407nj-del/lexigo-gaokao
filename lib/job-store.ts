@@ -2,6 +2,7 @@ import {randomUUID} from 'node:crypto';
 import {getStore} from '@netlify/blobs';
 import {z} from 'zod';
 import {educationFields,validEducationContext} from './education-context';
+import {isSavedFocus} from './primary-skills';
 import {privateOwner, PublicApiError, signPublicValue, verifyPublicValue} from './public-session';
 
 export type LearningJobKind = 'generate' | 'correct' | 'challenge';
@@ -18,7 +19,7 @@ const ID = /^\d{4}-\d{2}-\d{2}_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-
 const uuid = z.string().uuid();
 const weakness = z.object({knowledge: z.string().max(400), prompt: z.string().max(1200), yourAnswer: z.string().max(500).optional(), correctAnswer: z.string().max(1000).optional()});
 const schemas = {
-  generate: z.object({...educationFields,type: z.enum(['reading', 'grammar', 'seven', 'cloze']), level: z.enum(['基础', '标准', '挑战']), topic: z.string().trim().min(1).max(150), weaknesses: z.array(weakness).max(8).optional()}).strict().refine(validEducationContext).refine(v=>v.stage!=='primary'||v.type==='reading'||v.type==='grammar'),
+  generate: z.object({...educationFields,type: z.enum(['reading', 'grammar', 'seven', 'cloze']), level: z.enum(['基础', '标准', '挑战']), topic: z.string().trim().min(1).max(150), weaknesses: z.array(weakness).max(8).optional()}).strict().refine(validEducationContext).refine(v=>v.stage!=='primary'||((v.type==='reading'||v.type==='grammar')&&(v.weaknesses===undefined||isSavedFocus(v.weaknesses,v.type)))),
   correct: z.object({...educationFields,kind: z.enum(['essay', 'questions']), text: z.string().max(16000).default(''), prompt: z.string().max(6000).optional(), maxScore: z.union([z.literal(15), z.literal(25)]).default(15)}).strict().refine(validEducationContext).refine(v=>v.stage!=='primary'||v.maxScore===15),
   challenge: z.object({prompt: z.string().min(1).max(3000), context: z.string().max(6000).optional(), correctAnswer: z.string().min(1).max(2500), studentAnswer: z.string().trim().min(1).max(2500), explanation: z.string().max(2500).optional()}).strict(),
 };
@@ -134,6 +135,25 @@ function requestJobId(owner: string, day: string, requestId: string) {
 function reusableJob(job: LearningJob, now = Date.now()) {
   return Number.isFinite(job.createdAt) && Number.isFinite(job.expiresAt) && job.createdAt > now - DAY_MS && job.expiresAt > now;
 }
+export type JobLookupScope = {kind:'generate'|'essay'|'questions';stage:'high'|'primary';grade?:3|4|5|6};
+export function parseJobLookupScope(params: URLSearchParams): JobLookupScope {
+  const kind=params.get('kind'),stage=params.get('stage'),grade=Number(params.get('grade'));
+  if(!['generate','essay','questions'].includes(kind||'')||!['high','primary'].includes(stage||'')||(stage==='primary'?![3,4,5,6].includes(grade):params.has('grade')))throw new PublicApiError(400,'任务类型或学段无效。');
+  return {kind:kind as JobLookupScope['kind'],stage:stage as JobLookupScope['stage'],...(stage==='primary'?{grade:grade as 3|4|5|6}:{})};
+}
+function matchesJobScope(job:LearningJob,scope:JobLookupScope) {
+  return (scope.kind==='generate'?job.kind==='generate':job.kind==='correct'&&job.payload.kind===scope.kind)&&
+    (job.payload.stage==='primary'?'primary':'high')===scope.stage&&(scope.stage!=='primary'||job.payload.grade===scope.grade);
+}
+/** Lookup cannot create jobs, upload data, dispatch work, or consume provider quota. */
+export async function lookupLearningJob(requestId:string,user:string,scope:JobLookupScope) {
+  if(!uuid.safeParse(requestId).success)throw new PublicApiError(400,'提交编号无效。');
+  const now=Date.now(),owner=privateOwner(user);
+  const jobs=await Promise.all([now,now-DAY_MS].map(time=>loadLearningJob(requestJobId(owner,quotaDay(time),requestId))));
+  const job=jobs.find(candidate=>candidate&&candidate.owner===owner&&reusableJob(candidate,now)&&matchesJobScope(candidate,scope));
+  if(!job)throw new PublicApiError(404,'暂未找到这次提交的任务，可能尚未接收、会话已变化或已超过一天。可稍后再次查询，或明确放弃回执后重新提交。');
+  return learningJobView(job.id,user,scope);
+}
 function sameSubmission(job: LearningJob, input: ReturnType<typeof parseJobSubmission>, owner: string) {
   if (job.owner !== owner || !reusableJob(job)) throw new PublicApiError(404, '任务不存在或已过期，请重新提交。');
   if (JSON.stringify([job.kind, job.payload, job.uploadIds]) !== JSON.stringify([input.kind, input.payload, input.uploadIds])) throw new PublicApiError(409, '这次提交编号已用于其他内容，请重新提交。');
@@ -187,9 +207,9 @@ export async function removeJobUploads(job: LearningJob) {
   await Promise.allSettled(job.uploadIds.map(id => jobStore().delete(uploadKey(job.owner, id))));
 }
 
-export async function learningJobView(id: string, user: string) {
+export async function learningJobView(id: string, user: string, scope?:JobLookupScope) {
   const job = await loadLearningJob(id);
-  if (!job || job.owner !== privateOwner(user) || job.expiresAt <= Date.now()) throw new PublicApiError(404, '任务不存在或已过期，请重新提交。');
+  if (!job || job.owner !== privateOwner(user) || job.expiresAt <= Date.now() || (scope&&!matchesJobScope(job,scope))) throw new PublicApiError(404, '任务不存在或已过期，请重新提交。');
   const outcome = await jobStore().get(key('outcomes', id), {type: 'json'}) as Outcome | null;
   if (outcome) return {jobId: id, ...outcome};
   if (Date.now() - job.createdAt > JOB_TIMEOUT) return {jobId: id, status: 'failed', error: '这次 AI 处理超时，请重新提交；你的输入仍保留在当前页面。'};

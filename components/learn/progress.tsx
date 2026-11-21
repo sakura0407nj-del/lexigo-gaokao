@@ -26,6 +26,20 @@ export interface WrongEntry {
   misses: number;
   lastAnswer: string;
   lastWrong: string;
+  revision?: string;
+}
+
+/** A wrong-word drill may clear only the exact mistake version it started with. */
+export type WrongbookSnapshot = Record<string, Pick<WrongEntry, "misses" | "lastWrong" | "revision">>;
+
+export function captureWrongbookSnapshot(wrongbook: Progress["wrongbook"], ids: string[]): WrongbookSnapshot {
+  const entries: WrongbookSnapshot = {};
+  for (const id of ids) {
+    const entry = wrongbook[id];
+    if (!entry || !Number.isSafeInteger(entry.misses) || entry.misses < 1 || !Number.isFinite(Date.parse(entry.lastWrong))) continue;
+    entries[id] = { misses: entry.misses, lastWrong: entry.lastWrong, ...(entry.revision ? { revision: entry.revision } : {}) };
+  }
+  return entries;
 }
 
 export interface PracticeRecord {
@@ -39,6 +53,7 @@ export interface PracticeRecord {
 }
 
 export interface CorrectionRecord {
+  attemptId?: string;
   at: string;
   kind: "essay" | "questions";
   score: number;
@@ -152,6 +167,7 @@ export function parseProgress(input: unknown): Progress {
         misses: Math.max(1, Math.round(raw.misses)),
         lastAnswer: isString(raw.lastAnswer) ? raw.lastAnswer : "",
         lastWrong: isString(raw.lastWrong) ? raw.lastWrong : "",
+        ...(isString(raw.revision) && raw.revision.length > 0 && raw.revision.length <= 200 ? { revision: raw.revision } : {}),
       };
     }
   }
@@ -195,6 +211,7 @@ export function parseProgress(input: unknown): Progress {
       .map((item) => ({
         at: item.at as string,
         kind: item.kind as "essay" | "questions",
+        ...(isString(item.attemptId)&&item.attemptId.length>0&&item.attemptId.length<=160?{attemptId:item.attemptId}:{}),
         score: item.score as number,
         maxScore: item.maxScore as number,
         summary: isString(item.summary) ? item.summary.slice(0, 400) : "",
@@ -253,11 +270,11 @@ interface ProgressApi {
   reviewWord: (word: Word, known: boolean) => void;
   setDailyGoal: (goal: DailyGoal) => void;
   markStudyDay: () => void;
-  recordDictation: (attempt: Omit<DictationAttempt, "at">, results: { word: Word; correct: boolean; answer: string }[]) => void;
+  recordDictation: (attempt: Omit<DictationAttempt, "at">, results: { word: Word; correct: boolean; answer: string }[], wrongbookSnapshot?: WrongbookSnapshot) => void;
   removeWrong: (id: string) => void;
   recordPractice: (record: Omit<PracticeRecord, "at">) => void;
   recordExam: (attemptId: string, records: Omit<PracticeRecord, "at">[], mistakes: MistakeDraft[]) => void;
-  recordCorrection: (record: Omit<CorrectionRecord, "at">) => void;
+  recordCorrection: (record: Omit<CorrectionRecord, "at">, mistakes?:MistakeDraft[]) => boolean;
   addMistakes: (drafts: MistakeDraft[]) => number;
   masterMistake: (id: string) => void;
   restoreMistake: (id: string) => void;
@@ -325,18 +342,19 @@ function subscribe(listener: () => void) {
   };
 }
 
-function setProgress(update: (current: Progress) => Progress) {
+function setProgress(update: (current: Progress) => Progress, requirePersistence=false):boolean {
   const current = getSnapshot();
   const progress = update(current.progress);
-  if (progress === current.progress) return;
+  if (progress === current.progress) return current.storageAvailable;
   let storageAvailable = true;
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   } catch {
     storageAvailable = false;
   }
-  snapshot = { progress, storageAvailable };
+  snapshot = { progress:requirePersistence&&!storageAvailable?current.progress:progress, storageAvailable };
   emit();
+  return storageAvailable;
 }
 
 const noopSubscribe = () => () => {};
@@ -408,16 +426,25 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const recordDictation = useCallback<ProgressApi["recordDictation"]>((attempt, results) => {
+  const recordDictation = useCallback<ProgressApi["recordDictation"]>((attempt, results, wrongbookSnapshot) => {
     setProgress((current) => {
       if(attempt.attemptId&&current.dictation.some(record=>record.attemptId===attempt.attemptId))return current;
       const wrongbook = { ...current.wrongbook };
       const now = new Date().toISOString();
+      // Old drafts have no snapshot and ordinary dictation never clears the wrongbook.
+      // Include a per-write revision so even a removed/re-added mistake in the same
+      // millisecond cannot be cleared by an older successful report.
+      const revision = attempt.attemptId || `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+      const canSettle = !!attempt.attemptId && attempt.source === "wrongbook" && /^primary-grade-[3-6]$/.test(attempt.band) && !!wrongbookSnapshot;
       for (const result of results) {
-        if (result.correct) continue;
         const word=normalizedWord(result.word);
         const prior = wrongbook[word.id];
-        wrongbook[word.id] = { word, misses: (prior?.misses ?? 0) + 1, lastAnswer: result.answer, lastWrong: now };
+        if (result.correct) {
+          const expected = canSettle && Object.prototype.hasOwnProperty.call(wrongbookSnapshot, result.word.id) ? wrongbookSnapshot![result.word.id] : undefined;
+          if (prior && expected && prior.misses === expected.misses && prior.lastWrong === expected.lastWrong && prior.revision === expected.revision) delete wrongbook[word.id];
+          continue;
+        }
+        wrongbook[word.id] = { word, misses: (prior?.misses ?? 0) + 1, lastAnswer: result.answer, lastWrong: now, revision };
       }
       return markToday({
         ...current,
@@ -444,10 +471,12 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setProgress(current => applyExamRecord(current, attemptId, records, mistakes));
   }, []);
 
-  const recordCorrection = useCallback((record: Omit<CorrectionRecord, "at">) => {
-    setProgress((current) =>
-      markToday({ ...current, corrections: [...current.corrections, { ...record, summary: record.summary.slice(0, 400), at: new Date().toISOString() }].slice(-HISTORY_LIMIT) }),
-    );
+  const recordCorrection = useCallback((record: Omit<CorrectionRecord, "at">, mistakes:MistakeDraft[]=[]) => {
+    return setProgress((current) => {
+      if(record.attemptId&&current.corrections.some(item=>item.attemptId===record.attemptId))return current;
+      const at=new Date().toISOString();
+      return markToday({ ...current, corrections: [...current.corrections, { ...record, summary: record.summary.slice(0, 400), at }].slice(-HISTORY_LIMIT),mistakes:mergeMistakes(current.mistakes,mistakes,at) });
+    },true);
   }, []);
 
   const addMistakes = useCallback((drafts: MistakeDraft[]) => {

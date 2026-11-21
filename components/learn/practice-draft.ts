@@ -88,3 +88,16 @@ export function clearDraft(paperId?: string) {
 export function answeredCount(draft: PracticeDraft) {
   return Object.values(draft.answers).filter((value) => value.trim()).length;
 }
+
+type ReplacementDraft = Pick<PracticeDraft, 'paper' | 'answers' | 'elapsed'>;
+export function draftToReplace(saved:ReplacementDraft|null,nextId?:string):string {
+  if(!saved || saved.paper.id===nextId)return '';
+  const answered=Object.entries(saved.answers).filter(([,v])=>v.trim()).sort(([a],[b])=>a.localeCompare(b));
+  if(!answered.length && saved.elapsed===0 && saved.paper.origin!=='ai')return '';
+  return JSON.stringify([saved.paper.id,answered,saved.elapsed]);
+}
+export function allowReplacement(saved:ReplacementDraft|null,signature:string):boolean {
+  if(!saved||!signature)return true;
+  const count=Object.values(saved.answers).filter(value=>value.trim()).length;
+  return window.confirm(`「${saved.paper.title}」还有一份草稿，已答 ${count}/${saved.paper.questions.length} 题。打开新练习时会替换这份草稿。继续吗？`);
+}

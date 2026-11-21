@@ -14,7 +14,7 @@ import {PrimaryRecords} from './primary-records';
 import {CorrectionView} from '../learn/correction-view';
 import GameHub from '../learn/game-hub';
 import {MistakesView} from '../learn/mistakes-view';
-import {getSkillFocus} from './review-skills';
+import {getSkillFocus} from '@/lib/primary-skills';
 
 type Tab='today'|'words'|'dictation'|'practice'|'mistakes'|'games'|'correction'|'records';
 const GRADES:PrimaryGrade[]=[3,4,5,6];

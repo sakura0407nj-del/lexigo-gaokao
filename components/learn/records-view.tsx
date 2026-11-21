@@ -1,5 +1,6 @@
 "use client";
 
+import {readTextFile} from './read-text-file';
 import { Download, HardDrive, Trash2, Upload } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { ORIGIN_LABEL, TYPE_LABEL, type BankResponse } from "./api";
@@ -59,7 +60,7 @@ export function RecordsView({ bank, bankError, onReloadBank }: { bank: BankRespo
     setError("");
     try {
       if (file.size > MAX_BACKUP_BYTES) throw new Error("文件太大，学习记录文件应小于 20MB");
-      const text = await file.text();
+      const text = await readTextFile(file);
       if (generation !== readGeneration.current) return;
       if (text.length > MAX_BACKUP_BYTES) throw new Error("文件内容过大");
       const parsed = parseHighBackup(JSON.parse(text));

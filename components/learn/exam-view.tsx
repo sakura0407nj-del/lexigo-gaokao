@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Check, CheckCircle2, ClipboardList, Cl
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ExamConfig, ExamReport } from '@/lib/exam-types';
 import { EXAM_TYPES, EXAM_SECTION_LIMITS } from '@/lib/exam-types';
-import { api, ApiError, errorText, isAbort, TYPE_LABEL } from './api';
+import { api, ApiError, errorText, isAbort, throwIfAborted, TYPE_LABEL } from './api';
 import { activeMistakes, exerciseMistakes, pickWeaknesses, toWeakness } from './mistakes';
 import { useProgress } from './progress';
 import { downloadText, SectionHeader } from './ui';
@@ -54,7 +54,7 @@ export function ExamView({aiNotice}:{aiNotice?:string}){
    }else{
     const queue=sectionTypes(current.exam.config);
     while(current.exam.sections.length<queue.length){
-     controller.signal.throwIfAborted();const type=queue[current.exam.sections.length],weaknesses=current.exam.config.targeted?pickWeaknesses(progress.mistakes,type).map(toWeakness):[];
+     throwIfAborted(controller.signal);const type=queue[current.exam.sections.length],weaknesses=current.exam.config.targeted?pickWeaknesses(progress.mistakes,type).map(toWeakness):[];
      // Keep the exact body with its idempotency key: the wrongbook may change while away.
      const input=current.pendingInput||{type,level:current.exam.config.level,topic:current.exam.config.topic.trim()||'高中英语综合训练',...(weaknesses.length?{weaknesses}:{})};
      const generated=await api.generate(input,controller.signal,{resumeJobId:current.pendingJobId,resumeRequestId:current.pendingRequestId,onSubmitting:requestId=>{current={...current,pendingRequestId:requestId,pendingInput:input};commit(current)},onSubmitted:jobId=>{current={...current,pendingJobId:jobId};commit(current)}});

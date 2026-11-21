@@ -1,4 +1,5 @@
 'use client';
+import {readTextFile} from '../learn/read-text-file';
 import {useEffect, useRef, useState, type ChangeEvent} from 'react';
 import {AlertTriangle, CheckCircle2, Download, Upload, X} from 'lucide-react';
 import type {PrimaryGrade} from '@/lib/primary-types';
@@ -70,7 +71,7 @@ export function PrimaryRecords({grade}: {grade: PrimaryGrade}) {
     setPending(null); setError(''); setNotice(''); setBusy(true);
     try {
       if (file.size > MAX_BYTES) throw new Error('文件超过 10MB，无法导入');
-      const text = await file.text();
+      const text = await readTextFile(file);
       if (id !== gen.current) return;
       let raw: unknown;
       try { raw = JSON.parse(text); } catch { throw new Error('文件不是有效的 JSON'); }

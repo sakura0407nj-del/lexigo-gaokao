@@ -5,9 +5,9 @@ import type {PrimaryBankResponse,PrimaryGrade,PrimaryPaper} from '@/lib/primary-
 import type {Grade,Paper} from '@/lib/learning-types';
 import {api,getJson,postJson,ensureSession,errorText,isAbort,ApiError} from '../learn/api';
 import {PaperPlayer} from '../learn/paper-player';
-import {readDraft,writeDraft} from '../learn/practice-draft';
+import {allowReplacement,draftToReplace,readDraft,writeDraft} from '../learn/practice-draft';
 import {useProgress} from '../learn/progress';
-import {getSkillFocus,isSavedFocus,type SkillFocus} from './review-skills';
+import {getSkillFocus,isSavedFocus,type SkillFocus} from '@/lib/primary-skills';
 
 type AiType='reading'|'grammar';
 type GradeBody=Parameters<NonNullable<ComponentProps<typeof PaperPlayer>['gradePaper']>>[0];
@@ -97,6 +97,9 @@ export function PrimaryPractice({grade,aiNotice,initialFocusType}:{grade:Primary
     if(busyRef.current)return;
     const input:AiInput=resume?resume.input:{stage:'primary',grade,type,level:'基础',topic:topic.trim(),...(targetMistakes&&suggestions.length?{weaknesses:suggestions}:{})};
     if(!input.topic||input.topic.length>40){setAiErr('请输入1到40个字的主题');return;}
+    const prior=readPrimaryDraft(grade);
+    const approved=resume?'':draftToReplace(prior);
+    if(!allowReplacement(prior,approved))return;
     busyRef.current=true;setBusy(true);setAiErr('');setInfo('');
     const c=new AbortController();ctrlRef.current=c;
     let rec:Pending=resume??{version:1,input,savedAt:Date.now()};
@@ -108,9 +111,15 @@ export function PrimaryPractice({grade,aiNotice,initialFocusType}:{grade:Primary
       if(!activeRef.current)return;
       const paper=result as PrimaryPaper;
       if(paper.grade!==grade||paper.type!==input.type||!Array.isArray(paper.questions)||paper.questions.length===0||typeof paper.passage!=='string')throw new Error('返回的练习与当前年级或题型不匹配，请重试取回任务。');
-      if(writeDraft(paper,{},0)){savePending(null);setPending(null);}
+      const current=readPrimaryDraft(grade);
+      const replacement=draftToReplace(current,paper.id);
+      if(replacement!==approved&&!allowReplacement(current,replacement)){
+        setDraft(current);setInfo('旧草稿已保留。新练习已经生成，稍后点「取回原任务」即可打开。');return;
+      }
+      const same=current?.paper.id===paper.id?current:null;
+      if(writeDraft(paper,same?.answers??{},same?.elapsed??0)){savePending(null);setPending(null);}
       else setWarn('练习已生成，但本地草稿保存失败。请保留当前页面；已保留原任务编号，可返回后再次取回，避免重复命题。');
-      setOpen({paper,answers:{},elapsed:0});
+      setOpen({paper,answers:same?.answers??{},elapsed:same?.elapsed??0,restored:!!same});
     }catch(e){
       if(!activeRef.current)return;
       if(isAbort(e))setInfo('已停止等待，服务器可能仍在处理。可以稍后取回同一个任务；如出现本地保存失败提示，请先保留此页面。');
@@ -134,7 +143,7 @@ export function PrimaryPractice({grade,aiNotice,initialFocusType}:{grade:Primary
     if(busyRef.current)return;
     const saved=readPrimaryDraft(grade);
     if(saved&&saved.paper.id===paper.id)setOpen({paper:saved.paper,answers:saved.answers,elapsed:saved.elapsed,restored:true});
-    else setOpen({paper});
+    else if(allowReplacement(saved,draftToReplace(saved,paper.id)))setOpen({paper});
   };
 
   if(open)return <>{warn&&<p className='primary-error' role='alert'>{warn}</p>}<PaperPlayer key={`${open.paper.id}:${open.paper.sealed??''}`} paper={open.paper} onBack={onBack} initialAnswers={open.answers} initialElapsed={open.elapsed} restored={open.restored} gradePaper={gradePaper}/></>;

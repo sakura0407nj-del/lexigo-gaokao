@@ -1,12 +1,13 @@
-import {createLearningJob, learningJobView, parseJobSubmission, signJobDispatch} from '../../lib/job-store';
+import {createLearningJob, learningJobView, lookupLearningJob, parseJobLookupScope, parseJobSubmission, signJobDispatch} from '../../lib/job-store';
 import {privateIP, PublicApiError, publicFailure, publicJSON, readPublicJSON, requirePublicUser, requireSameOrigin} from '../../lib/public-session';
 
 export default async function handler(req: Request, context: {ip: string}) {
   try {
     const user = requirePublicUser(req);
-    const pathname = new URL(req.url).pathname;
+    const url=new URL(req.url),pathname=url.pathname;
+    if(req.method==='GET'&&pathname==='/api/ai/jobs/lookup')return publicJSON(await lookupLearningJob(url.searchParams.get('requestId')||'',user,parseJobLookupScope(url.searchParams)));
     const match = pathname.match(/^\/api\/ai\/jobs\/([^/]+)$/);
-    if (req.method === 'GET' && match) return publicJSON(await learningJobView(match[1], user));
+    if (req.method === 'GET' && match) return publicJSON(await learningJobView(match[1], user,url.searchParams.has('kind')?parseJobLookupScope(url.searchParams):undefined));
     if (req.method !== 'POST' || pathname !== '/api/ai/jobs') return publicJSON({error: '请求路径或方法无效。'}, 405);
     requireSameOrigin(req);
     if (!process.env.AI_API_KEY) throw new PublicApiError(503, 'AI 服务暂未配置，请稍后再试；词库和本地练习仍可使用。');

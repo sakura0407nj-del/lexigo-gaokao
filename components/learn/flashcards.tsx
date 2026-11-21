@@ -7,6 +7,7 @@ import { useProgress } from "./progress";
 import { cx } from "./ui";
 import type { SpeechState } from "./use-speech";
 import { formatPhonetic, frequencyBand } from "./word-card";
+import {wordExample} from './word-example';
 import type { RichWord } from "./vocab-api";
 
 export const SESSION_SIZES = [20, 30, 50] as const;
@@ -27,6 +28,8 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
   const cardRef = useRef<HTMLDivElement>(null);
   const canSpeak = speech.supported && speech.hasEnglish;
   const current = deck[index];
+  const example=current?wordExample(current):undefined;
+  const unit=current?.textbooks?.find(ref=>ref.bookId===current.book && ref.unitId===current.unit)??current?.textbooks?.[0];
   const finished = index >= deck.length;
   const known = outcomes.filter((item) => item.known).length;
   const byId = useMemo(() => new Map(deck.map((word) => [word.id, word])), [deck]);
@@ -190,12 +193,13 @@ export function Flashcards({ words, title, speech, onExit }: { words: RichWord[]
         {flipped ? (
           <div className="flash-back">
             <p className="word-translation">{current.translation}</p>
-            {current.example ? (
+            {example ? (
               <p className="word-example">
-                <span lang="en">{current.example}</span>
-                {current.exampleZh ? <span className="block">{current.exampleZh}</span> : null}
+                <span lang="en">{example.english}</span>
+                {example.note ? <span className="block">{example.note}</span> : null}
               </p>
             ) : null}
+            {unit && <p className="hint">{unit.bookTitle} · {unit.unitTitle}</p>}
           </div>
         ) : (
           <p className="flash-hint">先在心里回想意思，再点击卡片查看</p>

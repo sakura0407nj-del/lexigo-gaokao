@@ -1,4 +1,5 @@
 "use client";
+import {roundedRect} from './canvas-path';
 import {useEffect, useRef} from 'react';
 
 export interface GameSceneProps {crowd: number; lane: 0 | 1 | null; feedback: 'good' | 'bad' | null; paused?: boolean; finished?: boolean; progress?: number}
@@ -35,7 +36,7 @@ export function GameScene(props: GameSceneProps) {
       for (const side of [0, 1]) {
         const center = project(side === 0 ? -.5 : .5, gateDepth), gateWidth = width * .23, gateHeight = height * .22;
         const color = p.feedback && side === p.lane ? p.feedback === 'good' ? '#4bf4bc' : '#ffab86' : '#b2f4ff';
-        ctx.fillStyle = color + '44'; ctx.strokeStyle = color; ctx.lineWidth = 5; ctx.beginPath(); ctx.roundRect(center.x - gateWidth / 2, center.y - gateHeight, gateWidth, gateHeight, 9); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = color + '44'; ctx.strokeStyle = color; ctx.lineWidth = 5; ctx.beginPath(); roundedRect(ctx, center.x - gateWidth / 2, center.y - gateHeight, gateWidth, gateHeight, 9); ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#ffffff'; ctx.font = '800 21px system-ui'; ctx.textAlign = 'center'; ctx.fillText(side === 0 ? 'A' : 'B', center.x, center.y - gateHeight * .44);
       }
       const people = Math.min(70, Math.max(0, p.crowd));
@@ -46,7 +47,7 @@ export function GameScene(props: GameSceneProps) {
         ctx.strokeStyle = '#008fba'; ctx.lineWidth = size * .29; ctx.lineCap = 'round';
         const stride = moving ? Math.sin(time * 13 + n) * size * .25 : 0;
         ctx.beginPath(); ctx.moveTo(point.x - size * .2, point.y - size * .35 + bob); ctx.lineTo(point.x - size * .24 - stride, point.y + size * .15); ctx.moveTo(point.x + size * .2, point.y - size * .35 + bob); ctx.lineTo(point.x + size * .24 + stride, point.y + size * .15); ctx.stroke();
-        ctx.fillStyle = n % 4 === 0 ? '#95f6ff' : '#30dcf3'; ctx.beginPath(); ctx.roundRect(point.x - size * .43, point.y - size * 1.6 + bob, size * .86, size * 1.3, size * .36); ctx.fill();
+        ctx.fillStyle = n % 4 === 0 ? '#95f6ff' : '#30dcf3'; ctx.beginPath(); roundedRect(ctx, point.x - size * .43, point.y - size * 1.6 + bob, size * .86, size * 1.3, size * .36); ctx.fill();
         ctx.beginPath(); ctx.arc(point.x, point.y - size * 1.97 + bob, size * .44, 0, Math.PI * 2); ctx.fill();
         ctx.strokeStyle = '#31c5e9'; ctx.lineWidth = size * .2; ctx.beginPath(); ctx.moveTo(point.x - size * .4, point.y - size * 1.3 + bob); ctx.lineTo(point.x - size * .66, point.y - size * .65 + stride); ctx.moveTo(point.x + size * .4, point.y - size * 1.3 + bob); ctx.lineTo(point.x + size * .66, point.y - size * .65 - stride); ctx.stroke();
       }
